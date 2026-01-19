@@ -504,7 +504,7 @@
           weapon,
           gmu: gmu
         });
-        const data = await fetchJSON(`/api/draw_odds?${params.toString()}`);
+        const data = await fetchJSON(`api/draw_odds?${params.toString()}`);
 
         if (!data.results.length) {
           target.innerHTML = '<span class="muted">No hunts matched that filter.</span>';
@@ -550,7 +550,7 @@
       select.innerHTML = '<option value="">Loading...</option>';
       try {
         const params = new URLSearchParams({ species_code: speciesCode });
-        const data = await fetchJSON(`/api/hunts?${params.toString()}`);
+        const data = await fetchJSON(`api/hunts?${params.toString()}`);
         if (!data.hunts.length) {
           select.innerHTML = '<option value="">No hunts for that species.</option>';
           return;
@@ -587,7 +587,7 @@
           species_code: species,
           weapon
         });
-        const data = await fetchJSON(`/api/best_hunts?${params.toString()}`);
+        const data = await fetchJSON(`api/best_hunts?${params.toString()}`);
 
         if (!data.results.length) {
           target.innerHTML = '<span class="muted">No hunts matched those filters.</span>';
@@ -671,7 +671,7 @@
           species_code: species,
           choices: [c1, c2, c3],
         };
-        const data = await fetchJSON("/api/application_plan", {
+        const data = await fetchJSON("api/application_plan", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -726,7 +726,7 @@
     async function loadBagLimits() {
       const target = document.getElementById("bag-table");
       try {
-        const data = await fetchJSON("/api/bag_limits");
+        const data = await fetchJSON("api/bag_limits");
         const list = data.bag_limits || [];
         if (!list.length) {
           target.innerHTML = '<span class="muted">No bag limits found in the database.</span>';
@@ -752,4 +752,3 @@
   </script>
 </body>
 </html>
-
