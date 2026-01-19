@@ -1,0 +1,892 @@
+hunt_id,hunt_code,unit_description,licenses,bag,species
+1,ANT-1-101,"Units 2, 7, 9, 10: youth only",3,ES,Pronghorn
+2,ANT-1-102,"Units 2, 7, 9, 10",5,MB,Pronghorn
+3,ANT-1-104,Unit 12: youth only,3,ES,Pronghorn
+4,ANT-1-105,Unit 12,10,MB,Pronghorn
+5,ANT-1-106,Unit 12: mobility impaired only,10,MB,Pronghorn
+6,ANT-1-107,Unit 12,10,MB,Pronghorn
+7,ANT-1-109,Unit 13: youth only,2,ES,Pronghorn
+8,ANT-1-110,Unit 13,10,MB,Pronghorn
+9,ANT-1-111,Unit 13: mobility impaired only,10,MB,Pronghorn
+10,ANT-1-112,Unit 13,5,MB,Pronghorn
+11,ANT-1-114,Unit 15: youth only,5,ES,Pronghorn
+12,ANT-1-115,Unit 15,10,MB,Pronghorn
+13,ANT-1-117,Unit 15: mobility impaired only,3,MB,Pronghorn
+14,ANT-1-118,Unit 15,10,MB,Pronghorn
+15,ANT-1-120,Unit 16: youth only,5,ES,Pronghorn
+16,ANT-1-121,Unit 16,15,MB,Pronghorn
+17,ANT-1-123,Unit 16: mobility impaired only,3,MB,Pronghorn
+18,ANT-1-124,Unit 16,25,MB,Pronghorn
+19,ANT-1-126,Unit 17: youth only,5,ES,Pronghorn
+20,ANT-1-127,Unit 17,5,MB,Pronghorn
+21,ANT-1-128,Unit 17,5,MB,Pronghorn
+22,ANT-1-129,Unit 17: mobility impaired only,3,MB,Pronghorn
+23,ANT-1-130,Unit 17,10,MB,Pronghorn
+24,ANT-1-132,Unit 18,15,MB,Pronghorn
+25,ANT-1-133,Unit 18,15,MB,Pronghorn
+26,ANT-1-134,"Unit 19: WSMR only, youth only",5,ES,Pronghorn
+27,ANT-1-136,Unit 20: youth only,2,ES,Pronghorn
+28,ANT-1-137,Unit 20,10,MB,Pronghorn
+29,ANT-1-139,"Units 21, 24: youth only",10,ES,Pronghorn
+30,ANT-1-140,"Units 21, 24",5,MB,Pronghorn
+31,ANT-1-141,"Units 21, 24",10,MB,Pronghorn
+32,ANT-1-142,"Units 21, 24: mobility impaired only",8,MB,Pronghorn
+33,ANT-1-143,"Units 21, 24",15,MB,Pronghorn
+34,ANT-1-145,"Units 22, 23: youth only",5,ES,Pronghorn
+35,ANT-1-146,"Units 22, 23",5,MB,Pronghorn
+36,ANT-1-147,"Units 22, 23",10,MB,Pronghorn
+37,ANT-1-148,"Units 22, 23: mobility impaired only",3,MB,Pronghorn
+38,ANT-1-150,"Units 25, 26, 27: youth only",5,ES,Pronghorn
+39,ANT-1-151,"Units 25, 26, 27",5,MB,Pronghorn
+40,ANT-1-152,"Units 25, 26, 27",10,MB,Pronghorn
+41,ANT-1-153,"Units 25, 26, 27: mobility impaired only",3,MB,Pronghorn
+42,ANT-1-161,Unit 31 north of US 380: youth only,5,ES,Pronghorn
+43,ANT-1-162,Unit 31 north of US 380,5,MB,Pronghorn
+44,ANT-1-163,Unit 31 north of US 380,10,MB,Pronghorn
+45,ANT-1-164,Unit 31 north of US 380: mobility impaired only,5,MB,Pronghorn
+46,ANT-1-165,Unit 31 north of US 380,15,MB,Pronghorn
+47,ANT-1-167,Unit 31 south of US 380: youth only,5,ES,Pronghorn
+48,ANT-1-168,Unit 31 south of US 380,10,MB,Pronghorn
+49,ANT-1-169,Unit 31 south of US 380,10,MB,Pronghorn
+50,ANT-1-170,Unit 31 south of US 380: mobility impaired only,5,MB,Pronghorn
+51,ANT-1-171,Unit 31 south of US 380,20,MB,Pronghorn
+52,ANT-1-173,Unit 32 east of Pecos River: youth only,5,ES,Pronghorn
+53,ANT-1-174,Unit 32 east of Pecos River,10,MB,Pronghorn
+54,ANT-1-175,Unit 32 east of Pecos River,5,MB,Pronghorn
+55,ANT-1-176,Unit 32 east of Pecos River: mobility impaired only,5,MB,Pronghorn
+56,ANT-1-177,Unit 32 east of Pecos River,15,MB,Pronghorn
+57,ANT-1-179,Unit 32 west of Pecos River,15,MB,Pronghorn
+58,ANT-1-180,Unit 32 west of Pecos River,10,MB,Pronghorn
+59,ANT-1-181,Unit 32 west of Pecos River: mobility impaired only,5,MB,Pronghorn
+60,ANT-1-182,Unit 32 west of Pecos River,15,MB,Pronghorn
+61,ANT-1-183,Unit 32 (Roswell Hunt Area only),15,F-IM,Pronghorn
+62,ANT-1-185,Unit 33: youth only,5,ES,Pronghorn
+63,ANT-1-186,Unit 33,25,MB,Pronghorn
+64,ANT-1-187,Unit 33,20,MB,Pronghorn
+65,ANT-1-188,Unit 33: mobility impaired only,5,MB,Pronghorn
+66,ANT-1-189,Unit 33,25,MB,Pronghorn
+67,ANT-1-191,"Units 36, 37: youth only",5,ES,Pronghorn
+68,ANT-1-192,"Units 36, 37",10,MB,Pronghorn
+69,ANT-1-193,"Units 36, 37",10,MB,Pronghorn
+70,ANT-1-194,"Units 36, 37: mobility impaired only",5,MB,Pronghorn
+71,ANT-1-195,"Units 36, 37",15,MB,Pronghorn
+72,ANT-1-197,Unit 38: youth only,10,ES,Pronghorn
+73,ANT-1-198,Unit 38,15,MB,Pronghorn
+74,ANT-1-199,Unit 38,20,MB,Pronghorn
+75,ANT-1-200,Unit 38: mobility impaired only,10,MB,Pronghorn
+76,ANT-1-201,Unit 38,30,MB,Pronghorn
+77,ANT-1-203,Unit 39: youth only,5,ES,Pronghorn
+78,ANT-1-204,Unit 39,10,MB,Pronghorn
+79,ANT-1-205,Unit 39,10,MB,Pronghorn
+80,ANT-1-206,Unit 39: mobility impaired only,5,MB,Pronghorn
+81,ANT-1-207,Unit 39,10,MB,Pronghorn
+82,ANT-1-209,Unit 40,10,MB,Pronghorn
+83,ANT-1-210,Unit 40: mobility impaired only,5,MB,Pronghorn
+84,ANT-1-211,Unit 40,10,MB,Pronghorn
+85,ANT-1-213,Unit 41: youth only,4,ES,Pronghorn
+86,ANT-1-214,Unit 41,24,MB,Pronghorn
+87,ANT-1-215,Unit 41,24,MB,Pronghorn
+88,ANT-1-216,Unit 41: mobility impaired only,4,MB,Pronghorn
+89,ANT-1-217,Unit 41,28,MB,Pronghorn
+90,ANT-1-220,Unit 42: youth only,8,ES,Pronghorn
+91,ANT-1-221,Unit 42,8,MB,Pronghorn
+92,ANT-1-222,Unit 42,8,MB,Pronghorn
+93,ANT-1-224,"Units 8, 43",10,MB,Pronghorn
+94,ANT-1-226,Unit 47: youth only,4,ES,Pronghorn
+95,ANT-1-227,Unit 47,20,MB,Pronghorn
+96,ANT-1-228,Unit 47,24,MB,Pronghorn
+97,ANT-1-229,Unit 47: mobility impaired only,4,MB,Pronghorn
+98,ANT-1-230,Unit 47,28,MB,Pronghorn
+99,ANT-1-234,"Units 50, 52",20,MB,Pronghorn
+100,ANT-1-237,Unit 56: youth only,40,ES,Pronghorn
+101,ANT-1-238,Unit 56,4,MB,Pronghorn
+102,ANT-1-239,Unit 56,36,MB,Pronghorn
+103,ANT-1-240,Unit 56: mobility impaired only,4,MB,Pronghorn
+104,ANT-1-241,Unit 56,40,MB,Pronghorn
+105,ANT-1-244,Unit 57: youth only,4,ES,Pronghorn
+106,ANT-1-245,Unit 57,4,MB,Pronghorn
+107,ANT-1-248,Unit 58: youth only,16,ES,Pronghorn
+108,ANT-1-249,Unit 58,24,MB,Pronghorn
+109,ANT-1-250,Unit 58,24,MB,Pronghorn
+110,ANT-1-251,Unit 58: mobility impaired only,4,MB,Pronghorn
+111,ANT-1-252,Unit 58,32,MB,Pronghorn
+112,ANT-1-255,Unit 59: youth only,36,ES,Pronghorn
+113,ANT-1-256,Unit 59,4,MB,Pronghorn
+114,ANT-1-257,Unit 59,32,MB,Pronghorn
+115,ANT-1-258,Unit 59: mobility impaired only,8,MB,Pronghorn
+116,ANT-1-259,Unit 59,40,MB,Pronghorn
+117,ANT-2-100,"Units 2, 7, 9, 10",10,MB,Pronghorn
+118,ANT-2-103,Unit 12,10,MB,Pronghorn
+119,ANT-2-108,Unit 13,10,MB,Pronghorn
+120,ANT-2-113,Unit 15,20,MB,Pronghorn
+121,ANT-2-119,Unit 16,20,MB,Pronghorn
+122,ANT-2-125,Unit 17,20,MB,Pronghorn
+123,ANT-2-131,Unit 18,25,MB,Pronghorn
+124,ANT-2-135,Unit 20,10,MB,Pronghorn
+125,ANT-2-138,"Units 21, 24",25,MB,Pronghorn
+126,ANT-2-144,"Units 22, 23",10,MB,Pronghorn
+127,ANT-2-149,"Units 25, 26, 27",10,MB,Pronghorn
+128,ANT-2-159,Unit 30,25,MB,Pronghorn
+129,ANT-2-160,Unit 31 north of US 380,25,MB,Pronghorn
+130,ANT-2-166,Unit 31 south of US 380,50,MB,Pronghorn
+131,ANT-2-172,Unit 32 east of Pecos River,25,MB,Pronghorn
+132,ANT-2-178,Unit 32 west of Pecos River,20,MB,Pronghorn
+133,ANT-2-184,Unit 33,30,MB,Pronghorn
+134,ANT-2-190,"Units 36, 37",20,MB,Pronghorn
+135,ANT-2-196,Unit 38,20,MB,Pronghorn
+136,ANT-2-202,Unit 39,5,MB,Pronghorn
+137,ANT-2-208,Unit 40,5,MB,Pronghorn
+138,ANT-2-212,Unit 41,28,MB,Pronghorn
+139,ANT-2-219,Unit 42,4,MB,Pronghorn
+140,ANT-2-223,"Units 8, 43",5,MB,Pronghorn
+141,ANT-2-225,Unit 47,8,MB,Pronghorn
+142,ANT-2-233,"Units 50, 52",20,MB,Pronghorn
+143,ANT-2-236,Unit 56,40,MB,Pronghorn
+144,ANT-2-243,Unit 57,4,MB,Pronghorn
+145,ANT-2-247,Unit 58,32,MB,Pronghorn
+146,ANT-2-254,Unit 59,40,MB,Pronghorn
+147,ANT-3-154,Unit 28: McGregor Range only,7,MB,Pronghorn
+148,ANT-3-155,"Unit 28: McGregor Range only, military only",7,MB,Pronghorn
+149,ANT-3-156,Unit 29: youth only,5,ES,Pronghorn
+150,ANT-3-157,Unit 29,15,MB,Pronghorn
+151,ANT-3-158,Unit 29,25,MB,Pronghorn
+152,ANT-3-232,"Units 50, 52: youth only",40,ES,Pronghorn
+153,ANT-3-235,"Units 50, 52",40,MB,Pronghorn
+154,BBY-1-101,"GMUs 32, 36, 37",50,ES,Barbary sheep
+155,BBY-1-102,"GMUs 32, 36, 37",50,ES,Barbary sheep
+156,BBY-1-103,"GMUs 32, 36, 37",75,ES,Barbary sheep
+157,BBY-1-104,"GMUs 32, 36, 37",150,ES,Barbary sheep
+158,BBY-1-105,"GMUs 32, 36, 37",150,ES,Barbary sheep
+159,BBY-1-106,"GMUs 32, 36, 37",150,ES,Barbary sheep
+160,BBY-1-107,"GMUs 32, 36, 37",150,ES,Barbary sheep
+161,BBY-1-109,"GMUs 29, 30",75,ES,Barbary sheep
+162,BBY-1-110,"GMUs 29, 30",75,ES,Barbary sheep
+163,BBY-1-111,"GMUs 29, 30",75,ES,Barbary sheep
+164,BBY-1-112,"GMUs 29, 30",200,ES,Barbary sheep
+165,BBY-1-113,"GMUs 29, 30",200,ES,Barbary sheep
+166,BBY-1-114,"GMUs 29, 30",200,ES,Barbary sheep
+167,BBY-1-115,"GMUs 29, 30",200,ES,Barbary sheep
+168,BBY-1-116,Unit 28 McGregor range,10,ES,Barbary sheep
+169,BBY-1-117,"Unit 28 McGregor range, military only",10,ES,Barbary sheep
+170,BBY-1-118,Unit 28 McGregor range,65,F-IM,Barbary sheep
+171,BBY-1-119,"Unit 28 McGregor range, military only",10,F-IM,Barbary sheep
+172,BBY-1-120,Unit 28 McGregor range,65,F-IM,Barbary sheep
+173,BBY-1-121,"Unit 28 McGregor range, military only",10,F-IM,Barbary sheep
+174,BBY-2-100,"GMUs 32, 36, 37",75,ES,Barbary sheep
+175,BBY-2-108,"GMUs 29, 30",75,ES,Barbary sheep
+176,BHS-1-201,Rocky Mountain BHS: TBD by hunt area selected,28,RAM,BHS
+177,BHS-1-202,Unit 45,20,EWE,BHS
+178,BHS-1-204,Desert BHS: TBD by hunt area selected,25,RAM,BHS
+179,BHS-2-203,Unit 45,10,EWE,BHS
+180,DER-1-100,Unit 2A: youth only,25,FAD,Deer
+181,DER-1-101,Unit 2A,150,FAD,Deer
+182,DER-1-102,Unit 2A: private land only,40,FAD,Deer
+183,DER-1-103,Unit 2A: youth only,15,FAD,Deer
+184,DER-1-110,Unit 2B,275,FAD,Deer
+185,DER-1-111,Unit 2B: youth only,125,FAD,Deer
+186,DER-1-112,Unit 2B: private land only,25,FAD,Deer
+187,DER-1-113,Unit 2B,350,FAD,Deer
+188,DER-1-114,Unit 2B: private land only,25,FAD,Deer
+189,DER-1-115,Unit 2B,400,FAD,Deer
+190,DER-1-116,Unit 2B: private land only,75,FAD,Deer
+191,DER-1-117,Unit 2B: youth only,25,FAD,Deer
+192,DER-1-127,Unit 2C,30,FAD,Deer
+193,DER-1-128,Unit 2C: private land only,8,FAD,Deer
+194,DER-1-133,Unit 4: Humphries/Rio Chama/Sargent WMAs only,20,FAD,Deer
+195,DER-1-134,"Unit 4: Humphries/Rio Chama/Sargent WMAs only, youth only",10,FAD,Deer
+196,DER-1-135,Unit 4: private land only,175,FAD,Deer
+197,DER-1-136,Unit 4: Humphries/Rio Chama/Sargent WMAs only,20,FAD,Deer
+198,DER-1-137,Unit 4: private land only,175,FAD,Deer
+199,DER-1-138,Unit 4: Humphries/Rio Chama/Sargent WMAs only,10,FAD,Deer
+200,DER-1-139,Unit 4: private land only,10,FAD,Deer
+201,DER-1-140,"Unit 4: Humphries/Rio Chama/Sargent WMAs only, youth only",5,FAD,Deer
+202,DER-1-144,Unit 5A: public land only,40,FAD,Deer
+203,DER-1-145,Unit 5A: private land only,220,FAD,Deer
+204,DER-1-150,Unit 5B,30,FAD,Deer
+205,DER-1-151,Unit 5B: youth only,10,FAD,Deer
+206,DER-1-154,Units 6A and 6C: mobility impaired only,20,FAD,Deer
+207,DER-1-155,Units 6A and 6C,110,FAD,Deer
+208,DER-1-158,Unit 7,30,FAD,Deer
+209,DER-1-164,"Unit 9, including Water Canyon WMA",15,FAD,Deer
+210,DER-1-165,Unit 9: Marquez/LBar WMAs only,10,FAD,Deer
+211,DER-1-166,"Unit 9, including Water Canyon WMA: youth only",10,FAD,Deer
+212,DER-1-170,Unit 10: mobility impaired only,20,FAD,Deer
+213,DER-1-171,Unit 10,70,FAD,Deer
+214,DER-1-172,Unit 10,65,FAD,Deer
+215,DER-1-173,Unit 10,90,FAD,Deer
+216,DER-1-174,Unit 10: youth only,25,FAD,Deer
+217,DER-1-177,Unit 12,85,FAD,Deer
+218,DER-1-180,Unit 13,150,FAD,Deer
+219,DER-1-181,Unit 13,150,FAD,Deer
+220,DER-1-182,Unit 13: youth only,50,FAD,Deer
+221,DER-1-186,Unit 14,55,FAD,Deer
+222,DER-1-194,Unit 16,300,FAD,Deer
+223,DER-1-195,Unit 16: mobility impaired only,25,FAD,Deer
+224,DER-1-196,Unit 16,300,FAD,Deer
+225,DER-1-197,Unit 16: youth only,100,FAD,Deer
+226,DER-1-201,Unit 17,80,FAD,Deer
+227,DER-1-202,Unit 17,80,FAD,Deer
+228,DER-1-203,Unit 17: youth only,80,FAD,Deer
+229,DER-1-207,Unit 18,70,FAD,Deer
+230,DER-1-208,Unit 18,70,FAD,Deer
+231,DER-1-212,"Unit 19: White Sands missile range only, mandatory check-in/check-out",5,FAD,Deer
+232,DER-1-213,"Unit 19: White Sands missile range only, mandatory check-in/check-out",5,FAD,Deer
+233,DER-1-216,Unit 20,90,FAD,Deer
+234,DER-1-217,Unit 20,90,FAD,Deer
+235,DER-1-221,Unit 21,425,FAD,Deer
+236,DER-1-222,Unit 21,425,FAD,Deer
+237,DER-1-223,Unit 21: youth only,100,FAD,Deer
+238,DER-1-227,Unit 21,25,FAWTD,Deer
+239,DER-1-228,Unit 22,70,FAD,Deer
+240,DER-1-229,Unit 22,70,FAD,Deer
+241,DER-1-230,Unit 22: youth only,20,FAD,Deer
+242,DER-1-234,Unit 23: except the Burro mountains hunt area,450,FAMD,Deer
+243,DER-1-235,Unit 23: except the Burro mountains hunt area,450,FAMD,Deer
+244,DER-1-236,Unit 23: except the Burro mountains hunt area,100,FAWTD,Deer
+245,DER-1-237,Unit 23: except the Burro mountains hunt area,55,FAWTD,Deer
+246,DER-1-238,"Unit 23: except the Burro mountains hunt area, youth only",75,FAD,Deer
+247,DER-1-245,Unit 23: Burro mountains hunt area only,35,FAMD,Deer
+248,DER-1-246,Unit 23: Burro mountains hunt area only,40,FAWTD,Deer
+249,DER-1-247,"Unit 23: Burro mountains hunt area only, youth only",25,FAD,Deer
+250,DER-1-253,"Unit 24: including Fort Bayard management area, youth only",50,FAD,Deer
+251,DER-1-254,Unit 24: excluding Fort Bayard management area,400,FAMD,Deer
+252,DER-1-255,Unit 24: excluding Fort Bayard management area,400,FAMD,Deer
+253,DER-1-256,Unit 24: excluding Fort Bayard management area,100,FAWTD,Deer
+254,DER-1-257,"Unit 24: including Fort Bayard management area, youth only",50,FAD,Deer
+255,DER-1-258,Unit 24: excluding Fort Bayard management area,50,FAWTD,Deer
+256,DER-1-265,Unit 25,100,FAD,Deer
+257,DER-1-266,Unit 25,100,FAD,Deer
+258,DER-1-270,Unit 26,100,FAD,Deer
+259,DER-1-271,Unit 26,100,FAD,Deer
+260,DER-1-275,Unit 26,25,FAWTD,Deer
+261,DER-1-276,Unit 27,50,FAMD,Deer
+262,DER-1-277,Unit 27,50,FAMD,Deer
+263,DER-1-278,Unit 27,40,FAWTD,Deer
+264,DER-1-279,Unit 27: youth only,25,FAD,Deer
+265,DER-1-280,Unit 27,25,FAWTD,Deer
+266,DER-1-287,Unit 28: McGregor range only,25,FAD,Deer
+267,DER-1-288,"Unit 28: McGregor range only, military only",25,FAD,Deer
+268,DER-1-289,Unit 29,150,FAD,Deer
+269,DER-1-290,Unit 29,150,FAD,Deer
+270,DER-1-294,Unit 30,720,FAD,Deer
+271,DER-1-295,Unit 30,720,FAD,Deer
+272,DER-1-296,Unit 30: youth only,250,FAD,Deer
+273,DER-1-300,"Unit 31, including Prairie Chicken WMAs",440,FAD,Deer
+274,DER-1-301,"Unit 31, including Prairie Chicken WMAs",435,FAD,Deer
+275,DER-1-305,"Unit 32, including Prairie Chicken WMAs",565,FAD,Deer
+276,DER-1-306,"Unit 32, including Prairie Chicken WMAs",560,FAD,Deer
+277,DER-1-307,"Unit 32: Roswell and Ft. Sumner hunt areas only, youth only",15,A,Deer
+278,DER-1-308,Unit 32: Roswell and Ft. Sumner hunt areas only,15,A,Deer
+279,DER-1-312,"Unit 33, including Prairie Chicken WMAs",150,FAD,Deer
+280,DER-1-313,"Unit 33, including Prairie Chicken WMAs",150,FAD,Deer
+281,DER-1-319,Unit 34: mobility impaired only,50,FAD,Deer
+282,DER-1-320,Unit 34: youth only,45,FAD,Deer
+283,DER-1-321,Unit 34,650,FAD,Deer
+284,DER-1-322,Unit 34,650,FAD,Deer
+285,DER-1-326,Unit 36,300,FAD,Deer
+286,DER-1-327,Unit 36,300,FAD,Deer
+287,DER-1-328,Unit 36: youth only,25,FAD,Deer
+288,DER-1-333,Unit 37,365,FAD,Deer
+289,DER-1-334,Unit 37,360,FAD,Deer
+290,DER-1-338,Unit 38,160,FAD,Deer
+291,DER-1-339,Unit 38,155,FAD,Deer
+292,DER-1-343,Unit 39,35,FAD,Deer
+293,DER-1-344,Unit 39,35,FAD,Deer
+294,DER-1-348,Unit 40,50,FAD,Deer
+295,DER-1-349,Unit 40,50,FAD,Deer
+296,DER-1-353,Unit 41,40,FAD,Deer
+297,DER-1-354,Unit 41,40,FAD,Deer
+298,DER-1-355,Unit 41: youth only,5,FAD,Deer
+299,DER-1-356,Unit 41: youth only,15,ESWTD,Deer
+300,DER-1-357,Unit 41,10,ESWTD,Deer
+301,DER-1-361,Unit 42,40,FAD,Deer
+302,DER-1-362,Unit 42,40,FAD,Deer
+303,DER-1-363,Unit 42,10,ESWTD,Deer
+304,DER-1-366,Unit 43,35,FAD,Deer
+305,DER-1-369,Unit 45,250,FAD,Deer
+306,DER-1-370,Unit 45: mobility impaired only,25,FAD,Deer
+307,DER-1-371,Unit 45,250,FAD,Deer
+308,DER-1-372,Unit 45: youth only,25,FAD,Deer
+309,DER-1-375,Unit 47,25,FAD,Deer
+310,DER-1-376,Unit 47,20,FAD,Deer
+311,DER-1-379,Unit 48,50,FAD,Deer
+312,DER-1-380,Unit 48,50,FAD,Deer
+313,DER-1-383,Unit 49,100,FAD,Deer
+314,DER-1-384,Unit 49,100,FAD,Deer
+315,DER-1-386,Unit 50,50,FAD,Deer
+316,DER-1-387,Unit 50,50,FAD,Deer
+317,DER-1-389,Unit 51A,145,FAD,Deer
+318,DER-1-391,Unit 51B,20,FAD,Deer
+319,DER-1-392,Unit 51B,15,FAD,Deer
+320,DER-1-394,Unit 52,90,FAD,Deer
+321,DER-1-395,Unit 52,90,FAD,Deer
+322,DER-1-398,Unit 53,85,FAD,Deer
+323,DER-1-399,Unit 53,85,FAD,Deer
+324,DER-1-401,Units 54/55: Colin Neblett WMA only,10,FAD,Deer
+325,DER-1-402,Units 54/55: Colin Neblett WMA only,10,FAD,Deer
+326,DER-1-404,Unit 55: ES Barker WMA only,5,FAD,Deer
+327,DER-1-405,"Unit 55: ES Barker WMA only, youth only",5,FAD,Deer
+328,DER-1-406,Unit 55: Urraca WMA only,5,FAD,Deer
+329,DER-1-407,Unit 55: Urraca WMA only,5,FAD,Deer
+330,DER-1-409,Unit 56,15,FAD,Deer
+331,DER-1-410,Unit 56,15,FAD,Deer
+332,DER-1-411,Unit 56: youth only,10,FAD,Deer
+333,DER-1-412,Unit 56: youth only,10,ESWTD,Deer
+334,DER-1-415,Unit 57 (excluding Sugarite Canyon S.P.),25,FAD,Deer
+335,DER-1-416,Unit 57 (excluding Sugarite Canyon S.P.),25,FAD,Deer
+336,DER-1-417,Unit 57 (excluding Sugarite Canyon S.P.): youth only,10,FAD,Deer
+337,DER-1-418,Unit 57 (excluding Sugarite Canyon S.P.),10,ESWTD,Deer
+338,DER-1-422,Unit 58,40,FAD,Deer
+339,DER-1-423,Unit 58,35,FAD,Deer
+340,DER-1-424,Unit 58: youth only,10,FAD,Deer
+341,DER-1-425,Unit 58: youth only,15,ESWTD,Deer
+342,DER-1-426,Unit 58,15,ESWTD,Deer
+343,DER-1-429,Unit 59,40,FAD,Deer
+344,DER-1-430,Unit 59,40,FAD,Deer
+345,DER-1-431,Unit 59: youth only,5,FAD,Deer
+346,DER-1-432,Unit 59: youth only,15,ESWTD,Deer
+347,DER-1-433,Unit 59,15,ESWTD,Deer
+348,DER-1-700,statewide,1,FAD,Deer
+349,DER-2-104,Unit 2A,40,FAD,Deer
+350,DER-2-105,Unit 2A: private land only,15,FAD,Deer
+351,DER-2-106,Unit 2A,80,FAD,Deer
+352,DER-2-107,Unit 2A: private land only,15,FAD,Deer
+353,DER-2-118,Unit 2B,130,FAD,Deer
+354,DER-2-119,Unit 2B: youth only,20,FAD,Deer
+355,DER-2-120,Unit 2B: private land only,10,FAD,Deer
+356,DER-2-121,Unit 2B,180,FAD,Deer
+357,DER-2-122,Unit 2B: youth only,50,FAD,Deer
+358,DER-2-123,Unit 2B: private land only,30,FAD,Deer
+359,DER-2-129,Unit 2C,50,FAD,Deer
+360,DER-2-130,Unit 2C: private land only,15,FAD,Deer
+361,DER-2-141,Unit 4: Humphries/Rio Chama/Sargent WMAs only,10,FAD,Deer
+362,DER-2-142,Unit 4: private land only,150,FAD,Deer
+363,DER-2-146,Unit 5A: public land only,30,FAD,Deer
+364,DER-2-147,Unit 5A: private land only,220,FAD,Deer
+365,DER-2-152,Unit 5B,10,FAD,Deer
+366,DER-2-156,Units 6A and 6C,100,FAD,Deer
+367,DER-2-159,Unit 7,10,FAD,Deer
+368,DER-2-160,Unit 7,15,FAD,Deer
+369,DER-2-162,Unit 8: youth only,65,FAD,Deer
+370,DER-2-163,Unit 8,65,FAD,Deer
+371,DER-2-167,"Unit 9, including Water Canyon WMA",10,FAD,Deer
+372,DER-2-168,"Unit 9, including Water Canyon WMA",15,FAD,Deer
+373,DER-2-175,Unit 10,100,FAD,Deer
+374,DER-2-178,Unit 12,20,FAD,Deer
+375,DER-2-183,Unit 13,125,FAD,Deer
+376,DER-2-184,Unit 13,75,FAD,Deer
+377,DER-2-187,Unit 14,35,FAD,Deer
+378,DER-2-188,Unit 14,25,FAD,Deer
+379,DER-2-190,Unit 15,75,FAD,Deer
+380,DER-2-191,Unit 15,25,FAD,Deer
+381,DER-2-198,Unit 16,230,FAD,Deer
+382,DER-2-199,Unit 16,175,FAD,Deer
+383,DER-2-204,Unit 17,75,FAD,Deer
+384,DER-2-205,Unit 17,75,FAD,Deer
+385,DER-2-209,Unit 18,50,FAD,Deer
+386,DER-2-210,Unit 18,40,FAD,Deer
+387,DER-2-214,Unit 19: except WSMR and Ft. Bliss,10,FAD,Deer
+388,DER-2-218,Unit 20,45,FAD,Deer
+389,DER-2-219,Unit 20,25,FAD,Deer
+390,DER-2-224,Unit 21,300,FAD,Deer
+391,DER-2-225,Unit 21,200,FAD,Deer
+392,DER-2-231,Unit 22,30,FAD,Deer
+393,DER-2-232,Unit 22,25,FAD,Deer
+394,DER-2-239,Unit 23: except Burro mountains hunt area. ,205,FAMD,Deer
+395,DER-2-240,Unit 23: except Burro mountains hunt area. ,50,FAMD,Deer
+396,DER-2-241,Unit 23: except Burro mountains hunt area. ,100,FAWTD,Deer
+397,DER-2-242,Unit 23: except Burro mountains hunt area. ,50,FAWTD,Deer
+398,DER-2-248,Unit 23: Burro mountains hunt area only. ,40,FAMD,Deer
+399,DER-2-249,Unit 23: Burro mountains hunt area only. ,20,FAWTD,Deer
+400,DER-2-250,Unit 23: Burro mountains hunt area only. ,50,FAWTD,Deer
+401,DER-2-259,Unit 24: excluding Fort Bayard.,135,FAMD,Deer
+402,DER-2-260,Unit 24: excluding Fort Bayard.,85,FAMD,Deer
+403,DER-2-261,Unit 24: excluding Fort Bayard.,60,FAWTD,Deer
+404,DER-2-262,Unit 24: excluding Fort Bayard.,40,FAWTD,Deer
+405,DER-2-267,Unit 25,45,FAD,Deer
+406,DER-2-268,Unit 25,30,FAD,Deer
+407,DER-2-272,Unit 26,25,FAD,Deer
+408,DER-2-273,Unit 26,15,FAD,Deer
+409,DER-2-281,Unit 27,30,FAMD,Deer
+410,DER-2-282,Unit 27,15,FAWTD,Deer
+411,DER-2-283,Unit 27,30,FAMD,Deer
+412,DER-2-284,Unit 27,40,FAWTD,Deer
+413,DER-2-291,Unit 29,100,FAD,Deer
+414,DER-2-292,Unit 29,50,FAD,Deer
+415,DER-2-297,Unit 30,200,FAD,Deer
+416,DER-2-298,Unit 30,100,FAD,Deer
+417,DER-2-302,"Unit 31, including Prairie Chicken WMAs",175,FAD,Deer
+418,DER-2-303,"Unit 31, including Prairie Chicken WMAs",100,FAD,Deer
+419,DER-2-309,"Unit 32, including Prairie Chicken WMAs",150,FAD,Deer
+420,DER-2-310,"Unit 32, including Prairie Chicken WMAs",100,FAD,Deer
+421,DER-2-314,"Unit 33, including Prairie Chicken WMAs",60,FAD,Deer
+422,DER-2-315,"Unit 33, including Prairie Chicken WMAs",50,FAD,Deer
+423,DER-2-323,Unit 34,450,FAD,Deer
+424,DER-2-324,Unit 34,350,FAD,Deer
+425,DER-2-329,Unit 36,225,FAD,Deer
+426,DER-2-330,Unit 36,125,FAD,Deer
+427,DER-2-335,Unit 37,100,FAD,Deer
+428,DER-2-336,Unit 37,80,FAD,Deer
+429,DER-2-340,Unit 38,65,FAD,Deer
+430,DER-2-341,Unit 38,40,FAD,Deer
+431,DER-2-345,Unit 39,25,FAD,Deer
+432,DER-2-346,Unit 39,15,FAD,Deer
+433,DER-2-350,Unit 40,20,FAD,Deer
+434,DER-2-351,Unit 40,15,FAD,Deer
+435,DER-2-358,Unit 41,10,FAD,Deer
+436,DER-2-359,Unit 41,10,FAD,Deer
+437,DER-2-364,Unit 42,15,FAD,Deer
+438,DER-2-367,Unit 43,10,FAD,Deer
+439,DER-2-373,Unit 45,165,FAD,Deer
+440,DER-2-377,Unit 47,10,FAD,Deer
+441,DER-2-381,Unit 48,45,FAD,Deer
+442,DER-2-385,Unit 49,105,FAD,Deer
+443,DER-2-388,Unit 50,5,FAD,Deer
+444,DER-2-390,Unit 51A,65,FAD,Deer
+445,DER-2-393,Unit 51B,15,FAD,Deer
+446,DER-2-396,Unit 52,80,FAD,Deer
+447,DER-2-400,Unit 53,100,FAD,Deer
+448,DER-2-403,Units 54/55: Colin Neblett WMA only,10,FAD,Deer
+449,DER-2-408,Unit 55A: Valle Vidal only,10,FAD,Deer
+450,DER-2-413,Unit 56,10,FAD,Deer
+451,DER-2-419,Unit 57 (excluding Sugarite Canyon S.P.),20,FAD,Deer
+452,DER-2-420,Unit 57: Sugarite Canyon S.P. only,20,FAD,Deer
+453,DER-2-427,Unit 58,10,FAD,Deer
+454,DER-2-434,Unit 59,10,FAD,Deer
+455,DER-3-108,Unit 2A,50,FAD,Deer
+456,DER-3-109,Unit 2A: private land only,10,FAD,Deer
+457,DER-3-124,Unit 2B,175,FAD,Deer
+458,DER-3-125,Unit 2B: youth only,20,FAD,Deer
+459,DER-3-126,Unit 2B: private land only,10,FAD,Deer
+460,DER-3-131,Unit 2C,20,FAD,Deer
+461,DER-3-132,Unit 2C: private land only,9,FAD,Deer
+462,DER-3-143,Unit 4: private land only,100,FAD,Deer
+463,DER-3-148,Unit 5A: public land only,10,FAD,Deer
+464,DER-3-149,Unit 5A: private land only,50,FAD,Deer
+465,DER-3-153,Unit 5B,10,FAD,Deer
+466,DER-3-157,Units 6A and 6C,115,FAD,Deer
+467,DER-3-161,Unit 7,25,FAD,Deer
+468,DER-3-169,"Unit 9, including Water Canyon WMA: restricted muzzleloader",10,FAD,Deer
+469,DER-3-176,Unit 10,90,FAD,Deer
+470,DER-3-179,Unit 12,40,FAD,Deer
+471,DER-3-185,Unit 13,200,FAD,Deer
+472,DER-3-189,Unit 14,55,FAD,Deer
+473,DER-3-192,Unit 15,165,FAD,Deer
+474,DER-3-193,Unit 15: youth only,100,FAD,Deer
+475,DER-3-200,Unit 16,300,FAD,Deer
+476,DER-3-206,Unit 17,80,FAD,Deer
+477,DER-3-211,Unit 18,75,FAD,Deer
+478,DER-3-215,Unit 19: except WSMR and Ft. Bliss,10,FAD,Deer
+479,DER-3-220,Unit 20,85,FAD,Deer
+480,DER-3-226,Unit 21,350,FAD,Deer
+481,DER-3-233,Unit 22,65,FAD,Deer
+482,DER-3-243,Unit 23: except the Burro mountains hunt area,225,FAMD,Deer
+483,DER-3-244,Unit 23: except Burro mountains hunt area,75,FAWTD,Deer
+484,DER-3-251,Unit 23: Burro mountains hunt area only,40,FAMD,Deer
+485,DER-3-252,Unit 23: Burro mountains hunt area only,40,FAWTD,Deer
+486,DER-3-263,Unit 24: excluding Fort Bayard ,280,FAMD,Deer
+487,DER-3-264,Unit 24: excluding Fort Bayard ,75,FAWTD,Deer
+488,DER-3-269,Unit 25,45,FAD,Deer
+489,DER-3-274,Unit 26,60,FAD,Deer
+490,DER-3-285,Unit 27,40,FAMD,Deer
+491,DER-3-286,Unit 27,50,FAWTD,Deer
+492,DER-3-293,Unit 29,70,FAD,Deer
+493,DER-3-299,Unit 30,325,FAD,Deer
+494,DER-3-304,"Unit 31, including Prairie Chicken WMAs",175,FAD,Deer
+495,DER-3-311,"Unit 32, including Prairie Chicken WMAs",175,FAD,Deer
+496,DER-3-316,"Unit 33, including Prairie Chicken WMAs: restricted muzzleloader only",140,FAD,Deer
+497,DER-3-317,"Unit 33: Huey WMA only, youth only",5,ES,Deer
+498,DER-3-318,"Unit 33: Huey WMA only, youth only",5,A,Deer
+499,DER-3-325,Unit 34,340,FAD,Deer
+500,DER-3-331,Unit 36,115,FAD,Deer
+501,DER-3-332,Unit 36: youth only,25,FAD,Deer
+502,DER-3-337,Unit 37,125,FAD,Deer
+503,DER-3-342,Unit 38,100,FAD,Deer
+504,DER-3-347,Unit 39,40,FAD,Deer
+505,DER-3-352,Unit 40,30,FAD,Deer
+506,DER-3-360,Unit 41,25,FAD,Deer
+507,DER-3-365,Unit 42,15,FAD,Deer
+508,DER-3-368,Unit 43,15,FAD,Deer
+509,DER-3-374,Unit 45,160,FAD,Deer
+510,DER-3-378,Unit 47,20,FAD,Deer
+511,DER-3-382,Unit 48,30,FAD,Deer
+512,DER-3-397,Unit 52: restricted muzzleloader only,25,FAD,Deer
+513,DER-3-414,Unit 56,15,FAD,Deer
+514,DER-3-421,Unit 57 (excluding Sugarite Canyon S.P.),15,FAD,Deer
+515,DER-3-428,Unit 58,25,FAD,Deer
+516,DER-3-435,Unit 59,25,FAD,Deer
+517,ELK-1-132,Unit 2,85,MB,Elk
+518,ELK-1-133,Unit 2,125,A,Elk
+519,ELK-1-134,Unit 2 youth only,75,A,Elk
+520,ELK-1-135,Unit 2C,75,A,Elk
+521,ELK-1-138,Unit 5A public land only,10,MB,Elk
+522,ELK-1-139,Unit 5A public land only,10,A,Elk
+523,ELK-1-140,Unit 5A public land only,10,MB,Elk
+524,ELK-1-141,Unit 5A public land only,10,A,Elk
+525,ELK-1-142,Unit 5A public land only,10,MB,Elk
+526,ELK-1-143,Unit 5A public land only,10,A,Elk
+527,ELK-1-144,Unit 5A public land only,10,MB,Elk
+528,ELK-1-145,Unit 5A public land only,10,A,Elk
+529,ELK-1-160,Unit 10,70,MB,Elk
+530,ELK-1-161,Unit 10 youth only,120,A,Elk
+531,ELK-1-162,Unit 10,100,A,Elk
+532,ELK-1-165,Unit 4: Sargent WMA only,10,MB/A,Elk
+533,ELK-1-166,Unit 4: Sargent WMA only,10,MB/A,Elk
+534,ELK-1-167,Unit 4: Sargent WMA only,10,MB/A,Elk
+535,ELK-1-168,Unit 4: Sargent WMA only,10,MB/A,Elk
+536,ELK-1-169,Unit 4: Sargent WMA only,10,A,Elk
+537,ELK-1-170,"Unit 4: Sargent WMA only, youth only",10,A,Elk
+538,ELK-1-173,Unit 4: Humphries/ Rio Chama WMAs only,15,MB/A,Elk
+539,ELK-1-174,Unit 4: Humphries/ Rio Chama WMAs only,15,MB/A,Elk
+540,ELK-1-175,Unit 4: Humphries/ Rio Chama WMAs only,10,A,Elk
+541,ELK-1-176,"Unit 4: Humphries/ Rio Chama WMAs only, youth only",15,A,Elk
+542,ELK-1-177,Unit 4: Rio Chama WMA only,20,A,Elk
+543,ELK-1-180,Unit 5B,86,MB,Elk
+544,ELK-1-181,Unit 5B,59,A,Elk
+545,ELK-1-182,Unit 5B,86,MB,Elk
+546,ELK-1-183,Unit 5B,59,A,Elk
+547,ELK-1-184,Unit 5B,87,MB,Elk
+548,ELK-1-185,Unit 5B,59,A,Elk
+549,ELK-1-186,Unit 5B,87,MB,Elk
+550,ELK-1-189,Unit 50,120,MB,Elk
+551,ELK-1-190,Unit 50,125,MB,Elk
+552,ELK-1-191,Unit 50,42,A,Elk
+553,ELK-1-192,Unit 50,45,A,Elk
+554,ELK-1-195,Unit 51,220,MB,Elk
+555,ELK-1-196,Unit 51,220,MB,Elk
+556,ELK-1-197,Unit 51,220,MB,Elk
+557,ELK-1-198,Unit 51,251,A,Elk
+558,ELK-1-199,Unit 51,251,A,Elk
+559,ELK-1-200,Unit 51,252,A,Elk
+560,ELK-1-207,Unit 52,230,MB,Elk
+561,ELK-1-208,Unit 52,230,MB,Elk
+562,ELK-1-209,Unit 52 youth only,80,A,Elk
+563,ELK-1-210,Unit 52 mobility impaired only,56,A,Elk
+564,ELK-1-211,Unit 52,73,A,Elk
+565,ELK-1-212,Unit 52,115,A,Elk
+566,ELK-1-216,Unit 6A,100,MB,Elk
+567,ELK-1-217,Unit 6A,103,MB,Elk
+568,ELK-1-218,Unit 6A,99,A,Elk
+569,ELK-1-225,Unit 6B,15,ES,Elk
+570,ELK-1-226,Unit 6B,20,A,Elk
+571,ELK-1-227,Unit 6B,20,ES,Elk
+572,ELK-1-228,Unit 6B,15,A,Elk
+573,ELK-1-229,Unit 6B youth only,35,A,Elk
+574,ELK-1-230,Unit 6B,35,A,Elk
+575,ELK-1-231,Unit 6B,35,A,Elk
+576,ELK-1-232,Unit 6B youth only,35,A,Elk
+577,ELK-1-233,Unit 6B,35,A,Elk
+578,ELK-1-237,Unit 6C,105,MB,Elk
+579,ELK-1-238,Unit 6C,105,MB,Elk
+580,ELK-1-239,Unit 6C,110,A,Elk
+581,ELK-1-240,Unit 6C,110,A,Elk
+582,ELK-1-244,Unit 7,30,MB,Elk
+583,ELK-1-245,Unit 7,50,A,Elk
+584,ELK-1-248,Unit 12,35,MB,Elk
+585,ELK-1-249,Unit 12,60,MB,Elk
+586,ELK-1-250,Unit 12,80,MB,Elk
+587,ELK-1-251,Unit 12,80,MB,Elk
+588,ELK-1-252,Unit 12,60,A,Elk
+589,ELK-1-253,Unit 12,60,A,Elk
+590,ELK-1-254,Unit 12,64,A,Elk
+591,ELK-1-274,Unit 16A mobility impaired only,25,MB,Elk
+592,ELK-1-275,Unit 16A,75,MB,Elk
+593,ELK-1-276,Unit 16A,100,MB,Elk
+594,ELK-1-277,Unit 16A,75,A,Elk
+595,ELK-1-278,Unit 16A,75,A,Elk
+596,ELK-1-281,Unit 16B/22,25,MB,Elk
+597,ELK-1-282,Unit 16B/22,80,MB,Elk
+598,ELK-1-283,Unit 16B/22,120,MB,Elk
+599,ELK-1-286,Unit 16C youth only,25,ES,Elk
+600,ELK-1-287,Unit 16C,35,MB,Elk
+601,ELK-1-288,Unit 16C,65,MB,Elk
+602,ELK-1-289,Unit 16C,50,A,Elk
+603,ELK-1-290,Unit 16C,48,A,Elk
+604,ELK-1-293,Unit 16D mobility impaired only,25,MB,Elk
+605,ELK-1-294,Unit 16D,55,MB,Elk
+606,ELK-1-295,Unit 16D,50,MB,Elk
+607,ELK-1-296,Unit 16D,50,A,Elk
+608,ELK-1-297,Unit 16D,50,A,Elk
+609,ELK-1-300,Unit 16E youth only,25,ES,Elk
+610,ELK-1-302,Unit 16E,53,MB,Elk
+611,ELK-1-303,Unit 16E,75,A,Elk
+612,ELK-1-304,Unit 16E,75,A,Elk
+613,ELK-1-316,Unit 21A,15,MB,Elk
+614,ELK-1-317,Unit 21A,35,MB,Elk
+615,ELK-1-318,Unit 21A,55,MB,Elk
+616,ELK-1-319,Unit 21A,30,A,Elk
+617,ELK-1-323,Unit 21B,10,MB,Elk
+618,ELK-1-324,Unit 21B,15,MB,Elk
+619,ELK-1-325,Unit 21B,25,MB,Elk
+620,ELK-1-326,Unit 21B,15,A,Elk
+621,ELK-1-327,Unit 21B,15,A,Elk
+622,ELK-1-328,Unit 21B,15,A,Elk
+623,ELK-1-329,Unit 21B,20,A,Elk
+624,ELK-1-333,Unit 23 youth only,25,ES,Elk
+625,ELK-1-335,Unit 23,75,MB,Elk
+626,ELK-1-336,Unit 23,20,A,Elk
+627,ELK-1-338,Unit 23: south of NM 78,20,A,Elk
+628,ELK-1-342,Unit 24: excluding Ft. Bayard,15,MB,Elk
+629,ELK-1-343,"Unit 24: including Ft. Bayard, youth only",5,ES,Elk
+630,ELK-1-344,"Unit 24: including Ft. Bayard, youth only",5,A,Elk
+631,ELK-1-347,Unit 34 youth only,75,ES,Elk
+632,ELK-1-348,Unit 34 youth only,120,A,Elk
+633,ELK-1-349,Unit 34 mobility impaired,50,ES,Elk
+634,ELK-1-351,Unit 34,150,ES,Elk
+635,ELK-1-352,Unit 34,350,A,Elk
+636,ELK-1-353,Unit 34,350,A,Elk
+637,ELK-1-354,Unit 34,350,A,Elk
+638,ELK-1-356,Unit 34,200,A,Elk
+639,ELK-1-357,Unit 34,200,A,Elk
+640,ELK-1-361,Unit 36,140,ES,Elk
+641,ELK-1-362,Unit 36,140,ES,Elk
+642,ELK-1-363,Unit 36,100,A,Elk
+643,ELK-1-364,Unit 36,100,A,Elk
+644,ELK-1-365,Unit 36,100,A,Elk
+645,ELK-1-369,Unit 45,140,MB,Elk
+646,ELK-1-370,Unit 45,140,MB,Elk
+647,ELK-1-375,Unit 48,75,MB,Elk
+648,ELK-1-376,Unit 48,64,MB,Elk
+649,ELK-1-377,Unit 48,50,A,Elk
+650,ELK-1-378,Unit 48,54,A,Elk
+651,ELK-1-381,Unit 49,77,MB,Elk
+652,ELK-1-382,Unit 49,76,MB,Elk
+653,ELK-1-383,Unit 49,77,A,Elk
+654,ELK-1-384,Unit 49,77,A,Elk
+655,ELK-1-388,Unit 53: excluding Cerro portion,80,MB,Elk
+656,ELK-1-389,Unit 53: excluding Cerro portion,131,MB,Elk
+657,ELK-1-390,Unit 53: excluding Cerro portion,94,A,Elk
+658,ELK-1-391,Unit 53: excluding Cerro portion,94,A,Elk
+659,ELK-1-392,Unit 14,10,ES,Elk
+660,ELK-1-395,Unit 18,10,ES,Elk
+661,ELK-1-396,"Unit 28: McGregor range only, military only",10,ES,Elk
+662,ELK-1-397,Unit 28: McGregor range only,10,ES,Elk
+663,ELK-1-400,"Units 29, 30",20,ES,Elk
+664,ELK-1-401,"Units 29, 30",30,ES,Elk
+665,ELK-1-404,Unit 37,30,MB,Elk
+666,ELK-1-405,Unit 37,30,MB,Elk
+667,ELK-1-406,Unit 37,45,A,Elk
+668,ELK-1-408,Unit 38,10,ES,Elk
+669,ELK-1-409,Unit 38,10,ES,Elk
+670,ELK-1-410,"Units 39, 43",30,ES,Elk
+671,ELK-1-413,"Units 42, 47, 59",13,ES,Elk
+672,ELK-1-416,Unit 56,10,MB,Elk
+673,ELK-1-417,Unit 56,10,A,Elk
+674,ELK-1-422,"Units 57 (excluding Sugarite Canyon S.P.), 58",5,MB,Elk
+675,ELK-1-423,"Units 57 (excluding Sugarite Canyon S.P.), 58",10,MB,Elk
+676,ELK-1-424,"Units 57 (excluding Sugarite Canyon S.P.), 58",10,A,Elk
+677,ELK-1-428,Unit 54/55: Colin Neblett WMA only,20,MB,Elk
+678,ELK-1-429,Unit 54/55: Colin Neblett WMA only,20,MB,Elk
+679,ELK-1-430,Unit 54/55: Colin Neblett WMA only,20,A,Elk
+680,ELK-1-433,Unit 55A: ES Barker WMA only,10,MB,Elk
+681,ELK-1-437,Unit 55A: Urraca WMA only,10,MB,Elk
+682,ELK-1-438,Unit 55A: Urraca WMA only,10,MB,Elk
+683,ELK-1-439,Unit 55A: Urraca WMA only,15,A,Elk
+684,ELK-1-440,Unit 55A: Urraca WMA only,15,A,Elk
+685,ELK-1-444,Unit 55A: Valle Vidal only,35,MB,Elk
+686,ELK-1-445,Unit 55A: Valle Vidal only,30,MB,Elk
+687,ELK-1-446,"Unit 55A: Valle Vidal only, youth only",20,MB,Elk
+688,ELK-1-447,"Unit 55A: Valle Vidal only, youth only",30,A,Elk
+689,ELK-1-448,Unit 55A: Valle Vidal only,30,A,Elk
+690,ELK-1-449,Unit 55A: Valle Vidal only,30,A,Elk
+691,ELK-1-700,statewide,1,MB,Elk
+692,ELK-2-129,Unit 2,120,ES,Elk
+693,ELK-2-130,Unit 2,120,ES,Elk
+694,ELK-2-136,Unit 5A public land only,5,ES,Elk
+695,ELK-2-137,Unit 5A public land only,5,ES,Elk
+696,ELK-2-146,Unit 9 Marquez/LBar WMA only,15,ES,Elk
+697,ELK-2-147,Unit 9 Marquez/LBar WMA only,15,ES,Elk
+698,ELK-2-151,"Unit 9, including Water Canyon WMA",82,ES,Elk
+699,ELK-2-152,"Unit 9, including Water Canyon WMA",82,ES,Elk
+700,ELK-2-157,Unit 10,125,ES,Elk
+701,ELK-2-158,Unit 10,125,ES,Elk
+702,ELK-2-163,Unit 4: Sargent WMA only,10,ES,Elk
+703,ELK-2-164,Unit 4: Sargent WMA only,10,ES,Elk
+704,ELK-2-171,Unit 4: Humphries/Rio Chama WMAs only,10,ES,Elk
+705,ELK-2-172,Unit 4: Humphries/Rio Chama WMAs only,10,ES,Elk
+706,ELK-2-178,Unit 5B,76,ES,Elk
+707,ELK-2-179,Unit 5B,75,ES,Elk
+708,ELK-2-187,Unit 50,60,ES,Elk
+709,ELK-2-188,Unit 50,55,ES,Elk
+710,ELK-2-193,Unit 51,180,ES,Elk
+711,ELK-2-194,Unit 51,180,ES,Elk
+712,ELK-2-202,Unit 52,230,ES,Elk
+713,ELK-2-203,Unit 52,230,ES,Elk
+714,ELK-2-213,Unit 6A,150,ES,Elk
+715,ELK-2-214,Unit 6A,102,ES,Elk
+716,ELK-2-219,Unit 6B,25,ES,Elk
+717,ELK-2-220,Unit 6B,10,A,Elk
+718,ELK-2-221,Unit 6B,25,ES,Elk
+719,ELK-2-222,Unit 6B,10,A,Elk
+720,ELK-2-234,Unit 6C,150,ES,Elk
+721,ELK-2-235,Unit 6C,105,ES,Elk
+722,ELK-2-241,Unit 7,15,ES,Elk
+723,ELK-2-242,Unit 7,14,ES,Elk
+724,ELK-2-246,Unit 12,36,ES,Elk
+725,ELK-2-247,Unit 12,35,ES,Elk
+726,ELK-2-255,Unit 12,25,APRE/6,Elk
+727,ELK-2-256,Unit 13,202,ES,Elk
+728,ELK-2-257,Unit 13,148,ES,Elk
+729,ELK-2-264,Unit 15,350,ES,Elk
+730,ELK-2-265,Unit 15,250,ES,Elk
+731,ELK-2-272,Unit 16A,250,ES,Elk
+732,ELK-2-273,Unit 16A,150,ES,Elk
+733,ELK-2-279,Unit 16B/22,225,ES,Elk
+734,ELK-2-280,Unit 16B/22,165,ES,Elk
+735,ELK-2-284,Unit 16C,144,ES,Elk
+736,ELK-2-285,Unit 16C,100,ES,Elk
+737,ELK-2-291,Unit 16D,90,ES,Elk
+738,ELK-2-292,Unit 16D,60,ES,Elk
+739,ELK-2-298,Unit 16E,90,ES,Elk
+740,ELK-2-299,Unit 16E,60,ES,Elk
+741,ELK-2-305,Unit 17,125,ES,Elk
+742,ELK-2-306,Unit 17,75,ES,Elk
+743,ELK-2-314,Unit 21A,50,ES,Elk
+744,ELK-2-315,Unit 21A,50,ES,Elk
+745,ELK-2-320,Unit 21A,15,MB,Elk
+746,ELK-2-321,Unit 21B,25,ES,Elk
+747,ELK-2-322,Unit 21B,25,ES,Elk
+748,ELK-2-330,Unit 21B,15,MB,Elk
+749,ELK-2-331,Unit 23,125,ES,Elk
+750,ELK-2-332,Unit 23,75,ES,Elk
+751,ELK-2-337,Unit 23,15,MB,Elk
+752,ELK-2-339,Unit 24: excluding Ft. Bayard,15,ES,Elk
+753,ELK-2-340,Unit 24: excluding Ft. Bayard,10,ES,Elk
+754,ELK-2-345,Unit 34,200,ES,Elk
+755,ELK-2-346,Unit 34,200,ES,Elk
+756,ELK-2-355,Unit 34,200,APRE/6/A,Elk
+757,ELK-2-358,Unit 36,140,ES,Elk
+758,ELK-2-359,Unit 36,140,ES,Elk
+759,ELK-2-366,Unit 45,75,ES,Elk
+760,ELK-2-367,Unit 45,73,ES,Elk
+761,ELK-2-372,Unit 48,80,ES,Elk
+762,ELK-2-373,Unit 48,80,ES,Elk
+763,ELK-2-379,Unit 49,60,ES,Elk
+764,ELK-2-380,Unit 49,59,ES,Elk
+765,ELK-2-385,Unit 53,65,ES,Elk
+766,ELK-2-386,Unit 53,60,ES,Elk
+767,ELK-2-393,Unit 18,25,ES,Elk
+768,ELK-2-394,Unit 18,25,ES,Elk
+769,ELK-2-398,"Units 29, 30",20,ES,Elk
+770,ELK-2-399,"Units 29, 30",20,ES,Elk
+771,ELK-2-402,Unit 37,40,ES,Elk
+772,ELK-2-403,Unit 37,30,ES,Elk
+773,ELK-2-407,Unit 37,50,APRE/6,Elk
+774,ELK-2-411,"Units 42, 47, 59",13,ES,Elk
+775,ELK-2-412,"Units 42, 47, 59",13,ES,Elk
+776,ELK-2-414,Unit 56,5,ES,Elk
+777,ELK-2-415,Unit 56,5,ES,Elk
+778,ELK-2-418,Unit 57: Sugarite Canyon S.P. only,3,ES,Elk
+779,ELK-2-419,Unit 57: Sugarite Canyon S.P. only,2,ES,Elk
+780,ELK-2-420,"Units 57 (excluding Sugarite Canyon S.P.), 58",5,ES,Elk
+781,ELK-2-421,"Units 57 (excluding Sugarite Canyon S.P.), 58",5,ES,Elk
+782,ELK-2-425,Unit 54/55A: Colin Neblett WMA only,10,ES,Elk
+783,ELK-2-426,Unit 54/55A: Colin Neblett WMA only,10,ES,Elk
+784,ELK-2-431,Unit 55A: ES Barker WMA only,5,ES,Elk
+785,ELK-2-432,Unit 55A: ES Barker WMA only,5,ES,Elk
+786,ELK-2-434,Unit 55A: Urraca WMA only,5,ES,Elk
+787,ELK-2-435,Unit 55A: Urraca WMA only,5,ES,Elk
+788,ELK-2-441,Unit 55A: Valle Vidal only,25,ES,Elk
+789,ELK-2-442,Unit 55A: Valle Vidal only,25,ES,Elk
+790,ELK-3-131,Unit 2,135,MB,Elk
+791,ELK-3-148,Unit 9 Marquez/LBar WMA only,15,MB,Elk
+792,ELK-3-149,Unit 9 Marquez/LBar WMA only,15,MB,Elk
+793,ELK-3-150,Unit 9 Marquez/LBar WMA only,15,MB,Elk
+794,ELK-3-153,"Unit 9, including Water Canyon WMA - mobility impaired only",21,MB,Elk
+795,ELK-3-154,"Unit 9, including Water Canyon WMA",35,MB,Elk
+796,ELK-3-155,"Unit 9, including Water Canyon WMA",35,MB,Elk
+797,ELK-3-156,"Unit 9, including Water Canyon WMA",21,MB,Elk
+798,ELK-3-159,Unit 10,70,MB,Elk
+799,ELK-3-201,Unit 51,145,ES,Elk
+800,ELK-3-204,Unit 52 mobility impaired only,50,MB,Elk
+801,ELK-3-205,Unit 52,120,MB,Elk
+802,ELK-3-206,Unit 52,50,A,Elk
+803,ELK-3-215,Unit 6A,104,MB,Elk
+804,ELK-3-223,Unit 6B,15,ES,Elk
+805,ELK-3-224,Unit 6B,20,A,Elk
+806,ELK-3-236,Unit 6C,155,MB,Elk
+807,ELK-3-243,Unit 7,24,MB,Elk
+808,ELK-3-258,Unit 13 youth only,30,ES,Elk
+809,ELK-3-259,Unit 13,86,MB,Elk
+810,ELK-3-260,Unit 13,126,MB,Elk
+811,ELK-3-261,Unit 13,126,MB,Elk
+812,ELK-3-262,Unit 13,117,A,Elk
+813,ELK-3-263,Unit 13,116,A,Elk
+814,ELK-3-266,Unit 15 youth only,25,ES,Elk
+815,ELK-3-267,Unit 15,200,MB,Elk
+816,ELK-3-268,Unit 15,245,MB,Elk
+817,ELK-3-269,Unit 15,250,MB,Elk
+818,ELK-3-270,Unit 15,250,A,Elk
+819,ELK-3-271,Unit 15,250,A,Elk
+820,ELK-3-301,Unit 16E,70,MB,Elk
+821,ELK-3-307,Unit 17 youth only,25,ES,Elk
+822,ELK-3-308,Unit 17,100,MB,Elk
+823,ELK-3-309,Unit 17,100,MB,Elk
+824,ELK-3-310,Unit 17,25,MB,Elk
+825,ELK-3-311,Unit 17,25,A,Elk
+826,ELK-3-312,Unit 17,100,A,Elk
+827,ELK-3-313,Unit 17,100,A,Elk
+828,ELK-3-334,Unit 23,75,MB,Elk
+829,ELK-3-341,Unit 24: excluding Ft. Bayard,15,MB,Elk
+830,ELK-3-350,Unit 34,250,ES,Elk
+831,ELK-3-360,Unit 36,140,ES,Elk
+832,ELK-3-368,Unit 45,136,MB,Elk
+833,ELK-3-371,Unit 45,49,A,Elk
+834,ELK-3-374,Unit 48,60,MB,Elk
+835,ELK-3-387,Unit 53: excluding Cerro portion,50,ES,Elk
+836,ELK-3-427,Unit 54/55A: Colin Neblett WMA only,20,MB,Elk
+837,ELK-3-436,Unit 55A: Urraca WMA only,10,MB,Elk
+838,ELK-3-443,Unit 55A: Valle Vidal only,20,MB,Elk
+839,IBX-1-101,"Unit 25 Florida mountains, once-in-a-lifetime",15,ES,Ibex
+840,IBX-1-102,Unit 25 Florida mountains,20,F-IM,Ibex
+841,IBX-1-103,"Unit 25 Florida mountains, once-in-a-youth",5,ES,Ibex
+842,IBX-1-105,Unit 25 Florida mountains,20,F-IM,Ibex
+843,IBX-2-100,Unit 25 Florida mountains,100,ES,Ibex
+844,IBX-2-104,Unit 25 Florida mountains,100,ES,Ibex
+845,IBX-3-106,Unit 25 Florida mountains,15,ES,Ibex
+851,ORX-1-100,Unit 19 WSMR: Stallion Range,70,ES,Oryx
+852,ORX-1-101,Unit 19 WSMR: Rhodes Canyon,70,ES,Oryx
+853,ORX-1-102,"Unit 19 WSMR: Rhodes Canyon, resident veteran only",75,ES,Oryx
+854,ORX-1-103,Unit 19 WSMR: Stallion Range,70,ES,Oryx
+855,ORX-1-104,Unit 19 WSMR: Rhodes Canyon,70,ES,Oryx
+856,ORX-1-105,Unit 19 WSMR: Stallion Range,70,ES,Oryx
+857,ORX-1-106,Unit 19 WSMR: Rhodes Canyon,70,ES,Oryx
+858,ORX-1-107,Unit 19 WSMR: Stallion Range,70,ES,Oryx
+859,ORX-1-108,Unit 19 WSMR: Rhodes Canyon,70,ES,Oryx
+860,ORX-1-109,Unit 19 WSMR: Stallion Range,70,ES,Oryx
+861,ORX-1-110,"Unit 19 WSMR: Stallion Range, mobility impaired",20,ES,Oryx
+862,ORX-1-111,"Unit 19 WSMR: Stallion Range, once-in-a-youth",40,ES,Oryx
+863,ORX-1-112,Unit 19 WSMR: Stallion Range,15,BHO,Oryx
+864,ORX-1-113,Unit 19 WSMR: Rhodes Canyon,15,BHO,Oryx
+865,ORX-1-114,Unit 19 WSMR: Stallion Range,15,BHO,Oryx
+866,ORX-1-115,Unit 19 WSMR: Rhodes Canyon,15,BHO,Oryx
+867,ORX-1-116,Unit 19 WSMR: Stallion Range,15,BHO,Oryx
+868,ORX-1-117,Unit 19 WSMR: Rhodes Canyon,15,BHO,Oryx
+869,ORX-1-118,Unit 19 WSMR: Stallion Range,15,BHO,Oryx
+870,ORX-1-119,Unit 19 WSMR: Rhodes Canyon,15,BHO,Oryx
+871,ORX-1-120,Unit 19 WSMR: Stallion Range,15,BHO,Oryx
+872,ORX-1-204,"statewide, off-range",96,ES,Oryx
+873,ORX-1-205,"statewide, off-range, youth only",24,ES,Oryx
+874,ORX-1-206,"statewide, off-range",96,ES,Oryx
+875,ORX-1-207,"statewide, off-range, youth only",24,ES,Oryx
+876,ORX-1-208,"statewide, off-range",96,ES,Oryx
+877,ORX-1-209,"statewide, off-range, youth only",24,ES,Oryx
+878,ORX-1-210,"statewide, off-range",96,ES,Oryx
+879,ORX-1-211,"statewide, off-range, youth only",24,ES,Oryx
+880,ORX-1-212,"statewide, off-range",96,ES,Oryx
+881,ORX-1-213,"statewide, off-range, youth only",24,ES,Oryx
+882,ORX-1-214,"statewide, off-range",96,ES,Oryx
+883,ORX-1-215,"statewide, off-range, youth only",24,ES,Oryx
+884,ORX-1-216,"statewide, off-range",96,ES,Oryx
+885,ORX-1-217,"statewide, off-range, youth only",24,ES,Oryx
+886,ORX-1-218,"statewide, off-range",96,ES,Oryx
+887,ORX-1-219,"statewide, off-range, youth only",24,ES,Oryx
+888,ORX-1-220,"statewide, off-range",80,ES,Oryx
+889,ORX-1-221,"statewide, off-range, youth only",20,ES,Oryx
+890,ORX-1-222,"statewide, off-range, age 70 and older",40,ES,Oryx
+891,ORX-1-223,"statewide, off-range",96,ES,Oryx
+892,ORX-1-224,"statewide, off-range, youth only",24,ES,Oryx
+893,ORX-1-225,Unit 28 McGregor range,25,ES,Oryx
+894,ORX-1-226,"Unit 28 McGregor range, military only",25,ES,Oryx
+895,ORX-1-227,Unit 28 McGregor range,25,ES,Oryx
+896,ORX-1-228,"Unit 28 McGregor range, military only",25,ES,Oryx

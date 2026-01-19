@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grayson’s Draw Odds</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.5;
+    }
+    header {
+      background: #020617;
+      padding: 1.2rem 1.5rem 1rem;
+      border-bottom: 1px solid #1f2937;
+    }
+    header img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.8rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      display: block;
+      margin: 0 auto 0.6rem;
+    }
+    header p {
+      margin: 0;
+      color: #9ca3af;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    .card {
+      background: #020617;
+      border-radius: 0.75rem;
+      border: 1px solid #1f2937;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+    }
+    .card p.desc {
+      margin: 0 0 0.6rem;
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+    .field-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .field-group label {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .field {
+      flex: 1 1 120px;
+      min-width: 0;
+    }
+    select, input[type="number"], input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.35rem 0.45rem;
+      border-radius: 0.4rem;
+      border: 1px solid #374151;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+    }
+    select:focus, input:focus {
+      outline: none;
+      border-color: #f97316;
+      box-shadow: 0 0 0 1px #f97316;
+    }
+    button {
+      margin-top: 0.4rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: none;
+      background: #f97316;
+      color: #111827;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #fb923c;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+    }
+    th, td {
+      padding: 0.35rem 0.4rem;
+      border-bottom: 1px solid #111827;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: #9ca3af;
+      font-weight: 500;
+      font-size: 0.78rem;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .small {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      border: 1px solid #374151;
+      color: #e5e7eb;
+      background: #020617;
+    }
+    .section-title {
+      margin: 1rem 0 0.25rem;
+      font-size: 1.05rem;
+    }
+    .section-sub {
+      margin: 0 0 0.75rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+    .result-block {
+      margin-top: 0.5rem;
+      font-size: 0.86rem;
+    }
+    .result-block h3 {
+      margin: 0 0 0.3rem;
+      font-size: 0.95rem;
+    }
+    .muted {
+      color: #6b7280;
+    }
+    @media (max-width: 640px) {
+      header, main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="graysons_hunting_data.png" alt="Grayson’s Hunting Data cover">
+    <p>Only share with close friends. Explore draw odds, public land success, and build a sensible three choice application for New Mexico big game hunts.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">Draw odds by unit</h2>
+      <p class="section-sub">
+        Filter <span class="pill">2026 seasons</span> by pool, species, weapon, and GMU.
+        Results show <span class="pill">2025 draw odds</span> and the latest public land harvest data for each hunt.
+      </p>
+      <div class="card">
+        <p class="desc">Pick a game management unit and see up to ten hunts in that unit for your pool.</p>
+        <div class="field-group">
+          <div class="field">
+            <label for="unit-pool">Pool</label>
+            <select id="unit-pool">
+              <option value="resident">Resident</option>
+              <option value="nonresident">Nonresident</option>
+              <option value="outfitter">Outfitter</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="unit-species">Species</label>
+            <select id="unit-species">
+              <option value="">Choose a species...</option>
+              <option value="ELK">Elk</option>
+              <option value="DER">Deer</option>
+              <option value="BBY">Barbary sheep</option>
+              <option value="BHS">Bighorn sheep</option>
+              <option value="ANT">Pronghorn</option>
+              <option value="IBX">Ibex</option>
+              <option value="ORX">Oryx</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="unit-weapon">Weapon</label>
+            <select id="unit-weapon">
+              <option value="all">All weapons</option>
+              <option value="rifle">Rifle</option>
+              <option value="archery">Archery</option>
+              <option value="muzzleloader">Muzzleloader</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="unit-gmu">Unit (GMU)</label>
+            <select id="unit-gmu">
+              <option value="">Choose a GMU...</option>
+              <!-- numeric GMUs; subletters still match via text search -->
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+            </select>
+          </div>
+        </div>
+        <button id="unit-run">Run query</button>
+        <div id="unit-results" class="result-block"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Cheat Codes: Hunts that are easy to draw and still worth hunting</h2>
+      <p class="section-sub">
+        This surfaces hunts with a mix of higher draw odds and solid public land success. Youth and mobility impaired hunts are filtered out so you are seeing tags a regular applicant can actually use as second or third choices.
+      </p>
+      <div class="card">
+        <p class="desc">Pick a species, pool, and optional weapon and we will suggest up to ten cheat code hunts.</p>
+        <div class="field-group">
+          <div class="field">
+            <label for="cheat-pool">Pool</label>
+            <select id="cheat-pool">
+              <option value="resident">Resident</option>
+              <option value="nonresident">Nonresident</option>
+              <option value="outfitter">Outfitter</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cheat-species">Species</label>
+            <select id="cheat-species">
+              <option value="">Choose a species...</option>
+              <option value="ELK">Elk</option>
+              <option value="DER">Deer</option>
+              <option value="BBY">Barbary sheep</option>
+              <option value="BHS">Bighorn sheep</option>
+              <option value="ANT">Pronghorn</option>
+              <option value="IBX">Ibex</option>
+              <option value="ORX">Oryx</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cheat-weapon">Weapon</label>
+            <select id="cheat-weapon">
+              <option value="all">All weapons</option>
+              <option value="rifle">Rifle</option>
+              <option value="archery">Archery</option>
+              <option value="muzzleloader">Muzzleloader</option>
+            </select>
+          </div>
+        </div>
+        <button id="cheat-run">Find cheat code hunts</button>
+        <div id="cheat-results" class="result-block"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Plan a three choice application</h2>
+      <p class="section-sub">
+        The draw walks your first, second, and third choices in order for a single random sequence number.
+        In practice, your overall chance of drawing something is driven by the easiest hunt you list, the one with the highest odds.
+      </p>
+      <div class="card">
+        <div class="field-group">
+          <div class="field">
+            <label for="app-pool">Pool</label>
+            <select id="app-pool">
+              <option value="resident">Resident</option>
+              <option value="nonresident">Nonresident</option>
+              <option value="outfitter">Outfitter</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="app-species">Species</label>
+            <select id="app-species">
+              <option value="">Choose a species...</option>
+              <option value="ELK">Elk</option>
+              <option value="DER">Deer</option>
+              <option value="BBY">Barbary sheep</option>
+              <option value="BHS">Bighorn sheep</option>
+              <option value="ANT">Pronghorn</option>
+              <option value="IBX">Ibex</option>
+              <option value="ORX">Oryx</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field">
+            <label for="app-choice1">First choice hunt</label>
+            <select id="app-choice1">
+              <option value="">Choose a species above...</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="app-choice2">Second choice hunt</label>
+            <select id="app-choice2">
+              <option value="">Choose a species above...</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="app-choice3">Third choice hunt (safety)</label>
+            <select id="app-choice3">
+              <option value="">Choose a species above...</option>
+            </select>
+          </div>
+        </div>
+        <button id="app-run">Evaluate application</button>
+        <div id="app-results" class="result-block"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">How the New Mexico big game draw actually feels</h2>
+      <p class="section-sub">
+        Hunter eye version of the department rules.
+      </p>
+      <div class="card">
+        <h3 style="margin-top:0;margin-bottom:0.35rem;">No points. Just a lottery and a quota.</h3>
+        <p class="small">
+          New Mexico runs a straight lottery. There are no preference or bonus points. Every application in a species goes into the hat, gets one random
+          sequence number, and the computer starts at number 1 and walks down the list.
+        </p>
+
+        <h3 style="margin-bottom:0.35rem;">Three pools: 84 / 10 / 6</h3>
+        <p class="small">
+          By rule, each hunt code is split into three quotas: at least 84 percent of tags for New Mexico residents, up to 10 percent for hunters who applied
+          with a registered outfitter, and up to 6 percent for nonresidents without an outfitter. The 10 and 6 percent numbers are ceilings, not promises.
+          If the outfitter pool is light, unused tags roll back into the resident pool, not into the nonresident pool.
+        </p>
+
+        <h3 style="margin-bottom:0.35rem;">How your three choices are read</h3>
+        <p class="small">
+          When your sequence number comes up, the program reads your application for that species in order. It tries your first choice. If there is quota
+          left in your pool for that hunt code, you get the tag and the system moves on to the next application. If that hunt is full, it checks your second
+          choice, then your third. For deer and elk there is also a leftover option at the end of the draw that can feel like a fourth choice, but the real
+          action is on those first three lines.
+        </p>
+
+        <h3 style="margin-bottom:0.35rem;">What works and what wastes a line</h3>
+        <p class="small">
+          The pattern that works is simple: dream hunt first, something realistic second, a true safety hunt third. If you put an easy to draw hunt first and
+          a tougher hunt second, that second line is basically dead. The computer never skips an available first choice tag to give you your second choice.
+          So you want your choices in ascending order of odds: hardest first, easiest last.
+        </p>
+
+        <h3 style="margin-bottom:0.35rem;">How to think about odds</h3>
+        <p class="small">
+          In practice, the hunt with the highest odds on your list is what really controls whether you hunt that year. If your third choice is a high odds elk
+          tag in a decent unit, your overall chance of drawing something looks a lot like the odds of that tag alone. That is why a lot of residents swing at
+          a Gila, Valle Vidal, or Valles Caldera hunt first, then use more forgiving units on lines two and three. Same story on deer with units like 2B and
+          23 Burro Mountains.
+        </p>
+
+        <h3 style="margin-bottom:0.35rem;">Strategy in one paragraph</h3>
+        <p class="small">
+          Know your pool. Make sure every hunt you list actually has tags in that pool. Put the hardest, most interesting hunt you can live with at the top.
+          Use the second line for something you would be happy to hunt if the draw is kind. Use the third line for a high odds, still respectable hunt that you
+          would actually show up for. Then accept that it is still a lottery and treat a great tag as a windfall, not a guarantee.
+        </p>
+      </div>
+    </section>
+
+    <section id="bag-explainer">
+      <h2 class="section-title">Bag limit codes</h2>
+      <p class="section-sub">
+        The Bag* column uses the short bag code from the proclamation. Here is the key.
+      </p>
+      <div class="card">
+        <div id="bag-table" class="result-block small"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function formatPercentFromFraction(p) {
+      if (p == null) return "n/a";
+      return (p * 100).toFixed(1).replace(/\.0$/, "") + "%";
+    }
+
+    function formatPercent0to100(p) {
+      if (p == null) return "n/a";
+      return Number(p).toFixed(1).replace(/\.0$/, "") + "%";
+    }
+
+    function formatOdds(p) {
+      if (p == null || p <= 0) return "n/a";
+      const pct = formatPercentFromFraction(p);
+      const years = Math.max(1, Math.round(1 / p));
+      return `${pct} (on average, you will draw this hunt once every ${years} years)`;
+    }
+
+    function formatDateRange(start, end) {
+      if (!start || !end) return "Check proclamation";
+      const partsS = start.split("-").map(Number);
+      const partsE = end.split("-").map(Number);
+      const ys = partsS[0], ms = partsS[1], ds = partsS[2];
+      const ye = partsE[0], me = partsE[1], de = partsE[2];
+      const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+      const msName = months[ms - 1] || "";
+      const meName = months[me - 1] || "";
+      if (ms === me) {
+        return `${msName} ${ds}-${de}`;
+      }
+      return `${msName} ${ds}-${meName} ${de}`;
+    }
+
+    async function fetchJSON(url, opts) {
+      const res = await fetch(url, opts);
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`Request failed: ${res.status} ${text}`);
+      }
+      return res.json();
+    }
+
+    // Draw odds by unit
+    document.getElementById("unit-run").addEventListener("click", async () => {
+      const pool = document.getElementById("unit-pool").value;
+      const species = document.getElementById("unit-species").value;
+      const weapon = document.getElementById("unit-weapon").value;
+      const gmu = document.getElementById("unit-gmu").value;
+      const target = document.getElementById("unit-results");
+      target.innerHTML = "Loading...";
+
+      if (!species) {
+        target.innerHTML = '<span class="muted">Choose a species.</span>';
+        return;
+      }
+      if (!gmu) {
+        target.innerHTML = '<span class="muted">Pick a GMU.</span>';
+        return;
+      }
+
+      try {
+        const params = new URLSearchParams({
+          pool,
+          species_code: species,
+          weapon,
+          gmu: gmu
+        });
+        const data = await fetchJSON(`/api/draw_odds?${params.toString()}`);
+
+        if (!data.results.length) {
+          target.innerHTML = '<span class="muted">No hunts matched that filter.</span>';
+          return;
+        }
+
+        let html = `<div class="small">Showing ${data.results.length} hunts for <strong>${data.pool_label}</strong>, 2026 seasons, draw year ${data.draw_year}.</div>`;
+        html += `<table><thead><tr>
+          <th>Hunt code</th>
+          <th>Hunt name</th>
+          <th>Bag<a href="#bag-explainer">*</a></th>
+          <th>2026 dates</th>
+          <th>Draw odds</th>
+          <th>Success (latest)</th>
+        </tr></thead><tbody>`;
+
+        for (const r of data.results) {
+          const unitLabel = r.hunt_name || r.unit_description || "";
+          const bagText = r.bag_code || "n/a";
+          html += `<tr>
+            <td><code>${r.hunt_code}</code></td>
+            <td>${unitLabel}</td>
+            <td>${bagText}</td>
+            <td>${formatDateRange(r.start_date, r.end_date)}</td>
+            <td>${formatPercentFromFraction(r.draw_odds)}</td>
+            <td>${r.success_rate == null ? "n/a" : formatPercent0to100(r.success_rate)}${r.harvest_year ? ` <span class="muted">(${r.harvest_year})</span>` : ""}</td>
+          </tr>`;
+        }
+        html += "</tbody></table>";
+        target.innerHTML = html;
+      } catch (err) {
+        console.error(err);
+        target.innerHTML = `<span class="muted">Error: ${err.message}</span>`;
+      }
+    });
+
+    // shared hunts loader
+    async function loadHuntsIntoSelect(speciesCode, select) {
+      if (!speciesCode) {
+        select.innerHTML = '<option value="">Choose a species above...</option>';
+        return;
+      }
+      select.innerHTML = '<option value="">Loading...</option>';
+      try {
+        const params = new URLSearchParams({ species_code: speciesCode });
+        const data = await fetchJSON(`/api/hunts?${params.toString()}`);
+        if (!data.hunts.length) {
+          select.innerHTML = '<option value="">No hunts for that species.</option>';
+          return;
+        }
+        select.innerHTML = "";
+        for (const h of data.hunts) {
+          const opt = document.createElement("option");
+          opt.value = h.hunt_code;
+          opt.textContent = h.label;
+          select.appendChild(opt);
+        }
+      } catch (err) {
+        console.error(err);
+        select.innerHTML = '<option value="">Error loading hunts.</option>';
+      }
+    }
+
+    // Cheat codes
+    document.getElementById("cheat-run").addEventListener("click", async () => {
+      const pool = document.getElementById("cheat-pool").value;
+      const species = document.getElementById("cheat-species").value;
+      const weapon = document.getElementById("cheat-weapon").value;
+      const target = document.getElementById("cheat-results");
+      target.innerHTML = "Loading...";
+
+      if (!species) {
+        target.innerHTML = '<span class="muted">Choose a species.</span>';
+        return;
+      }
+
+      try {
+        const params = new URLSearchParams({
+          pool,
+          species_code: species,
+          weapon
+        });
+        const data = await fetchJSON(`/api/best_hunts?${params.toString()}`);
+
+        if (!data.results.length) {
+          target.innerHTML = '<span class="muted">No hunts matched those filters.</span>';
+          return;
+        }
+
+        let html = `<div class="small">Showing ${data.results.length} suggested hunts for <strong>${data.pool_label}</strong>, draw year ${data.draw_year}.</div>`;
+        html += `<table><thead><tr>
+          <th>Hunt code</th>
+          <th>Hunt name</th>
+          <th>Bag<a href="#bag-explainer">*</a></th>
+          <th>Draw odds</th>
+          <th>Success</th>
+          <th>Notes</th>
+        </tr></thead><tbody>`;
+
+        for (const r of data.results) {
+          const unitLabel = r.hunt_name || r.unit_description || "";
+          const bagText = r.bag_code || "n/a";
+          html += `<tr>
+            <td><code>${r.hunt_code}</code></td>
+            <td>${unitLabel}</td>
+            <td>${bagText}</td>
+            <td>${formatPercentFromFraction(r.draw_odds)}</td>
+            <td>${r.success_rate == null ? "n/a" : formatPercent0to100(r.success_rate)}${r.harvest_year ? ` <span class="muted">(${r.harvest_year})</span>` : ""}</td>
+            <td>${r.note}</td>
+          </tr>`;
+        }
+        html += "</tbody></table>";
+
+        html += `<p class="small" style="margin-top:0.4rem;">
+          Rough rule of thumb in the resident pool: hunts over about 25 percent draw odds make excellent third choice safety picks,
+          10 to 25 percent is the middle ground for second choices, and anything under 10 percent belongs in your first choice dream hunt slot.
+        </p>`;
+
+        target.innerHTML = html;
+      } catch (err) {
+        console.error(err);
+        target.innerHTML = `<span class="muted">Error: ${err.message}</span>`;
+      }
+    });
+
+    // Application planner
+    const appSpecies = document.getElementById("app-species");
+    const appChoice1 = document.getElementById("app-choice1");
+    const appChoice2 = document.getElementById("app-choice2");
+    const appChoice3 = document.getElementById("app-choice3");
+
+    async function reloadAppHunts() {
+      const code = appSpecies.value;
+      await Promise.all([
+        loadHuntsIntoSelect(code, appChoice1),
+        loadHuntsIntoSelect(code, appChoice2),
+        loadHuntsIntoSelect(code, appChoice3),
+      ]);
+    }
+
+    appSpecies.addEventListener("change", reloadAppHunts);
+
+    document.getElementById("app-run").addEventListener("click", async () => {
+      const pool = document.getElementById("app-pool").value;
+      const species = appSpecies.value;
+      const c1 = appChoice1.value;
+      const c2 = appChoice2.value;
+      const c3 = appChoice3.value;
+      const target = document.getElementById("app-results");
+      target.innerHTML = "Loading...";
+
+      if (!species) {
+        target.innerHTML = '<span class="muted">Choose a species.</span>';
+        return;
+      }
+      if (!c1 || !c2 || !c3) {
+        target.innerHTML = '<span class="muted">Pick three hunts.</span>';
+        return;
+      }
+
+      try {
+        const payload = {
+          pool,
+          species_code: species,
+          choices: [c1, c2, c3],
+        };
+        const data = await fetchJSON("/api/application_plan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        let html = `<div class="small">Using ${2025} draw data for <strong>${data.pool_label}</strong> pool and ${data.species_name || data.species_code}.</div>`;
+        html += `<table><thead><tr>
+          <th>Choice</th>
+          <th>Hunt code</th>
+          <th>Per hunt odds</th>
+          <th>Apps</th>
+          <th>Licenses</th>
+        </tr></thead><tbody>`;
+
+        for (const row of data.choices) {
+          html += `<tr>
+            <td>${row.choice_number}</td>
+            <td><code>${row.hunt_code}</code></td>
+            <td>${row.p == null ? "n/a" : formatOdds(row.p)}</td>
+            <td>${row.applications ?? "n/a"}</td>
+            <td>${row.licenses ?? "n/a"}</td>
+          </tr>`;
+        }
+        html += "</tbody></table>";
+
+        if (data.application_odds != null) {
+          html += `<p class="small" style="margin-top:0.3rem;">
+            Your overall chance of drawing something on this application is roughly the odds of your easiest hunt:
+            <strong>${formatOdds(data.application_odds)}</strong>.
+          </p>`;
+        }
+
+        if (!data.logical_order) {
+          html += `<p class="small" style="margin-top:0.25rem;color:#f97316;">
+            The odds on your choices are out of order. The draw engine walks your first, second, and third choices in sequence,
+            so easier hunts on top can quietly kill the value of the harder ones underneath.
+          </p>`;
+        }
+
+        if (data.advice) {
+          html += `<p class="small" style="margin-top:0.25rem;">${data.advice}</p>`;
+        }
+
+        target.innerHTML = html;
+      } catch (err) {
+        console.error(err);
+        target.innerHTML = `<span class="muted">Error: ${err.message}</span>`;
+      }
+    });
+
+    // Bag limit table
+    async function loadBagLimits() {
+      const target = document.getElementById("bag-table");
+      try {
+        const data = await fetchJSON("/api/bag_limits");
+        const list = data.bag_limits || [];
+        if (!list.length) {
+          target.innerHTML = '<span class="muted">No bag limits found in the database.</span>';
+          return;
+        }
+        let html = '<table><thead><tr><th>Bag code</th><th>Label</th><th>Plain definition</th></tr></thead><tbody>';
+        for (const b of list) {
+          html += `<tr>
+            <td>${b.bag_code}</td>
+            <td>${b.label}</td>
+            <td>${b.plain_definition}</td>
+          </tr>`;
+        }
+        html += "</tbody></table>";
+        target.innerHTML = html;
+      } catch (err) {
+        console.error(err);
+        target.innerHTML = '<span class="muted">Error loading bag limits.</span>';
+      }
+    }
+
+    loadBagLimits();
+  </script>
+</body>
+</html>
+
