@@ -1,0 +1,9 @@
+NM 2025-2026 Hunting Rules and Info PDF
+
+The PDF is behind a JavaScript download wall at:
+https://wildlife.dgf.nm.gov/download/2025-2026-new-mexico-hunting-rules-and-info/
+
+Alternative: visit https://wildlife.dgf.nm.gov/home/publications/ and click the download link.
+
+NOTE: NM 2026 hunt dates are already loaded in the database (891 hunts for season_year=2026).
+The proclamation PDF is not strictly needed for data loading but would be useful for verification.

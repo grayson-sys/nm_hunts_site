@@ -1,0 +1,1227 @@
+hunt_code,open_date,close_date,bag_limit_description,notes
+1-1,2026-10-15,2026-11-30,Any elk,Regular season; Quota: 100
+1-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+1-4,2026-10-15,2026-11-30,Antlerless elk,Regular season; Quota: 75
+1-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+2-Gen,2026-10-01,2026-10-20,Any elk,Regular season
+2-Gen-ARCH,2026-09-20,2026-09-30,Any elk,Special archery season
+2-Gen,2026-10-21,2026-11-15,Antlerless elk,Regular season
+2-6,2026-10-01,2026-12-15,Cow or calf,Regular season; Quota: 200
+3-Gen,2026-09-15,2026-11-30,Any elk,Regular season
+3-Gen-ARCH,2026-09-01,2026-09-14,Any elk,Special archery season
+3-Gen,2026-12-01,2027-01-31,Antlerless elk,Regular season
+3-8,2026-08-15,2027-01-31,Cow or calf,Regular season; Quota: Unlimited
+6-Gen,2026-10-01,2026-10-31,Any elk valid off national forest,Regular season
+6-Gen-ARCH,2026-09-01,2026-09-30,Any elk valid off national forest,Special archery season
+6-Gen,2026-11-01,2026-12-31,Antlerless elk valid off national forest,Regular season
+6-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 50
+6-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+6-1,2026-11-01,2027-01-31,Antlerless elk,Regular season
+6-4,2026-10-01,2027-01-31,Antlerless elk,Regular season; Quota: 25
+6-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+6-8,2026-08-15,2027-01-31,Cow or calf valid off national forest,Regular season; Quota: Unlimited
+7-1,2026-10-15,2026-11-20,Any elk,Regular season; Quota: 1500
+7-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+7-1,2026-11-21,2026-12-31,Antlerless elk,Regular season
+7-2,2026-11-21,2026-12-31,Antlered elk five (5) points or less on either antler; valid in Converse County,Regular season; Quota: 350
+7-4,2026-10-15,2026-12-31,Antlerless elk,Regular season; Quota: 800
+7-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+7-6,2026-10-15,2026-12-31,Cow or calf,Regular season; Quota: 1000
+7-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+7-8,2026-08-15,2026-10-14,Cow or calf valid on private land in Albany and Carbon counties; also valid in all of Platte County; not valid in Converse or Natrona counties,Regular season; Quota: Unlimited
+7-8,2026-10-15,2026-12-31,Cow or calf valid off national forest,Regular season
+8-1,2026-10-01,2027-01-31,Any elk,Regular season; Quota: 150
+8-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+8-8,2026-08-15,2027-01-31,Cow or calf,Regular season; Quota: Unlimited
+9-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+9-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+9-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 250
+9-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+"9, 10-7",2026-08-15,2027-01-31,Cow or calf valid off national forest,Regular season; Quota: 350
+10-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+10-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+10-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 300
+10-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+11-1,2026-10-01,2026-11-30,Any elk,Regular season; Quota: 200
+11-1-ARCH,2026-09-15,2026-09-30,Any elk,Special archery season
+11-1,2026-12-01,2027-01-31,Any elk valid off national forest,Regular season
+11-4,2026-10-01,2027-01-31,Antlerless elk,Regular season; Quota: 100
+11-4-ARCH,2026-09-15,2026-09-30,Antlerless elk,Special archery season
+11-6,2026-08-15,2026-09-30,Cow or calf valid off national forest and off the Wick Wildlife Habitat Management Area,Regular season; Quota: 450
+11-6,2026-10-01,2027-01-31,Cow or calf,Regular season
+11-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 75
+12-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+12-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+12-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 300
+12-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+"12, 13, 15, 110-7",2026-08-15,2027-01-31,Cow or calf valid on private land,Regular season; Quota: 350
+13-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+13-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+13-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 150
+13-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+15-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+15-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+15-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 200
+15-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+16-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 250
+16-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+16-1,2026-12-01,2027-01-31,Antlerless elk,Regular season
+16-2,2026-11-01,2026-11-30,Any elk,Regular season; Quota: 100
+16-2-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+16-2,2026-12-01,2027-01-31,Antlerless elk,Regular season
+16-4,2026-09-01,2026-09-30,Antlerless elk valid on private land; also valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 300
+16-4,2026-10-01,2027-01-31,Antlerless elk valid in the entire area,Regular season
+16-4-ARCH,2026-09-01,2026-09-30,Antlerless elk valid in the entire area,Special archery season
+16-6,2026-08-15,2026-09-30,Cow or calf valid on private land; also valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 300
+16-6,2026-10-01,2026-11-30,Cow or calf valid in the entire area,Regular season
+16-6-ARCH,2026-09-01,2026-09-30,Cow or calf valid in the entire area,Special archery season
+16-7,2026-12-01,2027-01-31,Cow or calf,Regular season; Quota: 200
+19-1,2026-10-01,2026-10-14,Any elk,Regular season; Quota: 150
+19-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+19-1,2026-12-01,2026-12-14,Any elk,Regular season
+19-1,2026-12-15,2027-01-31,Antlerless elk,Regular season
+19-2,2026-11-01,2026-11-20,Any elk,Regular season; Quota: 175
+19-2-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+19-2,2026-12-01,2026-12-14,Any elk,Regular season
+19-2,2026-12-15,2027-01-31,Antlerless elk,Regular season
+19-4,2026-10-01,2026-10-14,Antlerless elk,Regular season; Quota: 125
+19-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+19-4,2026-11-21,2027-01-31,Antlerless elk,Regular season
+19-5,2026-11-01,2027-01-31,Antlerless elk,Regular season; Quota: 125
+19-5-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+19-6,2026-10-01,2026-10-14,Cow or calf,Regular season; Quota: 225
+19-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+19-6,2026-11-01,2027-01-31,Cow or calf,Regular season
+"21-Gen-
+Youth
+only",2026-10-12,2026-10-13,Any elk; youth only,Regular season
+"21-Gen-
+Youth
+only-ARCH",2026-09-01,2026-09-30,Any elk; youth only,Special archery season
+21-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+21-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+21-6,2026-10-15,2026-11-17,Cow or calf,Regular season; Quota: 200
+21-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+21-7,2026-08-15,2026-12-31,Cow or calf valid on private land,Regular season; Quota: 25
+22-1,2026-10-08,2026-10-31,Any elk,Regular season; Quota: 75
+22-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+22-1,2026-11-15,2026-12-15,Any elk; also valid in Area 111,Regular season
+22-1,2026-12-16,2026-12-31,Antlerless elk,Regular season
+22-6,2026-10-08,2026-10-31,Cow or calf valid in the Muddy Creek drainage,Regular season; Quota: 100
+22-6-ARCH,2026-09-01,2026-09-30,Cow or calf valid in the Muddy Creek drainage,Special archery season
+22-6,2026-11-01,2026-12-31,Cow or calf valid in the entire area,Regular season
+23-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 175
+23-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+23-1,2026-11-15,2026-12-15,"Any elk; also valid in Area 128 east of Castle Gardens Road (Fremont County Road 507), east of Wyoming Highway 136, east of Ore Road (Fremont County Road 5), and north of Beaver Rim Road (B.L.M. Road 2401)",Regular season
+23-4,2026-10-01,2026-10-31,Antlerless elk,Regular season; Quota: 200
+23-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+23-4,2026-11-15,2026-12-15,"Antlerless elk; also valid in Area 128 east of Castle Gardens Road (Fremont County Road 507), east of Wyoming Highway 136, east of Ore Road (Fremont County Road 5), and north of Beaver Rim Road (B.L.M. Road 2401)",Regular season
+23-6,2026-10-01,2026-10-31,Cow or calf,Regular season; Quota: 200
+23-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+23-6,2026-11-15,2026-12-15,"Cow or calf; also valid in Area 128 east of Castle Gardens Road (Fremont County Road 507), east of Wyoming Highway 136, east of Ore Road (Fremont County Road 5), and north of Beaver Rim Road (B.L.M. Road 2401)",Regular season
+24-1,2026-10-01,2026-10-14,Any elk,Regular season; Quota: 200
+24-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+24-4,2026-10-01,2026-10-14,Antlerless elk,Regular season; Quota: 75
+24-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+24-5,2026-11-01,2026-11-30,Antlerless elk; also valid in Area 128,Regular season; Quota: 175
+24-5-ARCH,2026-09-01,2026-09-30,Antlerless elk; also valid in Area 128,Special archery season
+"25, 27-1",2026-10-01,2026-10-31,Any elk,Regular season; Quota: 200
+"25, 27-1-ARCH",2026-09-01,2026-09-30,Any elk,Special archery season
+25-4,2026-10-11,2026-10-31,Antlerless elk,Regular season; Quota: 100
+25-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+25-5,2026-10-21,2026-10-31,Antlerless elk,Regular season; Quota: 75
+25-5-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+25-5,2026-11-01,2026-11-10,Antlerless elk valid north of the Sweetwater River,Regular season
+25-6,2026-11-01,2026-11-20,Cow or calf valid north of the Sweetwater River,Regular season; Quota: 100
+25-6-ARCH,2026-09-01,2026-09-30,Cow or calf valid north of the Sweetwater River,Special archery season
+27-4,2026-10-01,2026-11-20,Antlerless elk,Regular season; Quota: 75
+27-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+28-Gen,2026-10-01,2026-10-14,Any elk,Regular season
+28-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+28-Gen,2026-10-15,2026-10-22,Antlerless elk,Regular season
+28-4,2026-11-01,2026-11-20,Antlerless elk,Regular season; Quota: 175
+28-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+30-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 40
+30-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+30-4,2026-10-07,2026-11-15,Antlerless elk,Regular season; Quota: 100
+30-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+31-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 50
+31-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+31-4,2026-10-07,2026-11-15,Antlerless elk,Regular season; Quota: 175
+31-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+32-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 40
+32-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+32-4,2026-10-07,2026-12-31,Antlerless elk,Regular season; Quota: 150
+32-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+32-9,2026-09-01,2026-09-30,"Antlerless elk, archery only",Regular season; Quota: 25
+33-1,2026-10-09,2026-10-31,Any elk,Regular season; Quota: 200
+33-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+33-1,2026-11-07,2026-12-31,Antlerless elk,Regular season
+33-4,2026-08-15,2026-09-30,Antlerless elk valid on private land east of Buffalo Creek and the Bar C Road (B.L.M. Road 6214),Regular season; Quota: 150
+33-4,2026-10-09,2026-10-31,Antlerless elk valid in the entire area,Regular season
+33-4-ARCH,2026-09-01,2026-09-30,Antlerless elk valid in the entire area,Special archery season
+33-4,2026-11-07,2026-12-31,Antlerless elk,Regular season
+33-6,2026-11-07,2026-12-31,Cow or calf,Regular season; Quota: 300
+33-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+34-1,2026-10-09,2026-11-15,Any elk,Regular season; Quota: 800
+34-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+34-1,2026-11-16,2026-12-31,Antlerless elk,Regular season
+34-6,2026-08-15,2026-10-08,Cow or calf valid on private land on or within one (1) mile of irrigated land,Regular season; Quota: 700
+34-6,2026-10-09,2026-12-31,Cow or calf valid off national forest,Regular season
+34-6-ARCH,2026-09-01,2026-09-30,Cow or calf valid off national forest,Special archery season
+35-1,2026-10-10,2026-11-05,Any elk,Regular season; Quota: 150
+35-1-ARCH,2026-09-15,2026-09-30,Any elk,Special archery season
+35-1,2026-11-15,2026-12-31,Antlerless elk,Regular season
+35-4,2026-10-10,2026-11-05,Antlerless elk,Regular season; Quota: 175
+35-4-ARCH,2026-09-15,2026-09-30,Antlerless elk,Special archery season
+35-4,2026-11-15,2026-12-31,Antlerless elk,Regular season
+35-6,2026-08-15,2026-10-09,Cow or calf valid on private land,Regular season; Quota: 425
+35-6,2026-10-10,2026-11-05,Cow or calf valid off national forest,Regular season
+35-6-ARCH,2026-09-15,2026-09-30,Cow or calf valid off national forest,Special archery season
+35-6,2026-11-15,2026-12-31,Cow or calf valid off national forest,Regular season
+35-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 75
+36-Gen,2026-10-10,2026-11-05,Antlered elk valid on national forest; any elk off national forest,Regular season
+36-Gen-ARCH,2026-09-15,2026-09-30,Antlered elk valid on national forest; any elk off national forest,Special archery season
+36-4,2026-10-10,2026-11-05,Antlerless elk,Regular season; Quota: 300
+36-4-ARCH,2026-09-15,2026-09-30,Antlerless elk,Special archery season
+36-4,2026-11-15,2026-12-31,Antlerless elk,Regular season
+36-6,2026-10-01,2026-10-09,Cow or calf valid off national forest north of Rock Creek,Regular season; Quota: 250
+36-6,2026-10-10,2026-11-05,Cow or calf valid in the entire area,Regular season
+36-6-ARCH,2026-09-15,2026-09-30,Cow or calf valid in the entire area,Special archery season
+36-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 75
+37-Gen,2026-10-10,2026-11-05,Any elk,Regular season
+37-Gen-ARCH,2026-09-15,2026-09-30,Any elk,Special archery season
+37-Gen,2026-11-06,2026-11-15,Antlerless elk,Regular season
+37-6,2026-09-01,2026-09-30,Cow or calf valid on private land,Regular season; Quota: 500
+37-6,2026-10-01,2026-12-31,Cow or calf valid in the entire area,Regular season
+37-6-ARCH,2026-09-15,2026-09-30,Cow or calf valid in the entire area,Special archery season
+37-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 150
+38-1,2026-10-10,2026-10-31,Any elk,Regular season; Quota: 400
+38-1,2026-11-01,2026-11-15,Antlerless elk,Regular season
+38-4,2026-10-01,2026-11-15,Antlerless elk,Regular season; Quota: 550
+38-6,2026-09-15,2026-12-31,Cow or calf valid off national forest and off the Wyoming Game and Fish Commission’s Amsden Creek and Kerns Wildlife Habitat Management Areas,Regular season; Quota: 75
+38-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 250
+39-1,2026-10-10,2026-11-04,Any elk,Regular season; Quota: 200
+39-1,2026-11-05,2026-11-30,Antlerless elk,Regular season
+39-4,2026-10-01,2026-11-30,Antlerless elk,Regular season; Quota: 150
+39-6,2026-11-05,2026-11-30,Cow or calf,Regular season; Quota: 75
+39-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+39-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 100
+40-1,2026-10-15,2026-11-04,Any elk,Regular season; Quota: 225
+40-4,2026-10-15,2026-11-30,Antlerless elk,Regular season; Quota: 125
+40-6,2026-09-01,2026-11-04,Cow or calf valid off national forest,Regular season; Quota: 125
+40-6,2026-11-05,2026-11-30,Cow or calf valid in the entire area,Regular season
+40-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 100
+41-1,2026-10-15,2026-11-04,Any elk,Regular season; Quota: 275
+41-2,2026-11-05,2026-11-20,Any elk,Regular season; Quota: 100
+41-3,2026-09-01,2026-10-14,Any elk valid off national forest north of Trapper Creek,Regular season; Quota: 35
+41-4,2026-10-15,2026-11-30,Antlerless elk,Regular season; Quota: 350
+41-6,2027-01-01,2027-01-21,Cow or calf,Regular season; Quota: 350
+41-7,2026-09-01,2026-11-04,Cow or calf valid off national forest north of Trapper Creek,Regular season; Quota: 150
+41-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 125
+45-1,2026-10-15,2026-11-04,Any elk,Regular season; Quota: 350
+45-4,2026-10-15,2026-11-30,Antlerless elk,Regular season; Quota: 250
+45-5,2026-10-01,2026-10-10,Antlerless elk,Regular season; Quota: 200
+45-5,2026-10-25,2026-11-30,Antlerless elk,Regular season
+45-6,2026-09-01,2026-11-30,Cow or calf valid off national forest,Regular season; Quota: 150
+45-7,2026-12-01,2026-12-21,Cow or calf,Regular season; Quota: 100
+45-7-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+45-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 175
+47-1,2026-10-09,2026-10-31,Any elk,Regular season; Quota: 150
+47-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+47-1,2026-11-01,2026-11-30,Antlerless elk,Regular season
+47-6,2026-10-09,2026-11-30,Cow or calf,Regular season; Quota: 50
+47-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+48-1,2026-10-09,2026-10-31,Any elk,Regular season; Quota: 400
+48-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+48-1,2026-11-07,2026-12-15,Antlerless elk,Regular season
+48-4,2026-10-09,2026-10-31,Antlerless elk,Regular season; Quota: 125
+48-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+48-4,2026-11-07,2026-12-15,Antlerless elk,Regular season
+48-6,2026-10-09,2026-10-31,Cow or calf,Regular season; Quota: 600
+48-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+48-6,2026-11-07,2026-11-30,Cow or calf,Regular season
+48-7,2026-11-07,2026-12-15,Cow or calf,Regular season; Quota: 300
+48-7-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+49-1,2026-10-09,2026-10-31,Any elk,Regular season; Quota: 350
+49-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+49-1,2026-11-07,2026-12-21,Antlerless elk,Regular season
+49-4,2026-09-15,2026-10-31,Antlerless elk,Regular season; Quota: 100
+49-4-ARCH,2026-09-01,2026-09-14,Antlerless elk,Special archery season
+49-4,2026-11-07,2026-12-21,Antlerless elk,Regular season
+49-6,2026-10-09,2026-10-31,Cow or calf,Regular season; Quota: 350
+49-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+49-7,2026-11-07,2026-12-21,Cow or calf,Regular season; Quota: 500
+49-7-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+51-1,2026-10-01,2026-10-31,Any elk south and west of the Clarks Fork River,Regular season; Quota: 120
+51-2,2026-10-01,2026-10-31,Any elk north and east of the Clarks Fork River,Regular season; Quota: 40
+51-4,2026-11-16,2026-12-15,Antlerless elk,Regular season; Quota: 50
+51-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 80
+54-1,2026-10-01,2026-10-31,Any elk valid south of the Clarks Fork River; also valid in Area 65,Regular season; Quota: 65
+54-2,2026-10-01,2026-10-31,Any elk valid north of the Clarks Fork River,Regular season; Quota: 25
+54-3,2026-11-01,2026-11-30,Any elk,Regular season; Quota: 10
+54-6,2026-10-01,2026-10-31,Cow or calf,Regular season; Quota: 100
+54-7,2026-08-15,2026-12-21,Cow or calf valid on private land,Regular season; Quota: 100
+54-9,2026-09-01,2026-09-30,"Any elk, archery only; also valid in Area 65",Regular season; Quota: 40
+55-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 60
+55-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+55-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 25
+56-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+56-Gen,2026-10-01,2026-10-21,Antlered elk,Regular season
+56-1,2026-11-05,2026-11-30,Any elk; also valid in Area 55,Regular season; Quota: 10
+56-1-ARCH,2026-09-01,2026-09-30,Any elk; also valid in Area 55,Special archery season
+56-6,2026-10-01,2026-12-21,Cow or calf,Regular season; Quota: 150
+56-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+56-7-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+56-7,2026-09-01,2026-09-30,Cow or calf valid on or within one- half (1/2) mile of irrigated land within the North Fork Shoshone River drainage,Regular season; Quota: 150
+56-7,2026-10-01,2026-12-21,Cow or calf valid off national forest,Regular season
+56-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 30
+58-1,2026-10-01,2026-11-30,Any elk,Regular season; Quota: 35
+58-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+58-6,2026-10-01,2026-12-21,Cow or calf,Regular season; Quota: 200
+58-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+59-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+59-Gen,2026-10-01,2026-10-21,Antlered elk,Regular season
+59-1,2026-11-01,2026-11-30,Any elk,Regular season; Quota: 10
+59-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+59-6,2026-10-01,2026-12-21,Cow or calf,Regular season; Quota: 175
+59-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+59-7-ARCH,2026-09-01,2026-09-30,Cow or calf valid in the entire area,Special archery season
+59-7,2026-10-01,2026-11-15,Cow or calf valid within the Washakie Wilderness,Regular season; Quota: 50
+59-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 25
+60-Gen-ARCH,2026-09-01,2026-09-19,Any elk,Special archery season
+60-Gen,2026-09-20,2026-10-22,Antlered elk,Regular season
+60-9,2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 20
+61-1-ARCH,2026-09-01,2026-09-30,"Any elk valid in the entire area, also valid in that portion of Area 62 within the Washakie Wilderness south of Avalanche Creek",Special archery season
+61-1,2026-10-01,2026-10-31,"Any elk valid within the Washakie Wilderness, also valid in that portion of Area 62 within the Washakie Wilderness south of Avalanche Creek",Regular season; Quota: 150
+61-2,2026-10-07,2026-11-15,Any elk,Regular season; Quota: 50
+61-2-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+61-4,2026-10-15,2026-12-21,Antlerless elk,Regular season; Quota: 200
+61-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+61-6,2026-11-07,2026-12-21,Cow or calf,Regular season; Quota: 400
+61-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+61-7,2026-09-01,2026-12-21,Cow or calf valid on or within one- half (1/2) mile of irrigated land or north of and including the Rawhide Creek drainage,Regular season; Quota: 500
+61-7,2027-01-01,2027-01-15,Cow or calf valid on or within one- half (1/2) mile of irrigated land or north of and including the Rawhide Creek drainage,Regular season
+61-9,2026-09-01,2026-09-30,"Any elk, archery only valid within the Washakie Wilderness; also valid in that portion of Area 62 within the Washakie Wilderness south of Avalanche Creek",Regular season; Quota: 25
+62-1,2026-10-01,2026-10-21,Any elk,Regular season; Quota: 125
+62-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+62-4,2026-10-01,2026-10-21,Antlerless elk,Regular season; Quota: 75
+62-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+"62, 63-5",2026-10-22,2026-12-21,Antlerless elk,Regular season; Quota: 175
+"62, 63-5-ARCH",2026-09-01,2026-09-30,Antlerless elk,Special archery season
+"63, 64-1",2026-10-01,2026-10-21,Any elk,Regular season; Quota: 200
+"63, 64-1-ARCH",2026-09-01,2026-09-30,Any elk,Special archery season
+"63, 64-2",2026-10-01,2026-10-21,Any elk valid within the Washakie Wilderness,Regular season; Quota: 35
+"63, 64-2-ARCH",2026-09-01,2026-09-30,Any elk valid within the Washakie Wilderness,Special archery season
+"63, 64-3",2026-11-01,2026-11-15,Any elk,Regular season; Quota: 75
+"63, 64-3-ARCH",2026-09-01,2026-09-30,Any elk,Special archery season
+63-4,2026-10-01,2026-12-21,Antlerless elk,Regular season; Quota: 100
+63-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+63-6,2026-08-15,2026-10-31,Cow or calf valid off national forest north of Gooseberry Creek,Regular season; Quota: 200
+63-6,2026-11-01,2026-12-21,Cow or calf valid in the entire area,Regular season
+63-6-ARCH,2026-09-01,2026-09-30,Cow or calf valid in the entire area,Special archery season
+64-6,2026-09-01,2026-11-14,Cow or calf valid in that portion of the Cottonwood Creek drainage downstream of and including the 21- Creek drainage; also valid within the Grass Creek drainage downstream of the Grass Creek/Little Grass Creek confluence,Regular season; Quota: 250
+64-6,2026-11-15,2026-12-21,Cow or calf valid in the entire area,Regular season
+64-6-ARCH,2026-09-01,2026-09-30,Cow or calf valid in the entire area,Special archery season
+64-7,2026-10-15,2026-12-21,Cow or calf valid south of and including the Cottonwood Creek drainage,Regular season; Quota: 300
+64-7-ARCH,2026-09-01,2026-09-30,Cow or calf valid south of and including the Cottonwood Creek drainage,Special archery season
+65-Gen,2027-01-01,2027-01-15,Antlerless elk,Regular season
+65-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 25
+65-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+65-4,2026-08-15,2026-12-21,Antlerless elk,Regular season; Quota: 100
+65-6,2026-08-15,2026-10-31,Cow or calf,Regular season; Quota: 150
+65-7,2026-11-01,2026-12-21,Cow or calf,Regular season; Quota: 250
+66-Gen,2026-10-01,2026-10-21,Any elk,Regular season
+66-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+66-6,2026-08-15,2027-01-15,Cow or calf,Regular season; Quota: 150
+67-Gen-ARCH,2026-09-15,2026-09-30,Any elk,Special archery season
+67-Gen,2026-10-01,2026-10-10,Antlered elk,Regular season
+67-Gen,2026-10-11,2026-10-31,"Antlered elk, spikes excluded",Regular season
+67-4,2026-11-01,2026-12-31,Antlerless elk,Regular season; Quota: 400
+67-4-ARCH,2026-09-15,2026-09-30,Antlerless elk,Special archery season
+67-6,2026-12-01,2026-12-31,Cow or calf valid west of the Wiggins Fork and west of the East Fork downstream from the confluence with the Wiggins Fork,Regular season; Quota: 450
+67-6-ARCH,2026-09-15,2026-09-30,Cow or calf valid west of the Wiggins Fork and west of the East Fork downstream from the confluence with the Wiggins Fork,Special archery season
+67-7,2026-10-15,2026-10-31,Cow or calf,Regular season; Quota: 450
+67-7-ARCH,2026-09-15,2026-09-30,Cow or calf,Special archery season
+67-7,2026-11-01,2026-11-30,Cow or calf valid west of the Wiggins Fork and west of the East Fork downstream from the confluence with the Wiggins Fork,Regular season
+"67, 68, 69-9",2026-09-01,2026-09-30,"Any elk, archery only",Regular season; Quota: 150
+68-Gen-ARCH,2026-09-15,2026-09-30,Any elk,Special archery season
+68-Gen,2026-10-01,2026-10-10,Antlered elk,Regular season
+68-Gen,2026-10-11,2026-10-31,"Antlered elk, spikes excluded",Regular season
+68-6,2026-11-01,2026-11-30,Cow or calf,Regular season; Quota: 100
+68-6-ARCH,2026-09-15,2026-09-30,Cow or calf,Special archery season
+69-Gen,2026-10-01,2026-10-31,Any elk,Regular season
+69-Gen-ARCH,2026-09-15,2026-09-30,Any elk,Special archery season
+69-6,2026-10-01,2026-11-30,Cow or calf,Regular season; Quota: 50
+69-6-ARCH,2026-09-15,2026-09-30,Cow or calf,Special archery season
+70-Gen-ARCH,2026-09-01,2026-09-19,Any elk,Special archery season
+70-Gen,2026-09-20,2026-10-31,"Antlered elk, spikes excluded",Regular season
+71-Gen-ARCH,2026-09-01,2026-09-19,Any elk,Special archery season
+71-Gen,2026-09-20,2026-10-31,"Antlered elk, spikes excluded",Regular season
+73-Gen,2026-09-20,2026-10-25,Any elk,Regular season
+73-Gen-ARCH,2026-09-01,2026-09-19,Any elk,Special archery season
+73-6-ARCH,2026-09-01,2026-09-19,Cow or calf valid in the entire area,Special archery season
+73-6,2026-08-15,2027-01-31,Cow or calf valid on private land,Regular season; Quota: 35
+75-4,2026-11-16,2026-12-08,Antlerless elk; the Snake River Bottom and Antelope Flats portions shall be closed,Regular season; Quota: 20
+75-6,2026-11-16,2026-12-08,Cow or calf; the Snake River Bottom and Antelope Flats portions shall be closed,Regular season; Quota: 20
+77-,2026-10-09,2026-10-22,"General license and unused limited quota licenses, excluding limited quota cow or calf licenses, valid for any elk",Regular season
+77-,2026-10-23,2026-11-27,"General license and unused limited quota licenses, antlerless elk",Regular season
+"77-Youth
+only",2026-11-28,2026-12-01,"National Elk Refuge permits shall be issued only for those in possession of a full price youth elk license, any elk; youth only",Regular season
+77-,2026-12-02,2026-12-13,"General license and unused limited quota licenses, antlerless elk",Regular season
+78-Gen-ARCH,2026-09-01,2026-09-25,Any elk valid in the entire area,Special archery season
+78-Gen,2026-08-15,2026-10-31,Antlerless elk valid on private land,Regular season
+78-1,2026-08-15,2026-09-25,Any elk valid off national forest,Regular season; Quota: 75
+78-1,2026-09-26,2027-01-31,Any elk valid in the entire area,Regular season
+78-1-ARCH,2026-09-01,2026-09-25,Any elk valid in the entire area,Special archery season
+78-2,2026-08-15,2026-10-31,Any elk valid on private land,Regular season; Quota: 50
+78-2-ARCH,2026-09-01,2026-09-25,Any elk valid in the entire area,Special archery season
+78-6,2026-08-15,2026-09-25,Cow or calf valid off national forest,Regular season; Quota: 175
+78-6,2026-09-26,2027-01-31,Cow or calf valid in the entire area,Regular season
+78-6-ARCH,2026-09-01,2026-09-25,Cow or calf valid in the entire area,Special archery season
+80-Gen,2026-09-26,2026-10-31,Any elk,Regular season
+80-Gen-ARCH,2026-09-01,2026-09-25,Any elk,Special archery season
+80-6,2026-10-15,2026-11-20,Cow or calf,Regular season; Quota: 300
+80-6-ARCH,2026-09-01,2026-09-25,Cow or calf,Special archery season
+80-6,2026-11-21,2026-11-30,Cow or calf valid south of the Curtis Canyon and Sheep Creek roads (U.S.F.S. roads 30440 and 30445) excluding the Flat Creek drainage,Regular season
+81-Gen-ARCH,2026-09-01,2026-09-25,Any elk,Special archery season
+81-Gen,2026-09-26,2026-10-25,"Antlered elk, spikes excluded",Regular season
+82-Gen-ARCH,2026-09-01,2026-09-25,Any elk,Special archery season
+82-Gen,2026-09-26,2026-10-25,"Antlered elk, spikes excluded",Regular season
+82-4,2026-09-10,2026-11-03,Antlerless elk,Regular season; Quota: 50
+82-4-ARCH,2026-09-01,2026-09-09,Antlerless elk,Special archery season
+82-4,2026-11-04,2027-01-31,Antlerless elk valid on private land; also valid on private land in Areas 70 and 81,Regular season
+83-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+83-Gen,2026-10-01,2026-10-25,"Antlered elk, spikes excluded",Regular season
+84-Gen-ARCH,2026-09-01,2026-09-25,Any elk,Special archery season
+84-Gen,2026-09-26,2026-10-31,"Any elk, spikes excluded",Regular season
+84-Gen,2026-11-01,2026-11-15,Antlerless elk,Regular season
+84-1,2026-11-01,2027-01-31,Any elk valid on private land west of U.S. Highway 191 and north and east of the Snake River starting at the South Park Bridge,Regular season; Quota: 50
+84-6,2026-09-26,2026-11-30,Cow or calf; that portion of Area 84 east and south of Shoal Creek to the Hoback River shall be closed after Nov. 20,Regular season; Quota: 350
+84-6-ARCH,2026-09-01,2026-09-25,Cow or calf; that portion of Area 84 east and south of Shoal Creek to the Hoback River shall be closed after Nov. 20,Special archery season
+"84, 85-7",2026-08-15,2027-01-31,Cow or calf valid on private land in Area 84; also valid in that portion of Area 85 on or within 200 yards of irrigated land north of Fall Creek,Regular season; Quota: 250
+85-Gen-ARCH,2026-09-01,2026-09-25,Any elk,Special archery season
+85-Gen,2026-09-26,2026-10-31,"Any elk, spikes excluded",Regular season
+85-6,2026-09-26,2026-11-15,Cow or calf,Regular season; Quota: 100
+85-6-ARCH,2026-09-01,2026-09-25,Cow or calf,Special archery season
+86-Gen,2026-09-26,2026-10-31,Any elk,Regular season
+86-Gen-ARCH,2026-09-01,2026-09-25,Any elk,Special archery season
+86-Gen,2026-11-01,2026-11-20,Antlerless elk,Regular season
+86-6,2026-09-26,2026-11-30,Cow or calf,Regular season; Quota: 150
+86-6-ARCH,2026-09-01,2026-09-25,Cow or calf,Special archery season
+87-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+87-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+87-Gen,2026-11-01,2026-11-20,Antlerless elk,Regular season
+87-1,2026-12-01,2027-01-31,Antlered elk valid within the interior of the Dell Creek Loop Road (Forest Road 30580 and Sublette County Road 23-114),Regular season; Quota: 10
+87-6,2026-12-01,2027-01-31,"Cow or calf valid south and east of Dell Creek, and west of North Fork Fisherman Creek",Regular season; Quota: 50
+87-7,2026-10-15,2026-11-20,Cow or calf,Regular season; Quota: 150
+87-7-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+88-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 40
+88-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+88-1,2026-11-01,2026-11-30,Antlerless elk valid south of Peterson Lane and south and west of the Greys River Wildlife Habitat Management Area Elk Fence,Regular season
+89-Gen,2026-10-15,2026-10-25,Any elk,Regular season
+89-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+90-Gen,2026-10-15,2026-10-25,Any elk,Regular season
+90-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+90-6,2026-10-15,2026-10-25,Cow or calf,Regular season; Quota: 50
+90-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+91-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+91-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+91-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 100
+91-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+91-1,2026-11-01,2026-12-31,Antlerless elk,Regular season
+91-1,2027-01-01,2027-01-31,Antlerless elk valid off national forest,Regular season
+91-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 300
+91-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+91-6,2027-01-01,2027-01-31,Cow or calf valid off national forest,Regular season
+91-7,2026-10-01,2027-01-31,Cow or calf valid off national forest west of U.S. Highway 89 and south of Wyoming Highway 239,Regular season; Quota: 150
+91-7-ARCH,2026-09-01,2026-09-30,Cow or calf valid off national forest west of U.S. Highway 89 and south of Wyoming Highway 239,Special archery season
+92-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+92-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+92-Gen,2026-11-01,2026-11-20,Antlerless elk,Regular season
+92-6,2026-10-01,2026-11-30,Cow or calf,Regular season; Quota: 500
+92-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+92-6,2026-12-01,2027-01-31,"Cow or calf valid north of Wyoming Highway 354 and Sublette County Road 112, east of Sublette County Road 115, and south of South Beaver Creek",Regular season
+93-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 200
+93-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+93-1,2026-11-01,2026-11-30,Antlerless elk,Regular season
+93-6,2026-10-01,2026-11-30,Cow or calf,Regular season; Quota: 275
+93-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+94-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+94-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+94-Gen,2026-11-01,2026-11-20,Antlerless elk,Regular season
+94-6,2026-10-01,2026-11-30,Cow or calf,Regular season; Quota: 500
+94-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+94-7,2026-11-01,2026-12-10,Cow or calf valid north of Middle Piney Creek,Regular season; Quota: 150
+94-7-ARCH,2026-09-01,2026-09-30,Cow or calf valid north of Middle Piney Creek,Special archery season
+94-7,2026-12-11,2027-01-31,Cow or calf valid on private land north of Middle Piney Creek,Regular season
+95-1,2026-10-15,2026-11-05,Any elk,Regular season; Quota: 225
+95-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+95-2,2026-10-01,2026-11-05,"Any elk valid within the Green River drainage upstream from the outlet of Lower Green River Lake, including that portion east and south of Mill Creek",Regular season; Quota: 30
+95-2-ARCH,2026-09-01,2026-09-30,"Any elk valid within the Green River drainage upstream from the outlet of Lower Green River Lake, including that portion east and south of Mill Creek",Special archery season
+95-4,2026-10-15,2026-11-05,Antlerless elk,Regular season; Quota: 150
+95-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+95-5,2026-10-01,2026-11-05,"Antlerless elk valid within the Green River drainage upstream from the outlet of Lower Green River Lake, including that portion east and south of Mill Creek",Regular season; Quota: 25
+95-5-ARCH,2026-09-01,2026-09-30,"Antlerless elk valid within the Green River drainage upstream from the outlet of Lower Green River Lake, including that portion east and south of Mill Creek",Special archery season
+95-6,2026-10-15,2026-11-05,Cow or calf,Regular season; Quota: 25
+95-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+96-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+96-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+96-Gen,2026-11-01,2026-11-20,Antlerless elk,Regular season
+96-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 275
+96-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+96-1,2026-11-01,2026-11-30,Antlerless elk,Regular season
+96-4,2026-10-01,2026-11-30,Antlerless elk,Regular season; Quota: 150
+96-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+96-6,2026-10-01,2026-11-30,Cow or calf,Regular season; Quota: 150
+96-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+97-Gen,2026-10-01,2026-10-15,Any elk,Regular season
+97-Gen-ARCH,2026-09-01,2026-09-19,Any elk,Special archery season
+97-Gen,2026-10-16,2026-11-20,Antlerless elk,Regular season
+97-1,2026-09-20,2026-10-31,Any elk,Regular season; Quota: 225
+97-1-ARCH,2026-09-01,2026-09-19,Any elk,Special archery season
+97-1,2026-11-01,2026-11-30,Antlerless elk,Regular season
+97-6,2026-09-20,2026-11-30,Cow or calf,Regular season; Quota: 175
+97-6-ARCH,2026-09-01,2026-09-19,Cow or calf,Special archery season
+98-Gen,2026-10-01,2026-10-15,Any elk,Regular season
+98-Gen-ARCH,2026-09-01,2026-09-19,Any elk,Special archery season
+98-Gen,2026-10-16,2026-11-20,Antlerless elk,Regular season
+98-1,2026-09-20,2026-10-31,Any elk,Regular season; Quota: 350
+98-1-ARCH,2026-09-01,2026-09-19,Any elk,Special archery season
+98-1,2026-11-01,2026-11-30,Antlerless elk,Regular season
+98-1,2026-12-01,2027-01-31,Antlerless elk valid between Scab Creek and the East Fork River,Regular season
+98-4,2026-09-20,2026-11-30,Antlerless elk,Regular season; Quota: 75
+98-4-ARCH,2026-09-01,2026-09-19,Antlerless elk,Special archery season
+98-4,2026-12-01,2027-01-31,Antlerless elk valid between Scab Creek and the East Fork River,Regular season
+98-6,2026-09-20,2026-11-30,Cow or calf,Regular season; Quota: 300
+98-6-ARCH,2026-09-01,2026-09-19,Cow or calf,Special archery season
+98-6,2026-12-01,2027-01-31,Cow or calf valid between Scab Creek and the East Fork River,Regular season
+99-1,2026-10-01,2026-10-31,Any elk,Regular season; Quota: 150
+99-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+99-1,2026-11-01,2026-11-20,Antlerless elk,Regular season
+99-4,2026-10-01,2026-11-20,Antlerless elk,Regular season; Quota: 175
+99-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+100-1,2026-10-07,2026-10-31,Any elk,Regular season; Quota: 200
+100-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+100-2,2026-09-01,2026-10-20,Any elk valid within two (2) miles of the Farson-Eden Irrigation Project,Regular season; Quota: 100
+100-2,2026-10-21,2026-11-10,Antlered elk four (4) points or less on either antler; any elk valid within two (2) miles of the Farson-Eden Irrigation Project,Regular season
+100-2-ARCH,2026-09-01,2026-09-30,Antlered elk four (4) points or less on either antler; any elk valid within two (2) miles of the Farson-Eden Irrigation Project,Special archery season
+100-4,2026-10-14,2026-11-10,Antlerless elk,Regular season; Quota: 175
+100-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+100-5,2026-11-11,2026-12-31,Antlerless elk,Regular season; Quota: 250
+100-5-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+100-6,2026-10-15,2026-11-30,"Cow or calf valid east of Sweetwater County Road 19, south of Sweetwater County Road 82, east of Sweetwater County Road 21 and south of Sweetwater County Road 20",Regular season; Quota: 25
+100-6-ARCH,2026-09-01,2026-09-30,"Cow or calf valid east of Sweetwater County Road 19, south of Sweetwater County Road 82, east of Sweetwater County Road 21 and south of Sweetwater County Road 20",Special archery season
+100-7,2026-10-01,2026-10-31,"Cow or calf valid east of U.S. Highway 191, south of Sweetwater County Road 17 and Sweetwater County Road 15, and west of Sweetwater County Road 19",Regular season; Quota: 100
+100-7-ARCH,2026-09-01,2026-09-30,"Cow or calf valid east of U.S. Highway 191, south of Sweetwater County Road 17 and Sweetwater County Road 15, and west of Sweetwater County Road 19",Special archery season
+102-Gen,2026-10-15,2026-10-24,Any elk,Regular season
+102-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+102-Gen,2026-10-25,2026-11-14,Antlerless elk,Regular season
+102-6,2026-10-15,2026-11-30,Cow or calf,Regular season; Quota: 250
+102-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+102-7,2026-12-15,2027-01-31,Cow or calf,Regular season; Quota: 125
+102-7-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+103-Gen,2026-10-15,2026-10-24,Any elk,Regular season
+103-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+103-Gen,2026-10-25,2026-11-14,Antlerless elk,Regular season
+103-6,2026-08-15,2026-08-31,Cow or calf valid on or within one quarter (1/4) mile of irrigated land,Regular season; Quota: 200
+103-6,2026-10-15,2026-11-30,Cow or calf,Regular season
+103-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+103-6,2026-12-15,2027-01-31,Cow or calf,Regular season
+104-Gen,2026-10-15,2026-10-24,Any elk,Regular season
+104-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+104-Gen,2026-10-25,2026-11-14,Antlerless elk,Regular season
+104-6,2026-10-15,2026-11-30,Cow or calf; also valid in Area 105 in Lincoln County,Regular season; Quota: 400
+104-6-ARCH,2026-09-01,2026-09-30,Cow or calf; also valid in Area 105 in Lincoln County,Special archery season
+104-7,2026-08-15,2026-08-31,Cow or calf valid on or within one quarter (1/4) mile of irrigated land,Regular season; Quota: 200
+104-7,2026-12-15,2026-12-31,Cow or calf; also valid in Area 105 in Lincoln County,Regular season
+104-7-ARCH,2026-09-01,2026-09-30,Cow or calf; also valid in Area 105 in Lincoln County,Special archery season
+104-7,2027-01-01,2027-01-31,Cow or calf valid on private land or west of U.S. Highway 30 or east of Rock Creek within the Twin Creek drainage,Regular season
+105-Gen,2026-10-01,2026-10-31,Any elk,Regular season
+105-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+105-Gen,2026-11-01,2026-11-14,Antlerless elk,Regular season
+105-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 50
+105-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+106-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+106-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+106-Gen,2026-11-01,2026-11-14,Antlerless elk,Regular season
+106-1,2026-11-15,2027-01-31,Any elk valid west of the Black's Fork River or north of Wyoming Highway 410; also valid in Area 105 west of the Bear River,Regular season; Quota: 50
+106-1-ARCH,2026-09-01,2026-09-30,Any elk valid west of the Black's Fork River or north of Wyoming Highway 410; also valid in Area 105 west of the Bear River,Special archery season
+106-4,2026-10-15,2026-12-31,Antlerless elk,Regular season; Quota: 150
+106-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+106-4,2027-01-01,2027-01-31,Antlerless elk valid on private land or west of the Black's Fork River or north of Wyoming Highway 410,Regular season
+106-7,2026-08-15,2027-01-31,Cow or calf valid on private land or west of the Black's Fork River or north of Wyoming Highway 410,Regular season; Quota: 350
+107-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+107-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+107-Gen,2026-11-01,2026-11-14,Antlerless elk,Regular season
+107-4,2026-10-15,2026-12-31,Antlerless elk,Regular season; Quota: 200
+107-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+107-4,2027-01-01,2027-01-31,Antlerless elk valid off national forest within the Henry's Fork River drainage,Regular season
+107-7,2026-08-15,2026-08-31,Cow or calf valid in Sweetwater County,Regular season; Quota: 50
+107-7,2026-12-15,2027-01-31,Cow or calf valid off national forest within the Henry's Fork River drainage,Regular season
+107-7-ARCH,2026-09-01,2026-09-30,Cow or calf valid off national forest within the Henry's Fork River drainage,Special archery season
+108-1,2026-10-11,2026-10-31,Any elk,Regular season; Quota: 100
+108-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+108-1,2026-11-01,2027-01-31,Antlerless elk,Regular season
+108-4,2026-10-11,2027-01-31,Antlerless elk,Regular season; Quota: 75
+108-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+108-6,2026-10-11,2026-12-31,Cow or calf,Regular season; Quota: 250
+108-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+108-6,2027-01-01,2027-01-31,Cow or calf valid west of the Twentymile Road (Carbon County Rd 605 N),Regular season
+110-Gen,2026-10-15,2026-10-31,Any elk,Regular season
+110-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+110-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 300
+110-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+111-1,2026-10-10,2026-10-31,Any elk,Regular season; Quota: 75
+111-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+111-1,2026-11-15,2026-12-15,Any elk; also valid in Area 22,Regular season
+111-1,2026-12-16,2026-12-31,Antlerless elk,Regular season
+111-4,2026-10-10,2026-12-31,Antlerless elk,Regular season; Quota: 150
+111-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+111-6,2026-11-01,2026-12-31,Cow or calf,Regular season; Quota: 250
+111-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+113-3,2026-11-05,2026-11-30,Spike or antlerless elk,Regular season; Quota: 150
+113-3-ARCH,2026-09-01,2026-09-30,Spike or antlerless elk,Special archery season
+116-Gen,2026-10-15,2026-11-10,Any elk,Regular season
+116-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+116-Gen,2026-11-11,2026-11-30,Antlerless elk,Regular season
+116-1,2026-11-11,2026-12-31,Any elk valid off national forest,Regular season; Quota: 100
+116-1-ARCH,2026-09-01,2026-09-30,Any elk valid off national forest,Special archery season
+116-1,2027-01-01,2027-01-31,Antlerless elk valid off national forest,Regular season
+116-7,2026-08-15,2027-01-31,Cow or calf valid off national forest,Regular season; Quota: 400
+117-Gen,2026-09-01,2026-11-30,Antlerless elk valid south of U.S. Highway 16,Regular season
+117-1,2026-10-15,2026-11-30,Any elk,Regular season; Quota: 500
+117-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+117-1,2026-12-01,2027-01-31,Antlerless elk,Regular season
+117-3,2026-10-15,2027-01-31,Spike or antlerless elk,Regular season; Quota: 350
+117-3-ARCH,2026-09-01,2026-09-30,Spike or antlerless elk,Special archery season
+117-6,2026-10-15,2027-01-31,Cow or calf,Regular season; Quota: 150
+117-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+117-8,2026-08-01,2027-01-31,Cow or calf valid on private land,Regular season; Quota: Unlimited
+118-1,2026-10-22,2026-11-12,Antlered elk,Regular season; Quota: 75
+118-1-ARCH,2026-09-01,2026-09-30,Antlered elk,Special archery season
+118-4,2026-10-22,2026-11-30,Antlerless elk,Regular season; Quota: 50
+118-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+118-6,2026-10-01,2026-11-30,Cow or calf valid south of the Mineral X Road (Sweetwater County Road 63 and B.L.M. Road 3206),Regular season; Quota: 100
+118-6-ARCH,2026-09-01,2026-09-30,Cow or calf valid south of the Mineral X Road (Sweetwater County Road 63 and B.L.M. Road 3206),Special archery season
+120-1,2026-10-09,2026-10-31,Any elk,Regular season; Quota: 175
+120-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+120-1,2026-11-01,2026-12-15,Antlerless elk,Regular season
+120-4,2026-10-09,2026-12-15,Antlerless elk,Regular season; Quota: 125
+120-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+120-6,2026-10-09,2026-12-15,Cow or calf,Regular season; Quota: 125
+120-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+122-1,2026-10-01,2026-11-30,Any elk,Regular season; Quota: 150
+122-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+122-1,2026-12-01,2026-12-31,Antlerless elk,Regular season
+122-2,2026-10-15,2026-11-30,Antlered elk five (5) points or less on either antler,Regular season; Quota: 100
+122-6,2026-10-01,2026-12-31,Cow or calf,Regular season; Quota: 150
+122-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+122-8,2026-08-01,2027-01-31,Cow or calf valid on private land,Regular season; Quota: Unlimited
+123-Gen,2026-09-01,2026-11-30,Any elk valid in the Raven Creek drainage,Regular season
+123-2,2026-09-01,2026-11-30,Antlered elk five (5) points or less on either antler or antlerless elk,Regular season; Quota: 50
+123-4,2026-09-01,2026-11-30,Antlerless elk,Regular season; Quota: 75
+123-6,2026-09-01,2026-11-30,Cow or calf,Regular season; Quota: 75
+123-8,2026-09-01,2027-01-31,Cow or calf valid on private land,Regular season; Quota: Unlimited
+124-1,2026-10-15,2026-11-30,Any elk,Regular season; Quota: 70
+124-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+124-4,2026-10-15,2026-11-30,Antlerless elk,Regular season; Quota: 100
+124-4-ARCH,2026-09-01,2026-09-30,Antlerless elk,Special archery season
+124-4,2026-12-01,2026-12-31,"Antlerless elk valid east of Sweetwater County Road 19, and north and east of B.L.M. roads 4409 and 4411, and west of B.L.M. Road 3310 and Sweetwater County Road 23S",Regular season
+124-6,2026-08-15,2027-01-31,Cow or calf valid south of Sand Creek Road (B.L.M. Road 3318) and Poison Buttes Road (Carbon County Road 700) within Carbon County,Regular season; Quota: 25
+125-1,2026-10-01,2026-12-31,Any elk,Regular season; Quota: 200
+125-1-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+125-1,2027-01-01,2027-01-31,Antlerless elk,Regular season
+125-6,2026-10-01,2027-01-31,Cow or calf,Regular season; Quota: 200
+125-6-ARCH,2026-09-01,2026-09-30,Cow or calf,Special archery season
+126-Gen,2026-09-01,2026-09-30,Any elk valid in Weston County,Regular season
+126-Gen,2026-10-01,2026-10-31,Any elk valid in the entire area,Regular season
+126-Gen-ARCH,2026-09-01,2026-09-30,Any elk valid in the entire area,Special archery season
+126-Gen,2026-11-01,2026-12-31,Antlerless elk,Regular season
+126-8,2026-08-15,2026-09-30,Cow or calf valid on private land; also valid in that portion of Area 117 south of U.S. Highway 16,Regular season; Quota: Unlimited
+126-8,2026-10-01,2027-01-31,Cow or calf valid in the entire area; also valid in that portion of Area 117 south of U.S. Highway 16,Regular season
+127-Gen,2026-10-01,2026-10-31,Any elk,Regular season
+127-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+127-Gen,2026-11-01,2027-01-31,Antlerless elk,Regular season
+128-Gen,2026-10-01,2026-10-07,Any elk,Regular season
+128-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+128-Gen,2026-10-08,2026-10-14,Antlerless elk,Regular season
+129-Gen-ARCH,2026-09-01,2026-09-14,Any elk valid off private land,Special archery season
+129-Gen,2026-09-01,2026-09-14,Any elk valid on private land,Regular season
+129-Gen,2026-09-15,2026-10-31,Any elk valid in the entire area,Regular season
+129-Gen,2026-11-01,2026-11-30,Antlerless elk,Regular season
+129-6,2026-09-01,2026-12-15,Cow or calf; also valid in that portion of Area 2 within Johnson County,Regular season; Quota: 850
+129-8,2026-09-01,2027-01-31,Cow or calf valid on private land,Regular season; Quota: Unlimited
+130-Gen,2026-10-01,2026-10-23,Any elk,Regular season
+130-Gen-ARCH,2026-09-01,2026-09-30,Any elk,Special archery season
+1-Gen,2026-11-01,2026-11-20,Antlered deer,Regular season
+1-Gen-ARCH,2026-09-01,2026-09-30,Antlered deer,Special archery season
+"1, 2, 3-8",2026-11-01,2026-11-20,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 350
+"1, 2, 3-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid on private land,Special archery season
+2-Gen,2026-11-01,2026-11-20,Antlered deer,Regular season
+2-Gen-ARCH,2026-09-01,2026-09-30,Antlered deer,Special archery season
+3-Gen,2026-11-01,2026-11-20,Antlered deer,Regular season
+3-Gen-ARCH,2026-09-01,2026-09-30,Antlered deer,Special archery season
+4-Gen,2026-11-01,2026-11-20,Antlered deer; except the lands of the State of Wyoming's Ranch A property shall be closed,Regular season
+4-Gen-ARCH,2026-09-01,2026-09-30,Antlered deer; except the lands of the State of Wyoming's Ranch A property shall be closed,Special archery season
+4-8,2026-11-01,2026-11-20,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 25
+4-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid on private land,Special archery season
+5-Gen,2026-11-01,2026-11-20,Antlered deer,Regular season
+5-Gen-ARCH,2026-09-01,2026-09-30,Antlered deer,Special archery season
+6-Gen,2026-11-01,2026-11-20,Antlered deer,Regular season
+6-Gen-ARCH,2026-09-01,2026-09-30,Antlered deer,Special archery season
+7-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+7-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+8-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+8-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+8-3,2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 50
+8-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+8-8,2026-10-01,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 50
+8-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+9-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+9-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+10-1,2026-10-01,2026-10-21,Antlered mule deer or any white-tailed deer,Regular season; Quota: 75
+10-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+10-3,2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 25
+10-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+10-8,2026-10-01,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 25
+10-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+11-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+11-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+11-Gen,2026-10-16,2026-11-30,Any white-tailed deer,Regular season
+"11, 12, 13, 14-3",2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 200
+"11, 12, 13, 14-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"11, 12, 13, 14-8",2026-10-01,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 200
+"11, 12, 13, 14-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+12-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+12-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+12-Gen,2026-10-16,2026-11-30,Any white-tailed deer,Regular season
+13-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+13-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+13-Gen,2026-10-16,2026-11-30,Any white-tailed deer,Regular season
+14-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+14-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+14-Gen,2026-10-16,2026-11-30,Any white-tailed deer,Regular season
+15-Gen,2026-10-20,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season
+15-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+15-3,2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 500
+15-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+15-3,2026-12-01,2026-12-31,Antlerless white- tailed deer,Regular season
+15-6,2026-10-01,2026-12-31,Doe or fawn valid on private land,Regular season; Quota: 150
+15-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on private land,Special archery season
+15-8,2026-10-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 450
+15-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+17-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+17-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+17-Gen,2026-11-01,2026-11-30,Any white-tailed deer,Regular season
+17-8,2026-10-01,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 250
+17-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+18-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+18-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+18-8,2026-10-01,2026-11-15,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 200
+18-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid on private land,Special archery season
+19-Gen,2026-10-01,2026-10-14,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Regular season
+19-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Special archery season
+19-Gen,2026-11-01,2026-11-15,Any white-tailed deer,Regular season
+19-8,2026-10-01,2026-11-15,Doe or fawn white- tailed deer,Regular season; Quota: 75
+19-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+21-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+21-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+21-8,2026-10-01,2026-10-31,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 50
+21-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid on private land,Special archery season
+22-1,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season; Quota: 150
+22-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+22-2,2026-10-01,2026-10-14,"Antlered mule deer or any white-tailed deer valid south and east of Wyoming Highway 95, 55 Ranch Road (Converse County Road 23), Sage Creek Divide/Blizzard Heights Road and Ross Road (Converse County Road 31)",Regular season; Quota: 250
+22-2-ARCH,2026-09-01,2026-09-30,"Antlered mule deer or any white-tailed deer valid south and east of Wyoming Highway 95, 55 Ranch Road (Converse County Road 23), Sage Creek Divide/Blizzard Heights Road and Ross Road (Converse County Road 31)",Special archery season
+22-3,2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 75
+22-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+22-8,2026-10-01,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 100
+22-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+23-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+23-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+23-Gen,2026-11-01,2026-11-30,Any white-tailed deer,Regular season
+"23, 26-3",2026-11-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 500
+"23, 26-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+23-7,2026-09-01,2026-12-15,Doe or fawn valid on private land,Regular season; Quota: 25
+"23, 26-8",2026-09-01,2026-12-15,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 1000
+24-Gen,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season
+24-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+24-Gen,2026-11-01,2026-11-30,Any white-tailed deer,Regular season
+24-3,2026-10-15,2026-10-31,Any white-tailed deer valid on private land,Regular season; Quota: 500
+24-3,2026-11-01,2026-11-30,Any white-tailed deer valid in the entire area,Regular season
+24-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer valid in the entire area,Special archery season
+24-7,2026-09-01,2026-12-15,Doe or fawn valid on private land,Regular season; Quota: 25
+24-8,2026-09-01,2026-12-15,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 3000
+25-Gen,2026-10-15,2026-10-24,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Regular season
+25-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Special archery season
+26-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+26-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+26-Gen,2026-11-01,2026-11-30,Any white-tailed deer,Regular season
+27-Gen,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season
+27-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+27-Gen,2026-11-01,2026-11-30,Any white-tailed deer,Regular season
+27-8,2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 1200
+27-8,2026-10-15,2026-11-30,Doe or fawn white- tailed deer valid in the entire area; also valid in Area 28,Regular season
+27-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid in the entire area; also valid in Area 28,Special archery season
+27-8,2026-12-01,2026-12-31,Doe or fawn white- tailed deer,Regular season
+28-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+28-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+28-Gen,2026-10-25,2026-11-30,Any white-tailed deer,Regular season
+29-Gen,2026-10-01,2026-10-14,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Regular season
+29-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Special archery season
+29-Gen,2026-11-01,2026-11-30,Any white-tailed deer,Regular season
+29-Gen,2026-12-01,2026-12-31,Antlerless white- tailed deer,Regular season
+"29, 31-8",2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 700
+"29, 31-8",2026-10-01,2026-12-31,Doe or fawn white- tailed deer valid in the entire area,Regular season
+"29, 31-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid in the entire area,Special archery season
+30-Gen,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season
+30-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+30-Gen,2026-11-01,2026-11-30,Any white-tailed deer,Regular season
+30-Gen,2026-12-01,2026-12-31,Antlerless white- tailed deer,Regular season
+"30, 32, 33, 163, 169-8",2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 1000
+"30, 32, 33, 163, 169-8",2026-10-15,2026-12-31,Doe or fawn white- tailed deer valid in the entire area,Regular season
+"30, 32, 33, 163, 169-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid in the entire area,Special archery season
+31-Gen,2026-10-01,2026-10-10,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Regular season
+31-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Special archery season
+32-Gen,2026-10-15,2026-10-21,Antlered mule deer or any white-tailed deer,Regular season
+32-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+32-Gen,2026-11-01,2026-11-15,Any white-tailed deer,Regular season
+33-Gen,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season
+33-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+33-Gen,2026-11-01,2026-11-15,Any white-tailed deer,Regular season
+33-Gen,2026-11-16,2026-12-31,Antlerless white- tailed deer,Regular season
+34-1,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 125
+34-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+34-3,2026-10-15,2026-11-30,Any white-tailed deer,Regular season; Quota: 50
+34-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+34-7,2026-08-15,2026-12-15,Doe or fawn valid east of Bucknum Road (Natrona County Road 125) and south of Burlington Northern Santa Fe railroad right-of-way,Regular season; Quota: 25
+34-8,2026-08-15,2026-12-15,Doe or fawn white- tailed deer,Regular season; Quota: 50
+35-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+35-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+36-1,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 100
+36-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+36-8,2026-10-15,2026-10-31,Doe or fawn white- tailed deer,Regular season; Quota: 25
+36-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+37-1,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 50
+37-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"37, 39-3",2026-11-01,2026-12-15,Any white-tailed deer,Regular season; Quota: 50
+"37, 39-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+37-6,2026-09-15,2026-11-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land within the Buffalo Creek drainage,Regular season; Quota: 25
+37-6-ARCH,2026-09-01,2026-09-14,Doe or fawn valid on or within one-half (1/2) mile of irrigated land within the Buffalo Creek drainage,Special archery season
+"37, 39-8",2026-10-15,2026-12-15,Doe or fawn white- tailed deer,Regular season; Quota: 100
+"37, 39-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+39-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+39-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+40-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+40-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+40-3,2026-10-15,2026-11-30,Any white-tailed deer; also valid in Area 35,Regular season; Quota: 50
+40-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer; also valid in Area 35,Special archery season
+40-6,2026-10-15,2026-10-31,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 50
+40-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Special archery season
+40-8,2026-10-15,2026-11-30,Doe or fawn white- tailed deer; also valid in Area 35,Regular season; Quota: 300
+40-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer; also valid in Area 35,Special archery season
+41-Gen,2026-10-15,2026-10-24,Any deer,Regular season
+41-Gen-ARCH,2026-09-01,2026-09-30,Any deer,Special archery season
+41-Gen,2026-10-25,2026-10-31,Any deer valid on or within one-half (1/2) mile of irrigated land,Regular season
+41-3,2026-10-15,2026-11-30,Any white-tailed deer,Regular season; Quota: 125
+41-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+41-6,2026-10-15,2026-11-15,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 100
+41-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Special archery season
+41-8,2026-09-01,2026-12-31,Doe or fawn white- tailed deer; also valid in Area 46,Regular season; Quota: 250
+46-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+46-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+47-Gen,2026-10-15,2026-10-24,Any deer,Regular season
+47-Gen-ARCH,2026-09-01,2026-09-30,Any deer,Special archery season
+47-Gen,2026-10-25,2026-10-31,Any deer valid on or within one-half (1/2) mile of irrigated land,Regular season
+"47, 51, 52-3",2026-10-15,2026-11-30,Any white-tailed deer,Regular season; Quota: 100
+"47, 51, 52-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+47-6,2026-10-15,2026-11-15,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 100
+47-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Special archery season
+47-8,2026-09-01,2026-12-31,Doe or fawn white- tailed deer; also valid in Area 46,Regular season; Quota: 150
+50-Gen,2026-10-15,2026-10-24,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Regular season
+50-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Special archery season
+51-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+51-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+51-Gen,2026-10-25,2026-10-31,Antlered mule deer or any white-tailed deer valid on or within one-half (1/2) mile of irrigated land,Regular season
+51-6,2026-10-15,2026-11-15,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 150
+51-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Special archery season
+51-8,2026-09-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 200
+52-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+52-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+52-Gen,2026-10-25,2026-10-31,Antlered mule deer or any white-tailed deer valid on or within one-half (1/2) mile of irrigated land,Regular season
+52-6,2026-10-15,2026-11-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 25
+52-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Special archery season
+53-Gen,2026-10-15,2026-10-24,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Regular season
+53-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer three (3) points or more on either antler or any white-tailed deer,Special archery season
+59-Gen,2026-10-20,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season
+59-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"59, 64-3",2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 250
+"59, 64-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"59, 64-3",2026-12-01,2026-12-31,Antlerless white- tailed deer,Regular season
+"59, 64-6",2026-10-20,2026-10-31,Doe or fawn valid on private land,Regular season; Quota: 100
+"59, 64-6-ARCH",2026-09-01,2026-09-30,Doe or fawn valid on private land,Special archery season
+"59, 64-6",2026-11-01,2026-12-31,Doe or fawn white- tailed deer valid in the entire area,Regular season
+"59, 64-8",2026-11-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 350
+"59, 64-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+60-1,2026-10-15,2026-11-05,Any deer,Regular season; Quota: 100
+60-1-ARCH,2026-09-01,2026-09-30,Any deer,Special archery season
+60-2,2026-10-15,2026-11-05,Any deer off national forest,Regular season; Quota: 200
+60-2-ARCH,2026-09-01,2026-09-30,Any deer off national forest,Special archery season
+60-3,2026-10-01,2026-12-31,Any white-tailed deer,Regular season; Quota: 100
+60-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+60-6,2026-10-15,2026-11-30,Doe or fawn,Regular season; Quota: 50
+60-6-ARCH,2026-09-01,2026-09-30,Doe or fawn,Special archery season
+60-8,2026-10-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 100
+60-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+61-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+61-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+64-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer valid in the entire area,Special archery season
+64-Gen,2026-10-20,2026-10-31,Antlered mule deer or any white-tailed deer except the Wyoming Game and Fish Commission's Tom Thorne/Beth Williams Wildlife Habitat Management Area and the Laramie Peak Wildlife Habitat Management Area north of the Tunnel Road (Albany County Road 727) shall be closed,Regular season
+64-2,2026-10-20,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 100
+64-2-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+65-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+65-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+65-3,2026-10-15,2026-11-30,Any white-tailed deer; also valid in that portion of Area 66 in Converse County,Regular season; Quota: 400
+65-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer; also valid in that portion of Area 66 in Converse County,Special archery season
+65-8,2026-10-15,2026-12-31,Doe or fawn white- tailed deer; also valid in that portion of Area 66 in Converse County,Regular season; Quota: 800
+65-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer; also valid in that portion of Area 66 in Converse County,Special archery season
+66-Gen,2026-10-15,2026-10-21,Antlered mule deer or any white-tailed deer,Regular season
+66-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"66, 88, 89-3",2026-10-15,2026-11-30,Any white-tailed deer,Regular season; Quota: 100
+"66, 88, 89-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"66, 88, 89-8",2026-08-15,2026-10-14,Doe or fawn white- tailed deer only valid in Area 88,Regular season; Quota: 100
+"66, 88, 89-8",2026-10-15,2026-11-30,Doe or fawn white- tailed deer,Regular season
+"66, 88, 89-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+70-Gen,2026-10-15,2026-10-21,Antlered mule deer or any white-tailed deer,Regular season
+70-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"70, 74-3",2026-10-01,2026-12-31,Any white-tailed deer,Regular season; Quota: 50
+"70, 74-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"70, 74-8",2026-10-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 75
+"70, 74-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+74-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+74-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+75-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+75-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"75, 76, 77-3",2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 75
+"75, 76, 77-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"75, 76, 77-3",2026-12-01,2026-12-31,Antlerless white- tailed deer,Regular season
+"75, 76, 77-8",2026-10-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 100
+"75, 76, 77-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+76-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+76-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+77-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+77-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+78-1,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season; Quota: 250
+78-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"78, 79, 80, 81-3",2026-10-01,2026-12-31,Any white-tailed deer,Regular season; Quota: 50
+"78, 79, 80, 81-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"78, 79, 80, 81-8",2026-09-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 125
+79-1,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season; Quota: 250
+79-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+80-1,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season; Quota: 150
+80-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+81-1,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season; Quota: 175
+81-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+82-Gen,2026-10-01,2026-10-08,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+82-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+"82-Gen-
+Youth
+only",2026-10-11,2026-10-12,Antlered mule deer or any white-tailed deer; youth only,Regular season
+"82-Gen-
+Youth
+only-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer; youth only,Special archery season
+"82, 100-3",2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 25
+"82, 100-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"82, 100-8",2026-11-01,2027-01-15,Doe or fawn white- tailed deer valid on private land,Regular season; Quota: 25
+"82, 100-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer valid on private land,Special archery season
+84-1,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season; Quota: 25
+84-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+87-1,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 50
+87-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+88-Gen,2026-10-15,2026-10-21,Antlered mule deer or any white-tailed deer,Regular season
+88-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+88-7,2026-10-15,2026-12-15,Doe or fawn valid on private land,Regular season; Quota: 75
+88-7-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on private land,Special archery season
+89-1,2026-10-15,2026-10-31,Antlered deer,Regular season; Quota: 125
+89-1-ARCH,2026-09-01,2026-09-30,Antlered deer,Special archery season
+90-1,2026-10-01,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 50
+90-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+92-Gen,2026-10-15,2026-10-20,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+92-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+"92, 94, 160-3",2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 100
+"92, 94, 160-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"92, 94, 160-8",2026-10-01,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 150
+"92, 94, 160-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+94-Gen,2026-10-15,2026-10-20,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+94-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+96-Gen,2026-10-15,2026-10-20,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+96-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+97-Gen,2026-10-15,2026-10-20,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+97-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+98-Gen,2026-10-15,2026-10-20,"Antlered mule deer four (4) points or more on either antler or any white-tailed deer, archery or muzzle-loading firearms only",Regular season
+98-Gen-ARCH,2026-09-01,2026-09-30,"Antlered mule deer four (4) points or more on either antler or any white-tailed deer, archery or muzzle-loading firearms only",Special archery season
+100-Gen,2026-10-01,2026-10-06,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+100-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+"100-Gen-
+Youth
+only",2026-10-11,2026-10-12,Antlered mule deer or any white-tailed deer; youth only,Regular season
+"100-Gen-
+Youth
+only-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer; youth only,Special archery season
+101-1,2026-10-15,2026-10-31,Antlered deer,Regular season; Quota: 25
+101-1-ARCH,2026-09-01,2026-09-30,Antlered deer,Special archery season
+102-1,2026-10-15,2026-10-31,Any deer,Regular season; Quota: 150
+102-1-ARCH,2026-09-01,2026-09-30,Any deer,Special archery season
+105-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+105-Gen,2026-10-01,2026-10-31,Antlered mule deer valid on national forest; any mule deer valid on irrigated land; any white- tailed deer valid in the entire area,Regular season
+105-Gen,2026-11-01,2026-11-05,Antlered mule deer valid off national forest; any white- tailed deer valid in the entire area,Regular season
+105-Gen,2026-11-06,2026-11-17,Antlerless deer valid on private land,Regular season
+"105, 106, 109-1",2026-10-01,2026-11-20,Any deer,Regular season; Quota: 25
+"105, 106, 109-1-ARCH",2026-09-01,2026-09-30,Any deer,Special archery season
+105-8,2026-09-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 75
+106-Gen,2026-10-01,2026-10-14,Antlered mule deer within the North Absaroka Wilderness; any white-tailed deer valid in the entire area,Regular season
+106-Gen,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season
+106-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+106-8,2026-10-01,2026-12-15,Doe or fawn white- tailed deer,Regular season; Quota: 50
+106-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+109-3,2026-11-01,2026-12-31,Any white-tailed deer,Regular season; Quota: 35
+109-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+109-8,2026-11-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 125
+109-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+110-Gen,2026-10-15,2026-11-10,Antlered mule deer or any white-tailed deer,Regular season
+110-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"110, 111-1",2026-11-01,2026-11-20,Antlered mule deer or any white-tailed deer,Regular season; Quota: 25
+"110, 111-1-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"110, 111-8",2026-10-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 100
+"110, 111-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+111-Gen,2026-10-15,2026-11-10,Antlered mule deer or any white-tailed deer,Regular season
+111-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+112-Gen,2026-10-15,2026-11-10,Antlered mule deer or any white-tailed deer,Regular season
+112-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"112, 113, 114-1",2026-11-01,2026-11-20,Antlered mule deer or any white-tailed deer,Regular season; Quota: 25
+"112, 113, 114-1-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"112, 113-3",2026-10-01,2026-12-31,Any white-tailed deer,Regular season; Quota: 75
+"112, 113-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+"112, 113-8",2026-10-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 300
+"112, 113-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+113-Gen,2026-10-15,2026-11-10,Antlered mule deer or any white-tailed deer,Regular season
+113-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+113-7,2026-09-15,2026-12-31,Doe or fawn valid north and east of Carter Creek,Regular season; Quota: 100
+113-7-ARCH,2026-09-01,2026-09-14,Doe or fawn valid north and east of Carter Creek,Special archery season
+114-Gen,2026-10-15,2026-11-10,Antlered mule deer or any white-tailed deer,Regular season
+114-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+115-Gen,2026-09-10,2026-10-27,Antlered mule deer or any white-tailed deer,Regular season
+115-Gen-ARCH,2026-09-01,2026-09-09,Antlered mule deer or any white-tailed deer,Special archery season
+116-1,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 75
+116-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"116, 117-3",2026-11-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 100
+"116, 117-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+116-7,2026-09-01,2026-10-14,Doe or fawn white- tailed deer valid on private land in the Wood River drainage,Regular season; Quota: 125
+"116, 117-8",2026-10-15,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 200
+"116, 117-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+117-1,2026-09-15,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season; Quota: 50
+117-1-ARCH,2026-09-01,2026-09-14,Antlered mule deer or any white-tailed deer,Special archery season
+118-1,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 25
+118-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+118-1,2026-11-01,2026-11-30,Any white-tailed deer,Regular season
+"118, 119-8",2026-10-15,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 25
+"118, 119-8-ARCH",2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+119-1,2026-11-01,2026-11-15,Antlered mule deer or any white-tailed deer,Regular season; Quota: 50
+119-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+119-2,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 50
+119-2-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"119, 120-3",2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 100
+"119, 120-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+120-1,2026-11-01,2026-11-15,Antlered mule deer or any white-tailed deer,Regular season; Quota: 75
+120-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+120-8,2026-09-01,2026-12-15,Doe or fawn white- tailed deer,Regular season; Quota: 200
+121-Gen,2026-11-01,2026-11-10,Any deer on private land; antlered mule deer or any white- tailed deer off private land,Regular season
+121-Gen-ARCH,2026-09-01,2026-09-30,Any deer on private land; antlered mule deer or any white- tailed deer off private land,Special archery season
+121-3,2026-11-01,2026-12-15,Any white-tailed deer,Regular season; Quota: 75
+121-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+121-6,2026-08-15,2026-11-30,Doe or fawn valid on private land,Regular season; Quota: 100
+121-8,2026-11-01,2026-12-15,Doe or fawn white- tailed deer,Regular season; Quota: 100
+121-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+122-Gen,2026-11-01,2026-11-10,Any deer on private land; antlered mule deer or any white- tailed deer off private land,Regular season
+122-Gen-ARCH,2026-09-01,2026-09-30,Any deer on private land; antlered mule deer or any white- tailed deer off private land,Special archery season
+122-3,2026-11-01,2026-12-15,Any white-tailed deer,Regular season; Quota: 75
+122-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+122-6,2026-10-15,2026-11-30,Doe or fawn valid on private land,Regular season; Quota: 100
+122-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on private land,Special archery season
+122-8,2026-11-01,2026-12-15,Doe or fawn white- tailed deer,Regular season; Quota: 200
+122-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+123-Gen,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season
+123-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+123-6,2026-10-15,2026-11-30,Doe or fawn valid on private land,Regular season; Quota: 25
+123-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on private land,Special archery season
+124-Gen,2026-11-01,2026-11-10,Antlered mule deer or any white-tailed deer,Regular season
+124-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+124-3,2026-11-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 100
+124-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+124-6,2026-11-01,2026-11-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 25
+124-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Special archery season
+124-8,2026-11-01,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 250
+124-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+125-1,2026-11-01,2026-11-15,Antlered mule deer or any white-tailed deer,Regular season; Quota: 75
+125-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+125-1,2026-11-16,2026-12-15,Any white-tailed deer,Regular season
+125-8,2026-11-01,2026-12-15,Doe or fawn white- tailed deer,Regular season; Quota: 25
+125-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+127-Gen,2026-10-15,2026-10-24,Antlered mule deer or any white-tailed deer,Regular season
+127-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+127-3,2026-11-01,2026-12-15,Any white-tailed deer,Regular season; Quota: 50
+127-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+127-8,2026-10-15,2026-12-15,Doe or fawn white- tailed deer,Regular season; Quota: 100
+127-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+128-Gen,2026-10-01,2026-10-15,Antlered mule deer or any white-tailed deer,Regular season
+128-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+128-1,2026-11-01,2026-11-20,Any deer,Regular season; Quota: 50
+128-1-ARCH,2026-09-01,2026-09-30,Any deer,Special archery season
+128-3,2026-11-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 50
+128-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+128-8,2026-10-01,2026-10-31,Doe or fawn white- tailed deer,Regular season; Quota: 50
+128-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+128-8,2026-11-01,2026-11-30,Doe or fawn white- tailed deer valid on private land,Regular season
+130-Gen,2026-10-01,2026-10-06,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+130-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+130-1,2026-10-15,2026-10-31,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season; Quota: 5
+130-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+131-Gen,2026-10-01,2026-10-06,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+131-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+131-7,2026-10-01,2026-10-31,Doe or fawn valid west of the Blue Rim (Sweetwater County Road 5) and Old Stauffer Roads (Sweetwater County Road 7) and south of the OCI Entrance Road (Sweetwater County Road 6),Regular season; Quota: 25
+131-7-ARCH,2026-09-01,2026-09-30,Doe or fawn valid west of the Blue Rim (Sweetwater County Road 5) and Old Stauffer Roads (Sweetwater County Road 7) and south of the OCI Entrance Road (Sweetwater County Road 6),Special archery season
+132-Gen,2026-10-01,2026-10-06,Antlered mule deer or any white-tailed deer,Regular season
+132-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"132-Gen-
+Youth
+only",2026-10-01,2026-10-12,Antlered mule deer or any white-tailed deer; youth only,Regular season
+"132-Gen-
+Youth
+only-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer; youth only,Special archery season
+"132, 133, 134, 135, 168-3",2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 25
+"132, 133, 134, 135, 168-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+132-7,2026-10-01,2026-10-31,Doe or fawn valid on or within one (1) mile of irrigated land in Sweetwater County west of Wyoming Highway 530 and north of Sweetwater County Road 1 and BLM Road 4315,Regular season; Quota: 25
+132-7-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one (1) mile of irrigated land in Sweetwater County west of Wyoming Highway 530 and north of Sweetwater County Road 1 and BLM Road 4315,Special archery season
+133-Gen,2026-10-01,2026-10-06,Antlered mule deer or any white-tailed deer,Regular season
+133-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"133-Gen-
+Youth
+only",2026-10-01,2026-10-12,Antlered mule deer or any white-tailed deer; youth only,Regular season
+"133-Gen-
+Youth
+only-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer; youth only,Special archery season
+134-Gen,2026-10-01,2026-10-06,Antlered mule deer or any white-tailed deer,Regular season
+134-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"134-Gen-
+Youth
+only",2026-10-01,2026-10-12,Antlered mule deer or any white-tailed deer; youth only,Regular season
+"134-Gen-
+Youth
+only-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer; youth only,Special archery season
+135-Gen,2026-10-01,2026-10-06,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+135-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+"135-Gen-
+Youth
+only",2026-10-01,2026-10-12,Antlered mule deer or any white-tailed deer; youth only,Regular season
+"135-Gen-
+Youth
+only-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer; youth only,Special archery season
+138-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+138-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+"138, 139, 140, 142, 143-3",2026-10-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 50
+"138, 139, 140, 142, 143-3-ARCH",2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+139-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+139-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+140-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+140-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+141-1,2026-10-01,2026-10-21,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season; Quota: 50
+141-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+141-1,2026-10-22,2026-10-31,Antlered mule deer four (4) points or more on either antler or any white-tailed deer on national forest,Regular season
+142-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+142-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+143-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+143-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+144-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+144-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+145-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+145-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+145-3,2026-09-15,2026-11-15,Any white-tailed deer,Regular season; Quota: 25
+145-3-ARCH,2026-09-01,2026-09-14,Any white-tailed deer,Special archery season
+145-3,2026-11-16,2027-01-31,Antlerless white- tailed deer,Regular season
+145-8,2026-11-01,2027-01-31,Doe or fawn white- tailed deer,Regular season; Quota: 25
+146-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+146-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+148-Gen,2026-09-15,2026-10-25,Antlered mule deer or any white-tailed deer,Regular season
+148-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer or any white-tailed deer,Special archery season
+"148, 150, 151, 152, 155, 156-3",2026-09-15,2026-11-30,Any white-tailed deer,Regular season; Quota: 50
+"148, 150, 151, 152, 155, 156-3-ARCH",2026-09-01,2026-09-14,Any white-tailed deer,Special archery season
+"148, 150, 151, 152, 155, 156-8",2026-09-15,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 50
+"148, 150, 151, 152, 155, 156-8-ARCH",2026-09-01,2026-09-14,Doe or fawn white- tailed deer,Special archery season
+149-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+149-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+149-3,2026-09-15,2026-11-30,Any white-tailed deer,Regular season; Quota: 25
+149-3-ARCH,2026-09-01,2026-09-14,Any white-tailed deer,Special archery season
+149-8,2026-09-15,2026-11-30,Doe or fawn white- tailed deer,Regular season; Quota: 25
+149-8-ARCH,2026-09-01,2026-09-14,Doe or fawn white- tailed deer,Special archery season
+150-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+150-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+151-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+151-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+152-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+152-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+153-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+153-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+154-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+154-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+155-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+155-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+156-Gen,2026-09-15,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+156-Gen-ARCH,2026-09-01,2026-09-14,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+157-Gen,2026-10-01,2026-10-31,Any deer,Regular season
+157-Gen-ARCH,2026-09-01,2026-09-30,Any deer,Special archery season
+157-3,2026-11-01,2026-11-30,Any white-tailed deer,Regular season; Quota: 175
+157-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+157-6,2026-10-01,2026-11-10,Doe or fawn,Regular season; Quota: 100
+157-6-ARCH,2026-09-01,2026-09-30,Doe or fawn,Special archery season
+157-8,2026-10-01,2026-10-31,Doe or fawn white- tailed deer,Regular season; Quota: Unlimited
+157-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+157-8,2026-11-01,2026-11-30,Doe or fawn white- tailed deer valid on private land,Regular season
+160-Gen,2026-10-15,2026-10-20,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Regular season
+160-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer four (4) points or more on either antler or any white-tailed deer,Special archery season
+163-Gen,2026-10-15,2026-10-21,Antlered mule deer or any white-tailed deer,Regular season
+163-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+163-Gen,2026-11-01,2026-11-15,Any white-tailed deer,Regular season
+164-Gen,2026-10-01,2026-10-14,Antlered mule deer or any white-tailed deer,Regular season
+164-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+164-1,2026-11-15,2026-11-30,Antlered mule deer or any white-tailed deer valid on or within one (1) mile of irrigated land,Regular season; Quota: 50
+164-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer valid on or within one (1) mile of irrigated land,Special archery season
+164-3,2026-10-01,2026-12-15,Any white-tailed deer,Regular season; Quota: 100
+164-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+164-6,2026-10-01,2026-11-15,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Regular season; Quota: 50
+164-6-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one-half (1/2) mile of irrigated land,Special archery season
+164-7,2026-11-15,2026-11-30,Doe or fawn valid on or within one (1) mile of irrigated land,Regular season; Quota: 50
+164-7-ARCH,2026-09-01,2026-09-30,Doe or fawn valid on or within one (1) mile of irrigated land,Special archery season
+164-8,2026-09-01,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 200
+165-1,2026-10-15,2026-10-31,Antlered mule deer or any white-tailed deer,Regular season; Quota: 50
+165-1-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+165-3,2026-10-15,2026-12-15,Any white-tailed deer,Regular season; Quota: 100
+165-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+165-8,2026-10-15,2026-12-31,Doe or fawn white- tailed deer,Regular season; Quota: 300
+165-8-ARCH,2026-09-01,2026-09-30,Doe or fawn white- tailed deer,Special archery season
+168-Gen,2026-10-01,2026-10-06,Antlered mule deer or any white-tailed deer,Regular season
+168-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+"168-Gen-
+Youth
+only",2026-10-01,2026-10-12,Antlered mule deer or any white-tailed deer; youth only,Regular season
+"168-Gen-
+Youth
+only-ARCH",2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer; youth only,Special archery season
+169-Gen,2026-10-15,2026-10-21,Antlered mule deer or any white-tailed deer,Regular season
+169-Gen-ARCH,2026-09-01,2026-09-30,Antlered mule deer or any white-tailed deer,Special archery season
+169-Gen,2026-11-01,2026-11-15,Any white-tailed deer,Regular season
+171-Gen,2026-10-01,2026-10-31,Any deer,Regular season
+171-Gen-ARCH,2026-09-01,2026-09-30,Any deer,Special archery season
+171-3,2026-10-01,2026-12-31,Any white-tailed deer,Regular season; Quota: 150
+171-3-ARCH,2026-09-01,2026-09-30,Any white-tailed deer,Special archery season
+171-6,2026-10-01,2026-12-31,Doe or fawn,Regular season; Quota: 350
+171-6-ARCH,2026-09-01,2026-09-30,Doe or fawn,Special archery season

@@ -6,3 +6,5 @@ __pycache__/
 .env
 .DS_Store
 nm_hunts.db
+venv2/
+*/proclamations/**/*.pdf
