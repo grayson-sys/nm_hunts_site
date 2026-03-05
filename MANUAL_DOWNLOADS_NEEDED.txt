@@ -1,0 +1,118 @@
+GRAYSONS DRAW ODDS — MANUAL DOWNLOAD CHECKLIST
+===============================================
+Generated: 2026-03-05
+Save all files into the state's raw_data/ folder as shown.
+
+
+=====================================================================
+PRIORITY 1 — MUST DO (draw odds data completely missing for these)
+=====================================================================
+
+--- IDAHO ---
+What: Draw odds by hunt unit (controlled hunts, deer + elk)
+Where: https://fishandgame.idaho.gov/ifwis/huntplanner/odds/
+Steps:
+  1. Open the page in a browser
+  2. Filter Species = Deer, run export (CSV or Excel), save as:
+       ID/raw_data/idaho_deer_draw_odds_2025.csv (or .xlsx)
+  3. Repeat for Species = Elk:
+       ID/raw_data/idaho_elk_draw_odds_2025.csv (or .xlsx)
+  4. If prior years (2023, 2024) are selectable, grab those too
+Notes: The export button is in the Hunt Planner tool UI — look for
+       a download/export icon near the results table.
+
+
+--- MONTANA ---
+What: Draw statistics for limited-entry deer and elk permits
+Where: https://myfwp.mt.gov/fwpPub/drawingStatistics
+Steps:
+  1. Open the page in a browser
+  2. Select Species = Elk, pull stats, export or save as:
+       MT/raw_data/montana_elk_draw_statistics_2025.pdf (or .xlsx)
+  3. Repeat for Species = Deer:
+       MT/raw_data/montana_deer_draw_statistics_2025.pdf (or .xlsx)
+  4. Grab 2024 too if the year selector allows it
+Notes: This is a myFWP interactive portal. It may require selecting
+       the permit type (B-license, special permit, etc.) separately.
+       Grab everything you can — any export format is fine.
+
+
+--- WASHINGTON ---
+What: Special permit draw odds (applications vs. successful, by GMU)
+Where: WDFW draw results page — https://wdfw.wa.gov/licenses/hunting/game/elk/draw
+       (also check https://wdfw.wa.gov/licenses/hunting/game/deer/draw)
+Steps:
+  1. Open the page in a browser — look for Power BI dashboard links
+  2. In the Power BI viewer, click the three dots (...) menu
+  3. Select "Export data" → download as CSV or Excel
+  4. Save as:
+       WA/raw_data/washington_elk_draw_odds_2025.csv (or .xlsx)
+       WA/raw_data/washington_deer_draw_odds_2025.csv (or .xlsx)
+  5. Repeat for 2024 if available
+Notes: Power BI is the only source for WA draw odds — there is no
+       direct download link. The export option may say "Export" or
+       show a download icon depending on the dashboard version.
+       If export is disabled, screenshot the tables as a fallback.
+
+
+=====================================================================
+PRIORITY 2 — NICE TO HAVE (partial data, fill the gaps)
+=====================================================================
+
+--- MONTANA HARVEST (Regions 2, 3, 5, 6, 7) ---
+What: Annual harvest reports for the 5 FWP regions not yet collected
+      (we already have Regions 1 and 4)
+Where: https://fwp.mt.gov/conservation/wildlife-management/
+       Look under Elk > Regional Reports and Deer > Regional Reports
+Steps:
+  1. Find and download the annual harvest/population reports for
+     Regions 2, 3, 5, 6, and 7 (deer and elk)
+  2. Save to: MT/raw_data/
+     Name them e.g. montana_region2_elk_harvest_2024.pdf
+Notes: These are PDFs scattered across the FWP regional pages.
+       2023 or 2024 data is what we want — don't go older than 2022.
+
+
+--- CALIFORNIA ELK HARVEST (2023 and 2024) ---
+What: Statewide elk harvest report — 2023 and/or 2024 season data
+      (most recent file we have is from the 2022 season)
+Where: https://wildlife.ca.gov/Conservation/Hunting/Harvest-Reporting
+       Also try: https://wildlife.ca.gov/Licensing/Big-Game
+Steps:
+  1. Look for "Elk Harvest" or "Big Game Harvest" reports
+  2. If 2023 or 2024 reports have been published, download and save to:
+       CA/raw_data/california_elk_harvest_2023.pdf
+       CA/raw_data/california_elk_harvest_2024.pdf
+Notes: CA sometimes publishes harvest data 12-18 months after the
+       season. It may not be available yet for 2024. Grab whatever
+       is most recent.
+
+
+=====================================================================
+EVERYTHING ELSE IS ALREADY COLLECTED — DO NOT NEED MANUAL STEPS
+=====================================================================
+
+State    Status
+------   ------
+NM       Done — Excel draw odds + harvest PDFs
+AZ       Done — Full draw pass reports + harvest PDFs (2024 + 2025)
+CO       Done — Draw recaps + harvest reports (2024 + 2025)
+UT       Done — Draw odds PDFs + harvest reports (2024 + 2025)
+NV       Done — Bonus point PDFs + Excel hunt data + harvest (2024 + 2025)
+OR       Done — Excel draw odds + harvest PDFs (2024 + 2025)
+WY       Done — Full draw odds + harvest PDFs by residency/draw type
+CA       Done (except elk harvest — see Priority 2 above)
+ID       Done for harvest (CSVs) — only draw odds still needed (Priority 1)
+
+
+=====================================================================
+WHERE TO SAVE EVERYTHING
+=====================================================================
+
+Base folder: /Users/openclaw/Documents/GraysonsDrawOdds/
+
+State subfolders:
+  ID/raw_data/   <-- Idaho draw odds go here
+  MT/raw_data/   <-- Montana draw stats + regional harvest go here
+  WA/raw_data/   <-- Washington draw odds go here
+  CA/raw_data/   <-- California elk harvest goes here (if found)

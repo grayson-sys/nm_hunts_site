@@ -2,6 +2,17 @@
 
 *Last updated: March 2026*
 
+> **⚠️ IMPORTANT — DO NOT OVERSIMPLIFY:**
+> Montana is NOT just "residents OTC, nonresidents draw." That's only true for
+> **general season** hunting. For **limited-entry permits** (the prestigious
+> trophy bull elk units like Missouri Breaks, Breaks country, and other
+> controlled districts), BOTH residents AND nonresidents must enter the bonus
+> point draw. Resident draw odds for these permits are just as real and just as
+> relevant as nonresident odds. A Montana resident cannot walk into a sporting
+> goods store and buy a Missouri Breaks bull elk tag — they accumulate bonus
+> points over years and compete in the same weighted lottery. Resident LE permit
+> odds must be captured and displayed in the app.
+
 ---
 
 ## 1. DRAW SYSTEM MECHANICS

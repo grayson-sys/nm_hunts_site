@@ -28,6 +28,7 @@
 6. **WA** is unique: no NR quota at all; R/NR compete in same pool. Also notable for very high NR application fee ($152.30 vs $9.61 resident).
 7. **CA elk** is extremely limited (~362 tags statewide) with only 1 NR elk tag per year.
 8. **OR** changed all Eastern Oregon deer to controlled-only starting 2026. OTC deer only available in Western Oregon.
+11. **MT OTC is general season only.** Limited-entry permits (e.g. Missouri Breaks, trophy bull elk districts) require a bonus point draw for BOTH residents and nonresidents. A Montana resident cannot buy a Missouri Breaks elk tag OTC — they compete in the same bonus point lottery. Resident LE permit odds are fully relevant data and must be captured in the app.
 9. **NV** has a 7-year waiting period after drawing a bull elk tag before you can reapply.
 10. **UT** has a 5-year waiting period after drawing limited-entry deer or elk.
 
