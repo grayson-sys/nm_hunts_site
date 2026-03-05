@@ -1,0 +1,134 @@
+{
+  "state": "ID",
+  "state_name": "Idaho",
+  "date_collected": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "elk_controlled_harvest_2024.csv",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=controlled&game=elk&yr=2024",
+      "description": "2024 elk controlled hunt harvest statistics by hunt number, area, weapon type. Columns: Hunt#, TakeMethod, Area, Hunters, Harvest, Success%, Days, Antlered, Antlerless, %Spike, %6+Pts, Year. 241 rows.",
+      "size_bytes": 11202
+    },
+    {
+      "filename": "elk_controlled_harvest_2024.html",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=controlled&game=elk&yr=2024",
+      "description": "Source HTML page for 2024 elk controlled hunt harvest statistics.",
+      "size_bytes": 253768
+    },
+    {
+      "filename": "deer_controlled_harvest_2024.csv",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=controlled&game=deer&yr=2024",
+      "description": "2024 deer controlled hunt harvest statistics by hunt number, area, weapon type. Columns: Hunt#, TakeMethod, Area, Hunters, Harvest, Success%, Days, Antlered, Antlerless, %4+Pts, %5+Pts, %Whitetail, Year. 174 rows.",
+      "size_bytes": 8474
+    },
+    {
+      "filename": "deer_controlled_harvest_2024.html",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=controlled&game=deer&yr=2024",
+      "description": "Source HTML page for 2024 deer controlled hunt harvest statistics.",
+      "size_bytes": 205087
+    },
+    {
+      "filename": "elk_general_harvest_2024.csv",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=general&game=elk&yr=2024",
+      "description": "2024 elk general season harvest statistics by zone/area. 326 rows.",
+      "size_bytes": 14873
+    },
+    {
+      "filename": "elk_general_harvest_2024.html",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=general&game=elk&yr=2024",
+      "description": "Source HTML page for 2024 elk general season harvest statistics.",
+      "size_bytes": 307201
+    },
+    {
+      "filename": "deer_general_harvest_2024.csv",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=general&game=deer&yr=2024",
+      "description": "2024 deer general season harvest statistics by zone/area. 362 rows.",
+      "size_bytes": 17474
+    },
+    {
+      "filename": "deer_general_harvest_2024.html",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=general&game=deer&yr=2024",
+      "description": "Source HTML page for 2024 deer general season harvest statistics.",
+      "size_bytes": 357389
+    },
+    {
+      "filename": "elk_controlled_harvest_2023.csv",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=controlled&game=elk&yr=2023",
+      "description": "2023 elk controlled hunt harvest statistics by hunt number, area, weapon type. 241 rows.",
+      "size_bytes": 11210
+    },
+    {
+      "filename": "elk_controlled_harvest_2023.html",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=controlled&game=elk&yr=2023",
+      "description": "Source HTML page for 2023 elk controlled hunt harvest statistics.",
+      "size_bytes": 256101
+    },
+    {
+      "filename": "deer_controlled_harvest_2023.csv",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=controlled&game=deer&yr=2023",
+      "description": "2023 deer controlled hunt harvest statistics by hunt number, area, weapon type. 172 rows.",
+      "size_bytes": 8384
+    },
+    {
+      "filename": "deer_controlled_harvest_2023.html",
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=controlled&game=deer&yr=2023",
+      "description": "Source HTML page for 2023 deer controlled hunt harvest statistics.",
+      "size_bytes": 203767
+    },
+    {
+      "filename": "harvest_summary_2024.csv",
+      "url": "https://idfg.idaho.gov/article/hunter-harvest-report-idaho-deer-and-elk-hunters-go-3-3-2024",
+      "description": "Statewide 2024 harvest summary for elk, mule deer, and white-tailed deer. Extracted from IDFG article. Includes total harvest, hunter counts, success rates, general vs controlled breakdown.",
+      "size_bytes": 315
+    },
+    {
+      "filename": "harvest_report_2024_article.html",
+      "url": "https://idfg.idaho.gov/article/hunter-harvest-report-idaho-deer-and-elk-hunters-go-3-3-2024",
+      "description": "Full IDFG article with 2024 hunter harvest report for deer and elk.",
+      "size_bytes": 159326
+    },
+    {
+      "filename": "mandatory_harvest_reports.html",
+      "url": "https://idfg.idaho.gov/hunt/mhr/results",
+      "description": "Real-time mandatory harvest reports page. Contains reporting form/interface, not downloadable bulk data.",
+      "size_bytes": 134602
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/odds/",
+      "description": "Idaho controlled hunt draw odds (1998-2025) for deer and elk. Data for permits, applicants, draw percentages by hunt number, resident/non-resident.",
+      "reason": "The Hunt Planner draw odds API (../api/1.1/odds/) requires JavaScript-rendered page interaction. The API crashes on direct curl requests with the 'biggame' parameter (ASP.NET Runtime Error) and returns empty results with alternative parameter names. Data must be exported manually via browser using the CSV/Excel export buttons on the interactive table, or scraped with a headless browser (Selenium/Playwright). Filter by game=Elk or game=Deer, year, and draw round (1st/2nd)."
+    },
+    {
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/oddfinder.aspx",
+      "description": "Odd Finder tool - search controlled hunts by minimum draw odds percentage.",
+      "reason": "ASP.NET WebForms application requiring session state and ViewState. Cannot be accessed via curl."
+    },
+    {
+      "url": "https://license.gooutdoorsidaho.com/Licensing/CustomerLookup.aspx",
+      "description": "Individual controlled hunt draw results (personal results lookup).",
+      "reason": "Requires login with personal credentials (Date of Birth, Last Name, identifier). Not publicly accessible bulk data."
+    },
+    {
+      "url": "https://fishandgame.idaho.gov/ifwis/huntplanner/stats/?season=general&game=elk&yr=2023",
+      "description": "2023 elk and deer general season harvest stats (and other year/species combos).",
+      "reason": "Additional year/species/season combinations available but not downloaded. Can be fetched using same curl approach as the 2024 data."
+    },
+    {
+      "url": "https://idfg.idaho.gov/hunt/mhr/results",
+      "description": "Real-time mandatory harvest report data with current season kill totals by zone.",
+      "reason": "Page requires JavaScript to load interactive data. Static HTML download contains only the page template."
+    }
+  ],
+  "notes": [
+    "Idaho harvest statistics were successfully scraped from the Hunt Planner stats pages. CSV files were extracted from HTML tables using Python HTML parser.",
+    "The Hunt Planner draw odds API at fishandgame.idaho.gov/ifwis/huntplanner/api/1.1/odds/ is a JavaScript-dependent ASP.NET application. The bootstrap-table component sends parameters (biggame, yr, draw) but the API crashes when these are sent via direct HTTP requests. This is the BEST source for draw odds but requires a headless browser or manual CSV export.",
+    "Draw odds data covers 1998-2025 and includes: hunt area, permits, 1st/2nd choice applications, draw counts, percentages, resident/non-resident splits.",
+    "Harvest statistics columns for elk: Hunt#, TakeMethod, Area, Hunters, Harvest, Success%, Days, Antlered, Antlerless, %Spike, %6+Pts, Year.",
+    "Harvest statistics columns for deer: Hunt#, TakeMethod, Area, Hunters, Harvest, Success%, Days, Antlered, Antlerless, %4+Pts, %5+Pts, %Whitetail, Year.",
+    "2024 statewide totals: Elk 20,996 harvested (24% success), Mule Deer 23,898 (32%), White-tailed Deer 20,908 (40%).",
+    "The controlled hunt results page at idfg.idaho.gov/licenses/tag/controlled/results redirects to a personal login system - no public bulk data available.",
+    "Third-party sources (goHunt, Huntin' Fool, onX Hunt) have draw odds data but require paid subscriptions."
+  ]
+}

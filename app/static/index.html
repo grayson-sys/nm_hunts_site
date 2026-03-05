@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grayson's Draw Odds</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0; padding: 0;
+      background: #0f172a; color: #e5e7eb; line-height: 1.5;
+    }
+    header {
+      background: #020617;
+      padding: 1.2rem 1.5rem 1rem;
+      border-bottom: 1px solid #1f2937;
+    }
+    header img {
+      max-width: 100%; height: auto; border-radius: 0.8rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      display: block; margin: 0 auto 0.6rem;
+    }
+    header p {
+      margin: 0; color: #9ca3af; font-size: 0.95rem; text-align: center;
+    }
+    main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+    .card {
+      background: #020617; border-radius: 0.75rem; border: 1px solid #1f2937;
+      padding: 1rem 1.2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      margin-bottom: 1.5rem;
+    }
+    .card h2 { margin: 0 0 0.4rem; font-size: 1.15rem; }
+    .card p.desc { margin: 0 0 0.6rem; color: #9ca3af; font-size: 0.9rem; }
+    .field-group {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.6rem;
+    }
+    .field-group label {
+      font-size: 0.8rem; color: #9ca3af; display: block; margin-bottom: 0.15rem;
+    }
+    .field { flex: 1 1 140px; min-width: 0; }
+    select, input[type="number"], input[type="text"] {
+      width: 100%; padding: 0.35rem 0.45rem; border-radius: 0.4rem;
+      border: 1px solid #374151; background: #020617; color: #e5e7eb;
+      font-size: 0.85rem;
+    }
+    select:focus, input:focus {
+      outline: none; border-color: #f97316; box-shadow: 0 0 0 1px #f97316;
+    }
+    button {
+      margin-top: 0.4rem; padding: 0.35rem 0.8rem; border-radius: 999px;
+      border: none; background: #f97316; color: #111827;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    }
+    button:hover { background: #fb923c; }
+    table {
+      width: 100%; border-collapse: collapse; margin-top: 0.6rem; font-size: 0.8rem;
+    }
+    th, td {
+      padding: 0.35rem 0.4rem; border-bottom: 1px solid #111827;
+      text-align: left; vertical-align: top;
+    }
+    th { color: #9ca3af; font-weight: 500; font-size: 0.78rem; }
+    tr:last-child td { border-bottom: none; }
+    .small { font-size: 0.8rem; color: #9ca3af; }
+    .pill {
+      display: inline-block; padding: 0.1rem 0.4rem; border-radius: 999px;
+      font-size: 0.75rem; border: 1px solid #374151; color: #e5e7eb; background: #020617;
+    }
+    .badge {
+      display: inline-block; padding: 0.1rem 0.35rem; border-radius: 0.25rem;
+      font-size: 0.7rem; font-weight: 600; margin-left: 0.3rem;
+    }
+    .badge-lottery { background: #166534; color: #bbf7d0; }
+    .badge-preference { background: #854d0e; color: #fef08a; }
+    .badge-bonus { background: #1e3a5f; color: #93c5fd; }
+    .badge-hybrid { background: #581c87; color: #d8b4fe; }
+    .section-title { margin: 1rem 0 0.25rem; font-size: 1.05rem; }
+    .section-sub { margin: 0 0 0.75rem; font-size: 0.9rem; color: #9ca3af; }
+    .result-block { margin-top: 0.5rem; font-size: 0.86rem; }
+    .result-block h3 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .muted { color: #6b7280; }
+    .odds-high { color: #4ade80; }
+    .odds-mid { color: #facc15; }
+    .odds-low { color: #f87171; }
+    .tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .tab {
+      padding: 0.35rem 0.9rem; border-radius: 999px; border: 1px solid #374151;
+      background: transparent; color: #9ca3af; font-size: 0.85rem; cursor: pointer;
+    }
+    .tab.active { background: #f97316; color: #111827; border-color: #f97316; font-weight: 600; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .state-info {
+      background: #020617; border: 1px solid #1f2937; border-radius: 0.75rem;
+      padding: 0.8rem 1rem; margin-bottom: 1.5rem; font-size: 0.85rem;
+    }
+    .state-info h3 { margin: 0 0 0.4rem; font-size: 1rem; }
+    .state-info .detail { color: #9ca3af; margin: 0.15rem 0; }
+    .hidden { display: none; }
+    .clickable { cursor: pointer; }
+    .clickable:hover { background: #1e293b; }
+    @media (max-width: 640px) {
+      header, main { padding: 1rem; }
+      .field { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="graysons_hunting_data.png" alt="Grayson's Hunting Data cover"
+         onerror="this.style.display='none'">
+    <p>Multi-state draw odds, harvest data, and application planning for western big game hunts.</p>
+  </header>
+
+  <main>
+    <!-- State selector -->
+    <section>
+      <h2 class="section-title">Choose a state</h2>
+      <p class="section-sub">Everything starts here. Pick a state to see species, units, and draw results.</p>
+      <div class="card">
+        <div class="field-group">
+          <div class="field" style="flex:1 1 300px">
+            <label for="state-select">State</label>
+            <select id="state-select">
+              <option value="">Choose a state...</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- State info panel -->
+    <div id="state-info" class="state-info hidden"></div>
+
+    <!-- Downstream filters (hidden until state selected) -->
+    <div id="filters-section" class="hidden">
+      <section>
+        <div class="tabs">
+          <button class="tab active" data-tab="draw-odds">Draw Odds</button>
+          <button class="tab" data-tab="cheat-codes">Cheat Codes</button>
+          <button class="tab" data-tab="app-plan">Application Plan</button>
+          <button class="tab" data-tab="bag-info">Bag Limits</button>
+        </div>
+
+        <!-- TAB: Draw Odds -->
+        <div id="tab-draw-odds" class="tab-content active">
+          <h2 class="section-title">Draw odds by unit</h2>
+          <p class="section-sub">Filter hunts by species, pool, and unit. Results show draw odds and harvest data.</p>
+          <div class="card">
+            <div class="field-group">
+              <div class="field">
+                <label for="odds-species">Species</label>
+                <select id="odds-species"><option value="">Loading...</option></select>
+              </div>
+              <div class="field">
+                <label for="odds-pool">Pool</label>
+                <select id="odds-pool"><option value="">Loading...</option></select>
+              </div>
+              <div class="field">
+                <label for="odds-unit">
+                  <span id="odds-unit-label">Unit</span> (optional)
+                </label>
+                <select id="odds-unit"><option value="">All units</option></select>
+              </div>
+              <div class="field">
+                <label for="odds-year">Draw year</label>
+                <select id="odds-year"><option value="">Latest</option></select>
+              </div>
+            </div>
+            <button id="odds-run">Search hunts</button>
+            <div id="odds-results" class="result-block"></div>
+          </div>
+        </div>
+
+        <!-- TAB: Cheat Codes -->
+        <div id="tab-cheat-codes" class="tab-content">
+          <h2 class="section-title">Cheat Codes: Easy to draw, still worth hunting</h2>
+          <p class="section-sub">Hunts with a mix of higher draw odds and solid harvest success. Youth and mobility impaired hunts are filtered out.</p>
+          <div class="card">
+            <div class="field-group">
+              <div class="field">
+                <label for="cheat-species">Species</label>
+                <select id="cheat-species"><option value="">Loading...</option></select>
+              </div>
+              <div class="field">
+                <label for="cheat-pool">Pool</label>
+                <select id="cheat-pool"><option value="">Loading...</option></select>
+              </div>
+            </div>
+            <button id="cheat-run">Find cheat code hunts</button>
+            <div id="cheat-results" class="result-block"></div>
+          </div>
+        </div>
+
+        <!-- TAB: Application Plan -->
+        <div id="tab-app-plan" class="tab-content">
+          <h2 class="section-title">Plan a three choice application</h2>
+          <p class="section-sub">Pick three hunts and see combined odds and ordering advice.</p>
+          <div class="card">
+            <div class="field-group">
+              <div class="field">
+                <label for="app-species">Species</label>
+                <select id="app-species"><option value="">Loading...</option></select>
+              </div>
+              <div class="field">
+                <label for="app-pool">Pool</label>
+                <select id="app-pool"><option value="">Loading...</option></select>
+              </div>
+            </div>
+            <div class="field-group">
+              <div class="field">
+                <label for="app-choice1">First choice hunt</label>
+                <select id="app-choice1"><option value="">Choose species first...</option></select>
+              </div>
+              <div class="field">
+                <label for="app-choice2">Second choice hunt</label>
+                <select id="app-choice2"><option value="">Choose species first...</option></select>
+              </div>
+              <div class="field">
+                <label for="app-choice3">Third choice hunt (safety)</label>
+                <select id="app-choice3"><option value="">Choose species first...</option></select>
+              </div>
+            </div>
+            <button id="app-run">Evaluate application</button>
+            <div id="app-results" class="result-block"></div>
+          </div>
+        </div>
+
+        <!-- TAB: Bag Limits -->
+        <div id="tab-bag-info" class="tab-content">
+          <h2 class="section-title">Bag limit codes</h2>
+          <p class="section-sub">The Bag column uses the short code from the proclamation. Here is the key.</p>
+          <div class="card">
+            <div id="bag-table" class="result-block small"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Hunt detail modal -->
+    <div id="hunt-detail-overlay" class="hidden" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;">
+      <div style="background:#0f172a;border:1px solid #374151;border-radius:0.75rem;padding:1.2rem;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+          <h3 style="margin:0;" id="detail-title">Hunt Detail</h3>
+          <button id="detail-close" style="border-radius:50%;width:2rem;height:2rem;padding:0;font-size:1rem;line-height:1;">X</button>
+        </div>
+        <div id="detail-body" class="small"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ─── State ────────────────────────────────────
+    let currentState = null;
+    let statesData = [];
+
+    async function fetchJSON(url, opts) {
+      const res = await fetch(url, opts);
+      if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
+      return res.json();
+    }
+
+    function esc(s) {
+      if (s == null) return "";
+      const d = document.createElement("div");
+      d.textContent = String(s);
+      return d.innerHTML;
+    }
+
+    function oddsClass(pct) {
+      if (pct == null) return "";
+      if (pct > 20) return "odds-high";
+      if (pct >= 5) return "odds-mid";
+      return "odds-low";
+    }
+
+    function fmtPct(v) {
+      if (v == null) return "n/a";
+      return Number(v).toFixed(1).replace(/\.0$/, "") + "%";
+    }
+
+    function fmtOddsFraction(p) {
+      if (p == null || p <= 0) return "n/a";
+      const pct = (p * 100).toFixed(1).replace(/\.0$/, "") + "%";
+      const years = Math.max(1, Math.round(1 / p));
+      return `${pct} (draw ~1 in ${years} years)`;
+    }
+
+    function drawBadge(drawType) {
+      const cls = {lottery:"badge-lottery",preference:"badge-preference",bonus:"badge-bonus",hybrid:"badge-hybrid"};
+      return `<span class="badge ${cls[drawType] || "badge-hybrid"}">${esc(drawType)}</span>`;
+    }
+
+    // ─── Init ─────────────────────────────────────
+    async function init() {
+      const data = await fetchJSON("api/states");
+      statesData = data.states;
+      const sel = document.getElementById("state-select");
+      sel.innerHTML = '<option value="">Choose a state...</option>';
+      for (const s of statesData) {
+        const opt = document.createElement("option");
+        opt.value = s.state_code;
+        opt.textContent = `${s.state_name} — ${s.draw_type}`;
+        sel.appendChild(opt);
+      }
+    }
+
+    document.getElementById("state-select").addEventListener("change", async function() {
+      const code = this.value;
+      if (!code) {
+        currentState = null;
+        document.getElementById("state-info").classList.add("hidden");
+        document.getElementById("filters-section").classList.add("hidden");
+        return;
+      }
+      currentState = statesData.find(s => s.state_code === code);
+      showStateInfo(currentState);
+      document.getElementById("filters-section").classList.remove("hidden");
+      await loadFilters(code);
+    });
+
+    function showStateInfo(st) {
+      const el = document.getElementById("state-info");
+      el.classList.remove("hidden");
+      el.innerHTML = `
+        <h3>${esc(st.state_name)} ${drawBadge(st.draw_type)}</h3>
+        <p class="detail"><strong>Draw system:</strong> ${esc(st.point_math_note || st.draw_type)}</p>
+        ${st.choices_per_app ? `<p class="detail"><strong>Choices per app:</strong> ${st.choices_per_app}</p>` : ""}
+        ${st.nr_allocation_note ? `<p class="detail"><strong>NR allocation:</strong> ${esc(st.nr_allocation_note)}</p>` : ""}
+        ${st.app_deadline_month ? `<p class="detail"><strong>App deadline:</strong> ${esc(st.app_deadline_month)}</p>` : ""}
+        ${st.results_month ? `<p class="detail"><strong>Results:</strong> ${esc(st.results_month)}</p>` : ""}
+        ${st.has_otc_tags ? '<p class="detail">OTC tags available for some species.</p>' : ""}
+        ${st.notes ? `<p class="detail muted">${esc(st.notes)}</p>` : ""}
+      `;
+    }
+
+    async function loadFilters(stateCode) {
+      const [speciesData, poolsData, yearsData, unitsData] = await Promise.all([
+        fetchJSON(`api/species?state_code=${stateCode}`),
+        fetchJSON(`api/pools?state_code=${stateCode}`),
+        fetchJSON(`api/draw_years?state_code=${stateCode}`),
+        fetchJSON(`api/units?state_code=${stateCode}`),
+      ]);
+
+      // Set unit label
+      const unitLabel = currentState?.unit_type_label || "Unit";
+      document.getElementById("odds-unit-label").textContent = unitLabel;
+
+      // Populate all species selects
+      const speciesSelects = ["odds-species", "cheat-species", "app-species"];
+      for (const id of speciesSelects) {
+        const sel = document.getElementById(id);
+        sel.innerHTML = '<option value="">Choose a species...</option>';
+        for (const sp of speciesData.species) {
+          const opt = document.createElement("option");
+          opt.value = sp.species_code;
+          opt.textContent = sp.common_name;
+          sel.appendChild(opt);
+        }
+      }
+
+      // Populate all pool selects
+      const poolSelects = ["odds-pool", "cheat-pool", "app-pool"];
+      for (const id of poolSelects) {
+        const sel = document.getElementById(id);
+        sel.innerHTML = "";
+        if (poolsData.pools.length === 0) {
+          sel.innerHTML = '<option value="">Open (All Hunters)</option>';
+        } else {
+          for (const p of poolsData.pools) {
+            const opt = document.createElement("option");
+            opt.value = p.pool_code;
+            opt.textContent = p.description;
+            sel.appendChild(opt);
+          }
+        }
+      }
+
+      // Units
+      const unitSel = document.getElementById("odds-unit");
+      unitSel.innerHTML = '<option value="">All units</option>';
+      for (const u of unitsData.units) {
+        const opt = document.createElement("option");
+        opt.value = u.gmu_code;
+        opt.textContent = u.dropdown_label;
+        unitSel.appendChild(opt);
+      }
+
+      // Years
+      const yearSel = document.getElementById("odds-year");
+      yearSel.innerHTML = '<option value="">Latest</option>';
+      for (const y of yearsData.draw_years) {
+        const opt = document.createElement("option");
+        opt.value = y;
+        opt.textContent = y;
+        yearSel.appendChild(opt);
+      }
+
+      // Bag limits
+      loadBagLimits(stateCode);
+
+      // Reset results
+      document.getElementById("odds-results").innerHTML = "";
+      document.getElementById("cheat-results").innerHTML = "";
+      document.getElementById("app-results").innerHTML = "";
+
+      // Reset app hunt selects
+      for (const id of ["app-choice1", "app-choice2", "app-choice3"]) {
+        document.getElementById(id).innerHTML = '<option value="">Choose species first...</option>';
+      }
+    }
+
+    // Reload units when species changes
+    document.getElementById("odds-species").addEventListener("change", async function() {
+      if (!currentState) return;
+      const speciesCode = this.value;
+      const unitsData = await fetchJSON(
+        `api/units?state_code=${currentState.state_code}` +
+        (speciesCode ? `&species_code=${speciesCode}` : "")
+      );
+      const unitSel = document.getElementById("odds-unit");
+      unitSel.innerHTML = '<option value="">All units</option>';
+      for (const u of unitsData.units) {
+        const opt = document.createElement("option");
+        opt.value = u.gmu_code;
+        opt.textContent = u.dropdown_label;
+        unitSel.appendChild(opt);
+      }
+    });
+
+    // ─── Tabs ─────────────────────────────────────
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.addEventListener("click", function() {
+        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+        document.querySelectorAll(".tab-content").forEach(tc => tc.classList.remove("active"));
+        this.classList.add("active");
+        document.getElementById("tab-" + this.dataset.tab).classList.add("active");
+      });
+    });
+
+    // ─── Draw Odds ────────────────────────────────
+    document.getElementById("odds-run").addEventListener("click", async () => {
+      if (!currentState) return;
+      const species = document.getElementById("odds-species").value;
+      const pool = document.getElementById("odds-pool").value;
+      const unit = document.getElementById("odds-unit").value;
+      const year = document.getElementById("odds-year").value;
+      const target = document.getElementById("odds-results");
+      target.innerHTML = "Loading...";
+
+      if (!species) { target.innerHTML = '<span class="muted">Choose a species.</span>'; return; }
+
+      const params = new URLSearchParams({
+        state_code: currentState.state_code,
+        species_code: species,
+      });
+      if (pool) params.set("pool_code", pool);
+      if (unit) params.set("gmu_code", unit);
+      if (year) params.set("draw_year", year);
+
+      try {
+        const data = await fetchJSON(`api/hunts?${params}`);
+        const hunts = data.hunts;
+        if (!hunts.length) {
+          target.innerHTML = '<span class="muted">No hunts matched that filter.</span>';
+          return;
+        }
+
+        let html = `<div class="small">Showing ${hunts.length} hunts.</div>`;
+        html += `<table><thead><tr>
+          <th>Hunt code</th>
+          <th>Description</th>
+          <th>Bag</th>
+          <th>Weapon</th>
+          <th>Draw odds</th>
+          <th>Apps / Tags</th>
+          <th>Harvest success</th>
+        </tr></thead><tbody>`;
+
+        for (const h of hunts) {
+          const oddsPct = h.draw_odds_pct;
+          const oc = oddsClass(oddsPct);
+          html += `<tr class="clickable" onclick="showDetail('${esc(currentState.state_code)}','${esc(h.hunt_code)}')">
+            <td><code>${esc(h.hunt_label)}</code></td>
+            <td>${esc(h.unit_description || "")}</td>
+            <td>${esc(h.bag_code || "")}</td>
+            <td>${esc(h.weapon_code || "")}</td>
+            <td class="${oc}">${oddsPct != null ? fmtPct(oddsPct) : "n/a"}</td>
+            <td>${h.applications ?? "n/a"} / ${h.tags_awarded ?? "n/a"}</td>
+            <td>${h.latest_success_rate != null ? fmtPct(h.latest_success_rate) : "n/a"}${h.latest_harvest_year ? ` <span class="muted">(${h.latest_harvest_year})</span>` : ""}</td>
+          </tr>`;
+        }
+        html += "</tbody></table>";
+        target.innerHTML = html;
+      } catch (err) {
+        target.innerHTML = `<span class="muted">Error: ${esc(err.message)}</span>`;
+      }
+    });
+
+    // ─── Cheat Codes ──────────────────────────────
+    document.getElementById("cheat-run").addEventListener("click", async () => {
+      if (!currentState) return;
+      const species = document.getElementById("cheat-species").value;
+      const pool = document.getElementById("cheat-pool").value;
+      const target = document.getElementById("cheat-results");
+      target.innerHTML = "Loading...";
+
+      if (!species) { target.innerHTML = '<span class="muted">Choose a species.</span>'; return; }
+
+      try {
+        const data = await fetchJSON("api/recommend", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({
+            state_code: currentState.state_code,
+            species_code: species,
+            pool_code: pool || "RES",
+          }),
+        });
+
+        if (!data.results.length) {
+          target.innerHTML = '<span class="muted">No hunts matched those filters.</span>';
+          return;
+        }
+
+        let html = `<div class="small">Showing ${data.results.length} suggested hunts.</div>`;
+        html += `<table><thead><tr>
+          <th>Hunt code</th>
+          <th>Description</th>
+          <th>Bag</th>
+          <th>Draw odds</th>
+          <th>Success</th>
+          <th>Notes</th>
+        </tr></thead><tbody>`;
+
+        for (const r of data.results) {
+          const oc = oddsClass(r.draw_odds * 100);
+          html += `<tr class="clickable" onclick="showDetail('${esc(currentState.state_code)}','${esc(r.hunt_code)}')">
+            <td><code>${esc(r.hunt_label || r.hunt_code)}</code></td>
+            <td>${esc(r.hunt_name || r.unit_description || "")}</td>
+            <td>${esc(r.bag_code || "")}</td>
+            <td class="${oc}">${fmtPct(r.draw_odds * 100)}</td>
+            <td>${r.success_rate != null ? fmtPct(r.success_rate) : "n/a"}${r.harvest_year ? ` <span class="muted">(${r.harvest_year})</span>` : ""}</td>
+            <td>${esc(r.note)}</td>
+          </tr>`;
+        }
+        html += "</tbody></table>";
+        html += '<p class="small" style="margin-top:0.4rem;">Rough rule of thumb: hunts over 25% draw odds make excellent safety picks, 10-25% is second choice territory, under 10% belongs in the dream hunt slot.</p>';
+        target.innerHTML = html;
+      } catch (err) {
+        target.innerHTML = `<span class="muted">Error: ${esc(err.message)}</span>`;
+      }
+    });
+
+    // ─── Application Plan ─────────────────────────
+    // Load hunt selects when app species changes
+    document.getElementById("app-species").addEventListener("change", async function() {
+      if (!currentState) return;
+      const species = this.value;
+      const selects = ["app-choice1", "app-choice2", "app-choice3"];
+      if (!species) {
+        for (const id of selects) {
+          document.getElementById(id).innerHTML = '<option value="">Choose species first...</option>';
+        }
+        return;
+      }
+
+      const params = new URLSearchParams({
+        state_code: currentState.state_code,
+        species_code: species,
+      });
+      const data = await fetchJSON(`api/hunts?${params}`);
+      for (const id of selects) {
+        const sel = document.getElementById(id);
+        sel.innerHTML = '<option value="">Select a hunt...</option>';
+        for (const h of data.hunts) {
+          const opt = document.createElement("option");
+          opt.value = h.hunt_code;
+          opt.textContent = h.hunt_label + (h.unit_description ? ` - ${h.unit_description}` : "");
+          sel.appendChild(opt);
+        }
+      }
+    });
+
+    document.getElementById("app-run").addEventListener("click", async () => {
+      if (!currentState) return;
+      const species = document.getElementById("app-species").value;
+      const pool = document.getElementById("app-pool").value;
+      const c1 = document.getElementById("app-choice1").value;
+      const c2 = document.getElementById("app-choice2").value;
+      const c3 = document.getElementById("app-choice3").value;
+      const target = document.getElementById("app-results");
+      target.innerHTML = "Loading...";
+
+      if (!species) { target.innerHTML = '<span class="muted">Choose a species.</span>'; return; }
+      if (!c1 || !c2 || !c3) { target.innerHTML = '<span class="muted">Pick three hunts.</span>'; return; }
+
+      try {
+        const data = await fetchJSON("api/application_plan", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({
+            state_code: currentState.state_code,
+            species_code: species,
+            pool_code: pool || "RES",
+            choices: [c1, c2, c3],
+          }),
+        });
+
+        let html = `<div class="small">Using latest draw data for <strong>${esc(data.species_name || data.species_code)}</strong>.</div>`;
+        html += `<table><thead><tr>
+          <th>Choice</th><th>Hunt code</th><th>Per hunt odds</th><th>Apps</th><th>Tags</th>
+        </tr></thead><tbody>`;
+
+        for (const row of data.choices) {
+          html += `<tr>
+            <td>${row.choice_number}</td>
+            <td><code>${esc(row.hunt_code)}</code></td>
+            <td>${row.p == null ? "n/a" : fmtOddsFraction(row.p)}</td>
+            <td>${row.applications ?? "n/a"}</td>
+            <td>${row.tags_awarded ?? "n/a"}</td>
+          </tr>`;
+        }
+        html += "</tbody></table>";
+
+        if (data.application_odds != null) {
+          html += `<p class="small" style="margin-top:0.3rem;">
+            Overall chance of drawing something: <strong>${fmtOddsFraction(data.application_odds)}</strong>.
+          </p>`;
+        }
+        if (!data.logical_order) {
+          html += '<p class="small" style="margin-top:0.25rem;color:#f97316;">Your choices are not ordered from hardest to easiest. Easier hunts on top quietly kill the value of the harder ones underneath.</p>';
+        }
+        if (data.advice) {
+          html += `<p class="small" style="margin-top:0.25rem;">${esc(data.advice)}</p>`;
+        }
+        target.innerHTML = html;
+      } catch (err) {
+        target.innerHTML = `<span class="muted">Error: ${esc(err.message)}</span>`;
+      }
+    });
+
+    // ─── Bag Limits ───────────────────────────────
+    async function loadBagLimits(stateCode) {
+      const target = document.getElementById("bag-table");
+      try {
+        const data = await fetchJSON(`api/bag_limits?state_code=${stateCode}`);
+        const list = data.bag_limits || [];
+        if (!list.length) {
+          target.innerHTML = '<span class="muted">No bag limits found.</span>';
+          return;
+        }
+        let html = '<table><thead><tr><th>Code</th><th>Label</th><th>Definition</th></tr></thead><tbody>';
+        for (const b of list) {
+          html += `<tr><td>${esc(b.bag_code)}</td><td>${esc(b.label)}</td><td>${esc(b.plain_definition)}</td></tr>`;
+        }
+        html += "</tbody></table>";
+        target.innerHTML = html;
+      } catch (err) {
+        target.innerHTML = '<span class="muted">Error loading bag limits.</span>';
+      }
+    }
+
+    // ─── Hunt Detail Modal ────────────────────────
+    async function showDetail(stateCode, huntCode) {
+      const overlay = document.getElementById("hunt-detail-overlay");
+      overlay.classList.remove("hidden");
+      overlay.style.display = "flex";
+      document.getElementById("detail-title").textContent = huntCode;
+      const body = document.getElementById("detail-body");
+      body.innerHTML = "Loading...";
+
+      try {
+        const data = await fetchJSON(`api/hunt_detail?state_code=${encodeURIComponent(stateCode)}&hunt_code=${encodeURIComponent(huntCode)}`);
+        let html = "";
+        html += `<p><strong>Hunt code:</strong> ${esc(data.hunt_label)}</p>`;
+        if (data.unit_description) html += `<p><strong>Unit:</strong> ${esc(data.unit_description)}</p>`;
+        if (data.weapon_code) html += `<p><strong>Weapon:</strong> ${esc(data.weapon_code)}</p>`;
+        if (data.bag_label) html += `<p><strong>Bag limit:</strong> ${esc(data.bag_label)} — ${esc(data.bag_definition || "")}</p>`;
+        if (data.season_type) html += `<p><strong>Season:</strong> ${esc(data.season_type)}</p>`;
+
+        // Season dates
+        if (data.season_dates && data.season_dates.length) {
+          html += '<h4 style="margin:0.5rem 0 0.2rem;">Season Dates</h4><table><thead><tr><th>Year</th><th>Hunt name</th><th>Start</th><th>End</th></tr></thead><tbody>';
+          for (const d of data.season_dates) {
+            html += `<tr><td>${d.season_year}</td><td>${esc(d.hunt_name || "")}</td><td>${esc(d.start_date || "")}</td><td>${esc(d.end_date || "")}</td></tr>`;
+          }
+          html += '</tbody></table>';
+        }
+
+        // Draw history
+        if (data.draw_history && data.draw_history.length) {
+          html += '<h4 style="margin:0.5rem 0 0.2rem;">Draw History</h4><table><thead><tr><th>Year</th><th>Pool</th><th>Apps</th><th>Tags avail</th><th>Tags awarded</th><th>Odds</th></tr></thead><tbody>';
+          for (const d of data.draw_history) {
+            const odds = (d.applications > 0 && d.tags_awarded > 0) ? fmtPct(d.tags_awarded / d.applications * 100) : "n/a";
+            html += `<tr><td>${d.draw_year}</td><td>${esc(d.pool_code)}</td><td>${d.applications ?? ""}</td><td>${d.tags_available ?? ""}</td><td>${d.tags_awarded ?? ""}</td><td>${odds}</td></tr>`;
+          }
+          html += '</tbody></table>';
+        }
+
+        // Harvest history
+        if (data.harvest_history && data.harvest_history.length) {
+          html += '<h4 style="margin:0.5rem 0 0.2rem;">Harvest History</h4><table><thead><tr><th>Year</th><th>Access</th><th>Success</th><th>Days</th><th>Satisfaction</th></tr></thead><tbody>';
+          for (const h of data.harvest_history) {
+            html += `<tr><td>${h.harvest_year}</td><td>${esc(h.access_type)}</td><td>${h.success_rate != null ? fmtPct(h.success_rate) : "n/a"}</td><td>${h.days_hunted ?? "n/a"}</td><td>${h.satisfaction ?? "n/a"}</td></tr>`;
+          }
+          html += '</tbody></table>';
+        }
+
+        body.innerHTML = html;
+      } catch (err) {
+        body.innerHTML = `<span class="muted">Error: ${esc(err.message)}</span>`;
+      }
+    }
+    window.showDetail = showDetail;
+
+    document.getElementById("detail-close").addEventListener("click", () => {
+      const overlay = document.getElementById("hunt-detail-overlay");
+      overlay.classList.add("hidden");
+      overlay.style.display = "none";
+    });
+    document.getElementById("hunt-detail-overlay").addEventListener("click", function(e) {
+      if (e.target === this) {
+        this.classList.add("hidden");
+        this.style.display = "none";
+      }
+    });
+
+    // ─── Boot ─────────────────────────────────────
+    init();
+  </script>
+</body>
+</html>

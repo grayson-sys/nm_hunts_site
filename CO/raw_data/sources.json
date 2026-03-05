@@ -1,0 +1,174 @@
+{
+  "state": "CO",
+  "agency": "Colorado Parks and Wildlife (CPW)",
+  "last_updated": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "2025_deer_draw_recap.pdf",
+      "url": "https://cpw.widen.net/s/r9bjfnqlbc/postdrawrecapreport_deer-25_05102025_1540",
+      "description": "2025 Primary Draw Recap Report - Deer. Pre-draw applications by hunt code and preference point level, post-draw results.",
+      "size_bytes": 11350949
+    },
+    {
+      "filename": "2024_deer_draw_recap.pdf",
+      "url": "https://cpw.widen.net/s/drbww92qtk/2024-primary-deer-post-draw-report",
+      "description": "2024 Primary Draw Recap Report - Deer. Pre-draw applications by hunt code and preference point level, post-draw results.",
+      "size_bytes": 11052775
+    },
+    {
+      "filename": "2025_elk_draw_recap.pdf",
+      "url": "https://cpw.widen.net/s/qh6nqttnnz/postdrawrecapreport_elk-25_05172025_0612",
+      "description": "2025 Primary Draw Recap Report - Elk. Pre-draw applications by hunt code and preference point level, post-draw results.",
+      "size_bytes": 11940272
+    },
+    {
+      "filename": "2024_elk_draw_recap.pdf",
+      "url": "https://cpw.widen.net/s/gvtppdkdcr/2024-primary-elk-post-draw-report",
+      "description": "2024 Primary Draw Recap Report - Elk. Pre-draw applications by hunt code and preference point level, post-draw results.",
+      "size_bytes": 11348625
+    },
+    {
+      "filename": "2025_deer_drawn_out_at.pdf",
+      "url": "https://cpw.widen.net/s/m8z9plcffl/postdrawnoutreport_deer-25_05102025_1558",
+      "description": "2025 Drawn Out At Report - Deer. Shows last preference point/choice at which a license was drawn per hunt code.",
+      "size_bytes": 545018
+    },
+    {
+      "filename": "2024_deer_drawn_out_at.pdf",
+      "url": "https://cpw.widen.net/s/vsvftbvptk/drawn-out-at-report-2024-primary-deer",
+      "description": "2024 Drawn Out At Report - Deer. Shows last preference point/choice at which a license was drawn per hunt code.",
+      "size_bytes": 514273
+    },
+    {
+      "filename": "2025_elk_drawn_out_at.pdf",
+      "url": "https://cpw.widen.net/s/xvrbwnvmj7/postdrawnoutreport_elk-25_05172025_0631",
+      "description": "2025 Drawn Out At Report - Elk. Shows last preference point/choice at which a license was drawn per hunt code.",
+      "size_bytes": 557254
+    },
+    {
+      "filename": "2024_elk_drawn_out_at.pdf",
+      "url": "https://cpw.widen.net/s/mnmvsqzvkz/drawn-out-at-report-2024-primary-elk",
+      "description": "2024 Drawn Out At Report - Elk. Shows last preference point/choice at which a license was drawn per hunt code.",
+      "size_bytes": 522901
+    },
+    {
+      "filename": "2025_deer_secondary_draw.pdf",
+      "url": "https://cpw.widen.net/s/rjvw9gnsvh/cpwpostdrawhuntstatisticsreport_558863307550222_c6384c6c-bbfc-4095-92b3-6d74edb19523",
+      "description": "2025 Secondary Draw Recap Report - Deer. Leftover licenses from the primary draw.",
+      "size_bytes": 9548976
+    },
+    {
+      "filename": "2024_deer_secondary_draw.pdf",
+      "url": "https://cpw.widen.net/s/gj8hl7tzjv/2024-deer-secondary-post-draw-report",
+      "description": "2024 Secondary Draw Recap Report - Deer. Leftover licenses from the primary draw.",
+      "size_bytes": 10284339
+    },
+    {
+      "filename": "2025_elk_secondary_draw.pdf",
+      "url": "https://cpw.widen.net/s/l8c7pgdpwd/cpwpostdrawhuntstatisticsreport_552349781293187_4f5b6596-8abc-4a30-91ce-f640c810891e",
+      "description": "2025 Secondary Draw Recap Report - Elk. Leftover licenses from the primary draw.",
+      "size_bytes": 10978619
+    },
+    {
+      "filename": "2024_elk_secondary_draw.pdf",
+      "url": "https://cpw.widen.net/s/kmqvr7nqsc/2024-elk-secondary-post-draw-report",
+      "description": "2024 Secondary Draw Recap Report - Elk. Leftover licenses from the primary draw.",
+      "size_bytes": 10521815
+    },
+    {
+      "filename": "2024_deer_harvest_statelib.pdf",
+      "url": "https://spl.cde.state.co.us/artemis/nrserials/nr1444internet/nr14442024internet.pdf",
+      "description": "2024 Colorado Statewide Deer Harvest Estimates. Official harvest data from Colorado State Library.",
+      "size_bytes": 2296750
+    },
+    {
+      "filename": "2024_elk_harvest_statelib.pdf",
+      "url": "https://spl.cde.state.co.us/artemis/nrserials/nr1445internet/nr14452024internet.pdf",
+      "description": "2024 Colorado Statewide Elk Harvest Estimates. Official harvest data from Colorado State Library.",
+      "size_bytes": 1556649
+    },
+    {
+      "filename": "2023_deer_harvest.pdf",
+      "url": "https://cpw.widen.net/s/vczl7tkhxr/2023statewidedeerhuntingharvestestimates",
+      "description": "2023 Colorado Statewide Deer Hunting Harvest Estimates from CPW.",
+      "size_bytes": 831143
+    },
+    {
+      "filename": "2023_elk_harvest.pdf",
+      "url": "https://cpw.widen.net/s/bkxcl778b8/2023-statewide-elk-hunting-harvest-estimates",
+      "description": "2023 Colorado Statewide Elk Hunting Harvest Estimates from CPW.",
+      "size_bytes": 625192
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://cpw.widencollective.com/assets/share/asset/wkisb2j1f4",
+      "description": "2024 Elk Harvest Report (CPW Widen Collective version)",
+      "reason": "Widencollective asset share pages are JavaScript-rendered SPAs; cannot extract direct download URL programmatically. State Library version was downloaded instead (2024_elk_harvest_statelib.pdf)."
+    },
+    {
+      "url": "https://cpw.widencollective.com/assets/share/asset/pdnoekykc6",
+      "description": "2024 Deer Harvest Report (CPW Widen Collective version)",
+      "reason": "Widencollective asset share pages are JavaScript-rendered SPAs; cannot extract direct download URL programmatically. State Library version was downloaded instead (2024_deer_harvest_statelib.pdf)."
+    },
+    {
+      "url": "https://cpw.widencollective.com/assets/share/asset/glcdwjrsmb",
+      "description": "2024 Elk Population Estimates Report",
+      "reason": "Widencollective asset share page requires JavaScript rendering. Could not extract direct download URL."
+    },
+    {
+      "url": "https://cpw.widencollective.com/assets/share/asset/krkouk0wec",
+      "description": "2024 Deer Population Estimates Report",
+      "reason": "Widencollective asset share page requires JavaScript rendering. Could not extract direct download URL."
+    }
+  ],
+  "notes": [
+    "CPW hosts reports on two platforms: cpw.widen.net (viewer pages with extractable CDN URLs) and cpw.widencollective.com (JS-rendered SPAs requiring browser interaction).",
+    "Widen.net viewer pages embed the actual PDF at previews.us-east-1.widencdn.net with signed, time-limited URLs. Downloads were made via these CDN URLs.",
+    "The Colorado State Library (spl.cde.state.co.us) hosts harvest reports as direct PDF downloads, providing an alternative to the Widen platform.",
+    "Draw Recap reports contain pre-draw application counts by hunt code and preference point level plus post-draw allocation results.",
+    "Drawn Out At reports show the minimum preference points needed to draw each hunt code.",
+    "All files verified as valid PDF documents (not HTML error pages).",
+    "Deer statistics page: https://cpw.state.co.us/activities/hunting/big-game/hunting-deer/deer-statistics",
+    "Elk statistics page: https://cpw.state.co.us/activities/hunting/big-game/hunting-elk/elk-statistics",
+    "Additional historical draw/harvest reports (2019-2022) are available on both statistics pages if needed."
+  ],
+  "additional_urls_available": {
+    "elk_draw_recap": {
+      "2023": "https://cpw.widen.net/s/slgqfqbwtl/2023elkdrawrecap",
+      "2022": "https://cpw.widen.net/s/pnpsrnqpvr/2022elkdrawrecap",
+      "2021": "https://cpw.widen.net/s/sbxwz2vtbx/2021elkdrawrecap",
+      "2020": "https://cpw.widen.net/s/bvspzktvkf/2020elkdrawrecap"
+    },
+    "elk_drawn_out_at": {
+      "2023": "https://cpw.widen.net/s/khqczfpslz/2023elkdrawnout",
+      "2022": "https://cpw.widen.net/s/nxrbnqvvlb/2022elkdrawnout",
+      "2021": "https://cpw.widen.net/s/frjb7nfcfn/2021elkdrawnout",
+      "2020": "https://cpw.widen.net/s/rphxpschk6/2020elkdrawnout"
+    },
+    "elk_harvest": {
+      "2022": "https://cpw.widen.net/s/fcwvtcdpbp/2022statewideelkharvest",
+      "2021": "https://cpw.widen.net/s/dttxdcqhsb/2021statewideelkharvest",
+      "2020": "https://cpw.widen.net/s/lxptlfrppg/2020statewideelkharvest",
+      "2019": "https://cpw.widen.net/s/wlxcbqlqdp/2019statewideelkharvest"
+    },
+    "deer_draw_recap": {
+      "2023": "https://cpw.widen.net/s/7bcmqkddrn/2023deerdrawrecap",
+      "2022": "https://cpw.widen.net/s/srqhwvssqn/2022deerdrawrecap",
+      "2021": "https://cpw.widen.net/s/t5dp6nvfrv/2021deerdrawrecap",
+      "2020": "https://cpw.widen.net/s/dgkfhz2cvp/2020deerdrawrecap"
+    },
+    "deer_drawn_out_at": {
+      "2023": "https://cpw.widen.net/s/9nn2pbgcvv/2023deerdrawnout",
+      "2022": "https://cpw.widen.net/s/dw6kvpxmzw/2022deerdrawnout",
+      "2021": "https://cpw.widen.net/s/pxgrpw7kvq/2021deerdrawnout",
+      "2020": "https://cpw.widen.net/s/fz9shxcnv5/2020deerdrawnout"
+    },
+    "deer_harvest": {
+      "2022": "https://cpw.widen.net/s/lkpnmjwk9m/2022statewidedeerharvest",
+      "2021": "https://cpw.widen.net/s/zskvhjdmq5/2021statewidedeerharvest",
+      "2020": "https://cpw.widen.net/s/8hx8lnprk6/2020statewidedeerharvest",
+      "2019": "https://cpw.widen.net/s/r2ns9grsqh/2019statewidedeerharvest"
+    }
+  }
+}
