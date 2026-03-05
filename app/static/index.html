@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grayson's Draw Odds</title>
-  <!--
-    Hunt season dates are sourced from each state's annual big game hunting proclamation PDF.
-    These PDFs are released annually (typically Jan-March) and are the authoritative source for
-    dates, bag limits, legal weapon specs, and season structure. A separate parsing pipeline
-    (tabula-py / pdfplumber) will extract dates from proclamation PDFs for each state.
-  -->
   <style>
     /* ─── Reset & Base ──────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,7 +37,13 @@
       font-size: 13px; color: #666;
     }
     .masthead-attr {
-      font-size: 13px; color: #666; margin-top: 4px;
+      font-size: 13px; color: #666; margin-top: 2px;
+    }
+
+    /* ─── Disclaimer Bar ──────────────────────────── */
+    .disclaimer-bar {
+      background: #fffbf0; border-top: 3px solid #b7791f; border-bottom: 1px solid #e2e2e2;
+      padding: 10px 24px; font-size: 13px; color: #444; text-align: center; line-height: 1.5;
     }
 
     /* ─── State Selector Bar ───────────────────────── */
@@ -278,10 +278,6 @@
     .detail-mini-table td {
       padding: 4px 8px; border-bottom: 1px solid #e2e2e2;
     }
-    .bag-disclaimer {
-      font-size: 12px; color: #666; margin-top: 10px; line-height: 1.5;
-    }
-    .bag-disclaimer a { color: #326891; }
 
     /* ─── Empty State ──────────────────────────────── */
     .empty-state {
@@ -368,7 +364,7 @@
 
     /* ─── Print ─────────────────────────────────────── */
     @media print {
-      .state-bar, .filter-bar, .section-tabs, .app-plan { display: none; }
+      .state-bar, .filter-bar, .section-tabs, .app-plan, .disclaimer-bar { display: none; }
       .state-content { opacity: 1 !important; }
       .sidebar { position: static !important; }
       body { font-size: 12px; }
@@ -389,9 +385,15 @@
         <span class="masthead-title">Grayson's Draw Odds</span>
         <span class="masthead-right">Western big game draw data, 11 states.</span>
       </div>
-      <div class="masthead-attr">A personal research project by Grayson Schaffer &mdash; reporter, writer, and obsessive hunter. <a href="https://graysonchaffer.com" target="_blank" rel="noopener">graysonchaffer.com</a></div>
+      <div class="masthead-attr">A personal research project by Grayson Schaffer &mdash; reporter, writer, and obsessive hunter. <a href="https://graysonchaffer.com" target="_blank" rel="noopener" style="color:#326891;">graysonchaffer.com</a></div>
     </div>
   </header>
+
+  <!-- ─── Disclaimer ──────────────────────────────── -->
+  <div class="disclaimer-bar">
+    <strong>Research project &mdash; verify before applying.</strong>
+    Draw odds are compiled from publicly available state agency data. Hunt dates, bag limits, and legal animal definitions may be incomplete or out of date. <strong>Always confirm with your state's official big game proclamation</strong> before submitting an application. Official proclamation links are in each state's panel.
+  </div>
 
   <!-- ─── State Selector ─────────────────────────── -->
   <nav class="state-bar">
@@ -400,6 +402,13 @@
       <p id="no-data-note" style="display:none;font-size:12px;color:#999;margin-top:8px;">* Draw data coming soon for these states. Editorial content is available now.</p>
     </div>
   </nav>
+
+  <!--
+    Hunt season dates are sourced from each state's annual big game hunting proclamation PDF.
+    These PDFs are released annually (typically Jan-March) and are the authoritative source for
+    dates, bag limits, legal weapon specs, and season structure. A separate parsing pipeline
+    (tabula-py / pdfplumber) will extract dates from proclamation PDFs for each state.
+  -->
 
   <!-- ─── State Content ──────────────────────────── -->
   <div class="container">
@@ -460,14 +469,15 @@ const STATE_CONTENT = {
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step highlight">Random number assigned</div>
         <span class="flow-arrow">&rarr;</span>
-        <div class="flow-step">Check 1 &rarr; 2 &rarr; 3</div>
+        <div class="flow-step">Check choices 1&rarr;2&rarr;3</div>
       </div>
-      <p>Ordering matters enormously. Put your dream hunt first and a high-odds safety last. A high-draw-rate first choice burns your number before it reaches harder hunts below it. New Mexico and Idaho are the only pure-random western states &mdash; no points to save, no reason to skip a year.</p>
+      <p>Ordering matters: the system walks your choices sequentially. A high-draw-rate first choice burns your number before it reaches harder hunts below. Put the dream hunt first, a safety pick third.</p>
     `,
     strategy: [
-      'First choice = dream hunt. No points means no benefit to saving up. Swing for the fences every year.',
-      'Third choice = safety valve. Pick a hunt with 25%+ odds to maximize your chance of actually going hunting.',
-      'For nonresidents, the 6% NR pool means odds depend on how many other NRs apply for that specific code. Lesser-known southern NM units sometimes exceed 30% NR draw rates.',
+      'First choice = dream hunt. No points to save, no benefit to waiting. Swing for the best hunt you want.',
+      'Third choice = safety valve. Pick something with 25%+ draw odds so you actually go hunting.',
+      'NR pool is small (6%), so NR odds depend heavily on how many other nonresidents apply for that specific code. Some southern NM units draw above 30% for NR.',
+      'Apply every year. No points, no waiting period, every draw is independent.',
     ],
   },
   AZ: {
@@ -485,7 +495,7 @@ const STATE_CONTENT = {
     portalLabel: 'AZ Game & Fish Draw',
     systemTitle: 'How Arizona\'s Draw Works',
     systemHtml: `
-      <p>Three-pass system. Pass 1 (20% of tags): max-point holders only. Pass 2 (60%): weighted random where each bonus point adds one entry. Pass 3 (20%): pure random, open to all. Loyalty points and Hunter Ed add fractional bonus to weighted entries.</p>
+      <p>Three-pass system per hunt. Pass 1: 20% of tags to max-point holders only. Pass 2: 60% weighted random (each bonus point = one extra entry). Pass 3: 20% pure random, open to all. Loyalty points and Hunter Ed completion add fractional bonus to weighted entries.</p>
       <div class="flow-diagram">
         <div class="flow-step highlight">Pass 1: 20%<br><span style="font-size:11px;font-weight:400">Max-point only</span></div>
         <span class="flow-arrow">&rarr;</span>
@@ -493,12 +503,13 @@ const STATE_CONTENT = {
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step highlight">Pass 3: 20%<br><span style="font-size:11px;font-weight:400">Pure random</span></div>
       </div>
-      <p>NR capped at 10% per hunt number. Premium rifle bull elk requires 15&ndash;20+ years of points. Deer is significantly more accessible. PointGuard lets you turn back a drawn tag and keep your points for $10&ndash;25 &mdash; always opt in.</p>
+      <p>NR capped at 10% per hunt number. Premium rifle bull elk requires 15&ndash;20+ years of points. Deer is far more accessible. PointGuard ($10&ndash;25) lets you return a drawn tag and keep your points.</p>
     `,
     strategy: [
-      'Start banking bonus points immediately. Premium rifle bull takes 15&ndash;20 years. Meanwhile, cow elk and archery units draw in 3&ndash;5 years.',
-      'Do not overlook Pass 3: 20% of tags go pure random. You can draw a premium unit on your first application &mdash; it happens every year.',
-      'Always opt into PointGuard. Trivial cost, protects a decade of accumulated points if life intervenes.',
+      'Start banking elk bonus points immediately. The best rifle bull hunts take 15&ndash;20 years. Cow elk and archery units are drawable in 3&ndash;5.',
+      'Pass 3 (20% pure random) means zero-point applicants draw premium units every year. Do not count yourself out.',
+      'Arizona deer is accessible: most muzzleloader and archery hunts drawable with 3&ndash;7 points. Hunt deer while banking elk points.',
+      'Always opt into PointGuard. Trivial cost, protects a decade of accumulation.',
     ],
   },
   CO: {
@@ -516,18 +527,19 @@ const STATE_CONTENT = {
     portalLabel: 'CPW Draw Results',
     systemTitle: 'How Colorado\'s Draw Works',
     systemHtml: `
-      <p>Strictest queue in the West: highest point holder draws first, no randomness in the preference round. Points accumulate by species, not unit. Four choices per application. First-choice failure earns a point; drawing on choices 2&ndash;4 keeps existing points without adding one.</p>
+      <p>Strict preference queue: highest point holder draws first. Points accumulate by species, not unit. Four choices per application. First-choice failures earn a point; drawing on choices 2&ndash;4 preserves existing points without adding one &mdash; a key strategic lever.</p>
       <div class="flow-diagram">
         <div class="flow-step highlight">Preference round<br><span style="font-size:11px;font-weight:400">Highest points first</span></div>
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step">Leftover round<br><span style="font-size:11px;font-weight:400">Remaining tags</span></div>
       </div>
-      <p>OTC licenses for many deer/elk units (2nd and 3rd rifle) require no draw at all &mdash; legitimate elk hunting on millions of acres of public land. The 2028 season switches to a 50/50 hybrid splitting tags between preference and weighted random.</p>
+      <p>OTC licenses exist for many units (2nd/3rd rifle), requiring no draw. The 2028 season switches to a 50/50 hybrid (preference queue + weighted random).</p>
     `,
     strategy: [
-      'OTC 2nd/3rd rifle seasons are legitimate alternatives while banking points. Units 61, 76, and 79 produce quality bulls on OTC tags.',
-      'Stack max-point first choice on your hardest target; use choices 2&ndash;4 as fallbacks that preserve points without adding one.',
-      'Watch the 2028 hybrid transition. The new 50/50 split will dilute pure preference holders\' advantage &mdash; consider using points before the switch.',
+      'OTC 2nd/3rd rifle is legitimate elk hunting on millions of public acres. Hunt OTC while banking points for premium units.',
+      'Use choice 1 on a long-shot dream hunt to bank a point, choices 2&ndash;4 as realistic fallbacks.',
+      '20&ndash;25% NR allocation is among the most generous in the West. Combined with OTC, Colorado is the most accessible first western elk hunt.',
+      'Watch the 2028 hybrid transition. If you have high points for a premium unit, consider using them before the system changes.',
     ],
   },
   UT: {
@@ -545,18 +557,19 @@ const STATE_CONTENT = {
     portalLabel: 'Utah DWR Draw Results',
     systemTitle: 'How Utah\'s Draw Works',
     systemHtml: `
-      <p>Two tracks. Limited-entry (trophy bull, trophy buck, once-in-a-lifetime): 50% preference queue for top point holders, 50% weighted random with entries = (bonus points + 1) squared. General season (spike elk, general buck): pure preference queue, highest points first.</p>
+      <p>Two tracks. Limited-entry (trophy bull, trophy buck, once-in-a-lifetime): 50% preference queue to top point holders, 50% weighted random with (points+1)&sup2; entries. General season (spike elk, general buck): pure preference queue, highest points first.</p>
       <div class="flow-diagram">
         <div class="flow-step highlight">50% Preference<br><span style="font-size:11px;font-weight:400">Top points first</span></div>
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step highlight">50% Weighted<br><span style="font-size:11px;font-weight:400">(pts+1)&sup2; entries</span></div>
       </div>
-      <p>Five-year NR waiting period after drawing LE deer or elk. You can buy bonus points without applying. Dedicated Hunter Program offers residents a guaranteed 3-year general tag in exchange for conservation hours.</p>
+      <p>You can buy bonus points without applying. Five-year NR waiting period after drawing LE deer or elk. Dedicated Hunter Program: guaranteed 3-year general tag in exchange for conservation hours.</p>
     `,
     strategy: [
-      'The squared formula makes high points extremely powerful: 10 points = 121 entries vs 1 for a new applicant. Start building early.',
-      'Buy bonus points annually even in years you cannot hunt &mdash; Utah allows it without a full application.',
-      'After drawing LE, use the 5-year NR waiting period to hunt general season (spike elk, gen buck) and apply for other species.',
+      'The squared formula makes high point counts extremely powerful: 10 points = 121 entries vs 1 for a new applicant. Start early.',
+      'Buy bonus points annually even in years you cannot hunt.',
+      'After drawing LE, use the 5-year waiting period for general season (spike elk, general buck) and other species.',
+      'Residents: Dedicated Hunter Program gives three guaranteed deer years while accumulating LE points.',
     ],
   },
   NV: {
@@ -574,7 +587,7 @@ const STATE_CONTENT = {
     portalLabel: 'NDOW Draw Results',
     systemTitle: 'How Nevada\'s Draw Works',
     systemHtml: `
-      <p>Weighted random, squared formula: entries = (bonus points + 1) squared. No max-point reserve pass &mdash; everyone competes in one pool per residency. Resident and nonresident pools are separate. Five choices per application.</p>
+      <p>Weighted random with (bonus points + 1)&sup2; entries. No max-point reserve &mdash; everyone competes in one pool per residency class. Resident and nonresident pools are separate. Points expire after missing two consecutive years.</p>
       <div class="flow-diagram">
         <div class="flow-step">Entries = (pts + 1)&sup2;</div>
         <span class="flow-arrow">&rarr;</span>
@@ -582,12 +595,13 @@ const STATE_CONTENT = {
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step">5 choices checked</div>
       </div>
-      <p>Extreme scarcity: roughly 150&ndash;300 elk tags statewide annually. NR elk is one of North America's hardest draws, with a 7-year post-draw waiting period. Deer is more accessible, especially eastern Nevada. Points expire after missing two consecutive years.</p>
+      <p>Extreme scarcity: 150&ndash;300 elk tags statewide annually. NR elk is one of the hardest draws in North America with a 7-year post-draw waiting period. Deer (eastern NV) is much more accessible.</p>
     `,
     strategy: [
-      'Never miss two consecutive years &mdash; Nevada expires your points. Set a calendar reminder in January.',
-      'NR elk is a lifetime pursuit. Apply every year and treat it as a bonus, not a plan. Eastern Nevada deer (units 231&ndash;233) offers far better odds.',
-      'With 5 choices, spread across a range: dream hunt first, increasingly accessible hunts in later positions.',
+      'Never miss two consecutive years &mdash; points expire. Set a January calendar reminder.',
+      'NR elk is a lifetime pursuit. Apply annually and treat it as a bonus, not a plan.',
+      'Eastern Nevada deer (units 231&ndash;233) offers far better draw odds. Prioritize deer as your primary NV hunt.',
+      'With 5 choices, spread across difficulty levels: dream hunt first, accessible hunts later.',
     ],
   },
   MT: {
@@ -605,18 +619,19 @@ const STATE_CONTENT = {
     portalLabel: 'MT FWP Draw Results',
     systemTitle: 'How Montana\'s Draw Works',
     systemHtml: `
-      <p>Two separate systems. NR combo licenses for general-season access: 75% to highest point holders, 25% random, capped at 3 points max. Limited-entry permits (Missouri Breaks, Sun River, etc.): both residents and nonresidents enter a bonus-point draw using the squared formula.</p>
+      <p>Two separate systems. NR combo licenses (general access): 75% to highest preference point holders, 25% random, 3-point cap. Limited-entry permits (Missouri Breaks, Sun River, etc.): bonus point draw using (pts+1)&sup2; formula &mdash; both residents and nonresidents must draw these. Residents cannot buy LE permits OTC.</p>
       <div class="flow-diagram">
         <div class="flow-step">NR Combo Draw<br><span style="font-size:11px;font-weight:400">75% pref / 25% random</span></div>
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step highlight">LE Permit Draw<br><span style="font-size:11px;font-weight:400">Bonus squared, Res + NR</span></div>
       </div>
-      <p>Residents cannot simply buy LE permits like Missouri Breaks elk &mdash; they accumulate bonus points over years, exactly like nonresidents. The general season on an NR combo provides access to millions of acres; do not overlook it while chasing LE permits.</p>
+      <p>The combo license draw and LE permit draw are separate systems with separate point pools. Apply for both.</p>
     `,
     strategy: [
-      'Do not confuse the combo license draw with the LE permit draw &mdash; they are separate systems with separate point pools. Apply for both.',
-      'Montana general season on an NR combo is some of the best public-land elk hunting in the West. Do not overlook it.',
-      'For LE permits, the squared bonus formula makes consistency critical. Apply every year even if you cannot hunt.',
+      'Do not confuse the NR combo draw with the LE permit draw. They are completely separate with separate point pools.',
+      'Montana general season on an NR combo license accesses millions of acres of some of the best elk hunting in the West.',
+      'For LE permits, the squared bonus formula rewards consistency. Apply every year.',
+      'Residents: Missouri Breaks and Sun River permits require years of bonus point accumulation. Plan accordingly.',
     ],
   },
   ID: {
@@ -634,18 +649,19 @@ const STATE_CONTENT = {
     portalLabel: 'IDFG Hunt Planner',
     systemTitle: 'How Idaho\'s Draw Works',
     systemHtml: `
-      <p>Pure random, no points. Each controlled hunt is drawn fresh every year with no accumulated advantage. 90% of tags go to an open random draw; 10% reserved for nonresidents. Two choices per application.</p>
+      <p>Pure random, no points. 90% open pool, 10% reserved for nonresidents. Each controlled hunt is drawn fresh every year with no accumulated advantage. Deer units and elk zones have different boundaries &mdash; do not assume matching numbers cover the same ground.</p>
       <div class="flow-diagram">
         <div class="flow-step highlight">Random draw<br><span style="font-size:11px;font-weight:400">90% open pool</span></div>
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step">10% NR reserved</div>
       </div>
-      <p>Deer managed in numbered units, elk in numbered zones &mdash; boundaries differ; do not assume unit 39 and zone 39 overlap. Starting 2026, NRs must enter a draw for general tags rather than buying OTC. IDFG's Hunt Planner is the best public draw-odds tool in the West.</p>
+      <p>Starting 2026, NR general season requires a separate draw rather than OTC purchase. IDFG publishes the best public draw odds tool in the West (Hunt Planner) with CSV export.</p>
     `,
     strategy: [
-      'Apply every year &mdash; no points means every year is a clean slate.',
-      'Salmon River corridor (zones 20&ndash;28) and Clearwater (zones 10&ndash;17) are among the best elk hunting in the lower 48, with 15&ndash;40% controlled-hunt draw rates.',
-      'With the 2026 NR general change, treat Idaho general season as a draw, not a guaranteed OTC purchase.',
+      'Apply every year. No points means every draw is a clean slate.',
+      'Use the IDFG Hunt Planner to find controlled hunts with 30%+ draw rates.',
+      'Salmon River corridor (zones 20&ndash;28) and Clearwater (zones 10&ndash;17) are among the best elk hunting in the lower 48, with 15&ndash;40% draw rates.',
+      'With the 2026 NR general change, treat Idaho general season as a draw application, not a guaranteed purchase.',
     ],
   },
   WY: {
@@ -663,18 +679,19 @@ const STATE_CONTENT = {
     portalLabel: 'WGFD Draw Results',
     systemTitle: 'How Wyoming\'s Draw Works',
     systemHtml: `
-      <p>75% of tags go to highest NR point holders in queue; 25% random. NRs choose between Regular (lower price, larger pool) and Special (higher price, smaller pool, often better odds per dollar). Preference points are NR-only for elk/deer &mdash; residents buy OTC in many units.</p>
+      <p>75% of tags to highest preference point holders (strict queue), 25% random. NR-only point system for elk and deer &mdash; residents have no points for these species and buy OTC for many units. Two NR license tiers: Regular (cheaper, larger pool) and Special (3x cost, smaller pool, often better odds per dollar).</p>
       <div class="flow-diagram">
         <div class="flow-step highlight">75% Preference<br><span style="font-size:11px;font-weight:400">Top points first</span></div>
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step highlight">25% Random<br><span style="font-size:11px;font-weight:400">All applicants</span></div>
       </div>
-      <p>Only one choice per application (plus waitlist), so you cannot hedge. Special tier costs ~3x Regular but has a dramatically smaller applicant pool &mdash; run the per-dollar math before defaulting to Regular.</p>
+      <p>One choice per application (plus waitlist). No hedging &mdash; commit to the area that matches your point level.</p>
     `,
     strategy: [
-      'Seriously consider Special tier despite the higher cost. Smaller applicant pool often yields better odds per dollar.',
-      'General units (Type 1/6 elk) in the Bighorns, Wind Rivers, and Wyoming Range produce legitimate 6-point bulls on resident OTC tags. NRs access these through the general draw.',
-      'New NR applicants: start in areas drawable in the random 25% pool while building preference for premium areas like the Thorofare.',
+      'Seriously consider Special tier. Despite higher cost, the smaller pool often yields better odds-per-dollar. Check both pools\' data.',
+      'Wyoming general units (Bighorn Mountains, Wind River Range, Wyoming Range) produce legitimate 6-point bulls on OTC resident tags and NR general draw.',
+      'With only one choice, do thorough research and commit. No fallback choices.',
+      'New NR applicants: start in areas drawable in the 25% random pool while building preference points.',
     ],
   },
   OR: {
@@ -692,20 +709,21 @@ const STATE_CONTENT = {
     portalLabel: 'ODFW Draw Results',
     systemTitle: 'How Oregon\'s Draw Works',
     systemHtml: `
-      <p>75% preference queue, 25% random. You earn a preference point whenever your first choice fails, even if you drew on choices 2&ndash;5. Points tracked by hunt series (100 = deer, 200 = elk), not individual hunt. Premium L/M/N hunts are pure random with no points.</p>
+      <p>75% to highest preference point holders, 25% random. Key twist: you earn a point whenever your first choice fails, even if you successfully drew on choices 2&ndash;5. Points tracked by hunt series (100-series = deer, 200-series = elk). Premium L/M/N hunts are pure random, no points.</p>
       <div class="flow-diagram">
         <div class="flow-step highlight">75% Preference<br><span style="font-size:11px;font-weight:400">Top points first</span></div>
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step highlight">25% Random<br><span style="font-size:11px;font-weight:400">All applicants</span></div>
         <span class="flow-arrow">&rarr;</span>
-        <div class="flow-step">Point on 1st fail</div>
+        <div class="flow-step">Point earned on<br><span style="font-size:11px;font-weight:400">1st-choice failure</span></div>
       </div>
-      <p>Point Saver: buy a point for $10 in years you cannot commit. 2026 eastern Oregon deer was restructured from WMUs to Hunt Areas &mdash; pre-2026 data uses old codes that do not map directly.</p>
+      <p>Point Saver: $10 to buy a point without hunting. 2026 Eastern Oregon deer restructured from WMUs to Hunt Areas &mdash; historical data may not map to current codes.</p>
     `,
     strategy: [
-      'Split strategy: hard-to-draw first choice (earn a point on failure) plus accessible choice 2&ndash;5 (actually go hunting). You get the point and a tag in the same year.',
-      'Premium L/M/N hunts are pure random &mdash; best trophy opportunity for new applicants with no point disadvantage.',
+      'Split strategy: hard-to-draw first choice (earn a point on failure) + accessible choice 2&ndash;5 (actually hunt). Get a point and a tag the same year.',
       'Use Point Saver ($10) in years you cannot hunt to maintain progression.',
+      'Premium L/M/N hunts are pure random &mdash; best trophy opportunities with no point disadvantage for new applicants.',
+      'Be cautious comparing pre-2026 and post-2026 Eastern Oregon deer data due to the WMU-to-Hunt-Area restructuring.',
     ],
   },
   WA: {
@@ -724,7 +742,7 @@ const STATE_CONTENT = {
     portalLabel: 'WDFW Harvest Data',
     systemTitle: 'How Washington\'s Draw Works',
     systemHtml: `
-      <p>Squared bonus point system. Unique among western states: residents and nonresidents compete in exactly the same pool with no NR quota. Points tracked by species category (Quality Deer, Buck Deer, Elk); entries = bonus points squared.</p>
+      <p>Squared bonus points, shared Res/NR pool &mdash; unique among western states. No NR quota; identical odds for residents and nonresidents with equal points. Points tracked by species category (Quality Deer, Buck Deer, Elk), entries = points&sup2;.</p>
       <div class="flow-diagram">
         <div class="flow-step">Entries = points&sup2;</div>
         <span class="flow-arrow">&rarr;</span>
@@ -732,12 +750,13 @@ const STATE_CONTENT = {
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step">Weighted random</div>
       </div>
-      <p>General deer and elk are OTC for everyone. Roosevelt elk on the Olympic Peninsula (one of the largest elk subspecies) requires no draw and offers world-class public-land hunting. The draw exists primarily for premium Quality hunts.</p>
+      <p>General deer and elk are OTC for everyone. Roosevelt elk on the Olympic Peninsula (no draw required) is world-class. The draw exists primarily for premium Quality hunts. Washington's draw data is locked in Power BI dashboards, limiting detailed analysis.</p>
     `,
     strategy: [
-      'Shared Res/NR pool means nonresidents compete on equal footing despite the higher fee ($152 vs $10). Your odds are identical to a resident with the same points.',
-      'OTC Roosevelt elk on the Olympic Peninsula is world-class and requires no draw. Do not sleep on it.',
-      'The squared formula makes even a few points very valuable (5 pts = 25 entries vs 1). Start building early.',
+      'Shared Res/NR pool means equal footing despite $152 NR fee. Your odds are identical to a resident with the same points.',
+      'OTC Roosevelt elk on the Olympic Peninsula requires no draw and offers one of the largest elk subspecies in North America.',
+      'Squared formula makes even a few points very valuable: 5 points = 25 entries vs 1 for a new applicant.',
+      'General season OTC provides guaranteed hunting while building points for Quality units.',
     ],
   },
   CA: {
@@ -755,18 +774,19 @@ const STATE_CONTENT = {
     portalLabel: 'CDFW Hunting & Licensing',
     systemTitle: 'How California\'s Draw Works',
     systemHtml: `
-      <p>Preference queue with species-specific splits. Deer: 90% preference / 10% random. Elk: 75% preference / 25% random. Points expire after a 5-year application gap. Only ~362 elk tags issued statewide across Tule, Roosevelt, and Rocky Mountain elk. One NR elk tag per year statewide &mdash; for practical purposes, NRs cannot draw California elk.</p>
+      <p>Preference queue with species-specific splits. Deer: 90% preference (strict queue), 10% random. Elk: 75% preference, 25% random. Points expire after a 5-year application gap. Only ~362 elk tags issued statewide across Tule, Roosevelt, and Rocky Mountain subspecies. One NR elk tag per year &mdash; nonresidents effectively cannot draw elk.</p>
       <div class="flow-diagram">
         <div class="flow-step highlight">Deer: 90% pref<br><span style="font-size:11px;font-weight:400">10% random</span></div>
         <span class="flow-arrow">&rarr;</span>
         <div class="flow-step highlight">Elk: 75% pref<br><span style="font-size:11px;font-weight:400">25% random</span></div>
       </div>
-      <p>Deer zones use a letter system (A&ndash;X with subzones). X zones are premium and require many years; A, B, C, D zones offer solid hunting with 2&ndash;5 years of points.</p>
+      <p>Deer zones use a letter system (A through X). X zones are premium, requiring many years. A zone (general) is popular and accessible. B, C, D zones offer solid hunting with 2&ndash;5 years of points.</p>
     `,
     strategy: [
-      'Nonresidents: forget California elk. One NR tag statewide per year is not a realistic pursuit.',
-      'For residents, the 90/10 deer split makes points extremely powerful. Commit to building points annually.',
-      'Do not let points expire &mdash; California resets after a 5-year gap. Set a recurring reminder.',
+      'Nonresidents: forget California elk. One NR tag per year statewide is not a realistic pursuit.',
+      'Residents: the 90/10 deer split makes points extremely powerful. 90% of tags go to the preference queue.',
+      'Do not let points expire &mdash; 5-year gap resets everything. Set a recurring annual reminder.',
+      'B, C, D zones offer solid buck deer hunting with 2&ndash;5 years of points. X zones are long-term investments.',
     ],
   },
 };
@@ -810,19 +830,19 @@ function fmtOddsFraction(p) {
   return `${pct} (1 in ${years})`;
 }
 
-function fmtSeasonDate(openDate, closeDate) {
+function fmtSeasonDates(openDate, closeDate) {
   if (!openDate && !closeDate) return '<span style="color:#999;">&mdash;</span>';
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  function fmt(d) {
-    if (!d) return '';
-    const dt = new Date(d + 'T00:00:00');
-    return months[dt.getMonth()] + ' ' + dt.getDate();
+  function fmtDate(ds) {
+    if (!ds) return '';
+    const d = new Date(ds + 'T00:00:00');
+    return months[d.getMonth()] + ' ' + d.getDate();
   }
-  const o = fmt(openDate);
-  const c = fmt(closeDate);
-  if (o && c) return o + '\u2013' + c;
-  if (o) return o + '\u2013';
-  return '\u2013' + c;
+  const open = fmtDate(openDate);
+  const close = fmtDate(closeDate);
+  if (open && close) return open + '\u2013' + close;
+  if (open) return open + '\u2013';
+  return '\u2013' + close;
 }
 
 async function fetchJSON(url, opts) {
@@ -922,50 +942,45 @@ function buildStateContent(code) {
   // ─── Main Area ───
   html += `<div class="main-area">`;
 
-  // TABS — Data first, then editorial
+  // 1. Odds Explorer (DATA FIRST)
+  html += `<div class="section-label">Data</div>`;
   html += `<div class="section-tabs">`;
   html += `<button class="section-tab active" data-panel="odds-panel" onclick="switchTab(this)">Odds Explorer</button>`;
   html += `<button class="section-tab" data-panel="plan-panel" onclick="switchTab(this)">Build Your Application</button>`;
   html += `<button class="section-tab" data-panel="cheat-panel" onclick="switchTab(this)">Top Hunts</button>`;
-  html += `<button class="section-tab" data-panel="system-panel" onclick="switchTab(this)">Draw System</button>`;
-  html += `<button class="section-tab" data-panel="strategy-panel" onclick="switchTab(this)">Strategy</button>`;
   html += `</div>`;
 
-  // 1. Odds Explorer Panel — FIRST
+  // Odds Explorer Panel
   html += `<div id="odds-panel" class="tab-panel active">`;
   html += buildFilterBar(code);
   html += `<div id="odds-results"></div>`;
   html += `</div>`;
 
-  // 2. Application Plan Panel
+  // Application Plan Panel
   html += `<div id="plan-panel" class="tab-panel">`;
   html += buildAppPlan(code);
   html += `</div>`;
 
-  // 3. Top Hunts Panel
+  // Top Hunts Panel
   html += `<div id="cheat-panel" class="tab-panel">`;
   html += buildCheatPanel(code);
   html += `</div>`;
 
-  // 4. Draw System Panel
-  html += `<div id="system-panel" class="tab-panel">`;
+  // 2. Draw System (below the fold)
+  html += `<hr class="section-divider">`;
   html += `<div class="section-label">Draw System</div>`;
   html += `<h2>${editorial.systemTitle || 'Draw System'}</h2>`;
   html += editorial.systemHtml || '<p>Draw system details coming soon.</p>';
-  html += `</div>`;
 
-  // 5. Strategy Panel
-  html += `<div id="strategy-panel" class="tab-panel">`;
+  // 3. Strategy
   if (editorial.strategy && editorial.strategy.length) {
+    html += `<hr class="section-divider">`;
     html += `<div class="section-label">Strategy</div>`;
     html += `<h2>Application Strategy</h2>`;
     for (const tip of editorial.strategy) {
       html += `<div class="strategy-box"><p>${tip}</p></div>`;
     }
-  } else {
-    html += `<p>Strategy content coming soon.</p>`;
   }
-  html += `</div>`;
 
   html += `</div>`; // main-area
   html += `</div>`; // state-layout
@@ -984,7 +999,6 @@ function switchTab(btn) {
   const panel = btn.dataset.panel;
   btn.closest('.section-tabs').querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-  // Find sibling panels
   const parent = btn.closest('.main-area') || btn.closest('.state-layout');
   parent.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById(panel).classList.add('active');
@@ -1031,7 +1045,6 @@ async function loadFilterData(code) {
       fetchJSON(`/api/units?state_code=${code}`),
     ]);
 
-    // Species
     const specSel = document.getElementById('f-species');
     if (specSel) {
       if (speciesData.species.length === 0) {
@@ -1040,9 +1053,8 @@ async function loadFilterData(code) {
         const oddsResults = document.getElementById('odds-results');
         if (oddsResults) {
           const sName = statesData.find(s => s.state_code === code)?.state_name || code;
-          oddsResults.innerHTML = `<div class="empty-state"><h3>No draw data loaded yet for ${esc(sName)}</h3><p>We're actively collecting and processing draw data for ${esc(sName)}. Check back soon &mdash; this state is on the roadmap.</p></div>`;
+          oddsResults.innerHTML = `<div class="empty-state"><h3>No draw data loaded yet for ${esc(sName)}</h3><p>We're actively collecting and processing draw data for ${esc(sName)}. Check back soon.</p></div>`;
         }
-        // Mark pill as no-data
         const pill = document.querySelector(`.state-pill[data-code="${code}"]`);
         if (pill) {
           pill.classList.add('no-data');
@@ -1058,7 +1070,6 @@ async function loadFilterData(code) {
       }
     }
 
-    // Pools
     const poolSel = document.getElementById('f-pool');
     if (poolSel) {
       poolSel.innerHTML = '';
@@ -1071,7 +1082,6 @@ async function loadFilterData(code) {
       }
     }
 
-    // Years
     const yearSel = document.getElementById('f-year');
     if (yearSel) {
       yearSel.innerHTML = '<option value="">Latest</option>';
@@ -1080,7 +1090,6 @@ async function loadFilterData(code) {
       }
     }
 
-    // Units
     const unitSel = document.getElementById('f-unit');
     if (unitSel) {
       unitSel.innerHTML = '<option value="">All</option>';
@@ -1089,11 +1098,9 @@ async function loadFilterData(code) {
       }
     }
 
-    // Also populate app-plan and cheat-panel dropdowns
     populateAppPlanFilters(speciesData, poolsData);
     populateCheatFilters(speciesData, poolsData);
 
-    // If no species, also disable plan and cheat panels
     if (speciesData.species.length === 0) {
       const planResults = document.getElementById('plan-results');
       if (planResults) planResults.innerHTML = '<div class="empty-state"><p>Draw data not yet available for this state.</p></div>';
@@ -1101,9 +1108,7 @@ async function loadFilterData(code) {
       if (cheatResults) cheatResults.innerHTML = '<div class="empty-state"><p>Draw data not yet available for this state.</p></div>';
     }
 
-  } catch (e) {
-    // Silently handle — filters will show loading state
-  }
+  } catch (e) {}
 }
 
 async function onSpeciesChange() {
@@ -1122,7 +1127,6 @@ async function onSpeciesChange() {
     }
   } catch (e) {}
 
-  // Also reload years for this species
   try {
     const yearsData = await fetchJSON(`/api/draw_years?state_code=${currentStateCode}&species_code=${species}`);
     const yearSel = document.getElementById('f-year');
@@ -1163,16 +1167,6 @@ async function searchHunts() {
   try {
     const data = await fetchJSON(`/api/hunts?${params}`);
     currentHunts = data.hunts || [];
-
-    // Deduplicate by hunt_code (in case server returns duplicates from joins)
-    const seen = new Set();
-    currentHunts = currentHunts.filter(h => {
-      const key = h.hunt_code + '|' + (h.draw_year || '');
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-
     sortCol = null;
     sortDir = 1;
     expandedRow = null;
@@ -1204,13 +1198,14 @@ function renderHuntsTable() {
     { key: 'season_label', label: 'Season Type', sort: 'string' },
     { key: 'bag_code', label: 'Bag', sort: 'string' },
     { key: 'weapon_code', label: 'Weapon', sort: 'string' },
-    { key: '_season_dates', label: 'Season', sort: 'string' },
+    { key: 'open_date', label: 'Season', sort: 'string' },
     { key: 'draw_odds_pct', label: 'Odds', sort: 'number' },
     { key: 'applications', label: 'Apps', sort: 'number' },
     { key: 'tags_awarded', label: 'Tags', sort: 'number' },
     { key: 'latest_success_rate', label: 'Harvest %', sort: 'number' },
   ];
 
+  const colCount = columns.length;
   let html = `<div class="data-count">${hunts.length} hunt${hunts.length !== 1 ? 's' : ''}</div>`;
   html += '<div class="table-scroll"><table class="data-table"><thead><tr>';
 
@@ -1219,8 +1214,6 @@ function renderHuntsTable() {
     html += `<th onclick="sortTable('${col.key}','${col.sort}')">${col.label}<span class="sort-indicator">${arrow}</span></th>`;
   }
   html += '</tr></thead><tbody>';
-
-  const colSpan = columns.length;
 
   for (let i = 0; i < hunts.length; i++) {
     const h = hunts[i];
@@ -1231,16 +1224,15 @@ function renderHuntsTable() {
     html += `<td>${h.season_label ? esc(h.season_label) : '<span style="color:#999;">&mdash;</span>'}</td>`;
     html += `<td>${esc(h.bag_code || '')}</td>`;
     html += `<td>${esc(h.weapon_code || '')}</td>`;
-    html += `<td>${fmtSeasonDate(h.open_date, h.close_date)}</td>`;
+    html += `<td>${fmtSeasonDates(h.open_date, h.close_date)}</td>`;
     html += `<td>${fmtPct(oddsPct)}</td>`;
     html += `<td>${fmtNum(h.applications)}</td>`;
     html += `<td>${fmtNum(h.tags_awarded)}</td>`;
     html += `<td>${h.latest_success_rate != null ? fmtPct(h.latest_success_rate) : '<span class="odds-na">--</span>'}${h.latest_harvest_year ? ' <span style="color:#999;font-size:12px">(' + h.latest_harvest_year + ')</span>' : ''}</td>`;
     html += '</tr>';
 
-    // Expanded row placeholder
     if (expandedRow === i) {
-      html += `<tr class="row-detail"><td colspan="${colSpan}" id="detail-row-${i}"><div class="loading">Loading details...</div></td></tr>`;
+      html += `<tr class="row-detail"><td colspan="${colCount}" id="detail-row-${i}"><div class="loading">Loading details...</div></td></tr>`;
     }
   }
 
@@ -1289,8 +1281,9 @@ async function loadRowDetail(idx, stateCode, huntCode) {
   const cell = document.getElementById(`detail-row-${idx}`);
   if (!cell) return;
 
-  const stateNameForLink = statesData.find(s => s.state_code === stateCode)?.state_name || stateCode;
-  const procUrl = PROCLAMATION_URLS[stateCode] || '#';
+  const procUrl = PROCLAMATION_URLS[stateCode];
+  const stateObj = statesData.find(s => s.state_code === stateCode);
+  const stateFullName = stateObj ? stateObj.state_name : stateCode;
 
   try {
     const data = await fetchJSON(`/api/hunt_detail?state_code=${encodeURIComponent(stateCode)}&hunt_code=${encodeURIComponent(huntCode)}`);
@@ -1302,11 +1295,20 @@ async function loadRowDetail(idx, stateCode, huntCode) {
     html += `<p style="font-size:13px;margin:0 0 4px;"><strong>${esc(data.hunt_label)}</strong></p>`;
     if (data.unit_description) html += `<p style="font-size:13px;margin:0 0 4px;">Unit: ${esc(data.unit_description)}</p>`;
     if (data.weapon_code) html += `<p style="font-size:13px;margin:0 0 4px;">Weapon: ${esc(data.weapon_code)}</p>`;
-    if (data.bag_label) html += `<p style="font-size:13px;margin:0 0 4px;">Bag: ${esc(data.bag_label)}${data.bag_definition ? ' &mdash; ' + esc(data.bag_definition) : ''}</p>`;
+    if (data.season_label) html += `<p style="font-size:13px;margin:0 0 4px;">Season Type: ${esc(data.season_label)}</p>`;
+
+    // Bag limit
+    if (data.bag_label) {
+      html += `<p style="font-size:13px;margin:0 0 4px;">Bag: ${esc(data.bag_label)}${data.bag_definition ? ' &mdash; ' + esc(data.bag_definition) : ''}</p>`;
+    }
     if (data.season_type) html += `<p style="font-size:13px;margin:0 0 4px;">Season: ${esc(data.season_type)}</p>`;
 
-    // Bag limit disclaimer
-    html += `<div class="bag-disclaimer">Always verify bag limits and legal animal definitions in the official proclamation before applying. <a href="${procUrl}" target="_blank" rel="noopener">See the official ${esc(stateNameForLink)} hunting proclamation &rarr;</a></div>`;
+    // Proclamation disclaimer
+    html += `<p style="font-size:11px;color:#999;margin:8px 0 0;">Verify with official proclamation before applying.</p>`;
+    if (procUrl) {
+      html += `<p style="font-size:12px;color:#666;margin:4px 0 0;">For legal shooting hours, weapon specifications, and legal animal definitions, see the official <a href="${procUrl}" target="_blank" rel="noopener" style="color:#326891;">${esc(stateFullName)} hunting proclamation</a>.</p>`;
+      html += `<p style="font-size:12px;color:#666;margin:2px 0 0;">Always verify bag limits and legal animal definitions in the official proclamation before applying.</p>`;
+    }
 
     // Season dates
     if (data.season_dates && data.season_dates.length) {
@@ -1315,6 +1317,7 @@ async function loadRowDetail(idx, stateCode, huntCode) {
         html += `<tr><td>${d.season_year}</td><td>${esc(d.start_date || '')}</td><td>${esc(d.end_date || '')}</td></tr>`;
       }
       html += '</tbody></table>';
+      html += `<p style="font-size:11px;color:#999;margin:4px 0 0;">Verify with official proclamation before applying.</p>`;
     }
     html += '</div>';
 
@@ -1358,7 +1361,7 @@ function buildAppPlan(code) {
   return `
     <div class="app-plan">
       <h2>Build Your Application</h2>
-      <p style="color:#666;font-size:15px;margin-bottom:16px;">Pick 3 hunt codes and see combined draw probability with ordering advice. Put your dream hunt first and a high-odds safety pick third.</p>
+      <p style="color:#666;font-size:15px;margin-bottom:16px;">Pick 3 hunt codes and see combined draw probability with ordering advice. Dream hunt first, safety pick third.</p>
       <div class="filter-bar-inner" style="margin-bottom:16px;">
         <div class="filter-group">
           <label for="plan-species">Species</label>
@@ -1425,13 +1428,15 @@ async function onPlanSpeciesChange() {
 
   try {
     const data = await fetchJSON(`/api/hunts?state_code=${currentStateCode}&species_code=${species}`);
-    // Deduplicate hunt codes for dropdowns
+    // Deduplicate by hunt_code
     const seen = new Set();
-    const uniqueHunts = (data.hunts || []).filter(h => {
-      if (seen.has(h.hunt_code)) return false;
-      seen.add(h.hunt_code);
-      return true;
-    });
+    const uniqueHunts = [];
+    for (const h of data.hunts) {
+      if (!seen.has(h.hunt_code)) {
+        seen.add(h.hunt_code);
+        uniqueHunts.push(h);
+      }
+    }
     for (const id of selects) {
       const sel = document.getElementById(id);
       if (!sel) continue;
@@ -1482,7 +1487,6 @@ async function runAppPlan() {
 
     let html = '';
 
-    // Results table
     html += '<table class="data-table plan-results-table"><thead><tr>';
     html += '<th>Choice</th><th>Hunt Code</th><th>Per-Hunt Odds</th><th>Apps</th><th>Tags</th>';
     html += '</tr></thead><tbody>';
@@ -1497,12 +1501,10 @@ async function runAppPlan() {
     }
     html += '</tbody></table>';
 
-    // Combined odds
     if (data.application_odds != null) {
       html += `<div class="plan-combined">Overall chance of drawing something: <strong>${fmtOddsFraction(data.application_odds)}</strong></div>`;
     }
 
-    // Ordering advice
     if (!data.logical_order) {
       html += `<div class="plan-advice warning">Your choices are not ordered from hardest to easiest. Easier hunts placed above harder ones quietly waste the value of the harder choices beneath them. Reorder so the hardest-to-draw hunt is first.</div>`;
     }
@@ -1524,7 +1526,7 @@ function buildCheatPanel(code) {
   return `
     <div>
       <h2>Top Hunts</h2>
-      <p style="color:#666;font-size:15px;margin-bottom:16px;">Hunts with a balance of draw accessibility and harvest quality. Youth and mobility-impaired hunts are excluded.</p>
+      <p style="color:#666;font-size:15px;margin-bottom:16px;">Hunts with a balance of draw accessibility and harvest quality. Youth and mobility-impaired hunts excluded.</p>
       <div class="filter-bar-inner" style="margin-bottom:16px;">
         <div class="filter-group">
           <label for="cheat-species">Species</label>
@@ -1611,8 +1613,7 @@ async function runCheatCodes() {
       html += '</tr>';
     }
     html += '</tbody></table></div>';
-    html += '<p style="font-size:13px;color:#999;margin-top:12px;">Hunts over 25% draw odds make excellent safety picks. 10-25% is second-choice territory. Under 10% belongs in the dream-hunt slot.</p>';
-
+    html += '<p style="font-size:13px;color:#999;margin-top:12px;">25%+ draw odds = safety pick. 10&ndash;25% = second choice. Under 10% = dream hunt slot.</p>';
     target.innerHTML = html;
   } catch (err) {
     target.innerHTML = `<p style="color:#999;font-size:14px;">Error: ${esc(err.message)}</p>`;
