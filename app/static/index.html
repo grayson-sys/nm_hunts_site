@@ -4,731 +4,1626 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grayson's Draw Odds</title>
+  <!--
+    Hunt season dates are sourced from each state's annual big game hunting proclamation PDF.
+    These PDFs are released annually (typically Jan-March) and are the authoritative source for
+    dates, bag limits, legal weapon specs, and season structure. A separate parsing pipeline
+    (tabula-py / pdfplumber) will extract dates from proclamation PDFs for each state.
+  -->
   <style>
-    * { box-sizing: border-box; }
+    /* ─── Reset & Base ──────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0; padding: 0;
-      background: #0f172a; color: #e5e7eb; line-height: 1.5;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px; line-height: 1.6; color: #1a1a1a;
+      background: #ffffff;
     }
-    header {
-      background: #020617;
-      padding: 1.2rem 1.5rem 1rem;
-      border-bottom: 1px solid #1f2937;
+    a { color: #326891; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─── Layout ────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .divider { border: none; border-top: 1px solid #e2e2e2; margin: 0; }
+
+    /* ─── Masthead ──────────────────────────────────── */
+    .masthead {
+      padding: 14px 0 12px;
+      border-bottom: 1px solid #e2e2e2;
     }
-    header img {
-      max-width: 100%; height: auto; border-radius: 0.8rem;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-      display: block; margin: 0 auto 0.6rem;
+    .masthead-inner {
+      display: flex; align-items: baseline; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px;
     }
-    header p {
-      margin: 0; color: #9ca3af; font-size: 0.95rem; text-align: center;
+    .masthead-title {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #1a1a1a;
     }
-    main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
-    .card {
-      background: #020617; border-radius: 0.75rem; border: 1px solid #1f2937;
-      padding: 1rem 1.2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      margin-bottom: 1.5rem;
+    .masthead-right {
+      font-size: 13px; color: #666;
     }
-    .card h2 { margin: 0 0 0.4rem; font-size: 1.15rem; }
-    .card p.desc { margin: 0 0 0.6rem; color: #9ca3af; font-size: 0.9rem; }
-    .field-group {
-      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.6rem;
+    .masthead-attr {
+      font-size: 13px; color: #666; margin-top: 4px;
     }
-    .field-group label {
-      font-size: 0.8rem; color: #9ca3af; display: block; margin-bottom: 0.15rem;
+
+    /* ─── State Selector Bar ───────────────────────── */
+    .state-bar {
+      padding: 20px 0;
+      border-bottom: 1px solid #e2e2e2;
     }
-    .field { flex: 1 1 140px; min-width: 0; }
-    select, input[type="number"], input[type="text"] {
-      width: 100%; padding: 0.35rem 0.45rem; border-radius: 0.4rem;
-      border: 1px solid #374151; background: #020617; color: #e5e7eb;
-      font-size: 0.85rem;
+    .state-pills {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      list-style: none;
     }
-    select:focus, input:focus {
-      outline: none; border-color: #f97316; box-shadow: 0 0 0 1px #f97316;
+    .state-pill {
+      padding: 6px 16px; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.04em; cursor: pointer;
+      border: 1px solid #1a1a1a; background: #fff; color: #1a1a1a;
+      border-radius: 3px; transition: all 0.15s ease;
+      user-select: none;
     }
-    button {
-      margin-top: 0.4rem; padding: 0.35rem 0.8rem; border-radius: 999px;
-      border: none; background: #f97316; color: #111827;
-      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    .state-pill:hover { background: #f7f7f5; }
+    .state-pill.active {
+      background: #1a1a1a; color: #fff;
     }
-    button:hover { background: #fb923c; }
-    table {
-      width: 100%; border-collapse: collapse; margin-top: 0.6rem; font-size: 0.8rem;
+    .state-pill.no-data { opacity: 0.5; }
+    .state-pill.no-data::after { content: ' *'; font-size: 10px; }
+    @media (max-width: 768px) {
+      .state-pills { gap: 6px; }
+      .state-pill { padding: 8px 14px; font-size: 13px; min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
     }
-    th, td {
-      padding: 0.35rem 0.4rem; border-bottom: 1px solid #111827;
-      text-align: left; vertical-align: top;
+
+    /* ─── State Content ────────────────────────────── */
+    .state-content {
+      opacity: 0; transition: opacity 0.3s ease;
+      padding: 32px 0 48px;
     }
-    th { color: #9ca3af; font-weight: 500; font-size: 0.78rem; }
-    tr:last-child td { border-bottom: none; }
-    .small { font-size: 0.8rem; color: #9ca3af; }
-    .pill {
-      display: inline-block; padding: 0.1rem 0.4rem; border-radius: 999px;
-      font-size: 0.75rem; border: 1px solid #374151; color: #e5e7eb; background: #020617;
+    .state-content.visible { opacity: 1; }
+
+    .state-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
     }
-    .badge {
-      display: inline-block; padding: 0.1rem 0.35rem; border-radius: 0.25rem;
-      font-size: 0.7rem; font-weight: 600; margin-left: 0.3rem;
+    @media (max-width: 768px) {
+      .state-layout { grid-template-columns: 1fr; gap: 32px; }
+      .sidebar { position: static !important; }
     }
-    .badge-lottery { background: #166534; color: #bbf7d0; }
-    .badge-preference { background: #854d0e; color: #fef08a; }
-    .badge-bonus { background: #1e3a5f; color: #93c5fd; }
-    .badge-hybrid { background: #581c87; color: #d8b4fe; }
-    .section-title { margin: 1rem 0 0.25rem; font-size: 1.05rem; }
-    .section-sub { margin: 0 0 0.75rem; font-size: 0.9rem; color: #9ca3af; }
-    .result-block { margin-top: 0.5rem; font-size: 0.86rem; }
-    .result-block h3 { margin: 0 0 0.3rem; font-size: 0.95rem; }
-    .muted { color: #6b7280; }
-    .odds-high { color: #4ade80; }
-    .odds-mid { color: #facc15; }
-    .odds-low { color: #f87171; }
-    .tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
-    .tab {
-      padding: 0.35rem 0.9rem; border-radius: 999px; border: 1px solid #374151;
-      background: transparent; color: #9ca3af; font-size: 0.85rem; cursor: pointer;
+
+    /* ─── Sidebar ──────────────────────────────────── */
+    .sidebar { position: sticky; top: 24px; align-self: start; }
+    .sidebar h1 {
+      font-size: 32px; font-weight: 700; letter-spacing: -0.02em;
+      line-height: 1.15; margin-bottom: 8px;
     }
-    .tab.active { background: #f97316; color: #111827; border-color: #f97316; font-weight: 600; }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-    .state-info {
-      background: #020617; border: 1px solid #1f2937; border-radius: 0.75rem;
-      padding: 0.8rem 1rem; margin-bottom: 1.5rem; font-size: 0.85rem;
+    .draw-badge {
+      display: inline-block; padding: 3px 10px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #666;
+      border: 1px solid #e2e2e2; border-radius: 3px;
+      margin-bottom: 20px;
     }
-    .state-info h3 { margin: 0 0 0.4rem; font-size: 1rem; }
-    .state-info .detail { color: #9ca3af; margin: 0.15rem 0; }
-    .hidden { display: none; }
-    .clickable { cursor: pointer; }
-    .clickable:hover { background: #1e293b; }
-    @media (max-width: 640px) {
-      header, main { padding: 1rem; }
-      .field { flex: 1 1 100%; }
+    .fact-list { list-style: none; }
+    .fact-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #e2e2e2;
+      font-size: 14px; line-height: 1.45;
     }
+    .fact-list li:last-child { border-bottom: none; }
+    .fact-label {
+      display: block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #999; margin-bottom: 2px;
+    }
+    .fact-value { color: #1a1a1a; }
+    .sidebar-link {
+      display: inline-block; margin-top: 16px;
+      font-size: 13px; font-weight: 600; color: #326891;
+    }
+    .sidebar-link:hover { text-decoration: underline; }
+
+    /* ─── Main Content Area ─────────────────────────── */
+    .main-area h2 {
+      font-size: 24px; font-weight: 700; letter-spacing: -0.01em;
+      margin: 0 0 6px; line-height: 1.2;
+    }
+    .main-area h3 {
+      font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
+      margin: 28px 0 8px; line-height: 1.3;
+    }
+    .main-area h3:first-child { margin-top: 0; }
+    .main-area p {
+      margin: 0 0 14px; font-size: 16px; line-height: 1.65; color: #333;
+    }
+    .section-divider {
+      border: none; border-top: 1px solid #e2e2e2;
+      margin: 36px 0;
+    }
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #999; margin-bottom: 12px;
+    }
+
+    /* ─── Draw Flow Diagram ─────────────────────────── */
+    .flow-diagram {
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: 0; margin: 16px 0 20px;
+      font-size: 13px;
+    }
+    .flow-step {
+      padding: 8px 16px;
+      border: 1px solid #e2e2e2; background: #f7f7f5;
+      font-weight: 600; text-align: center;
+      min-width: 100px;
+    }
+    .flow-step.highlight { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+    .flow-arrow {
+      padding: 0 8px; color: #999; font-size: 18px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .flow-diagram { flex-direction: column; align-items: stretch; }
+      .flow-arrow { text-align: center; transform: rotate(90deg); padding: 4px 0; }
+    }
+
+    /* ─── Strategy Box ─────────────────────────────── */
+    .strategy-box {
+      background: #f7f7f5; padding: 20px 24px;
+      border-left: 3px solid #1a1a1a;
+      margin: 16px 0 20px;
+    }
+    .strategy-box p {
+      font-size: 15px; line-height: 1.6; color: #333;
+      margin: 0 0 10px;
+    }
+    .strategy-box p:last-child { margin-bottom: 0; }
+
+    /* ─── Filter Bar ───────────────────────────────── */
+    .filter-bar {
+      position: sticky; top: 0; z-index: 50;
+      background: #fff; border-bottom: 1px solid #e2e2e2;
+      padding: 12px 0; margin: 0 0 24px;
+    }
+    .filter-bar-inner {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end;
+    }
+    .filter-group { flex: 1 1 150px; min-width: 0; }
+    .filter-group label {
+      display: block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #999; margin-bottom: 4px;
+    }
+    .filter-group select {
+      width: 100%; padding: 7px 10px; font-size: 14px;
+      font-family: inherit; border: 1px solid #e2e2e2;
+      background: #fff; color: #1a1a1a; border-radius: 3px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+    }
+    .filter-group select:focus {
+      outline: none; border-color: #1a1a1a;
+    }
+    @media (max-width: 768px) {
+      .filter-group { flex: 1 1 100%; }
+    }
+
+    /* ─── Data Table ───────────────────────────────── */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+      min-width: 700px;
+    }
+    .data-table thead th {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #999;
+      padding: 10px 12px; text-align: left;
+      border-bottom: 2px solid #1a1a1a;
+      cursor: pointer; user-select: none;
+      white-space: nowrap;
+    }
+    .data-table thead th:hover { color: #1a1a1a; }
+    .data-table thead th .sort-indicator { font-size: 10px; margin-left: 4px; }
+    .data-table tbody td {
+      padding: 10px 12px; font-size: 14px;
+      border-bottom: 1px solid #e2e2e2;
+      vertical-align: top;
+    }
+    .data-table tbody tr { cursor: pointer; transition: background 0.1s; }
+    .data-table tbody tr:hover { background: #f7f7f5; }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table .hunt-code {
+      font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+      font-size: 13px; font-weight: 600;
+    }
+    .odds-green { color: #00732f; font-weight: 600; }
+    .odds-yellow { color: #b7791f; font-weight: 600; }
+    .odds-red { color: #c0392b; font-weight: 600; }
+    .odds-na { color: #999; }
+    .data-count {
+      font-size: 13px; color: #999; margin-bottom: 12px;
+    }
+
+    /* ─── Expanded Row Detail ──────────────────────── */
+    .row-detail {
+      background: #f7f7f5;
+    }
+    .row-detail td {
+      padding: 16px 12px !important;
+      border-bottom: 1px solid #e2e2e2 !important;
+    }
+    .detail-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+    .detail-section h4 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #999; margin-bottom: 8px;
+    }
+    .detail-mini-table {
+      width: 100%; border-collapse: collapse; font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+    .detail-mini-table th {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: #999;
+      padding: 4px 8px; text-align: left;
+      border-bottom: 1px solid #e2e2e2;
+    }
+    .detail-mini-table td {
+      padding: 4px 8px; border-bottom: 1px solid #e2e2e2;
+    }
+    .bag-disclaimer {
+      font-size: 12px; color: #666; margin-top: 10px; line-height: 1.5;
+    }
+    .bag-disclaimer a { color: #326891; }
+
+    /* ─── Empty State ──────────────────────────────── */
+    .empty-state {
+      text-align: center; padding: 48px 24px; color: #999;
+    }
+    .empty-state h3 { font-size: 18px; color: #666; margin-bottom: 8px; }
+    .empty-state p { font-size: 14px; }
+
+    /* ─── Application Plan ─────────────────────────── */
+    .app-plan { margin-top: 0; }
+    .app-plan-choices {
+      display: flex; flex-direction: column; gap: 12px;
+      margin: 16px 0;
+    }
+    .choice-row {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .choice-number {
+      flex: 0 0 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700;
+      background: #1a1a1a; color: #fff; border-radius: 50%;
+    }
+    .choice-select { flex: 1; }
+    .choice-select select {
+      width: 100%; padding: 8px 12px; font-size: 14px;
+      font-family: inherit; border: 1px solid #e2e2e2;
+      background: #fff; color: #1a1a1a; border-radius: 3px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+    }
+    .choice-select select:focus { outline: none; border-color: #1a1a1a; }
+
+    .plan-results-table { margin-top: 16px; }
+    .plan-advice {
+      background: #f7f7f5; padding: 16px 20px;
+      border-left: 3px solid #1a1a1a;
+      margin-top: 16px; font-size: 14px; line-height: 1.55;
+    }
+    .plan-advice.warning {
+      border-left-color: #b7791f;
+    }
+    .plan-combined {
+      margin-top: 16px; padding: 16px 0;
+      border-top: 2px solid #1a1a1a;
+      font-size: 15px;
+    }
+    .plan-combined strong { font-size: 20px; }
+
+    /* ─── Buttons ───────────────────────────────────── */
+    .btn {
+      display: inline-block; padding: 10px 20px;
+      font-size: 13px; font-weight: 700; font-family: inherit;
+      letter-spacing: 0.04em; min-height: 44px;
+      background: #1a1a1a; color: #fff; border: 1px solid #1a1a1a;
+      border-radius: 3px; cursor: pointer; transition: all 0.15s;
+    }
+    .btn:hover { background: #333; }
+    .btn-outline {
+      background: #fff; color: #1a1a1a;
+    }
+    .btn-outline:hover { background: #f7f7f5; }
+
+    /* ─── Section Tabs ─────────────────────────────── */
+    .section-tabs {
+      display: flex; gap: 0; border-bottom: 1px solid #e2e2e2;
+      margin-bottom: 24px;
+    }
+    .section-tab {
+      padding: 12px 20px; font-size: 14px; font-weight: 600;
+      color: #999; cursor: pointer; border-bottom: 2px solid transparent;
+      margin-bottom: -1px; transition: all 0.15s; background: none; border-top: none;
+      border-left: none; border-right: none; font-family: inherit; min-height: 44px;
+    }
+    .section-tab:hover { color: #1a1a1a; }
+    .section-tab.active {
+      color: #1a1a1a; border-bottom-color: #1a1a1a;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ─── Print ─────────────────────────────────────── */
+    @media print {
+      .state-bar, .filter-bar, .section-tabs, .app-plan { display: none; }
+      .state-content { opacity: 1 !important; }
+      .sidebar { position: static !important; }
+      body { font-size: 12px; }
+    }
+
+    /* ─── Loading ───────────────────────────────────── */
+    .loading { color: #999; font-size: 14px; padding: 20px 0; }
+    .fade-enter { animation: fadeIn 0.3s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
 </head>
 <body>
-  <header>
-    <img src="graysons_hunting_data.png" alt="Grayson's Hunting Data cover"
-         onerror="this.style.display='none'">
-    <p>Multi-state draw odds, harvest data, and application planning for western big game hunts.</p>
+
+  <!-- ─── Masthead ────────────────────────────────── -->
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead-inner">
+        <span class="masthead-title">Grayson's Draw Odds</span>
+        <span class="masthead-right">Western big game draw data, 11 states.</span>
+      </div>
+      <div class="masthead-attr">A personal research project by Grayson Schaffer &mdash; reporter, writer, and obsessive hunter. <a href="https://graysonchaffer.com" target="_blank" rel="noopener">graysonchaffer.com</a></div>
+    </div>
   </header>
 
-  <main>
-    <!-- State selector -->
-    <section>
-      <h2 class="section-title">Choose a state</h2>
-      <p class="section-sub">Everything starts here. Pick a state to see species, units, and draw results.</p>
-      <div class="card">
-        <div class="field-group">
-          <div class="field" style="flex:1 1 300px">
-            <label for="state-select">State</label>
-            <select id="state-select">
-              <option value="">Choose a state...</option>
-            </select>
-          </div>
+  <!-- ─── State Selector ─────────────────────────── -->
+  <nav class="state-bar">
+    <div class="container">
+      <ul class="state-pills" id="state-pills"></ul>
+      <p id="no-data-note" style="display:none;font-size:12px;color:#999;margin-top:8px;">* Draw data coming soon for these states. Editorial content is available now.</p>
+    </div>
+  </nav>
+
+  <!-- ─── State Content ──────────────────────────── -->
+  <div class="container">
+    <div id="state-content" class="state-content"></div>
+  </div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// DATA & STATE
+// ═══════════════════════════════════════════════════════════════
+
+const STATE_ORDER = ['AZ','CA','CO','ID','MT','NM','NV','OR','UT','WA','WY'];
+
+const PROCLAMATION_URLS = {
+  NM: 'https://www.wildlife.state.nm.us/hunting/big-game/',
+  AZ: 'https://www.azgfd.com/hunting/draw/biggame/',
+  CO: 'https://cpw.state.co.us/thingstodo/Pages/BigGameDraws.aspx',
+  UT: 'https://wildlife.utah.gov/hunting/big-game.html',
+  NV: 'https://www.ndow.org/hunt/big-game/',
+  MT: 'https://myfwp.mt.gov/fwpPub/drawingStatistics',
+  ID: 'https://idfg.idaho.gov/hunt/draw',
+  WY: 'https://wgfd.wyo.gov/Hunting/Apply-for-Hunts',
+  OR: 'https://myodfw.com/hunting/species/elk-deer',
+  WA: 'https://wdfw.wa.gov/hunting/big-game',
+  CA: 'https://www.wildlife.ca.gov/Hunting/Big-Game',
+};
+
+let statesData = [];
+let currentStateCode = null;
+let currentHunts = [];
+let sortCol = null;
+let sortDir = 1;
+let expandedRow = null;
+
+// ═══════════════════════════════════════════════════════════════
+// EDITORIAL CONTENT
+// ═══════════════════════════════════════════════════════════════
+
+const STATE_CONTENT = {
+  NM: {
+    drawLabel: 'PURE LOTTERY',
+    facts: {
+      'Points system': 'None (pure random)',
+      'NR allocation': '6% NR; 10% outfitter/guide',
+      'Choices per app': '3 (ordered preference)',
+      'Application deadline': 'March (varies by species)',
+      'Results announced': 'April',
+      'OTC available': 'No (all drawn)',
+      'Landowner tags': 'Yes (EPLUS system)',
+    },
+    portalUrl: 'https://onlinesales.wildlife.state.nm.us/',
+    portalLabel: 'NM Game & Fish Portal',
+    systemTitle: 'How New Mexico\'s Draw Works',
+    systemHtml: `
+      <p>Pure random lottery, no points. Three pools: resident (84%), nonresident (6%), outfitter (10%). List up to 3 hunt codes in preference order &mdash; one random number per applicant determines which choice (if any) is awarded. A first-year applicant has identical odds to a 30-year veteran.</p>
+      <div class="flow-diagram">
+        <div class="flow-step">Apply with 3 choices</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">Random number assigned</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">Check 1 &rarr; 2 &rarr; 3</div>
+      </div>
+      <p>Ordering matters enormously. Put your dream hunt first and a high-odds safety last. A high-draw-rate first choice burns your number before it reaches harder hunts below it. New Mexico and Idaho are the only pure-random western states &mdash; no points to save, no reason to skip a year.</p>
+    `,
+    strategy: [
+      'First choice = dream hunt. No points means no benefit to saving up. Swing for the fences every year.',
+      'Third choice = safety valve. Pick a hunt with 25%+ odds to maximize your chance of actually going hunting.',
+      'For nonresidents, the 6% NR pool means odds depend on how many other NRs apply for that specific code. Lesser-known southern NM units sometimes exceed 30% NR draw rates.',
+    ],
+  },
+  AZ: {
+    drawLabel: 'THREE-PASS BONUS',
+    facts: {
+      'Points system': 'Bonus (1 extra entry per point)',
+      'NR allocation': '~10% per hunt number',
+      'Choices per app': '3 (ordered preference)',
+      'Application deadline': 'February (elk); October (deer)',
+      'Results announced': 'March-April (elk); December (deer)',
+      'OTC available': 'Yes (some species, OTC archery)',
+      'Landowner tags': 'No',
+    },
+    portalUrl: 'https://www.azgfd.com/hunting/draw/',
+    portalLabel: 'AZ Game & Fish Draw',
+    systemTitle: 'How Arizona\'s Draw Works',
+    systemHtml: `
+      <p>Three-pass system. Pass 1 (20% of tags): max-point holders only. Pass 2 (60%): weighted random where each bonus point adds one entry. Pass 3 (20%): pure random, open to all. Loyalty points and Hunter Ed add fractional bonus to weighted entries.</p>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Pass 1: 20%<br><span style="font-size:11px;font-weight:400">Max-point only</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">Pass 2: 60%<br><span style="font-size:11px;font-weight:400">Weighted random</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">Pass 3: 20%<br><span style="font-size:11px;font-weight:400">Pure random</span></div>
+      </div>
+      <p>NR capped at 10% per hunt number. Premium rifle bull elk requires 15&ndash;20+ years of points. Deer is significantly more accessible. PointGuard lets you turn back a drawn tag and keep your points for $10&ndash;25 &mdash; always opt in.</p>
+    `,
+    strategy: [
+      'Start banking bonus points immediately. Premium rifle bull takes 15&ndash;20 years. Meanwhile, cow elk and archery units draw in 3&ndash;5 years.',
+      'Do not overlook Pass 3: 20% of tags go pure random. You can draw a premium unit on your first application &mdash; it happens every year.',
+      'Always opt into PointGuard. Trivial cost, protects a decade of accumulated points if life intervenes.',
+    ],
+  },
+  CO: {
+    drawLabel: 'PREFERENCE QUEUE',
+    facts: {
+      'Points system': 'Preference (strict queue)',
+      'NR allocation': '20-25% per hunt code',
+      'Choices per app': '4',
+      'Application deadline': 'April',
+      'Results announced': 'May-June',
+      'OTC available': 'Yes (many units, 2nd/3rd/4th rifle)',
+      'Landowner tags': 'Yes (transferable)',
+    },
+    portalUrl: 'https://cpw.state.co.us/learn/Pages/DrawingResults.aspx',
+    portalLabel: 'CPW Draw Results',
+    systemTitle: 'How Colorado\'s Draw Works',
+    systemHtml: `
+      <p>Strictest queue in the West: highest point holder draws first, no randomness in the preference round. Points accumulate by species, not unit. Four choices per application. First-choice failure earns a point; drawing on choices 2&ndash;4 keeps existing points without adding one.</p>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Preference round<br><span style="font-size:11px;font-weight:400">Highest points first</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">Leftover round<br><span style="font-size:11px;font-weight:400">Remaining tags</span></div>
+      </div>
+      <p>OTC licenses for many deer/elk units (2nd and 3rd rifle) require no draw at all &mdash; legitimate elk hunting on millions of acres of public land. The 2028 season switches to a 50/50 hybrid splitting tags between preference and weighted random.</p>
+    `,
+    strategy: [
+      'OTC 2nd/3rd rifle seasons are legitimate alternatives while banking points. Units 61, 76, and 79 produce quality bulls on OTC tags.',
+      'Stack max-point first choice on your hardest target; use choices 2&ndash;4 as fallbacks that preserve points without adding one.',
+      'Watch the 2028 hybrid transition. The new 50/50 split will dilute pure preference holders\' advantage &mdash; consider using points before the switch.',
+    ],
+  },
+  UT: {
+    drawLabel: 'HYBRID SYSTEM',
+    facts: {
+      'Points system': 'Bonus (squared + 1) for LE; Preference queue for general',
+      'NR allocation': 'Varies; 10% for most LE',
+      'Choices per app': '1 (LE), varies (general)',
+      'Application deadline': 'March (LE), July (general)',
+      'Results announced': 'Mid-April (LE)',
+      'OTC available': 'General season (spike elk, gen buck)',
+      'Landowner tags': 'Yes (CWMU and LOA programs)',
+    },
+    portalUrl: 'https://wildlife.utah.gov/draw-results.html',
+    portalLabel: 'Utah DWR Draw Results',
+    systemTitle: 'How Utah\'s Draw Works',
+    systemHtml: `
+      <p>Two tracks. Limited-entry (trophy bull, trophy buck, once-in-a-lifetime): 50% preference queue for top point holders, 50% weighted random with entries = (bonus points + 1) squared. General season (spike elk, general buck): pure preference queue, highest points first.</p>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">50% Preference<br><span style="font-size:11px;font-weight:400">Top points first</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">50% Weighted<br><span style="font-size:11px;font-weight:400">(pts+1)&sup2; entries</span></div>
+      </div>
+      <p>Five-year NR waiting period after drawing LE deer or elk. You can buy bonus points without applying. Dedicated Hunter Program offers residents a guaranteed 3-year general tag in exchange for conservation hours.</p>
+    `,
+    strategy: [
+      'The squared formula makes high points extremely powerful: 10 points = 121 entries vs 1 for a new applicant. Start building early.',
+      'Buy bonus points annually even in years you cannot hunt &mdash; Utah allows it without a full application.',
+      'After drawing LE, use the 5-year NR waiting period to hunt general season (spike elk, gen buck) and apply for other species.',
+    ],
+  },
+  NV: {
+    drawLabel: 'SQUARED BONUS',
+    facts: {
+      'Points system': 'Bonus (squared: (pts+1)\u00B2)',
+      'NR allocation': 'Separate NR pool; 10% for most species',
+      'Choices per app': '5',
+      'Application deadline': 'April',
+      'Results announced': 'May-June',
+      'OTC available': 'No (all big game drawn)',
+      'Landowner tags': 'Yes (limited)',
+    },
+    portalUrl: 'https://www.ndow.org/hunt/draw-results/',
+    portalLabel: 'NDOW Draw Results',
+    systemTitle: 'How Nevada\'s Draw Works',
+    systemHtml: `
+      <p>Weighted random, squared formula: entries = (bonus points + 1) squared. No max-point reserve pass &mdash; everyone competes in one pool per residency. Resident and nonresident pools are separate. Five choices per application.</p>
+      <div class="flow-diagram">
+        <div class="flow-step">Entries = (pts + 1)&sup2;</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">Weighted random<br><span style="font-size:11px;font-weight:400">All applicants</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">5 choices checked</div>
+      </div>
+      <p>Extreme scarcity: roughly 150&ndash;300 elk tags statewide annually. NR elk is one of North America's hardest draws, with a 7-year post-draw waiting period. Deer is more accessible, especially eastern Nevada. Points expire after missing two consecutive years.</p>
+    `,
+    strategy: [
+      'Never miss two consecutive years &mdash; Nevada expires your points. Set a calendar reminder in January.',
+      'NR elk is a lifetime pursuit. Apply every year and treat it as a bonus, not a plan. Eastern Nevada deer (units 231&ndash;233) offers far better odds.',
+      'With 5 choices, spread across a range: dream hunt first, increasingly accessible hunts in later positions.',
+    ],
+  },
+  MT: {
+    drawLabel: 'DUAL SYSTEM',
+    facts: {
+      'Points system': 'Preference (NR combo); Bonus squared (LE permits)',
+      'NR allocation': '~10% NR (LE); 10% NR combo licenses',
+      'NR waiting period': 'None for deer/elk',
+      'Application deadline': 'April 1 (LE); March 15 (combo)',
+      'Results announced': 'Mid-April',
+      'OTC available': 'General season (residents only)',
+      'Landowner tags': 'Yes (not transferable)',
+    },
+    portalUrl: 'https://fwp.mt.gov/hunt/draw-results',
+    portalLabel: 'MT FWP Draw Results',
+    systemTitle: 'How Montana\'s Draw Works',
+    systemHtml: `
+      <p>Two separate systems. NR combo licenses for general-season access: 75% to highest point holders, 25% random, capped at 3 points max. Limited-entry permits (Missouri Breaks, Sun River, etc.): both residents and nonresidents enter a bonus-point draw using the squared formula.</p>
+      <div class="flow-diagram">
+        <div class="flow-step">NR Combo Draw<br><span style="font-size:11px;font-weight:400">75% pref / 25% random</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">LE Permit Draw<br><span style="font-size:11px;font-weight:400">Bonus squared, Res + NR</span></div>
+      </div>
+      <p>Residents cannot simply buy LE permits like Missouri Breaks elk &mdash; they accumulate bonus points over years, exactly like nonresidents. The general season on an NR combo provides access to millions of acres; do not overlook it while chasing LE permits.</p>
+    `,
+    strategy: [
+      'Do not confuse the combo license draw with the LE permit draw &mdash; they are separate systems with separate point pools. Apply for both.',
+      'Montana general season on an NR combo is some of the best public-land elk hunting in the West. Do not overlook it.',
+      'For LE permits, the squared bonus formula makes consistency critical. Apply every year even if you cannot hunt.',
+    ],
+  },
+  ID: {
+    drawLabel: 'PURE RANDOM',
+    facts: {
+      'Points system': 'None (pure random)',
+      'NR allocation': '10% reserved for NR',
+      'Choices per app': '2 (controlled hunts)',
+      'Application deadline': 'June 5 (controlled hunts)',
+      'Results announced': 'July',
+      'OTC available': 'Yes (residents general); NR general drawn (2026+)',
+      'Landowner tags': 'Yes (depredation)',
+    },
+    portalUrl: 'https://idfg.idaho.gov/hunt/draw',
+    portalLabel: 'IDFG Hunt Planner',
+    systemTitle: 'How Idaho\'s Draw Works',
+    systemHtml: `
+      <p>Pure random, no points. Each controlled hunt is drawn fresh every year with no accumulated advantage. 90% of tags go to an open random draw; 10% reserved for nonresidents. Two choices per application.</p>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Random draw<br><span style="font-size:11px;font-weight:400">90% open pool</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">10% NR reserved</div>
+      </div>
+      <p>Deer managed in numbered units, elk in numbered zones &mdash; boundaries differ; do not assume unit 39 and zone 39 overlap. Starting 2026, NRs must enter a draw for general tags rather than buying OTC. IDFG's Hunt Planner is the best public draw-odds tool in the West.</p>
+    `,
+    strategy: [
+      'Apply every year &mdash; no points means every year is a clean slate.',
+      'Salmon River corridor (zones 20&ndash;28) and Clearwater (zones 10&ndash;17) are among the best elk hunting in the lower 48, with 15&ndash;40% controlled-hunt draw rates.',
+      'With the 2026 NR general change, treat Idaho general season as a draw, not a guaranteed OTC purchase.',
+    ],
+  },
+  WY: {
+    drawLabel: '75/25 PREFERENCE',
+    facts: {
+      'Points system': 'Preference (NR only for elk/deer)',
+      'NR allocation': 'Varies by area; ~16% statewide',
+      'Choices per app': '1 (plus waitlist)',
+      'Application deadline': 'January 31 (elk/deer)',
+      'Results announced': 'February-March',
+      'OTC available': 'Yes (residents, many units)',
+      'Landowner tags': 'Yes (transferable)',
+    },
+    portalUrl: 'https://wgfd.wyo.gov/apply-or-buy/draw-results',
+    portalLabel: 'WGFD Draw Results',
+    systemTitle: 'How Wyoming\'s Draw Works',
+    systemHtml: `
+      <p>75% of tags go to highest NR point holders in queue; 25% random. NRs choose between Regular (lower price, larger pool) and Special (higher price, smaller pool, often better odds per dollar). Preference points are NR-only for elk/deer &mdash; residents buy OTC in many units.</p>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">75% Preference<br><span style="font-size:11px;font-weight:400">Top points first</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">25% Random<br><span style="font-size:11px;font-weight:400">All applicants</span></div>
+      </div>
+      <p>Only one choice per application (plus waitlist), so you cannot hedge. Special tier costs ~3x Regular but has a dramatically smaller applicant pool &mdash; run the per-dollar math before defaulting to Regular.</p>
+    `,
+    strategy: [
+      'Seriously consider Special tier despite the higher cost. Smaller applicant pool often yields better odds per dollar.',
+      'General units (Type 1/6 elk) in the Bighorns, Wind Rivers, and Wyoming Range produce legitimate 6-point bulls on resident OTC tags. NRs access these through the general draw.',
+      'New NR applicants: start in areas drawable in the random 25% pool while building preference for premium areas like the Thorofare.',
+    ],
+  },
+  OR: {
+    drawLabel: '75/25 HYBRID',
+    facts: {
+      'Points system': 'Preference (earn on 1st-choice failure)',
+      'NR allocation': 'Varies by species/area',
+      'Choices per app': '5',
+      'Application deadline': 'May 15',
+      'Results announced': 'June',
+      'OTC available': 'Yes (general archery, some rifle)',
+      'Landowner tags': 'Yes (LOP system)',
+    },
+    portalUrl: 'https://myodfw.com/hunting/draw-results',
+    portalLabel: 'ODFW Draw Results',
+    systemTitle: 'How Oregon\'s Draw Works',
+    systemHtml: `
+      <p>75% preference queue, 25% random. You earn a preference point whenever your first choice fails, even if you drew on choices 2&ndash;5. Points tracked by hunt series (100 = deer, 200 = elk), not individual hunt. Premium L/M/N hunts are pure random with no points.</p>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">75% Preference<br><span style="font-size:11px;font-weight:400">Top points first</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">25% Random<br><span style="font-size:11px;font-weight:400">All applicants</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">Point on 1st fail</div>
+      </div>
+      <p>Point Saver: buy a point for $10 in years you cannot commit. 2026 eastern Oregon deer was restructured from WMUs to Hunt Areas &mdash; pre-2026 data uses old codes that do not map directly.</p>
+    `,
+    strategy: [
+      'Split strategy: hard-to-draw first choice (earn a point on failure) plus accessible choice 2&ndash;5 (actually go hunting). You get the point and a tag in the same year.',
+      'Premium L/M/N hunts are pure random &mdash; best trophy opportunity for new applicants with no point disadvantage.',
+      'Use Point Saver ($10) in years you cannot hunt to maintain progression.',
+    ],
+  },
+  WA: {
+    drawLabel: 'SQUARED BONUS',
+    facts: {
+      'Points system': 'Bonus (points\u00B2 entries)',
+      'NR allocation': 'None &mdash; same pool as residents',
+      'NR application fee': '$152 (vs $10 resident)',
+      'Choices per app': '1',
+      'Application deadline': 'May-June',
+      'Results announced': 'June-July',
+      'OTC available': 'Yes (general deer and elk)',
+      'Landowner tags': 'No formal program',
+    },
+    portalUrl: 'https://wdfw.wa.gov/hunting/management/game-harvest',
+    portalLabel: 'WDFW Harvest Data',
+    systemTitle: 'How Washington\'s Draw Works',
+    systemHtml: `
+      <p>Squared bonus point system. Unique among western states: residents and nonresidents compete in exactly the same pool with no NR quota. Points tracked by species category (Quality Deer, Buck Deer, Elk); entries = bonus points squared.</p>
+      <div class="flow-diagram">
+        <div class="flow-step">Entries = points&sup2;</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">Single pool<br><span style="font-size:11px;font-weight:400">Res + NR together</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">Weighted random</div>
+      </div>
+      <p>General deer and elk are OTC for everyone. Roosevelt elk on the Olympic Peninsula (one of the largest elk subspecies) requires no draw and offers world-class public-land hunting. The draw exists primarily for premium Quality hunts.</p>
+    `,
+    strategy: [
+      'Shared Res/NR pool means nonresidents compete on equal footing despite the higher fee ($152 vs $10). Your odds are identical to a resident with the same points.',
+      'OTC Roosevelt elk on the Olympic Peninsula is world-class and requires no draw. Do not sleep on it.',
+      'The squared formula makes even a few points very valuable (5 pts = 25 entries vs 1). Start building early.',
+    ],
+  },
+  CA: {
+    drawLabel: 'PREFERENCE QUEUE',
+    facts: {
+      'Points system': 'Preference (strict queue)',
+      'NR allocation': 'Deer: no NR quota; Elk: 1 NR tag/year',
+      'Choices per app': '3 (deer); 3 (elk)',
+      'Application deadline': 'June',
+      'Results announced': 'Mid-June',
+      'OTC available': 'No (all big game drawn)',
+      'Landowner tags': 'Yes (PLM program)',
+    },
+    portalUrl: 'https://wildlife.ca.gov/Licensing/Hunting',
+    portalLabel: 'CDFW Hunting & Licensing',
+    systemTitle: 'How California\'s Draw Works',
+    systemHtml: `
+      <p>Preference queue with species-specific splits. Deer: 90% preference / 10% random. Elk: 75% preference / 25% random. Points expire after a 5-year application gap. Only ~362 elk tags issued statewide across Tule, Roosevelt, and Rocky Mountain elk. One NR elk tag per year statewide &mdash; for practical purposes, NRs cannot draw California elk.</p>
+      <div class="flow-diagram">
+        <div class="flow-step highlight">Deer: 90% pref<br><span style="font-size:11px;font-weight:400">10% random</span></div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step highlight">Elk: 75% pref<br><span style="font-size:11px;font-weight:400">25% random</span></div>
+      </div>
+      <p>Deer zones use a letter system (A&ndash;X with subzones). X zones are premium and require many years; A, B, C, D zones offer solid hunting with 2&ndash;5 years of points.</p>
+    `,
+    strategy: [
+      'Nonresidents: forget California elk. One NR tag statewide per year is not a realistic pursuit.',
+      'For residents, the 90/10 deer split makes points extremely powerful. Commit to building points annually.',
+      'Do not let points expire &mdash; California resets after a 5-year gap. Set a recurring reminder.',
+    ],
+  },
+};
+
+// ═══════════════════════════════════════════════════════════════
+// UTILITY FUNCTIONS
+// ═══════════════════════════════════════════════════════════════
+
+function esc(s) {
+  if (s == null) return '';
+  const d = document.createElement('div');
+  d.textContent = String(s);
+  return d.innerHTML;
+}
+
+function oddsClass(pct) {
+  if (pct == null || pct === '') return 'odds-na';
+  pct = Number(pct);
+  if (pct > 20) return 'odds-green';
+  if (pct >= 5) return 'odds-yellow';
+  return 'odds-red';
+}
+
+function fmtPct(v) {
+  if (v == null) return '<span class="odds-na">--</span>';
+  const n = Number(v);
+  if (isNaN(n)) return '<span class="odds-na">--</span>';
+  const s = n.toFixed(1).replace(/\.0$/, '');
+  return `<span class="${oddsClass(n)}">${s}%</span>`;
+}
+
+function fmtNum(v) {
+  if (v == null) return '--';
+  return Number(v).toLocaleString();
+}
+
+function fmtOddsFraction(p) {
+  if (p == null || p <= 0) return '--';
+  const pct = (p * 100).toFixed(1).replace(/\.0$/, '') + '%';
+  const years = Math.max(1, Math.round(1 / p));
+  return `${pct} (1 in ${years})`;
+}
+
+function fmtSeasonDate(openDate, closeDate) {
+  if (!openDate && !closeDate) return '<span style="color:#999;">&mdash;</span>';
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function fmt(d) {
+    if (!d) return '';
+    const dt = new Date(d + 'T00:00:00');
+    return months[dt.getMonth()] + ' ' + dt.getDate();
+  }
+  const o = fmt(openDate);
+  const c = fmt(closeDate);
+  if (o && c) return o + '\u2013' + c;
+  if (o) return o + '\u2013';
+  return '\u2013' + c;
+}
+
+async function fetchJSON(url, opts) {
+  const res = await fetch(url, opts);
+  if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
+  return res.json();
+}
+
+// ═══════════════════════════════════════════════════════════════
+// INITIALIZATION
+// ═══════════════════════════════════════════════════════════════
+
+async function init() {
+  try {
+    const data = await fetchJSON('/api/states');
+    statesData = data.states;
+  } catch (e) {
+    statesData = [];
+  }
+
+  // Build state pills in alphabetical order
+  const pillsEl = document.getElementById('state-pills');
+  for (const code of STATE_ORDER) {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.className = 'state-pill';
+    btn.dataset.code = code;
+    btn.textContent = code;
+    btn.addEventListener('click', () => selectState(code));
+    li.appendChild(btn);
+    pillsEl.appendChild(li);
+  }
+
+  // Hash routing
+  const hash = window.location.hash.replace('#', '').toUpperCase();
+  if (hash && STATE_ORDER.includes(hash)) {
+    selectState(hash);
+  } else {
+    selectState('NM');
+  }
+
+  window.addEventListener('hashchange', () => {
+    const h = window.location.hash.replace('#', '').toUpperCase();
+    if (h && STATE_ORDER.includes(h) && h !== currentStateCode) {
+      selectState(h);
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// STATE SELECTION
+// ═══════════════════════════════════════════════════════════════
+
+function selectState(code) {
+  currentStateCode = code;
+  window.location.hash = code;
+
+  // Update pills
+  document.querySelectorAll('.state-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.code === code);
+  });
+
+  // Fade out, rebuild, fade in
+  const container = document.getElementById('state-content');
+  container.classList.remove('visible');
+
+  setTimeout(() => {
+    buildStateContent(code);
+    container.classList.add('visible');
+  }, 150);
+}
+
+function buildStateContent(code) {
+  const container = document.getElementById('state-content');
+  const stateDb = statesData.find(s => s.state_code === code) || {};
+  const editorial = STATE_CONTENT[code] || {};
+
+  const stateName = stateDb.state_name || code;
+  const facts = editorial.facts || {};
+
+  let html = `<div class="state-layout">`;
+
+  // ─── Sidebar ───
+  html += `<aside class="sidebar">`;
+  html += `<h1>${esc(stateName)}</h1>`;
+  html += `<div class="draw-badge">${editorial.drawLabel || stateDb.draw_type || 'DRAW'}</div>`;
+  html += `<ul class="fact-list">`;
+  for (const [label, value] of Object.entries(facts)) {
+    html += `<li><span class="fact-label">${esc(label)}</span><span class="fact-value">${value}</span></li>`;
+  }
+  html += `</ul>`;
+  if (editorial.portalUrl) {
+    html += `<a class="sidebar-link" href="${editorial.portalUrl}" target="_blank" rel="noopener">${editorial.portalLabel || 'Official Draw Portal'} &rarr;</a>`;
+  }
+  html += `</aside>`;
+
+  // ─── Main Area ───
+  html += `<div class="main-area">`;
+
+  // TABS — Data first, then editorial
+  html += `<div class="section-tabs">`;
+  html += `<button class="section-tab active" data-panel="odds-panel" onclick="switchTab(this)">Odds Explorer</button>`;
+  html += `<button class="section-tab" data-panel="plan-panel" onclick="switchTab(this)">Build Your Application</button>`;
+  html += `<button class="section-tab" data-panel="cheat-panel" onclick="switchTab(this)">Top Hunts</button>`;
+  html += `<button class="section-tab" data-panel="system-panel" onclick="switchTab(this)">Draw System</button>`;
+  html += `<button class="section-tab" data-panel="strategy-panel" onclick="switchTab(this)">Strategy</button>`;
+  html += `</div>`;
+
+  // 1. Odds Explorer Panel — FIRST
+  html += `<div id="odds-panel" class="tab-panel active">`;
+  html += buildFilterBar(code);
+  html += `<div id="odds-results"></div>`;
+  html += `</div>`;
+
+  // 2. Application Plan Panel
+  html += `<div id="plan-panel" class="tab-panel">`;
+  html += buildAppPlan(code);
+  html += `</div>`;
+
+  // 3. Top Hunts Panel
+  html += `<div id="cheat-panel" class="tab-panel">`;
+  html += buildCheatPanel(code);
+  html += `</div>`;
+
+  // 4. Draw System Panel
+  html += `<div id="system-panel" class="tab-panel">`;
+  html += `<div class="section-label">Draw System</div>`;
+  html += `<h2>${editorial.systemTitle || 'Draw System'}</h2>`;
+  html += editorial.systemHtml || '<p>Draw system details coming soon.</p>';
+  html += `</div>`;
+
+  // 5. Strategy Panel
+  html += `<div id="strategy-panel" class="tab-panel">`;
+  if (editorial.strategy && editorial.strategy.length) {
+    html += `<div class="section-label">Strategy</div>`;
+    html += `<h2>Application Strategy</h2>`;
+    for (const tip of editorial.strategy) {
+      html += `<div class="strategy-box"><p>${tip}</p></div>`;
+    }
+  } else {
+    html += `<p>Strategy content coming soon.</p>`;
+  }
+  html += `</div>`;
+
+  html += `</div>`; // main-area
+  html += `</div>`; // state-layout
+
+  container.innerHTML = html;
+
+  // Load filter data
+  loadFilterData(code);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════════════════════════
+
+function switchTab(btn) {
+  const panel = btn.dataset.panel;
+  btn.closest('.section-tabs').querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  // Find sibling panels
+  const parent = btn.closest('.main-area') || btn.closest('.state-layout');
+  parent.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(panel).classList.add('active');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FILTER BAR
+// ═══════════════════════════════════════════════════════════════
+
+function buildFilterBar(code) {
+  return `
+    <div class="filter-bar" style="position:static;border-bottom:none;padding:0 0 16px;">
+      <div class="filter-bar-inner">
+        <div class="filter-group">
+          <label for="f-species">Species</label>
+          <select id="f-species" onchange="onSpeciesChange()"><option value="">Loading...</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="f-pool">Pool</label>
+          <select id="f-pool"><option value="">Loading...</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="f-unit">Unit</label>
+          <select id="f-unit"><option value="">All</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="f-year">Year</label>
+          <select id="f-year"><option value="">Latest</option></select>
+        </div>
+        <div class="filter-group" style="flex:0 0 auto;align-self:flex-end;">
+          <button class="btn" onclick="searchHunts()">Search</button>
         </div>
       </div>
-    </section>
-
-    <!-- State info panel -->
-    <div id="state-info" class="state-info hidden"></div>
-
-    <!-- Downstream filters (hidden until state selected) -->
-    <div id="filters-section" class="hidden">
-      <section>
-        <div class="tabs">
-          <button class="tab active" data-tab="draw-odds">Draw Odds</button>
-          <button class="tab" data-tab="cheat-codes">Cheat Codes</button>
-          <button class="tab" data-tab="app-plan">Application Plan</button>
-          <button class="tab" data-tab="bag-info">Bag Limits</button>
-        </div>
-
-        <!-- TAB: Draw Odds -->
-        <div id="tab-draw-odds" class="tab-content active">
-          <h2 class="section-title">Draw odds by unit</h2>
-          <p class="section-sub">Filter hunts by species, pool, and unit. Results show draw odds and harvest data.</p>
-          <div class="card">
-            <div class="field-group">
-              <div class="field">
-                <label for="odds-species">Species</label>
-                <select id="odds-species"><option value="">Loading...</option></select>
-              </div>
-              <div class="field">
-                <label for="odds-pool">Pool</label>
-                <select id="odds-pool"><option value="">Loading...</option></select>
-              </div>
-              <div class="field">
-                <label for="odds-unit">
-                  <span id="odds-unit-label">Unit</span> (optional)
-                </label>
-                <select id="odds-unit"><option value="">All units</option></select>
-              </div>
-              <div class="field">
-                <label for="odds-year">Draw year</label>
-                <select id="odds-year"><option value="">Latest</option></select>
-              </div>
-            </div>
-            <button id="odds-run">Search hunts</button>
-            <div id="odds-results" class="result-block"></div>
-          </div>
-        </div>
-
-        <!-- TAB: Cheat Codes -->
-        <div id="tab-cheat-codes" class="tab-content">
-          <h2 class="section-title">Cheat Codes: Easy to draw, still worth hunting</h2>
-          <p class="section-sub">Hunts with a mix of higher draw odds and solid harvest success. Youth and mobility impaired hunts are filtered out.</p>
-          <div class="card">
-            <div class="field-group">
-              <div class="field">
-                <label for="cheat-species">Species</label>
-                <select id="cheat-species"><option value="">Loading...</option></select>
-              </div>
-              <div class="field">
-                <label for="cheat-pool">Pool</label>
-                <select id="cheat-pool"><option value="">Loading...</option></select>
-              </div>
-            </div>
-            <button id="cheat-run">Find cheat code hunts</button>
-            <div id="cheat-results" class="result-block"></div>
-          </div>
-        </div>
-
-        <!-- TAB: Application Plan -->
-        <div id="tab-app-plan" class="tab-content">
-          <h2 class="section-title">Plan a three choice application</h2>
-          <p class="section-sub">Pick three hunts and see combined odds and ordering advice.</p>
-          <div class="card">
-            <div class="field-group">
-              <div class="field">
-                <label for="app-species">Species</label>
-                <select id="app-species"><option value="">Loading...</option></select>
-              </div>
-              <div class="field">
-                <label for="app-pool">Pool</label>
-                <select id="app-pool"><option value="">Loading...</option></select>
-              </div>
-            </div>
-            <div class="field-group">
-              <div class="field">
-                <label for="app-choice1">First choice hunt</label>
-                <select id="app-choice1"><option value="">Choose species first...</option></select>
-              </div>
-              <div class="field">
-                <label for="app-choice2">Second choice hunt</label>
-                <select id="app-choice2"><option value="">Choose species first...</option></select>
-              </div>
-              <div class="field">
-                <label for="app-choice3">Third choice hunt (safety)</label>
-                <select id="app-choice3"><option value="">Choose species first...</option></select>
-              </div>
-            </div>
-            <button id="app-run">Evaluate application</button>
-            <div id="app-results" class="result-block"></div>
-          </div>
-        </div>
-
-        <!-- TAB: Bag Limits -->
-        <div id="tab-bag-info" class="tab-content">
-          <h2 class="section-title">Bag limit codes</h2>
-          <p class="section-sub">The Bag column uses the short code from the proclamation. Here is the key.</p>
-          <div class="card">
-            <div id="bag-table" class="result-block small"></div>
-          </div>
-        </div>
-      </section>
     </div>
+  `;
+}
 
-    <!-- Hunt detail modal -->
-    <div id="hunt-detail-overlay" class="hidden" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;">
-      <div style="background:#0f172a;border:1px solid #374151;border-radius:0.75rem;padding:1.2rem;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-          <h3 style="margin:0;" id="detail-title">Hunt Detail</h3>
-          <button id="detail-close" style="border-radius:50%;width:2rem;height:2rem;padding:0;font-size:1rem;line-height:1;">X</button>
-        </div>
-        <div id="detail-body" class="small"></div>
-      </div>
-    </div>
-  </main>
+async function loadFilterData(code) {
+  try {
+    const [speciesData, poolsData, yearsData, unitsData] = await Promise.all([
+      fetchJSON(`/api/species?state_code=${code}`),
+      fetchJSON(`/api/pools?state_code=${code}`),
+      fetchJSON(`/api/draw_years?state_code=${code}`),
+      fetchJSON(`/api/units?state_code=${code}`),
+    ]);
 
-  <script>
-    // ─── State ────────────────────────────────────
-    let currentState = null;
-    let statesData = [];
-
-    async function fetchJSON(url, opts) {
-      const res = await fetch(url, opts);
-      if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
-      return res.json();
-    }
-
-    function esc(s) {
-      if (s == null) return "";
-      const d = document.createElement("div");
-      d.textContent = String(s);
-      return d.innerHTML;
-    }
-
-    function oddsClass(pct) {
-      if (pct == null) return "";
-      if (pct > 20) return "odds-high";
-      if (pct >= 5) return "odds-mid";
-      return "odds-low";
-    }
-
-    function fmtPct(v) {
-      if (v == null) return "n/a";
-      return Number(v).toFixed(1).replace(/\.0$/, "") + "%";
-    }
-
-    function fmtOddsFraction(p) {
-      if (p == null || p <= 0) return "n/a";
-      const pct = (p * 100).toFixed(1).replace(/\.0$/, "") + "%";
-      const years = Math.max(1, Math.round(1 / p));
-      return `${pct} (draw ~1 in ${years} years)`;
-    }
-
-    function drawBadge(drawType) {
-      const cls = {lottery:"badge-lottery",preference:"badge-preference",bonus:"badge-bonus",hybrid:"badge-hybrid"};
-      return `<span class="badge ${cls[drawType] || "badge-hybrid"}">${esc(drawType)}</span>`;
-    }
-
-    // ─── Init ─────────────────────────────────────
-    async function init() {
-      const data = await fetchJSON("api/states");
-      statesData = data.states;
-      const sel = document.getElementById("state-select");
-      sel.innerHTML = '<option value="">Choose a state...</option>';
-      for (const s of statesData) {
-        const opt = document.createElement("option");
-        opt.value = s.state_code;
-        opt.textContent = `${s.state_name} — ${s.draw_type}`;
-        sel.appendChild(opt);
-      }
-    }
-
-    document.getElementById("state-select").addEventListener("change", async function() {
-      const code = this.value;
-      if (!code) {
-        currentState = null;
-        document.getElementById("state-info").classList.add("hidden");
-        document.getElementById("filters-section").classList.add("hidden");
-        return;
-      }
-      currentState = statesData.find(s => s.state_code === code);
-      showStateInfo(currentState);
-      document.getElementById("filters-section").classList.remove("hidden");
-      await loadFilters(code);
-    });
-
-    function showStateInfo(st) {
-      const el = document.getElementById("state-info");
-      el.classList.remove("hidden");
-      el.innerHTML = `
-        <h3>${esc(st.state_name)} ${drawBadge(st.draw_type)}</h3>
-        <p class="detail"><strong>Draw system:</strong> ${esc(st.point_math_note || st.draw_type)}</p>
-        ${st.choices_per_app ? `<p class="detail"><strong>Choices per app:</strong> ${st.choices_per_app}</p>` : ""}
-        ${st.nr_allocation_note ? `<p class="detail"><strong>NR allocation:</strong> ${esc(st.nr_allocation_note)}</p>` : ""}
-        ${st.app_deadline_month ? `<p class="detail"><strong>App deadline:</strong> ${esc(st.app_deadline_month)}</p>` : ""}
-        ${st.results_month ? `<p class="detail"><strong>Results:</strong> ${esc(st.results_month)}</p>` : ""}
-        ${st.has_otc_tags ? '<p class="detail">OTC tags available for some species.</p>' : ""}
-        ${st.notes ? `<p class="detail muted">${esc(st.notes)}</p>` : ""}
-      `;
-    }
-
-    async function loadFilters(stateCode) {
-      const [speciesData, poolsData, yearsData, unitsData] = await Promise.all([
-        fetchJSON(`api/species?state_code=${stateCode}`),
-        fetchJSON(`api/pools?state_code=${stateCode}`),
-        fetchJSON(`api/draw_years?state_code=${stateCode}`),
-        fetchJSON(`api/units?state_code=${stateCode}`),
-      ]);
-
-      // Set unit label
-      const unitLabel = currentState?.unit_type_label || "Unit";
-      document.getElementById("odds-unit-label").textContent = unitLabel;
-
-      // Populate all species selects
-      const speciesSelects = ["odds-species", "cheat-species", "app-species"];
-      for (const id of speciesSelects) {
-        const sel = document.getElementById(id);
-        sel.innerHTML = '<option value="">Choose a species...</option>';
+    // Species
+    const specSel = document.getElementById('f-species');
+    if (specSel) {
+      if (speciesData.species.length === 0) {
+        specSel.innerHTML = '<option value="">No species data yet</option>';
+        specSel.disabled = true;
+        const oddsResults = document.getElementById('odds-results');
+        if (oddsResults) {
+          const sName = statesData.find(s => s.state_code === code)?.state_name || code;
+          oddsResults.innerHTML = `<div class="empty-state"><h3>No draw data loaded yet for ${esc(sName)}</h3><p>We're actively collecting and processing draw data for ${esc(sName)}. Check back soon &mdash; this state is on the roadmap.</p></div>`;
+        }
+        // Mark pill as no-data
+        const pill = document.querySelector(`.state-pill[data-code="${code}"]`);
+        if (pill) {
+          pill.classList.add('no-data');
+          const note = document.getElementById('no-data-note');
+          if (note) note.style.display = 'block';
+        }
+      } else {
+        specSel.innerHTML = '<option value="">Select species</option>';
+        specSel.disabled = false;
         for (const sp of speciesData.species) {
-          const opt = document.createElement("option");
-          opt.value = sp.species_code;
-          opt.textContent = sp.common_name;
-          sel.appendChild(opt);
+          specSel.innerHTML += `<option value="${esc(sp.species_code)}">${esc(sp.common_name)}</option>`;
         }
       }
+    }
 
-      // Populate all pool selects
-      const poolSelects = ["odds-pool", "cheat-pool", "app-pool"];
-      for (const id of poolSelects) {
-        const sel = document.getElementById(id);
-        sel.innerHTML = "";
-        if (poolsData.pools.length === 0) {
-          sel.innerHTML = '<option value="">Open (All Hunters)</option>';
-        } else {
-          for (const p of poolsData.pools) {
-            const opt = document.createElement("option");
-            opt.value = p.pool_code;
-            opt.textContent = p.description;
-            sel.appendChild(opt);
-          }
+    // Pools
+    const poolSel = document.getElementById('f-pool');
+    if (poolSel) {
+      poolSel.innerHTML = '';
+      if (poolsData.pools.length === 0) {
+        poolSel.innerHTML = '<option value="">Open (All)</option>';
+      } else {
+        for (const p of poolsData.pools) {
+          poolSel.innerHTML += `<option value="${esc(p.pool_code)}">${esc(p.description)}</option>`;
         }
       }
+    }
 
-      // Units
-      const unitSel = document.getElementById("odds-unit");
-      unitSel.innerHTML = '<option value="">All units</option>';
-      for (const u of unitsData.units) {
-        const opt = document.createElement("option");
-        opt.value = u.gmu_code;
-        opt.textContent = u.dropdown_label;
-        unitSel.appendChild(opt);
-      }
-
-      // Years
-      const yearSel = document.getElementById("odds-year");
+    // Years
+    const yearSel = document.getElementById('f-year');
+    if (yearSel) {
       yearSel.innerHTML = '<option value="">Latest</option>';
       for (const y of yearsData.draw_years) {
-        const opt = document.createElement("option");
-        opt.value = y;
-        opt.textContent = y;
-        yearSel.appendChild(opt);
-      }
-
-      // Bag limits
-      loadBagLimits(stateCode);
-
-      // Reset results
-      document.getElementById("odds-results").innerHTML = "";
-      document.getElementById("cheat-results").innerHTML = "";
-      document.getElementById("app-results").innerHTML = "";
-
-      // Reset app hunt selects
-      for (const id of ["app-choice1", "app-choice2", "app-choice3"]) {
-        document.getElementById(id).innerHTML = '<option value="">Choose species first...</option>';
+        yearSel.innerHTML += `<option value="${y}">${y}</option>`;
       }
     }
 
-    // Reload units when species changes
-    document.getElementById("odds-species").addEventListener("change", async function() {
-      if (!currentState) return;
-      const speciesCode = this.value;
-      const unitsData = await fetchJSON(
-        `api/units?state_code=${currentState.state_code}` +
-        (speciesCode ? `&species_code=${speciesCode}` : "")
-      );
-      const unitSel = document.getElementById("odds-unit");
-      unitSel.innerHTML = '<option value="">All units</option>';
+    // Units
+    const unitSel = document.getElementById('f-unit');
+    if (unitSel) {
+      unitSel.innerHTML = '<option value="">All</option>';
       for (const u of unitsData.units) {
-        const opt = document.createElement("option");
-        opt.value = u.gmu_code;
-        opt.textContent = u.dropdown_label;
-        unitSel.appendChild(opt);
-      }
-    });
-
-    // ─── Tabs ─────────────────────────────────────
-    document.querySelectorAll(".tab").forEach(tab => {
-      tab.addEventListener("click", function() {
-        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-        document.querySelectorAll(".tab-content").forEach(tc => tc.classList.remove("active"));
-        this.classList.add("active");
-        document.getElementById("tab-" + this.dataset.tab).classList.add("active");
-      });
-    });
-
-    // ─── Draw Odds ────────────────────────────────
-    document.getElementById("odds-run").addEventListener("click", async () => {
-      if (!currentState) return;
-      const species = document.getElementById("odds-species").value;
-      const pool = document.getElementById("odds-pool").value;
-      const unit = document.getElementById("odds-unit").value;
-      const year = document.getElementById("odds-year").value;
-      const target = document.getElementById("odds-results");
-      target.innerHTML = "Loading...";
-
-      if (!species) { target.innerHTML = '<span class="muted">Choose a species.</span>'; return; }
-
-      const params = new URLSearchParams({
-        state_code: currentState.state_code,
-        species_code: species,
-      });
-      if (pool) params.set("pool_code", pool);
-      if (unit) params.set("gmu_code", unit);
-      if (year) params.set("draw_year", year);
-
-      try {
-        const data = await fetchJSON(`api/hunts?${params}`);
-        const hunts = data.hunts;
-        if (!hunts.length) {
-          target.innerHTML = '<span class="muted">No hunts matched that filter.</span>';
-          return;
-        }
-
-        let html = `<div class="small">Showing ${hunts.length} hunts.</div>`;
-        html += `<table><thead><tr>
-          <th>Hunt code</th>
-          <th>Description</th>
-          <th>Bag</th>
-          <th>Weapon</th>
-          <th>Draw odds</th>
-          <th>Apps / Tags</th>
-          <th>Harvest success</th>
-        </tr></thead><tbody>`;
-
-        for (const h of hunts) {
-          const oddsPct = h.draw_odds_pct;
-          const oc = oddsClass(oddsPct);
-          html += `<tr class="clickable" onclick="showDetail('${esc(currentState.state_code)}','${esc(h.hunt_code)}')">
-            <td><code>${esc(h.hunt_label)}</code></td>
-            <td>${esc(h.unit_description || "")}</td>
-            <td>${esc(h.bag_code || "")}</td>
-            <td>${esc(h.weapon_code || "")}</td>
-            <td class="${oc}">${oddsPct != null ? fmtPct(oddsPct) : "n/a"}</td>
-            <td>${h.applications ?? "n/a"} / ${h.tags_awarded ?? "n/a"}</td>
-            <td>${h.latest_success_rate != null ? fmtPct(h.latest_success_rate) : "n/a"}${h.latest_harvest_year ? ` <span class="muted">(${h.latest_harvest_year})</span>` : ""}</td>
-          </tr>`;
-        }
-        html += "</tbody></table>";
-        target.innerHTML = html;
-      } catch (err) {
-        target.innerHTML = `<span class="muted">Error: ${esc(err.message)}</span>`;
-      }
-    });
-
-    // ─── Cheat Codes ──────────────────────────────
-    document.getElementById("cheat-run").addEventListener("click", async () => {
-      if (!currentState) return;
-      const species = document.getElementById("cheat-species").value;
-      const pool = document.getElementById("cheat-pool").value;
-      const target = document.getElementById("cheat-results");
-      target.innerHTML = "Loading...";
-
-      if (!species) { target.innerHTML = '<span class="muted">Choose a species.</span>'; return; }
-
-      try {
-        const data = await fetchJSON("api/recommend", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({
-            state_code: currentState.state_code,
-            species_code: species,
-            pool_code: pool || "RES",
-          }),
-        });
-
-        if (!data.results.length) {
-          target.innerHTML = '<span class="muted">No hunts matched those filters.</span>';
-          return;
-        }
-
-        let html = `<div class="small">Showing ${data.results.length} suggested hunts.</div>`;
-        html += `<table><thead><tr>
-          <th>Hunt code</th>
-          <th>Description</th>
-          <th>Bag</th>
-          <th>Draw odds</th>
-          <th>Success</th>
-          <th>Notes</th>
-        </tr></thead><tbody>`;
-
-        for (const r of data.results) {
-          const oc = oddsClass(r.draw_odds * 100);
-          html += `<tr class="clickable" onclick="showDetail('${esc(currentState.state_code)}','${esc(r.hunt_code)}')">
-            <td><code>${esc(r.hunt_label || r.hunt_code)}</code></td>
-            <td>${esc(r.hunt_name || r.unit_description || "")}</td>
-            <td>${esc(r.bag_code || "")}</td>
-            <td class="${oc}">${fmtPct(r.draw_odds * 100)}</td>
-            <td>${r.success_rate != null ? fmtPct(r.success_rate) : "n/a"}${r.harvest_year ? ` <span class="muted">(${r.harvest_year})</span>` : ""}</td>
-            <td>${esc(r.note)}</td>
-          </tr>`;
-        }
-        html += "</tbody></table>";
-        html += '<p class="small" style="margin-top:0.4rem;">Rough rule of thumb: hunts over 25% draw odds make excellent safety picks, 10-25% is second choice territory, under 10% belongs in the dream hunt slot.</p>';
-        target.innerHTML = html;
-      } catch (err) {
-        target.innerHTML = `<span class="muted">Error: ${esc(err.message)}</span>`;
-      }
-    });
-
-    // ─── Application Plan ─────────────────────────
-    // Load hunt selects when app species changes
-    document.getElementById("app-species").addEventListener("change", async function() {
-      if (!currentState) return;
-      const species = this.value;
-      const selects = ["app-choice1", "app-choice2", "app-choice3"];
-      if (!species) {
-        for (const id of selects) {
-          document.getElementById(id).innerHTML = '<option value="">Choose species first...</option>';
-        }
-        return;
-      }
-
-      const params = new URLSearchParams({
-        state_code: currentState.state_code,
-        species_code: species,
-      });
-      const data = await fetchJSON(`api/hunts?${params}`);
-      for (const id of selects) {
-        const sel = document.getElementById(id);
-        sel.innerHTML = '<option value="">Select a hunt...</option>';
-        for (const h of data.hunts) {
-          const opt = document.createElement("option");
-          opt.value = h.hunt_code;
-          opt.textContent = h.hunt_label + (h.unit_description ? ` - ${h.unit_description}` : "");
-          sel.appendChild(opt);
-        }
-      }
-    });
-
-    document.getElementById("app-run").addEventListener("click", async () => {
-      if (!currentState) return;
-      const species = document.getElementById("app-species").value;
-      const pool = document.getElementById("app-pool").value;
-      const c1 = document.getElementById("app-choice1").value;
-      const c2 = document.getElementById("app-choice2").value;
-      const c3 = document.getElementById("app-choice3").value;
-      const target = document.getElementById("app-results");
-      target.innerHTML = "Loading...";
-
-      if (!species) { target.innerHTML = '<span class="muted">Choose a species.</span>'; return; }
-      if (!c1 || !c2 || !c3) { target.innerHTML = '<span class="muted">Pick three hunts.</span>'; return; }
-
-      try {
-        const data = await fetchJSON("api/application_plan", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({
-            state_code: currentState.state_code,
-            species_code: species,
-            pool_code: pool || "RES",
-            choices: [c1, c2, c3],
-          }),
-        });
-
-        let html = `<div class="small">Using latest draw data for <strong>${esc(data.species_name || data.species_code)}</strong>.</div>`;
-        html += `<table><thead><tr>
-          <th>Choice</th><th>Hunt code</th><th>Per hunt odds</th><th>Apps</th><th>Tags</th>
-        </tr></thead><tbody>`;
-
-        for (const row of data.choices) {
-          html += `<tr>
-            <td>${row.choice_number}</td>
-            <td><code>${esc(row.hunt_code)}</code></td>
-            <td>${row.p == null ? "n/a" : fmtOddsFraction(row.p)}</td>
-            <td>${row.applications ?? "n/a"}</td>
-            <td>${row.tags_awarded ?? "n/a"}</td>
-          </tr>`;
-        }
-        html += "</tbody></table>";
-
-        if (data.application_odds != null) {
-          html += `<p class="small" style="margin-top:0.3rem;">
-            Overall chance of drawing something: <strong>${fmtOddsFraction(data.application_odds)}</strong>.
-          </p>`;
-        }
-        if (!data.logical_order) {
-          html += '<p class="small" style="margin-top:0.25rem;color:#f97316;">Your choices are not ordered from hardest to easiest. Easier hunts on top quietly kill the value of the harder ones underneath.</p>';
-        }
-        if (data.advice) {
-          html += `<p class="small" style="margin-top:0.25rem;">${esc(data.advice)}</p>`;
-        }
-        target.innerHTML = html;
-      } catch (err) {
-        target.innerHTML = `<span class="muted">Error: ${esc(err.message)}</span>`;
-      }
-    });
-
-    // ─── Bag Limits ───────────────────────────────
-    async function loadBagLimits(stateCode) {
-      const target = document.getElementById("bag-table");
-      try {
-        const data = await fetchJSON(`api/bag_limits?state_code=${stateCode}`);
-        const list = data.bag_limits || [];
-        if (!list.length) {
-          target.innerHTML = '<span class="muted">No bag limits found.</span>';
-          return;
-        }
-        let html = '<table><thead><tr><th>Code</th><th>Label</th><th>Definition</th></tr></thead><tbody>';
-        for (const b of list) {
-          html += `<tr><td>${esc(b.bag_code)}</td><td>${esc(b.label)}</td><td>${esc(b.plain_definition)}</td></tr>`;
-        }
-        html += "</tbody></table>";
-        target.innerHTML = html;
-      } catch (err) {
-        target.innerHTML = '<span class="muted">Error loading bag limits.</span>';
+        unitSel.innerHTML += `<option value="${esc(u.gmu_code)}">${esc(u.dropdown_label)}</option>`;
       }
     }
 
-    // ─── Hunt Detail Modal ────────────────────────
-    async function showDetail(stateCode, huntCode) {
-      const overlay = document.getElementById("hunt-detail-overlay");
-      overlay.classList.remove("hidden");
-      overlay.style.display = "flex";
-      document.getElementById("detail-title").textContent = huntCode;
-      const body = document.getElementById("detail-body");
-      body.innerHTML = "Loading...";
+    // Also populate app-plan and cheat-panel dropdowns
+    populateAppPlanFilters(speciesData, poolsData);
+    populateCheatFilters(speciesData, poolsData);
 
-      try {
-        const data = await fetchJSON(`api/hunt_detail?state_code=${encodeURIComponent(stateCode)}&hunt_code=${encodeURIComponent(huntCode)}`);
-        let html = "";
-        html += `<p><strong>Hunt code:</strong> ${esc(data.hunt_label)}</p>`;
-        if (data.unit_description) html += `<p><strong>Unit:</strong> ${esc(data.unit_description)}</p>`;
-        if (data.weapon_code) html += `<p><strong>Weapon:</strong> ${esc(data.weapon_code)}</p>`;
-        if (data.bag_label) html += `<p><strong>Bag limit:</strong> ${esc(data.bag_label)} — ${esc(data.bag_definition || "")}</p>`;
-        if (data.season_type) html += `<p><strong>Season:</strong> ${esc(data.season_type)}</p>`;
+    // If no species, also disable plan and cheat panels
+    if (speciesData.species.length === 0) {
+      const planResults = document.getElementById('plan-results');
+      if (planResults) planResults.innerHTML = '<div class="empty-state"><p>Draw data not yet available for this state.</p></div>';
+      const cheatResults = document.getElementById('cheat-results');
+      if (cheatResults) cheatResults.innerHTML = '<div class="empty-state"><p>Draw data not yet available for this state.</p></div>';
+    }
 
-        // Season dates
-        if (data.season_dates && data.season_dates.length) {
-          html += '<h4 style="margin:0.5rem 0 0.2rem;">Season Dates</h4><table><thead><tr><th>Year</th><th>Hunt name</th><th>Start</th><th>End</th></tr></thead><tbody>';
-          for (const d of data.season_dates) {
-            html += `<tr><td>${d.season_year}</td><td>${esc(d.hunt_name || "")}</td><td>${esc(d.start_date || "")}</td><td>${esc(d.end_date || "")}</td></tr>`;
-          }
-          html += '</tbody></table>';
-        }
+  } catch (e) {
+    // Silently handle — filters will show loading state
+  }
+}
 
-        // Draw history
-        if (data.draw_history && data.draw_history.length) {
-          html += '<h4 style="margin:0.5rem 0 0.2rem;">Draw History</h4><table><thead><tr><th>Year</th><th>Pool</th><th>Apps</th><th>Tags avail</th><th>Tags awarded</th><th>Odds</th></tr></thead><tbody>';
-          for (const d of data.draw_history) {
-            const odds = (d.applications > 0 && d.tags_awarded > 0) ? fmtPct(d.tags_awarded / d.applications * 100) : "n/a";
-            html += `<tr><td>${d.draw_year}</td><td>${esc(d.pool_code)}</td><td>${d.applications ?? ""}</td><td>${d.tags_available ?? ""}</td><td>${d.tags_awarded ?? ""}</td><td>${odds}</td></tr>`;
-          }
-          html += '</tbody></table>';
-        }
+async function onSpeciesChange() {
+  if (!currentStateCode) return;
+  const species = document.getElementById('f-species')?.value;
+  if (!species) return;
 
-        // Harvest history
-        if (data.harvest_history && data.harvest_history.length) {
-          html += '<h4 style="margin:0.5rem 0 0.2rem;">Harvest History</h4><table><thead><tr><th>Year</th><th>Access</th><th>Success</th><th>Days</th><th>Satisfaction</th></tr></thead><tbody>';
-          for (const h of data.harvest_history) {
-            html += `<tr><td>${h.harvest_year}</td><td>${esc(h.access_type)}</td><td>${h.success_rate != null ? fmtPct(h.success_rate) : "n/a"}</td><td>${h.days_hunted ?? "n/a"}</td><td>${h.satisfaction ?? "n/a"}</td></tr>`;
-          }
-          html += '</tbody></table>';
-        }
-
-        body.innerHTML = html;
-      } catch (err) {
-        body.innerHTML = `<span class="muted">Error: ${esc(err.message)}</span>`;
+  try {
+    const unitsData = await fetchJSON(`/api/units?state_code=${currentStateCode}&species_code=${species}`);
+    const unitSel = document.getElementById('f-unit');
+    if (unitSel) {
+      unitSel.innerHTML = '<option value="">All</option>';
+      for (const u of unitsData.units) {
+        unitSel.innerHTML += `<option value="${esc(u.gmu_code)}">${esc(u.dropdown_label)}</option>`;
       }
     }
-    window.showDetail = showDetail;
+  } catch (e) {}
 
-    document.getElementById("detail-close").addEventListener("click", () => {
-      const overlay = document.getElementById("hunt-detail-overlay");
-      overlay.classList.add("hidden");
-      overlay.style.display = "none";
-    });
-    document.getElementById("hunt-detail-overlay").addEventListener("click", function(e) {
-      if (e.target === this) {
-        this.classList.add("hidden");
-        this.style.display = "none";
+  // Also reload years for this species
+  try {
+    const yearsData = await fetchJSON(`/api/draw_years?state_code=${currentStateCode}&species_code=${species}`);
+    const yearSel = document.getElementById('f-year');
+    if (yearSel) {
+      yearSel.innerHTML = '<option value="">Latest</option>';
+      for (const y of yearsData.draw_years) {
+        yearSel.innerHTML += `<option value="${y}">${y}</option>`;
       }
+    }
+  } catch (e) {}
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ODDS EXPLORER
+// ═══════════════════════════════════════════════════════════════
+
+async function searchHunts() {
+  const target = document.getElementById('odds-results');
+  if (!target || !currentStateCode) return;
+
+  const species = document.getElementById('f-species')?.value;
+  const pool = document.getElementById('f-pool')?.value;
+  const unit = document.getElementById('f-unit')?.value;
+  const year = document.getElementById('f-year')?.value;
+
+  if (!species) {
+    target.innerHTML = '<div class="empty-state"><p>Select a species to search hunts.</p></div>';
+    return;
+  }
+
+  target.innerHTML = '<div class="loading">Loading hunt data...</div>';
+
+  const params = new URLSearchParams({ state_code: currentStateCode, species_code: species });
+  if (pool) params.set('pool_code', pool);
+  if (unit) params.set('gmu_code', unit);
+  if (year) params.set('draw_year', year);
+
+  try {
+    const data = await fetchJSON(`/api/hunts?${params}`);
+    currentHunts = data.hunts || [];
+
+    // Deduplicate by hunt_code (in case server returns duplicates from joins)
+    const seen = new Set();
+    currentHunts = currentHunts.filter(h => {
+      const key = h.hunt_code + '|' + (h.draw_year || '');
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
     });
 
-    // ─── Boot ─────────────────────────────────────
-    init();
-  </script>
+    sortCol = null;
+    sortDir = 1;
+    expandedRow = null;
+
+    if (!currentHunts.length) {
+      target.innerHTML = `
+        <div class="empty-state">
+          <h3>No draw data loaded yet for ${esc(statesData.find(s=>s.state_code===currentStateCode)?.state_name || currentStateCode)}</h3>
+          <p>Data collection is ongoing. Check back soon.</p>
+        </div>`;
+      return;
+    }
+
+    renderHuntsTable();
+  } catch (err) {
+    target.innerHTML = `<div class="empty-state"><p>Error: ${esc(err.message)}</p></div>`;
+  }
+}
+
+function renderHuntsTable() {
+  const target = document.getElementById('odds-results');
+  if (!target) return;
+
+  const hunts = currentHunts;
+
+  const columns = [
+    { key: 'hunt_label', label: 'Hunt Code', sort: 'string' },
+    { key: 'unit_description', label: 'Unit', sort: 'string' },
+    { key: 'season_label', label: 'Season Type', sort: 'string' },
+    { key: 'bag_code', label: 'Bag', sort: 'string' },
+    { key: 'weapon_code', label: 'Weapon', sort: 'string' },
+    { key: '_season_dates', label: 'Season', sort: 'string' },
+    { key: 'draw_odds_pct', label: 'Odds', sort: 'number' },
+    { key: 'applications', label: 'Apps', sort: 'number' },
+    { key: 'tags_awarded', label: 'Tags', sort: 'number' },
+    { key: 'latest_success_rate', label: 'Harvest %', sort: 'number' },
+  ];
+
+  let html = `<div class="data-count">${hunts.length} hunt${hunts.length !== 1 ? 's' : ''}</div>`;
+  html += '<div class="table-scroll"><table class="data-table"><thead><tr>';
+
+  for (const col of columns) {
+    const arrow = sortCol === col.key ? (sortDir === 1 ? ' \u25B2' : ' \u25BC') : '';
+    html += `<th onclick="sortTable('${col.key}','${col.sort}')">${col.label}<span class="sort-indicator">${arrow}</span></th>`;
+  }
+  html += '</tr></thead><tbody>';
+
+  const colSpan = columns.length;
+
+  for (let i = 0; i < hunts.length; i++) {
+    const h = hunts[i];
+    const oddsPct = h.draw_odds_pct;
+    html += `<tr onclick="toggleRow(${i}, '${esc(currentStateCode)}', '${esc(h.hunt_code)}')">`;
+    html += `<td class="hunt-code">${esc(h.hunt_label)}</td>`;
+    html += `<td>${esc(h.unit_description || '')}</td>`;
+    html += `<td>${h.season_label ? esc(h.season_label) : '<span style="color:#999;">&mdash;</span>'}</td>`;
+    html += `<td>${esc(h.bag_code || '')}</td>`;
+    html += `<td>${esc(h.weapon_code || '')}</td>`;
+    html += `<td>${fmtSeasonDate(h.open_date, h.close_date)}</td>`;
+    html += `<td>${fmtPct(oddsPct)}</td>`;
+    html += `<td>${fmtNum(h.applications)}</td>`;
+    html += `<td>${fmtNum(h.tags_awarded)}</td>`;
+    html += `<td>${h.latest_success_rate != null ? fmtPct(h.latest_success_rate) : '<span class="odds-na">--</span>'}${h.latest_harvest_year ? ' <span style="color:#999;font-size:12px">(' + h.latest_harvest_year + ')</span>' : ''}</td>`;
+    html += '</tr>';
+
+    // Expanded row placeholder
+    if (expandedRow === i) {
+      html += `<tr class="row-detail"><td colspan="${colSpan}" id="detail-row-${i}"><div class="loading">Loading details...</div></td></tr>`;
+    }
+  }
+
+  html += '</tbody></table></div>';
+  target.innerHTML = html;
+
+  if (expandedRow !== null) {
+    loadRowDetail(expandedRow, currentStateCode, hunts[expandedRow].hunt_code);
+  }
+}
+
+function sortTable(key, type) {
+  if (sortCol === key) {
+    sortDir *= -1;
+  } else {
+    sortCol = key;
+    sortDir = 1;
+  }
+  expandedRow = null;
+
+  currentHunts.sort((a, b) => {
+    let va = a[key], vb = b[key];
+    if (type === 'number') {
+      va = va == null ? -Infinity : Number(va);
+      vb = vb == null ? -Infinity : Number(vb);
+      return (va - vb) * sortDir;
+    }
+    va = va == null ? '' : String(va).toLowerCase();
+    vb = vb == null ? '' : String(vb).toLowerCase();
+    return va.localeCompare(vb) * sortDir;
+  });
+
+  renderHuntsTable();
+}
+
+async function toggleRow(idx, stateCode, huntCode) {
+  if (expandedRow === idx) {
+    expandedRow = null;
+  } else {
+    expandedRow = idx;
+  }
+  renderHuntsTable();
+}
+
+async function loadRowDetail(idx, stateCode, huntCode) {
+  const cell = document.getElementById(`detail-row-${idx}`);
+  if (!cell) return;
+
+  const stateNameForLink = statesData.find(s => s.state_code === stateCode)?.state_name || stateCode;
+  const procUrl = PROCLAMATION_URLS[stateCode] || '#';
+
+  try {
+    const data = await fetchJSON(`/api/hunt_detail?state_code=${encodeURIComponent(stateCode)}&hunt_code=${encodeURIComponent(huntCode)}`);
+    let html = '<div class="detail-grid">';
+
+    // Info
+    html += '<div class="detail-section">';
+    html += '<h4>Hunt Details</h4>';
+    html += `<p style="font-size:13px;margin:0 0 4px;"><strong>${esc(data.hunt_label)}</strong></p>`;
+    if (data.unit_description) html += `<p style="font-size:13px;margin:0 0 4px;">Unit: ${esc(data.unit_description)}</p>`;
+    if (data.weapon_code) html += `<p style="font-size:13px;margin:0 0 4px;">Weapon: ${esc(data.weapon_code)}</p>`;
+    if (data.bag_label) html += `<p style="font-size:13px;margin:0 0 4px;">Bag: ${esc(data.bag_label)}${data.bag_definition ? ' &mdash; ' + esc(data.bag_definition) : ''}</p>`;
+    if (data.season_type) html += `<p style="font-size:13px;margin:0 0 4px;">Season: ${esc(data.season_type)}</p>`;
+
+    // Bag limit disclaimer
+    html += `<div class="bag-disclaimer">Always verify bag limits and legal animal definitions in the official proclamation before applying. <a href="${procUrl}" target="_blank" rel="noopener">See the official ${esc(stateNameForLink)} hunting proclamation &rarr;</a></div>`;
+
+    // Season dates
+    if (data.season_dates && data.season_dates.length) {
+      html += '<table class="detail-mini-table" style="margin-top:8px;"><thead><tr><th>Year</th><th>Start</th><th>End</th></tr></thead><tbody>';
+      for (const d of data.season_dates) {
+        html += `<tr><td>${d.season_year}</td><td>${esc(d.start_date || '')}</td><td>${esc(d.end_date || '')}</td></tr>`;
+      }
+      html += '</tbody></table>';
+    }
+    html += '</div>';
+
+    // Draw history
+    html += '<div class="detail-section">';
+    if (data.draw_history && data.draw_history.length) {
+      html += '<h4>Draw History</h4>';
+      html += '<table class="detail-mini-table"><thead><tr><th>Year</th><th>Pool</th><th>Apps</th><th>Tags</th><th>Odds</th></tr></thead><tbody>';
+      for (const d of data.draw_history) {
+        const odds = (d.applications > 0 && d.tags_awarded > 0)
+          ? ((d.tags_awarded / d.applications * 100).toFixed(1) + '%')
+          : '--';
+        html += `<tr><td>${d.draw_year}</td><td>${esc(d.pool_code)}</td><td>${fmtNum(d.applications)}</td><td>${fmtNum(d.tags_awarded)}</td><td>${odds}</td></tr>`;
+      }
+      html += '</tbody></table>';
+    }
+
+    // Harvest history
+    if (data.harvest_history && data.harvest_history.length) {
+      html += '<h4 style="margin-top:12px;">Harvest History</h4>';
+      html += '<table class="detail-mini-table"><thead><tr><th>Year</th><th>Success</th><th>Days</th></tr></thead><tbody>';
+      for (const h of data.harvest_history) {
+        html += `<tr><td>${h.harvest_year}</td><td>${h.success_rate != null ? (Number(h.success_rate).toFixed(1) + '%') : '--'}</td><td>${h.days_hunted ?? '--'}</td></tr>`;
+      }
+      html += '</tbody></table>';
+    }
+    html += '</div>';
+    html += '</div>';
+
+    cell.innerHTML = html;
+  } catch (err) {
+    cell.innerHTML = `<p style="color:#999;font-size:13px;">Error loading details: ${esc(err.message)}</p>`;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// APPLICATION PLAN
+// ═══════════════════════════════════════════════════════════════
+
+function buildAppPlan(code) {
+  return `
+    <div class="app-plan">
+      <h2>Build Your Application</h2>
+      <p style="color:#666;font-size:15px;margin-bottom:16px;">Pick 3 hunt codes and see combined draw probability with ordering advice. Put your dream hunt first and a high-odds safety pick third.</p>
+      <div class="filter-bar-inner" style="margin-bottom:16px;">
+        <div class="filter-group">
+          <label for="plan-species">Species</label>
+          <select id="plan-species" onchange="onPlanSpeciesChange()"><option value="">Loading...</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="plan-pool">Pool</label>
+          <select id="plan-pool"><option value="">Loading...</option></select>
+        </div>
+      </div>
+      <div class="app-plan-choices">
+        <div class="choice-row">
+          <div class="choice-number">1</div>
+          <div class="choice-select"><select id="plan-c1"><option value="">Select species first</option></select></div>
+        </div>
+        <div class="choice-row">
+          <div class="choice-number">2</div>
+          <div class="choice-select"><select id="plan-c2"><option value="">Select species first</option></select></div>
+        </div>
+        <div class="choice-row">
+          <div class="choice-number">3</div>
+          <div class="choice-select"><select id="plan-c3"><option value="">Select species first</option></select></div>
+        </div>
+      </div>
+      <button class="btn" onclick="runAppPlan()">Evaluate Application</button>
+      <div id="plan-results"></div>
+    </div>
+  `;
+}
+
+function populateAppPlanFilters(speciesData, poolsData) {
+  const specSel = document.getElementById('plan-species');
+  if (specSel) {
+    specSel.innerHTML = '<option value="">Select species</option>';
+    for (const sp of speciesData.species) {
+      specSel.innerHTML += `<option value="${esc(sp.species_code)}">${esc(sp.common_name)}</option>`;
+    }
+  }
+  const poolSel = document.getElementById('plan-pool');
+  if (poolSel) {
+    poolSel.innerHTML = '';
+    if (poolsData.pools.length === 0) {
+      poolSel.innerHTML = '<option value="">Open (All)</option>';
+    } else {
+      for (const p of poolsData.pools) {
+        poolSel.innerHTML += `<option value="${esc(p.pool_code)}">${esc(p.description)}</option>`;
+      }
+    }
+  }
+}
+
+async function onPlanSpeciesChange() {
+  if (!currentStateCode) return;
+  const species = document.getElementById('plan-species')?.value;
+  const selects = ['plan-c1', 'plan-c2', 'plan-c3'];
+
+  if (!species) {
+    for (const id of selects) {
+      const s = document.getElementById(id);
+      if (s) s.innerHTML = '<option value="">Select species first</option>';
+    }
+    return;
+  }
+
+  try {
+    const data = await fetchJSON(`/api/hunts?state_code=${currentStateCode}&species_code=${species}`);
+    // Deduplicate hunt codes for dropdowns
+    const seen = new Set();
+    const uniqueHunts = (data.hunts || []).filter(h => {
+      if (seen.has(h.hunt_code)) return false;
+      seen.add(h.hunt_code);
+      return true;
+    });
+    for (const id of selects) {
+      const sel = document.getElementById(id);
+      if (!sel) continue;
+      sel.innerHTML = '<option value="">Select a hunt...</option>';
+      for (const h of uniqueHunts) {
+        sel.innerHTML += `<option value="${esc(h.hunt_code)}">${esc(h.hunt_label)}${h.unit_description ? ' \u2014 ' + esc(h.unit_description) : ''}</option>`;
+      }
+    }
+  } catch (e) {}
+}
+
+async function runAppPlan() {
+  const target = document.getElementById('plan-results');
+  if (!target || !currentStateCode) return;
+
+  const species = document.getElementById('plan-species')?.value;
+  const pool = document.getElementById('plan-pool')?.value;
+  const c1 = document.getElementById('plan-c1')?.value;
+  const c2 = document.getElementById('plan-c2')?.value;
+  const c3 = document.getElementById('plan-c3')?.value;
+
+  if (!species) { target.innerHTML = '<p style="color:#999;font-size:14px;">Select a species.</p>'; return; }
+
+  const choices = [c1, c2, c3];
+  const filled = choices.filter(Boolean);
+  if (filled.length === 0) {
+    target.innerHTML = '<p style="color:#999;font-size:14px;">Pick at least one hunt.</p>';
+    return;
+  }
+  if (filled.length < 3) {
+    target.innerHTML = '<p style="color:#999;font-size:14px;">Please fill all 3 choices. Use your third choice as a high-odds safety valve.</p>';
+    return;
+  }
+
+  target.innerHTML = '<div class="loading">Evaluating...</div>';
+
+  try {
+    const data = await fetchJSON('/api/application_plan', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        state_code: currentStateCode,
+        species_code: species,
+        pool_code: pool || 'RES',
+        choices: choices,
+      }),
+    });
+
+    let html = '';
+
+    // Results table
+    html += '<table class="data-table plan-results-table"><thead><tr>';
+    html += '<th>Choice</th><th>Hunt Code</th><th>Per-Hunt Odds</th><th>Apps</th><th>Tags</th>';
+    html += '</tr></thead><tbody>';
+    for (const row of data.choices) {
+      html += `<tr>`;
+      html += `<td>${row.choice_number}</td>`;
+      html += `<td class="hunt-code">${esc(row.hunt_code)}</td>`;
+      html += `<td>${row.p == null ? '--' : fmtOddsFraction(row.p)}</td>`;
+      html += `<td>${fmtNum(row.applications)}</td>`;
+      html += `<td>${fmtNum(row.tags_awarded)}</td>`;
+      html += '</tr>';
+    }
+    html += '</tbody></table>';
+
+    // Combined odds
+    if (data.application_odds != null) {
+      html += `<div class="plan-combined">Overall chance of drawing something: <strong>${fmtOddsFraction(data.application_odds)}</strong></div>`;
+    }
+
+    // Ordering advice
+    if (!data.logical_order) {
+      html += `<div class="plan-advice warning">Your choices are not ordered from hardest to easiest. Easier hunts placed above harder ones quietly waste the value of the harder choices beneath them. Reorder so the hardest-to-draw hunt is first.</div>`;
+    }
+    if (data.advice) {
+      html += `<div class="plan-advice">${esc(data.advice)}</div>`;
+    }
+
+    target.innerHTML = html;
+  } catch (err) {
+    target.innerHTML = `<p style="color:#999;font-size:14px;">Error: ${esc(err.message)}</p>`;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TOP HUNTS (CHEAT CODES)
+// ═══════════════════════════════════════════════════════════════
+
+function buildCheatPanel(code) {
+  return `
+    <div>
+      <h2>Top Hunts</h2>
+      <p style="color:#666;font-size:15px;margin-bottom:16px;">Hunts with a balance of draw accessibility and harvest quality. Youth and mobility-impaired hunts are excluded.</p>
+      <div class="filter-bar-inner" style="margin-bottom:16px;">
+        <div class="filter-group">
+          <label for="cheat-species">Species</label>
+          <select id="cheat-species"><option value="">Loading...</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="cheat-pool">Pool</label>
+          <select id="cheat-pool"><option value="">Loading...</option></select>
+        </div>
+        <div class="filter-group" style="flex:0 0 auto;align-self:flex-end;">
+          <button class="btn" onclick="runCheatCodes()">Find Top Hunts</button>
+        </div>
+      </div>
+      <div id="cheat-results"></div>
+    </div>
+  `;
+}
+
+function populateCheatFilters(speciesData, poolsData) {
+  const specSel = document.getElementById('cheat-species');
+  if (specSel) {
+    specSel.innerHTML = '<option value="">Select species</option>';
+    for (const sp of speciesData.species) {
+      specSel.innerHTML += `<option value="${esc(sp.species_code)}">${esc(sp.common_name)}</option>`;
+    }
+  }
+  const poolSel = document.getElementById('cheat-pool');
+  if (poolSel) {
+    poolSel.innerHTML = '';
+    if (poolsData.pools.length === 0) {
+      poolSel.innerHTML = '<option value="">Open (All)</option>';
+    } else {
+      for (const p of poolsData.pools) {
+        poolSel.innerHTML += `<option value="${esc(p.pool_code)}">${esc(p.description)}</option>`;
+      }
+    }
+  }
+}
+
+async function runCheatCodes() {
+  const target = document.getElementById('cheat-results');
+  if (!target || !currentStateCode) return;
+
+  const species = document.getElementById('cheat-species')?.value;
+  const pool = document.getElementById('cheat-pool')?.value;
+
+  if (!species) {
+    target.innerHTML = '<p style="color:#999;font-size:14px;">Select a species.</p>';
+    return;
+  }
+
+  target.innerHTML = '<div class="loading">Finding top hunts...</div>';
+
+  try {
+    const data = await fetchJSON('/api/recommend', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        state_code: currentStateCode,
+        species_code: species,
+        pool_code: pool || 'RES',
+      }),
+    });
+
+    if (!data.results || !data.results.length) {
+      target.innerHTML = '<div class="empty-state"><p>No scored hunts found for this combination.</p></div>';
+      return;
+    }
+
+    let html = `<div class="data-count">${data.results.length} recommended hunts</div>`;
+    html += '<div class="table-scroll"><table class="data-table"><thead><tr>';
+    html += '<th>Hunt Code</th><th>Description</th><th>Bag</th><th>Draw Odds</th><th>Harvest %</th><th>Notes</th>';
+    html += '</tr></thead><tbody>';
+
+    for (const r of data.results) {
+      const oddsPct = r.draw_odds != null ? r.draw_odds * 100 : null;
+      html += '<tr>';
+      html += `<td class="hunt-code">${esc(r.hunt_label || r.hunt_code)}</td>`;
+      html += `<td>${esc(r.hunt_name || r.unit_description || '')}</td>`;
+      html += `<td>${esc(r.bag_code || '')}</td>`;
+      html += `<td>${fmtPct(oddsPct)}</td>`;
+      html += `<td>${r.success_rate != null ? fmtPct(r.success_rate) : '<span class="odds-na">--</span>'}${r.harvest_year ? ' <span style="color:#999;font-size:12px">(' + r.harvest_year + ')</span>' : ''}</td>`;
+      html += `<td style="font-size:13px;color:#666;">${esc(r.note || '')}</td>`;
+      html += '</tr>';
+    }
+    html += '</tbody></table></div>';
+    html += '<p style="font-size:13px;color:#999;margin-top:12px;">Hunts over 25% draw odds make excellent safety picks. 10-25% is second-choice territory. Under 10% belongs in the dream-hunt slot.</p>';
+
+    target.innerHTML = html;
+  } catch (err) {
+    target.innerHTML = `<p style="color:#999;font-size:14px;">Error: ${esc(err.message)}</p>`;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════════════════════════
+
+init();
+</script>
 </body>
 </html>

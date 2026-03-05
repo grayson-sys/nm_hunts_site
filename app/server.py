@@ -32,6 +32,23 @@ def dict_rows(cur):
     return [dict(zip(cols, row)) for row in cur.fetchall()]
 
 
+def _run_migration():
+    """Add season_label column to hunts table if it doesn't exist."""
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+        cur.execute(
+            "ALTER TABLE hunts ADD COLUMN IF NOT EXISTS season_label TEXT"
+        )
+        conn.commit()
+        conn.close()
+    except Exception:
+        pass
+
+
+_run_migration()
+
+
 # ─── Static ──────────────────────────────────────────────────────────
 @app.route("/")
 def index():
@@ -198,6 +215,7 @@ def api_hunts():
             wt.weapon_code,
             h.season_type,
             h.tag_type,
+            h.season_label,
             bl.bag_code,
             bl.label AS bag_label,
             dr.draw_year,
@@ -211,12 +229,20 @@ def api_hunts():
             dr.min_pts_drawn,
             hs.harvest_year AS latest_harvest_year,
             hs.success_rate AS latest_success_rate,
-            hs.days_hunted
+            hs.days_hunted,
+            latest_dates.start_date AS open_date,
+            latest_dates.end_date AS close_date,
+            latest_dates.season_year AS dates_season_year
         FROM hunts h
         JOIN states st ON st.state_id = h.state_id
         JOIN species sp ON sp.species_id = h.species_id
         LEFT JOIN weapon_types wt ON wt.weapon_type_id = h.weapon_type_id
         LEFT JOIN bag_limits bl ON bl.bag_limit_id = h.bag_limit_id
+        LEFT JOIN (
+            SELECT DISTINCT ON (hunt_id) hunt_id, start_date, end_date, season_year
+            FROM hunt_dates
+            ORDER BY hunt_id, season_year DESC
+        ) latest_dates ON latest_dates.hunt_id = h.hunt_id
     """
 
     # Draw results join
@@ -267,6 +293,22 @@ def api_hunts():
     rows = dict_rows(cur)
     conn.close()
 
+    # Deduplicate by hunt_code (can happen when no pool filter is set)
+    seen = set()
+    deduped = []
+    for r in rows:
+        if r["hunt_code"] not in seen:
+            seen.add(r["hunt_code"])
+            deduped.append(r)
+    rows = deduped
+
+    # Serialize date objects to strings
+    for r in rows:
+        if r.get("open_date"):
+            r["open_date"] = str(r["open_date"])
+        if r.get("close_date"):
+            r["close_date"] = str(r["close_date"])
+
     return jsonify({"hunts": rows})
 
 
@@ -285,7 +327,7 @@ def api_hunt_detail():
     cur.execute("""
         SELECT h.hunt_id, h.hunt_code,
                COALESCE(h.hunt_code_display, h.hunt_code) AS hunt_label,
-               h.unit_description, h.season_type, h.tag_type,
+               h.unit_description, h.season_type, h.tag_type, h.season_label,
                wt.weapon_code, bl.bag_code, bl.label AS bag_label,
                bl.plain_definition AS bag_definition
         FROM hunts h
@@ -665,5 +707,98 @@ def api_bag_limits():
     return jsonify({"bag_limits": rows})
 
 
+def _compute_season_labels_nm():
+    """Compute season_label for NM hunts based on weapon, bag, and date data."""
+    from collections import defaultdict
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+
+        cur.execute("""
+            SELECT h.hunt_id, h.hunt_code, wt.weapon_code, bl.bag_code,
+                   bl.label AS bag_label, hd.start_date, hd.hunt_name,
+                   array_agg(DISTINCT g.gmu_code) AS gmu_codes
+            FROM hunts h
+            JOIN states st ON st.state_id = h.state_id
+            LEFT JOIN weapon_types wt ON wt.weapon_type_id = h.weapon_type_id
+            LEFT JOIN bag_limits bl ON bl.bag_limit_id = h.bag_limit_id
+            LEFT JOIN (
+                SELECT DISTINCT ON (hunt_id) hunt_id, start_date, hunt_name
+                FROM hunt_dates ORDER BY hunt_id, season_year DESC
+            ) hd ON hd.hunt_id = h.hunt_id
+            LEFT JOIN hunt_gmus hg ON hg.hunt_id = h.hunt_id
+            LEFT JOIN gmus g ON g.gmu_id = hg.gmu_id
+            WHERE st.state_code = 'NM' AND h.is_active = 1
+            GROUP BY h.hunt_id, h.hunt_code, wt.weapon_code, bl.bag_code,
+                     bl.label, hd.start_date, hd.hunt_name
+            ORDER BY h.hunt_code
+        """)
+        rows = dict_rows(cur)
+
+        def sex_label(bag_code, bag_label):
+            bc = (bag_code or "").upper()
+            bl_lower = (bag_label or "").lower()
+            if bc == "A" or "antlerless" in bl_lower:
+                return "Antlerless"
+            if "cow" in bl_lower:
+                return "Cow"
+            if "either sex" in bl_lower or bc == "ES":
+                return "Either Sex"
+            if "mature bull" in bl_lower or bc == "MB":
+                return "Bull"
+            if "spike" in bl_lower:
+                return "Spike"
+            if "fork" in bl_lower:
+                return "Fork Antlered"
+            if "doe" in bl_lower:
+                return "Doe"
+            if "buck" in bl_lower:
+                return "Buck"
+            if "ram" in bl_lower:
+                return "Ram"
+            if "ewe" in bl_lower:
+                return "Ewe"
+            return bag_code
+
+        weapon_map = {
+            "RIFLE": "Rifle", "ARCHERY": "Archery", "MUZZ": "Muzzleloader",
+            "ANY": "Any Weapon", "SRW": "Short-Range", "SHOTGUN": "Shotgun",
+        }
+
+        groups = defaultdict(list)
+        hunt_info = {}
+        for r in rows:
+            sex = sex_label(r["bag_code"], r["bag_label"])
+            weapon = weapon_map.get((r["weapon_code"] or "").upper(), r["weapon_code"])
+            gmus = tuple(sorted(r["gmu_codes"] or []))
+            hunt_info[r["hunt_id"]] = {"sex": sex, "weapon": weapon}
+            groups[(gmus, r["weapon_code"], sex)].append(r)
+
+        ordinals = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth"]
+        for key, group_rows in groups.items():
+            group_rows.sort(key=lambda x: (str(x["start_date"] or "9999"), x["hunt_code"]))
+            for idx, r in enumerate(group_rows):
+                info = hunt_info[r["hunt_id"]]
+                parts = []
+                if len(group_rows) > 1 and idx < len(ordinals):
+                    parts.append(ordinals[idx])
+                if info["weapon"]:
+                    parts.append(info["weapon"])
+                if info["sex"]:
+                    parts.append(info["sex"])
+                label = " ".join(parts) if parts else None
+                cur.execute("UPDATE hunts SET season_label = %s WHERE hunt_id = %s",
+                            (label, r["hunt_id"]))
+
+        conn.commit()
+        conn.close()
+    except Exception:
+        import traceback
+        traceback.print_exc()
+
+
+_compute_season_labels_nm()
+
+
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)
