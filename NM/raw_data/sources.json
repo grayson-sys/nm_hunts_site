@@ -1,0 +1,84 @@
+{
+  "state": "NM",
+  "agency": "New Mexico Department of Game and Fish (NMDGF)",
+  "date_collected": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "2025OddsSummary.xlsx",
+      "url": "https://wildlife.dgf.nm.gov/download/2025-drawing-odds-summary-report/?ind=1753453481080&filename=2025OddsSummary.xlsx&wpdmdl=52047",
+      "description": "2025 Drawing Odds Summary Report - summary draw odds for all big game species including deer and elk (2025 draw cycle)",
+      "size_bytes": 196591
+    },
+    {
+      "filename": "2025CompleteReport.xlsx",
+      "url": "https://wildlife.dgf.nm.gov/download/2025-drawing-odds-complete-report/?ind=1753453437099&filename=2025CompleteReport.xlsx&wpdmdl=52046",
+      "description": "2025 Drawing Odds Complete Report - detailed draw odds by hunt code for all species including deer and elk (2025 draw cycle)",
+      "size_bytes": 257053
+    },
+    {
+      "filename": "2024OddsSummary.xlsx",
+      "url": "https://wildlife.dgf.nm.gov/download/2024-drawing-odds-summary-report/?ind=1722886916814&filename=1722886916wpdm_2024OddsSummary.xlsx&wpdmdl=48996",
+      "description": "2024 Drawing Odds Summary Report - summary draw odds for all big game species including deer and elk (2024 draw cycle)",
+      "size_bytes": 222250
+    },
+    {
+      "filename": "2024CompleteReport.xlsx",
+      "url": "https://wildlife.dgf.nm.gov/download/2024-drawing-odds-complete-report/?ind=1722886539801&filename=1722886539wpdm_2024CompleteReport.xlsx&wpdmdl=48997",
+      "description": "2024 Drawing Odds Complete Report - detailed draw odds by hunt code for all species including deer and elk (2024 draw cycle)",
+      "size_bytes": 301366
+    },
+    {
+      "filename": "Elk_Harvest_Report_2024_Corrected.pdf",
+      "url": "https://wildlife.dgf.nm.gov/download/2024-2025-elk-harvest-report/?ind=1754927508702&filename=Elk_Harvest_Report_2024_Corrected.pdf&wpdmdl=51252",
+      "description": "2024-2025 Elk Harvest Report (corrected) - harvest data by GMU for NM elk hunts",
+      "size_bytes": 842243
+    },
+    {
+      "filename": "2024-2025-deer-harvest-report.pdf",
+      "url": "https://wildlife.dgf.nm.gov/download/2024-2025-deer-harvest-report/?ind=1748537824539&filename=2024-2025%20deer%20harvest%20report.pdf&wpdmdl=51251",
+      "description": "2024-2025 Deer Harvest Report - harvest data by GMU for NM deer hunts",
+      "size_bytes": 337379
+    },
+    {
+      "filename": "2023-2024-deer-harvest-report.pdf",
+      "url": "https://wildlife.dgf.nm.gov/download/2023-2024-deer-harvest-report/?ind=1720733478975&filename=2023-2024-deer-harvest-report.pdf&wpdmdl=48481",
+      "description": "2023-2024 Deer Harvest Report - harvest data by GMU for NM deer hunts (prior year)",
+      "size_bytes": 376444
+    },
+    {
+      "filename": "draw_info_page.html",
+      "url": "https://wildlife.dgf.nm.gov/hunting/applications-and-draw-information/how-new-mexico-draw-works/",
+      "description": "NMDGF Draw Info, Odds & Success Tips page - explains NM draw system, quota allocation (84% resident, 6% nonresident, 10% outfitter)",
+      "size_bytes": 278060
+    },
+    {
+      "filename": "draw_results_2024_page.html",
+      "url": "https://wildlife.dgf.nm.gov/draw-results-released-april-17-2024/",
+      "description": "2024 draw results announcement page - 287,449 applications submitted, 61,341 draw licenses issued",
+      "size_bytes": 256842
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://onlinesales.wildlife.state.nm.us/public/lucky-lookup",
+      "description": "Online Draw Results Lookup - individual draw result checker",
+      "reason": "Interactive web app requiring user login/search; not a downloadable data file"
+    },
+    {
+      "url": "https://wildlife.dgf.nm.gov/download/2025-drawing-odds-summary-report/",
+      "description": "WPDM download pages require browser interaction; direct file URLs include time-based refresh tokens that may expire",
+      "reason": "If re-downloading is needed, visit the download page in a browser and click the download button"
+    }
+  ],
+  "notes": [
+    "NM uses a true random draw system with NO preference or bonus points - all applicants have equal odds within their pool.",
+    "Draw quota allocation: 84% resident, 6% nonresident (unguided), 10% outfitter-guided nonresident.",
+    "The Excel draw odds files (Summary and Complete reports) contain draw odds for ALL big game species: deer, elk, antelope, oryx, ibex, bighorn sheep, Barbary sheep, and javelina.",
+    "The Complete reports have per-hunt-code detail; the Summary reports have aggregated odds.",
+    "2024 draw: 287,449 total applications submitted, 61,341 draw licenses issued across all species.",
+    "The NMDGF website uses WordPress Download Manager (WPDM) which obscures direct file URLs behind download pages. The download URLs contain time-sensitive 'refresh' tokens.",
+    "Harvest reports are published as PDFs with data broken down by Game Management Unit (GMU).",
+    "A 2023-2024 elk harvest report may exist but was not found; the 2024-2025 elk report (corrected) was the most recent available.",
+    "All files were verified as genuine data files (Excel 2007+ or PDF) using file type detection."
+  ]
+}

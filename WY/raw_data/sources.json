@@ -1,0 +1,192 @@
+{
+  "state": "WY",
+  "gathered_date": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "2025_elk_random_nonres.pdf",
+      "url": "https://wgfd.wyo.gov/media/32449/download?inline",
+      "description": "2025 Elk Random Draw Odds - Nonresident",
+      "size_bytes": 45952
+    },
+    {
+      "filename": "2025_elk_random_nonres_special.pdf",
+      "url": "https://wgfd.wyo.gov/media/32450/download?inline",
+      "description": "2025 Elk Random Draw Odds - Nonresident Special",
+      "size_bytes": 58074
+    },
+    {
+      "filename": "2025_elk_random_res.pdf",
+      "url": "https://wgfd.wyo.gov/media/32697/download?inline",
+      "description": "2025 Elk Random Draw Odds - Resident",
+      "size_bytes": 57412
+    },
+    {
+      "filename": "2025_elk_prefpoints_nonres.pdf",
+      "url": "https://wgfd.wyo.gov/media/32451/download?inline",
+      "description": "2025 Elk Preference Point Draw Odds - Nonresident",
+      "size_bytes": 292086
+    },
+    {
+      "filename": "2025_elk_prefpoints_nonres_special.pdf",
+      "url": "https://wgfd.wyo.gov/media/32452/download?inline",
+      "description": "2025 Elk Preference Point Draw Odds - Nonresident Special",
+      "size_bytes": 182938
+    },
+    {
+      "filename": "2025_elk_cowcalf_nonres.pdf",
+      "url": "https://wgfd.wyo.gov/media/32453/download?inline",
+      "description": "2025 Elk Cow/Calf Draw Odds - Nonresident",
+      "size_bytes": 47209
+    },
+    {
+      "filename": "2025_elk_cowcalf_res.pdf",
+      "url": "https://wgfd.wyo.gov/media/32695/download?inline",
+      "description": "2025 Elk Cow/Calf Draw Odds - Resident",
+      "size_bytes": 47120
+    },
+    {
+      "filename": "2025_elk_leftover_res.pdf",
+      "url": "https://wgfd.wyo.gov/media/32765/download?inline",
+      "description": "2025 Elk Leftover Draw - Resident",
+      "size_bytes": 76915
+    },
+    {
+      "filename": "2025_elk_leftover_nonres.pdf",
+      "url": "https://wgfd.wyo.gov/media/32771/download?inline",
+      "description": "2025 Elk Leftover Draw - Nonresident",
+      "size_bytes": 76984
+    },
+    {
+      "filename": "2025_deer_random_nonres.pdf",
+      "url": "https://wgfd.wyo.gov/media/32699/download?inline",
+      "description": "2025 Deer Random Draw Odds - Nonresident",
+      "size_bytes": 45898
+    },
+    {
+      "filename": "2025_deer_random_nonres_special.pdf",
+      "url": "https://wgfd.wyo.gov/media/32701/download?inline",
+      "description": "2025 Deer Random Draw Odds - Nonresident Special",
+      "size_bytes": 49280
+    },
+    {
+      "filename": "2025_deer_random_res.pdf",
+      "url": "https://wgfd.wyo.gov/media/32706/download?inline",
+      "description": "2025 Deer Random Draw Odds - Resident",
+      "size_bytes": 39832
+    },
+    {
+      "filename": "2025_deer_prefpoints_nonres.pdf",
+      "url": "https://wgfd.wyo.gov/media/32698/download?inline",
+      "description": "2025 Deer Preference Point Draw Odds - Nonresident",
+      "size_bytes": 216446
+    },
+    {
+      "filename": "2025_deer_prefpoints_nonres_special.pdf",
+      "url": "https://wgfd.wyo.gov/media/32700/download?inline",
+      "description": "2025 Deer Preference Point Draw Odds - Nonresident Special",
+      "size_bytes": 124549
+    },
+    {
+      "filename": "2025_deer_doefawn_nonres.pdf",
+      "url": "https://wgfd.wyo.gov/media/32702/download?inline",
+      "description": "2025 Deer Doe/Fawn Draw Odds - Nonresident",
+      "size_bytes": 40636
+    },
+    {
+      "filename": "2025_deer_doefawn_res.pdf",
+      "url": "https://wgfd.wyo.gov/media/32707/download?inline",
+      "description": "2025 Deer Doe/Fawn Draw Odds - Resident",
+      "size_bytes": 40458
+    },
+    {
+      "filename": "2025_deer_leftover_res.pdf",
+      "url": "https://wgfd.wyo.gov/media/32766/download?inline",
+      "description": "2025 Deer Leftover Draw - Resident",
+      "size_bytes": 71675
+    },
+    {
+      "filename": "2025_deer_leftover_nonres.pdf",
+      "url": "https://wgfd.wyo.gov/media/32772/download?inline",
+      "description": "2025 Deer Leftover Draw - Nonresident",
+      "size_bytes": 71726
+    },
+    {
+      "filename": "2024_draw_odds_report.pdf",
+      "url": "https://wgfd.wyo.gov/media/29329/download",
+      "description": "2024 Drawing Odds Summary Report (all species)",
+      "size_bytes": 451234
+    },
+    {
+      "filename": "2025_draw_odds_report.pdf",
+      "url": "https://wgfd.wyo.gov/media/31721/download",
+      "description": "2025 Drawing Odds Summary Report (all species)",
+      "size_bytes": 611656
+    },
+    {
+      "filename": "2024_elk_harvest_report.pdf",
+      "url": "https://wgfd.wyo.gov/media/32051/download?inline",
+      "description": "2024 Elk Harvest Report - hunter success, harvest by area",
+      "size_bytes": 3183090
+    },
+    {
+      "filename": "2025_elk_harvest_report.pdf",
+      "url": "https://wgfd.wyo.gov/media/33482/download?inline",
+      "description": "2025 Elk Harvest Report - hunter success, harvest by area",
+      "size_bytes": 6519666
+    },
+    {
+      "filename": "2024_deer_harvest_report.pdf",
+      "url": "https://wgfd.wyo.gov/media/31996/download?inline",
+      "description": "2024 Deer Harvest Report - hunter success, harvest by area",
+      "size_bytes": 2481950
+    },
+    {
+      "filename": "2025_deer_harvest_report.pdf",
+      "url": "https://wgfd.wyo.gov/media/33467/download?inline",
+      "description": "2025 Mule Deer and White-Tailed Deer Harvest Report",
+      "size_bytes": 4820808
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://wgfd.wyo.gov/Hunting/Draw-Results",
+      "description": "Legacy draw results URL",
+      "reason": "Returns 404 - URL structure has changed to /licenses-applications/draw-results-odds"
+    },
+    {
+      "url": "https://wgfd.wyo.gov/hunting/apply-draw/draw-results",
+      "description": "Alternative draw results URL",
+      "reason": "Returns 404 - URL structure has changed to /licenses-applications/draw-results-odds"
+    },
+    {
+      "url": "https://wgfd.wyo.gov/Wildlife-Management/Wildlife-Population/Elk",
+      "description": "Elk population management page",
+      "reason": "Returns 404 - URL structure may have changed on new WGFD site"
+    },
+    {
+      "url": "https://wgfd.wyo.gov/HuntPlanner",
+      "description": "WGFD Hunt Planner interactive tool with draw odds and harvest data by unit",
+      "reason": "Interactive web app - data cannot be bulk downloaded via curl; useful for per-unit research"
+    },
+    {
+      "url": "https://wyoming-wgfd.opendata.arcgis.com/",
+      "description": "WGFD Open Data Portal (ArcGIS) with elk and deer datasets",
+      "reason": "Interactive portal with GIS data; datasets require manual browsing to find harvest/draw data layers"
+    },
+    {
+      "url": "https://wgfd.wyo.gov/licenses-applications/draw-results-odds",
+      "description": "2024 individual draw odds PDFs (same page as 2025 but need to scroll to 2024 section)",
+      "reason": "The 2024 per-category draw odds PDFs (random, pref points, etc.) are on this page under a 2024 accordion; could not extract individual 2024 media IDs from fetch. The 2024 summary report was downloaded separately."
+    }
+  ],
+  "notes": [
+    "All 24 files verified as valid PDFs with expected file sizes.",
+    "WGFD restructured their website; old URLs under /Hunting/ now redirect or 404. Current structure uses /licenses-applications/ and /hunting-trapping/ paths.",
+    "Draw odds are broken out by: species, residency (res/nonres/nonres special), and draw type (random, preference point, cow/calf or doe/fawn, leftover).",
+    "Harvest reports cover all hunt areas statewide with success rates, total harvest, hunter effort, and trend data.",
+    "The 2024 and 2025 draw odds summary reports contain combined odds data across all species in a single PDF each.",
+    "For 2024 per-category draw odds (equivalent to the 2025 breakouts), check the draw-results-odds page under the 2024 section or use the Hunt Planner.",
+    "WGFD Hunt Planner (https://wgfd.wyo.gov/HuntPlanner) is the best interactive tool for unit-level draw odds and harvest stats but requires manual use.",
+    "Resident preference point draw odds are not published as separate PDFs - resident draws use a squared preference point system detailed in the draw odds summary reports."
+  ]
+}

@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: grayson-draws
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: draws
+      POSTGRES_USER: draws
+      POSTGRES_PASSWORD: drawspass
+    ports:
+      - "5432:5432"
+    volumes:
+      - grayson-draws-data:/var/lib/postgresql/data
+
+volumes:
+  grayson-draws-data:
+    external: true

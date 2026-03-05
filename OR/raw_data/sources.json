@@ -1,0 +1,163 @@
+{
+  "state": "OR",
+  "agency": "Oregon Department of Fish and Wildlife (ODFW)",
+  "data_gathered_date": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "2025_buck_deer_applicants_by_hunt_choice.xlsx",
+      "url": "https://myodfw.com/sites/default/files/2025-11/2025%20Buck%20Deer%20Applicants%20by%20Hunt%20Choice.xlsx",
+      "description": "2025 buck deer controlled hunt applicants by hunt choice (100 series)",
+      "size_bytes": 251163
+    },
+    {
+      "filename": "2025_buck_deer_preference_point_draw_report.xlsx",
+      "url": "https://myodfw.com/sites/default/files/2025-11/2025_buck_points.xlsx",
+      "description": "2025 buck deer preference point draw report showing draw odds by point level",
+      "size_bytes": 114195
+    },
+    {
+      "filename": "2024_buck_deer_applicants_by_hunt_choice.xlsx",
+      "url": "https://myodfw.com/sites/default/files/2025-09/2024%20Applicants%20by%20Hunt%20Choice%20Buck%20Deer.xlsx",
+      "description": "2024 buck deer controlled hunt applicants by hunt choice (100 series)",
+      "size_bytes": 19109
+    },
+    {
+      "filename": "2024_buck_deer_preference_point_draw_report.xlsx",
+      "url": "https://myodfw.com/sites/default/files/2025-09/2024%20Preference%20Point%20Draw%20Report%20Buck%20Deer.xlsx",
+      "description": "2024 buck deer preference point draw report showing draw odds by point level",
+      "size_bytes": 222326
+    },
+    {
+      "filename": "2025_elk_applicants_by_hunt_choice.xlsx",
+      "url": "https://myodfw.com/sites/default/files/2025-11/2025%20Elk%20Applicants%20by%20Hunt%20Choice.xlsx",
+      "description": "2025 elk controlled hunt applicants by hunt choice (200 series)",
+      "size_bytes": 258408
+    },
+    {
+      "filename": "2025_elk_preference_point_draw_report.xlsx",
+      "url": "https://myodfw.com/sites/default/files/2025-11/2025_elk_points.xlsx",
+      "description": "2025 elk preference point draw report showing draw odds by point level",
+      "size_bytes": 186742
+    },
+    {
+      "filename": "2024_elk_applicants_by_hunt_choice.xlsx",
+      "url": "https://myodfw.com/sites/default/files/2025-09/2024%20Applicants%20by%20Hunt%20Choice%20Elk.xlsx",
+      "description": "2024 elk controlled hunt applicants by hunt choice (200 series)",
+      "size_bytes": 26567
+    },
+    {
+      "filename": "2024_elk_preference_point_draw_report.xlsx",
+      "url": "https://myodfw.com/sites/default/files/2025-09/2024%20Preference%20Point%20Draw%20Report%20Elk.xlsx",
+      "description": "2024 elk preference point draw report showing draw odds by point level",
+      "size_bytes": 300030
+    },
+    {
+      "filename": "2024_antlerless_deer_harvest_summary.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/Antlerless_Deer_Harvest_Summary.pdf",
+      "description": "2024 antlerless deer harvest summary by zone/WMU/hunt from mandatory harvest surveys",
+      "size_bytes": 159222
+    },
+    {
+      "filename": "2024_buck_deer_ALW_harvest_summary.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/Buck_Deer_Any_Legal_Weapon_Harvest_Summary.pdf",
+      "description": "2024 buck deer any-legal-weapon harvest summary by zone/WMU/hunt",
+      "size_bytes": 166600
+    },
+    {
+      "filename": "2024_buck_deer_archery_harvest_summary.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/Buck_Deer_Archery_Harvest_Summary.pdf",
+      "description": "2024 buck deer archery harvest summary by zone/WMU/hunt",
+      "size_bytes": 165621
+    },
+    {
+      "filename": "2024_buck_deer_muzzleloader_harvest_summary.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/Buck_Deer_Muzzleloader_Harvest_Summary.pdf",
+      "description": "2024 buck deer muzzleloader harvest summary by zone/WMU/hunt",
+      "size_bytes": 149791
+    },
+    {
+      "filename": "2024_elk_ALW_harvest_summary.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/Elk_Any_Legal_Weapon_Harvest_Summary.pdf",
+      "description": "2024 elk any-legal-weapon harvest summary by zone/WMU/hunt",
+      "size_bytes": 179308
+    },
+    {
+      "filename": "2024_elk_archery_harvest_summary.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/Elk_Archery_Harvest_Summary.pdf",
+      "description": "2024 elk archery harvest summary by zone/WMU/hunt",
+      "size_bytes": 170872
+    },
+    {
+      "filename": "2024_elk_muzzleloader_harvest_summary.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/Elk_Muzzleloader_Harvest_Summary.pdf",
+      "description": "2024 elk muzzleloader harvest summary by zone/WMU/hunt",
+      "size_bytes": 148706
+    },
+    {
+      "filename": "2024_elk_public_vs_private_harvest.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/elk_public_VS_Private_harvest_summary.pdf",
+      "description": "2024 elk harvest breakdown by public vs private land",
+      "size_bytes": 157338
+    },
+    {
+      "filename": "2024_buck_deer_public_vs_private_harvest.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/buck_deer_public_VS_Private_harvest_summary.pdf",
+      "description": "2024 buck deer harvest breakdown by public vs private land",
+      "size_bytes": 147899
+    },
+    {
+      "filename": "2024_antlerless_deer_public_vs_private_harvest.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/antlerless_public_VS_Private_harvest_summary.pdf",
+      "description": "2024 antlerless deer harvest breakdown by public vs private land",
+      "size_bytes": 143252
+    },
+    {
+      "filename": "2024_general_season_deer_elk_public_vs_private.pdf",
+      "url": "https://dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunts_summary_reports/2024/2024_General_Season_Deer_and_Elk_PublicVPrivate_Harvest_Summary.pdf",
+      "description": "2024 general season deer and elk public vs private land harvest summary",
+      "size_bytes": 126010
+    },
+    {
+      "filename": "2025_mule_deer_population_2021-2025.pdf",
+      "url": "https://www.dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunt_statistics/25/Mule%20Deer%20Population%20Estimates,%20Composition,%20and%20Over-Winter%20Fawn%20Survival%202021%20-%202025.pdf",
+      "description": "Mule deer population estimates, herd composition, and over-winter fawn survival 2021-2025",
+      "size_bytes": 196979
+    },
+    {
+      "filename": "2025_blacktail_deer_herd_composition_2021-2025.pdf",
+      "url": "https://www.dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunt_statistics/25/Black-tailed%20Deer%20Herd%20Composition%202021%20-%202025%20.pdf",
+      "description": "Black-tailed deer herd composition survey data 2021-2025",
+      "size_bytes": 126325
+    },
+    {
+      "filename": "2025_rocky_mtn_elk_population_2021-2025.pdf",
+      "url": "https://www.dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunt_statistics/25/Rocky%20Mountain%20Elk%20Population%20Estimates%20and%20Herd%20Composition%202021%20-%202025%20.pdf",
+      "description": "Rocky Mountain elk population estimates and herd composition 2021-2025",
+      "size_bytes": 221824
+    },
+    {
+      "filename": "2025_roosevelt_elk_population_2021-2025.pdf",
+      "url": "https://www.dfw.state.or.us/resources/hunting/big_game/controlled_hunts/docs/hunt_statistics/25/Roosevelt%20Elk%20Population%20Estimate%20and%20Herd%20Composition%202021-2025.pdf",
+      "description": "Roosevelt elk population estimates and herd composition 2021-2025",
+      "size_bytes": 121882
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://odfw.huntfishoregon.com/reportdownloads",
+      "description": "ODFW Controlled Hunt Report Downloads portal - may have additional interactive/dynamic reports",
+      "reason": "Page rendered only CSS/JS; content requires a browser to load dynamic report selection interface"
+    },
+    {
+      "url": "https://myodfw.com/articles/big-game-statistics",
+      "description": "Additional historical hunt statistics (2022 and earlier) and antelope/sheep data",
+      "reason": "Older year files available but not downloaded to keep scope to 2024-2025 deer/elk"
+    },
+    {
+      "url": "https://myodfw.com/articles/point-summary-reports",
+      "description": "2022-2023 deer and elk point/applicant reports also available in xlsx/pdf",
+      "reason": "Available for download if historical draw trend data is needed; not downloaded to limit scope"
+    }
+  ],
+  "notes": "Oregon uses a preference point system for controlled hunts. Draw odds data is in the preference point draw report xlsx files (tags drawn at each point level). Applicant-by-hunt-choice files show total demand per hunt. Harvest summaries are PDF-only from mandatory hunter harvest surveys, broken down by zone, WMU, and hunt number. Population/herd composition PDFs provide 5-year trend data useful for unit-level analysis. The 2024 data covers the most recent completed season; 2025 draw data reflects the most recent application cycle. Contact ODFW.WildlifeInfo@odfw.oregon.gov for data prior to 2022."
+}

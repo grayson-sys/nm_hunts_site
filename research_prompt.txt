@@ -1,0 +1,174 @@
+You are researching western US big game draw systems for a project called GraysonsDrawOdds. This is an overnight autonomous research task. Do NOT stop to ask questions. Make your best judgment on any ambiguities and keep going. Write all output to markdown files in /Users/openclaw/Documents/GraysonsDrawOdds/.
+
+IMPORTANT: Do not stop working until every section below is complete. If you hit a dead end on one state, note what you couldn't find and move to the next. Come back and retry later if needed.
+
+---
+
+PROJECT CONTEXT
+
+We have an existing Flask/SQLite app that combines New Mexico big game draw odds with harvest report data into an interactive tool for hunters. We are expanding this to cover deer and elk draws across all western big game states. The tool must be equally useful for residents AND nonresidents of every state. For example: an Ohio hunter applying for Arizona elk, or a Colorado resident applying for Colorado deer.
+
+SPECIES SCOPE: Deer (mule deer and whitetail where applicable) and elk ONLY.
+
+STATES TO RESEARCH (in this order):
+1. Arizona (AZ)
+2. Colorado (CO)
+3. Utah (UT)
+4. Nevada (NV)
+5. Montana (MT)
+6. Idaho (ID)
+7. Wyoming (WY)
+8. Oregon (OR)
+9. Washington (WA)
+10. California (CA)
+
+---
+
+PHASE 1: PER-STATE RESEARCH
+
+For EACH state, write a detailed markdown file at:
+/Users/openclaw/Documents/GraysonsDrawOdds/<STATE_ABBREV>/draw_system.md
+
+Cover ALL of the following for deer and elk:
+
+1. DRAW SYSTEM MECHANICS
+   - Is it a straight lottery, preference point system, bonus point system, or hybrid?
+   - Explain the exact difference between preference points and bonus points if the state uses either or both
+   - How does the weighted lottery work mathematically? (e.g., "each bonus point doubles your chances" or "squared weighting" or "preference points guarantee draw in order")
+   - Are there separate draws for different weapon types (rifle, archery, muzzleloader)?
+   - How many choices can you list on an application?
+   - What happens if you don't draw any of your choices?
+
+2. POINT BANKING / TAG TURN-BACK
+   - Can hunters turn in a tag after drawing to keep or gain points?
+   - What are the rules and deadlines for tag turn-back?
+   - How does turning back a tag affect your points?
+   - Are there states where you can buy a point without applying for a hunt?
+   - What is the maximum points anyone currently holds (if published)?
+
+3. RESIDENT VS NONRESIDENT RULES
+   - What percentage or number of tags are allocated to residents vs nonresidents?
+   - Are there separate draws or combined draws with quotas?
+   - Are there waiting periods for nonresidents (e.g., must wait N years between tags)?
+   - Are there nonresident caps per unit or statewide?
+   - Residency requirements to qualify as a resident hunter
+
+4. TAG AND LICENSE PRICES
+   - Resident deer tag/license price
+   - Nonresident deer tag/license price
+   - Resident elk tag/license price
+   - Nonresident elk tag/license price
+   - Application fees (refundable or not?)
+   - Point purchase fees (if applicable)
+   - Are there additional fees (habitat stamps, access fees, etc.)?
+   - Price differences between weapon types if any
+
+5. OVER-THE-COUNTER (OTC) TAGS
+   - Are there OTC deer tags available? For residents? For nonresidents?
+   - Are there OTC elk tags available? For residents? For nonresidents?
+   - Which units/zones are OTC vs limited draw?
+   - Are OTC tags unlimited or quota-based (first-come-first-served)?
+   - OTC tag prices
+
+6. LANDOWNER TAGS
+   - Does the state have a landowner tag program?
+   - How does it work? (Tags tied to specific property vs unit-wide?)
+   - Can landowner tags be transferred or sold to nonresidents?
+   - How many landowner tags are issued relative to public draw tags?
+   - Price of landowner tags if different from draw tags
+
+7. APPLICATION DEADLINES FOR 2025 AND 2026
+   - When does the application period open?
+   - Application deadline
+   - When are draw results announced?
+   - When do seasons typically run?
+
+8. DATA SOURCES
+   - Where does this state publish draw odds/results? (URL)
+   - What format? (CSV, Excel, PDF, interactive web tool, API)
+   - Where does this state publish harvest reports? (URL)
+   - What format?
+   - How many years of historical data are available?
+   - Can the data be downloaded directly or does it require scraping?
+
+---
+
+PHASE 2: CROSS-STATE COMPARISON TABLE
+
+After completing all per-state files, write a comparison table at:
+/Users/openclaw/Documents/GraysonsDrawOdds/comparison_table.md
+
+Create a comprehensive markdown table with these columns:
+- State
+- Draw type (lottery/preference/bonus/hybrid)
+- Points system summary
+- Can buy points without applying? (Y/N)
+- Tag turn-back allowed? (Y/N)
+- NR tag allocation (% or cap)
+- NR waiting period
+- Resident deer tag price
+- Nonresident deer tag price
+- Resident elk tag price
+- Nonresident elk tag price
+- Application fee
+- OTC deer available? (Res/NR/Both/No)
+- OTC elk available? (Res/NR/Both/No)
+- Landowner tags transferable? (Y/N)
+- Application deadline (month)
+- Draw results (month)
+- Data format (CSV/PDF/Web/Excel)
+
+Include NM in this table for comparison using our existing data.
+
+---
+
+PHASE 3: DATABASE ARCHITECTURE RECOMMENDATION
+
+Write a detailed analysis at:
+/Users/openclaw/Documents/GraysonsDrawOdds/database_architecture.md
+
+Answer this critical question: Can all states share a single database schema, or do the draw mechanics differ enough to require per-state databases?
+
+Consider:
+- NM has a simple 3-pool system (resident/nonresident/outfitter) with no points
+- Some states have preference points with guaranteed draw-in-order
+- Some states have bonus points with weighted random
+- Some states have hybrid systems (e.g., CO has a preference point draw AND a weighted bonus draw in the same system)
+- Point banking and tag turn-back create additional data fields
+- OTC tags are fundamentally different from draw tags
+- Landowner tag programs vary wildly
+- Price structures differ
+
+Propose a schema approach. Consider:
+- A unified schema with nullable/optional columns for state-specific fields
+- A core schema with state-specific extension tables
+- Completely separate per-state schemas
+- Any hybrid approach
+
+Recommend ONE approach with justification. Show draft CREATE TABLE statements for the key tables. The current NM schema uses these tables: hunts, draw_results, harvest_stats, species, bag_limits, pools, hunt_dates, gmus, hunt_gmu. Think about what needs to change to accommodate multi-state data.
+
+---
+
+PHASE 4: DATA SOURCE INVENTORY
+
+Write a file at:
+/Users/openclaw/Documents/GraysonsDrawOdds/data_sources.md
+
+For each state, list:
+- Exact URLs where draw odds data can be downloaded
+- Exact URLs where harvest report data can be downloaded
+- File format and any notes about how to access (e.g., "requires clicking through a form", "direct CSV download", "PDF only")
+- Years of data available
+- Whether an automated download script could fetch this data or if manual steps are needed
+
+---
+
+RULES FOR THIS SESSION:
+1. Do NOT stop to ask questions. Ever. Make your best judgment and note any assumptions.
+2. Do NOT summarize or abbreviate. Write complete, detailed research for every state.
+3. If you cannot find a specific piece of information via web search, say "NOT FOUND - needs manual verification" and move on.
+4. Create the state subdirectory folders as you go: /Users/openclaw/Documents/GraysonsDrawOdds/AZ/, CO/, UT/, etc.
+5. Use web search extensively. Every state fish and game department has a website. Search for "[State] big game draw", "[State] elk draw odds", "[State] deer harvest report", "[State] hunting license fees", etc.
+6. Cite your sources with URLs in every state file.
+7. When done with ALL states, write a file called /Users/openclaw/Documents/GraysonsDrawOdds/RESEARCH_COMPLETE.md that summarizes what was completed, what gaps remain, and recommended next steps.
+8. Do not stop until RESEARCH_COMPLETE.md has been written.

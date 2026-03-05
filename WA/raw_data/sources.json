@@ -1,0 +1,116 @@
+{
+  "state": "WA",
+  "gather_date": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "deer_statewide_2024.html",
+      "url": "https://wdfw.wa.gov/hunting/management/game-harvest/2024/deer-statewide",
+      "description": "2024 statewide deer harvest statistics - summary by weapon type, general vs special permit, antlered vs antlerless. Total harvest: 26,564 deer, 29% success rate.",
+      "size_bytes": 44350
+    },
+    {
+      "filename": "elk_statewide_2024.html",
+      "url": "https://wdfw.wa.gov/hunting/management/game-harvest/2024/elk-statewide",
+      "description": "2024 statewide elk harvest statistics - summary by weapon type, general vs special permit. Total harvest: 5,033 elk, 10% success rate.",
+      "size_bytes": 44287
+    },
+    {
+      "filename": "deer_general_2024.html",
+      "url": "https://wdfw.wa.gov/hunting/management/game-harvest/2024/deer-general",
+      "description": "2024 deer general season harvest reports by district (17 districts) and GMU, broken down by weapon type and point class.",
+      "size_bytes": 1218445
+    },
+    {
+      "filename": "elk_general_2024.html",
+      "url": "https://wdfw.wa.gov/hunting/management/game-harvest/2024/elk-general",
+      "description": "2024 elk general season harvest reports by district (17 districts) and GMU, broken down by weapon type and point class.",
+      "size_bytes": 1937231
+    },
+    {
+      "filename": "deer_special_2024.html",
+      "url": "https://wdfw.wa.gov/hunting/management/game-harvest/2024/deer-special",
+      "description": "2024 deer special permit season harvest reports by district and GMU.",
+      "size_bytes": 135902
+    },
+    {
+      "filename": "elk_special_2024.html",
+      "url": "https://wdfw.wa.gov/hunting/management/game-harvest/2024/elk-special",
+      "description": "2024 elk special permit season harvest reports by district and GMU.",
+      "size_bytes": 141986
+    },
+    {
+      "filename": "eregulations_deer_special_permits.html",
+      "url": "https://www.eregulations.com/washington/hunting/deer-special-permits",
+      "description": "2025 deer special permit hunt listings with hunt codes, dates, permits available, and 2024 apps/avg points data per hunt. Contains draw odds proxy data (applications vs permits).",
+      "size_bytes": 286152
+    },
+    {
+      "filename": "eregulations_elk_special_permits.html",
+      "url": "https://www.eregulations.com/washington/hunting/elk-special-permits",
+      "description": "2025 elk special permit hunt listings with hunt codes, dates, permits available, and 2024 apps/avg points data per hunt. Contains draw odds proxy data (applications vs permits).",
+      "size_bytes": 248709
+    },
+    {
+      "filename": "draw_results_page.html",
+      "url": "https://wdfw.wa.gov/hunting/special-hunts/results",
+      "description": "WDFW special hunt permit drawing result summaries page. Contains links to Power BI dashboards with overall results and species breakdown reports.",
+      "size_bytes": 38913
+    },
+    {
+      "filename": "2024_draw_updates.html",
+      "url": "https://wdfw.wa.gov/hunting/special-hunts/2024-draw-updates",
+      "description": "2024 special hunt permit draw updates including manually awarded permits info.",
+      "size_bytes": 52713
+    },
+    {
+      "filename": "special_hunts_page.html",
+      "url": "https://wdfw.wa.gov/hunting/special-hunts",
+      "description": "Main special hunt permits and raffles page with links to application info, results, and deer/elk hunt areas.",
+      "size_bytes": 40565
+    },
+    {
+      "filename": "wdfw_2025_big_game_regulations.pdf",
+      "url": "https://wdfw.wa.gov/sites/default/files/publications/02608/wdfw02608.pdf",
+      "description": "2025 Big Game Hunting Seasons and Rules pamphlet (effective April 2025 - March 2026). Contains season dates, GMU boundaries, permit quotas, and regulations for deer and elk.",
+      "size_bytes": 18426730
+    },
+    {
+      "filename": "emergency_rule_permits.pdf",
+      "url": "https://wdfw.wa.gov/sites/default/files/about/regulations/filings/2024/merged-24-15-031.pdf",
+      "description": "2024 emergency rule with table of manually awarded special hunt permits.",
+      "size_bytes": 438056
+    },
+    {
+      "filename": "how_check_special_hunt_wins.pdf",
+      "url": "https://wdfw.wa.gov/sites/default/files/2024-07/how-check-special-hunt-wins.pdf",
+      "description": "Instructions for checking special hunt permit draw results in WILD licensing system.",
+      "size_bytes": 289379
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://app.powerbigov.us/view?r=eyJrIjoiZjZiZjkyMzItY2E5MC00YmQwLTkyMDAtMjI4NmI4MTQ5ZDFiIiwidCI6IjExZDBlMjE3LTI2NGUtNDAwYS04YmEwLTU3ZGNjMTI3ZDcyZCJ9&pageName=ReportSection",
+      "description": "WDFW Special Hunt Permit Draw Results - Overall Results Report (Power BI dashboard)",
+      "reason": "Power BI dashboard - interactive report that cannot be downloaded as static data via curl. Must be accessed in browser. May have export options within the dashboard UI."
+    },
+    {
+      "url": "https://app.powerbigov.us/view?r=eyJrIjoiMTUwYmI1Y2ItOWQ2My00YzBmLTkxYzUtYTUxNTQ2ZDA2MzRhIiwidCI6IjExZDBlMjE3LTI2NGUtNDAwYS04YmEwLTU3ZGNjMTI3ZDcyZCJ9",
+      "description": "WDFW Special Hunt Permit Draw Results - Species Breakdown Report (Power BI dashboard, filterable by species/hunt/choice)",
+      "reason": "Power BI dashboard - interactive report with deer and elk draw data. Cannot be scraped via curl. Open in browser and use Power BI export feature to download underlying data as CSV/Excel."
+    },
+    {
+      "url": "https://fishhunt.dfw.wa.gov/",
+      "description": "WILD licensing system - individual draw results portal",
+      "reason": "Requires authentication/login to access individual draw results. Not scrapable."
+    }
+  ],
+  "notes": [
+    "WDFW does NOT publish draw odds as downloadable CSV/Excel files. Draw result summaries are exclusively in Power BI dashboards hosted on app.powerbigov.us.",
+    "The Power BI dashboards (listed in needs_manual) are the PRIMARY source for draw odds data. They contain overall results and species-level breakdowns filterable by hunt name and choice.",
+    "The eRegulations pages (eregulations_deer_special_permits.html, eregulations_elk_special_permits.html) contain '2024 Apps/Avg Points' data per hunt which serves as a proxy for draw odds when combined with permit counts.",
+    "Harvest data is available as HTML tables on WDFW website - no CSV/Excel exports offered. Tables in the downloaded HTML files can be parsed programmatically.",
+    "The 2024 harvest HTML files contain detailed district-by-district, GMU-by-GMU data for both general season and special permit hunts.",
+    "Power BI dashboard data was last updated June 21, 2021 per the results page - may be outdated or may have been refreshed since.",
+    "Contact for draw data inquiries: wildthing@dfw.wa.gov or 360-902-2515"
+  ]
+}

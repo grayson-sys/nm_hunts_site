@@ -1,0 +1,181 @@
+{
+  "state": "CA",
+  "agency": "California Department of Fish and Wildlife (CDFW)",
+  "date_collected": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "deer_draw_2024_apprentice.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229461&inline",
+      "description": "2024 deer draw statistics - Apprentice Hunts",
+      "size_bytes": 153105
+    },
+    {
+      "filename": "deer_draw_2024_archery_0-7pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229482&inline",
+      "description": "2024 deer draw statistics - Area Specific Archery (0-7 preference points)",
+      "size_bytes": 230581
+    },
+    {
+      "filename": "deer_draw_2024_archery_8-14pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229483&inline",
+      "description": "2024 deer draw statistics - Area Specific Archery (8-14 preference points)",
+      "size_bytes": 231035
+    },
+    {
+      "filename": "deer_draw_2024_archery_15-22pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229484&inline",
+      "description": "2024 deer draw statistics - Area Specific Archery (15-22 preference points)",
+      "size_bytes": 224087
+    },
+    {
+      "filename": "deer_draw_2024_general_late_0-7pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229485&inline",
+      "description": "2024 deer draw statistics - General Late Season (0-7 preference points)",
+      "size_bytes": 153589
+    },
+    {
+      "filename": "deer_draw_2024_general_late_8-14pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229486&inline",
+      "description": "2024 deer draw statistics - General Late Season (8-14 preference points)",
+      "size_bytes": 153909
+    },
+    {
+      "filename": "deer_draw_2024_general_late_15-22pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229487&inline",
+      "description": "2024 deer draw statistics - General Late Season (15-22 preference points)",
+      "size_bytes": 150686
+    },
+    {
+      "filename": "deer_draw_2024_muzzleloader_0-7pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229488&inline",
+      "description": "2024 deer draw statistics - Muzzleloader (0-7 preference points)",
+      "size_bytes": 152460
+    },
+    {
+      "filename": "deer_draw_2024_muzzleloader_8-14pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229489&inline",
+      "description": "2024 deer draw statistics - Muzzleloader (8-14 preference points)",
+      "size_bytes": 153315
+    },
+    {
+      "filename": "deer_draw_2024_muzzleloader_15-22pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229490&inline",
+      "description": "2024 deer draw statistics - Muzzleloader (15-22 preference points)",
+      "size_bytes": 150141
+    },
+    {
+      "filename": "deer_draw_2024_zone_0-7pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229491&inline",
+      "description": "2024 deer draw statistics - Zone Hunts (0-7 preference points)",
+      "size_bytes": 205701
+    },
+    {
+      "filename": "deer_draw_2024_zone_8-14pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229492&inline",
+      "description": "2024 deer draw statistics - Zone Hunts (8-14 preference points)",
+      "size_bytes": 205783
+    },
+    {
+      "filename": "deer_draw_2024_zone_15-22pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229493&inline",
+      "description": "2024 deer draw statistics - Zone Hunts (15-22 preference points)",
+      "size_bytes": 199024
+    },
+    {
+      "filename": "elk_draw_2024_apprentice.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229450&inline",
+      "description": "2024 elk draw statistics - Apprentice Hunts",
+      "size_bytes": 128826
+    },
+    {
+      "filename": "elk_draw_2024_antlerless_eithersex_0-10pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229451&inline",
+      "description": "2024 elk draw statistics - Antlerless/Either-sex (0-10 preference points)",
+      "size_bytes": 303078
+    },
+    {
+      "filename": "elk_draw_2024_antlerless_eithersex_11-22pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229452&inline",
+      "description": "2024 elk draw statistics - Antlerless/Either-sex (11-22 preference points)",
+      "size_bytes": 310068
+    },
+    {
+      "filename": "elk_draw_2024_bull_spikebull_0-10pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229453&inline",
+      "description": "2024 elk draw statistics - Bull/Spike Bull (0-10 preference points)",
+      "size_bytes": 295990
+    },
+    {
+      "filename": "elk_draw_2024_bull_spikebull_11-22pts.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=229454&inline",
+      "description": "2024 elk draw statistics - Bull/Spike Bull (11-22 preference points)",
+      "size_bytes": 309569
+    },
+    {
+      "filename": "deer_harvest_2024.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=232831&inline",
+      "description": "2024 California deer harvest statistics report",
+      "size_bytes": 398910
+    },
+    {
+      "filename": "deer_harvest_2023.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=222330&inline",
+      "description": "2023 California deer harvest statistics report",
+      "size_bytes": 265210
+    },
+    {
+      "filename": "elk_harvest_2022.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=211299&inline",
+      "description": "2022 California elk hunt statistics",
+      "size_bytes": 136770
+    },
+    {
+      "filename": "elk_harvest_2021.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=200680&inline",
+      "description": "2021 California elk hunt statistics",
+      "size_bytes": 135796
+    },
+    {
+      "filename": "elk_tooth_age_2024.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=238317&inline",
+      "description": "2024 California elk tooth age data",
+      "size_bytes": 260207
+    },
+    {
+      "filename": "elk_tooth_age_2023.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=228282&inline",
+      "description": "2023 California elk tooth age data",
+      "size_bytes": 280862
+    },
+    {
+      "filename": "big_game_digest_2024_2025.pdf",
+      "url": "https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=222487",
+      "description": "2024-2025 California Big Game Hunting Digest (regulations, season dates, hunt descriptions)",
+      "size_bytes": 3961592
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://wildlife.ca.gov/Conservation/Mammals/Elk/Harvest-Data",
+      "description": "Elk harvest statistics page - no 2023 or 2024 elk hunt statistics PDF found (only 2022 and earlier). CDFW may not have published these yet or they may be combined with tooth age data.",
+      "reason": "2023 and 2024 elk hunt statistics (harvest success rates by hunt unit) not available as separate files; check back or contact CDFW"
+    },
+    {
+      "url": "https://wildlife.ca.gov/Licensing/Statistics/Big-Game-Drawing",
+      "description": "2025 draw statistics will be posted after the 2025 draw closes (typically June/July 2025)",
+      "reason": "2025 draw has not yet occurred; data will be available after draw results are published"
+    }
+  ],
+  "notes": [
+    "All files sourced from official CDFW website (wildlife.ca.gov) and their NRM document system (nrm.dfg.ca.gov).",
+    "Draw statistics are split by weapon type and preference point ranges. California uses a preference point system for deer and elk.",
+    "Deer draw categories: Apprentice, Area Specific Archery, General Late Season, Muzzleloader, Zone Hunts.",
+    "Elk draw categories: Apprentice, Antlerless/Either-sex, Bull/Spike Bull.",
+    "The Big Game Digest contains regulations, season dates, zone maps, and tag quotas.",
+    "Elk harvest data lags behind deer harvest data; the most recent standalone elk hunt statistics file found was for 2022.",
+    "California deer harvest reporting is mandatory by January 31 each year. Elk harvest is also mandatory.",
+    "Draw statistics page: https://wildlife.ca.gov/Licensing/Statistics/Big-Game-Drawing",
+    "Deer hunting page: https://wildlife.ca.gov/Hunting/Deer",
+    "Elk conservation page: https://wildlife.ca.gov/Conservation/Mammals/Elk"
+  ]
+}

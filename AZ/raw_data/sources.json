@@ -1,0 +1,188 @@
+{
+  "state": "AZ",
+  "agency": "Arizona Game and Fish Department (AZGFD)",
+  "date_collected": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "2025-AZ-Deer-Harvest-Summary.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/30104141/2025-AZ-Deer-Harvest-Summary.pdf",
+      "description": "2025 Arizona deer harvest summary - hunt-by-hunt harvest stats",
+      "size_bytes": 795799
+    },
+    {
+      "filename": "2025-AZ-Elk-Harvest-Summary.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2026/01/23102434/2025-AZ-Elk-Harvest-Summary.pdf",
+      "description": "2025 Arizona elk harvest summary - hunt-by-hunt harvest stats",
+      "size_bytes": 851068
+    },
+    {
+      "filename": "2024-AZ-Deer-Harvest-Summary.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/04/10154252/2024-AZ-Deer-Harvest-Summary-1.pdf",
+      "description": "2024 Arizona deer harvest summary - hunt-by-hunt harvest stats",
+      "size_bytes": 281318
+    },
+    {
+      "filename": "2024-AZ-Elk-Harvest-Summary.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/05/08163736/2024-AZ-Elk-Harvest-Summary.pdf",
+      "description": "2024 Arizona elk harvest summary - hunt-by-hunt harvest stats",
+      "size_bytes": 128257
+    },
+    {
+      "filename": "2025-Fall-Bonus-Point-Report.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/07/17111316/2025-Fall-Bonus-Point-Report.pdf",
+      "description": "2025 Fall draw bonus point report - includes deer, turkey, bighorn sheep, bison, sandhill crane. Shows applicants and tags by bonus point level per hunt.",
+      "size_bytes": 4564157
+    },
+    {
+      "filename": "2025-Fall-Draw-Bonus-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/07/17111321/2025-Fall-Draw-Bonus-Pass.pdf",
+      "description": "2025 Fall draw report - bonus pass results (deer and other fall species)",
+      "size_bytes": 1320246
+    },
+    {
+      "filename": "2025-Fall-Draw-1-2-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/07/17111306/2025-Fall-Draw-1-2-Pass.pdf",
+      "description": "2025 Fall draw report - pass 1-2 results (deer and other fall species)",
+      "size_bytes": 1347343
+    },
+    {
+      "filename": "2025-Fall-Draw-3-4-5-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/07/17112118/2025-Fall-Draw-3-4-5-Pass.pdf",
+      "description": "2025 Fall draw report - pass 3-4-5 results (deer and other fall species)",
+      "size_bytes": 1146835
+    },
+    {
+      "filename": "2025-Fall-Individual-Bonus-Point-Report.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/07/17111310/2025-Fall-Individual-Bonus-Point-Report.pdf",
+      "description": "2025 Fall individual bonus point report - per-species bonus point distribution",
+      "size_bytes": 751033
+    },
+    {
+      "filename": "2025-Elk-Pronghorn-Bonus-Point-Report.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/05/15151918/2025-Bonus-Point-Report.pdf",
+      "description": "2025 Midwinter (elk/pronghorn) draw bonus point report - applicants and tags by bonus point level per hunt",
+      "size_bytes": 7051690
+    },
+    {
+      "filename": "2025-Elk-Pronghorn-Draw-Report-Bonus-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/05/15151934/2025-Elk-Pronghorn-Draw-Report-Bonus-Pass.pdf",
+      "description": "2025 Elk/Pronghorn draw report - bonus pass results",
+      "size_bytes": 1243499
+    },
+    {
+      "filename": "2025-Elk-Pronghorn-Draw-Report-1-2-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/05/15151926/2025-Elk-Pronghorn-Draw-Report-1-2-Pass.pdf",
+      "description": "2025 Elk/Pronghorn draw report - pass 1-2 results",
+      "size_bytes": 1814997
+    },
+    {
+      "filename": "2025-Elk-Pronghorn-Draw-Report-3-4-5-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/05/15151930/2025-Elk-Pronghorn-Draw-Report-3-4-5-Pass.pdf",
+      "description": "2025 Elk/Pronghorn draw report - pass 3-4-5 results",
+      "size_bytes": 1074285
+    },
+    {
+      "filename": "2025-Elk-Pronghorn-Individual-Bonus-Point-Report.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/05/15151922/2025-Elk_Pronghorn-Individual-Bonus-Point-Report-05-14-25.pdf",
+      "description": "2025 Elk/Pronghorn individual bonus point report",
+      "size_bytes": 692365
+    },
+    {
+      "filename": "2024-Elk-Pronghorn-Bonus-Point-Report.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/03/28135125/2024-Elk-Pronghorn-Bonus-Point-Report.pdf",
+      "description": "2024 Elk/Pronghorn draw bonus point report",
+      "size_bytes": 1828754
+    },
+    {
+      "filename": "2024-Elk-Pronghorn-Draw-Report-Bonus-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/03/28135136/2024-Elk-Pronghorn-Draw-Report-Bonus-Pass.pdf",
+      "description": "2024 Elk/Pronghorn draw report - bonus pass results",
+      "size_bytes": 324919
+    },
+    {
+      "filename": "2024-Elk-Pronghorn-Draw-Report-1-2-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/03/28135129/2024-Elk-Pronghorn-Draw-Report-1-2-Pass.pdf",
+      "description": "2024 Elk/Pronghorn draw report - pass 1-2 results",
+      "size_bytes": 329066
+    },
+    {
+      "filename": "2024-Elk-Pronghorn-Draw-Report-3-4-5-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/03/28135132/2024-Elk-Pronghorn-Draw-Report-3-4-5-Pass.pdf",
+      "description": "2024 Elk/Pronghorn draw report - pass 3-4-5 results",
+      "size_bytes": 327782
+    },
+    {
+      "filename": "2024-Fall-Bonus-Point-Report.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/09/03155509/2024-Fall-Bonus-Point-Report.pdf",
+      "description": "2024 Fall draw bonus point report - includes deer and other fall species",
+      "size_bytes": 2074238
+    },
+    {
+      "filename": "2024-Fall-Draw-Report-Bonus-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/07/17132558/2024-Fall-Draw-Report-Bonus-Pass.pdf",
+      "description": "2024 Fall draw report - bonus pass results (deer and other fall species)",
+      "size_bytes": 607125
+    },
+    {
+      "filename": "2024-Fall-Draw-Report-1-2-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/07/17132550/2024-Fall-Draw-Report-1-2-Pass.pdf",
+      "description": "2024 Fall draw report - pass 1-2 results (deer and other fall species)",
+      "size_bytes": 612831
+    },
+    {
+      "filename": "2024-Fall-Draw-Report-3-4-5-Pass.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/07/17132553/2024-Fall-Draw-Report-3-4-5-Pass.pdf",
+      "description": "2024 Fall draw report - pass 3-4-5 results (deer and other fall species)",
+      "size_bytes": 517502
+    },
+    {
+      "filename": "2025-26-Arizona-Hunting-Regulations.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/12/23103956/2025-26-Arizona-Hunting-Regulations_251223.pdf",
+      "description": "2025-26 Arizona hunting regulations - hunt unit descriptions, season dates, tag quotas",
+      "size_bytes": 4953307
+    },
+    {
+      "filename": "2026-Pronghorn-and-Elk-Regulations.pdf",
+      "url": "https://azgfd-portal-wordpress-pantheon.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/12/23143704/2026-Pronghorn-and-Elk-Regulations_251223.pdf",
+      "description": "2026 Pronghorn and elk regulations - hunt numbers, season dates, tag quotas for elk",
+      "size_bytes": 3445167
+    },
+    {
+      "filename": "harvest_reporting_page.html",
+      "url": "https://www.azgfd.com/hunting/hunt-draw-and-licenses/harvest-reporting/",
+      "description": "AZGFD harvest reporting page - links to all harvest summaries and survey data",
+      "size_bytes": null
+    },
+    {
+      "filename": "bonus_point_process_page.html",
+      "url": "https://www.azgfd.com/hunting/hunt-draw-and-licenses/big-game-draw/bonus-point-process/",
+      "description": "AZGFD bonus point process page - links to all draw reports and bonus point reports",
+      "size_bytes": null
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://draw.azgfd.com/",
+      "description": "AZGFD Draw Portal - individual draw results and bonus point lookup",
+      "reason": "Requires authenticated AZGFD portal account login to access individual draw results and bonus point data. No public bulk download available."
+    },
+    {
+      "url": "https://draw.azgfd.com/Statistics",
+      "description": "Draw statistics page",
+      "reason": "Returns 404 - this URL path does not exist or has been removed. Draw statistics are now published as PDF reports on the bonus point process page."
+    },
+    {
+      "url": "https://www.azgfd.com/hunting/hunt-draw-and-licenses/harvest-reporting/",
+      "description": "Survey data PDFs (elk survey summary, deer survey summary)",
+      "reason": "Page references survey data sections but the content may be further down the page or behind expandable sections. The 2024 survey summaries (elk, deer, pronghorn) may be available but URLs could not be reliably extracted. Check the saved harvest_reporting_page.html for additional links."
+    }
+  ],
+  "notes": [
+    "Arizona uses a multi-pass draw system: Bonus Pass (loyalty/bonus points), Pass 1-2 (first/second choice), Pass 3-4-5 (remaining choices). Draw reports show applicants, tags available, and tags issued per hunt number for each pass.",
+    "Deer is drawn in the FALL draw cycle (application deadline ~June). Elk is drawn in the MIDWINTER draw cycle (application deadline ~February).",
+    "The bonus point reports show the number of applicants at each bonus point level for each hunt, which is the key data needed to calculate draw odds.",
+    "AZGFD no longer publishes a consolidated 'Hunt Arizona' book. Individual harvest summaries and draw reports are posted separately as PDFs.",
+    "All 24 PDF files verified as valid PDFs (header bytes: 25504446 = %PDF).",
+    "2026 Midwinter (elk/pronghorn) draw results have been posted but the 2026 draw reports may not yet be published as PDFs."
+  ]
+}

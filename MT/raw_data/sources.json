@@ -1,0 +1,108 @@
+{
+  "state": "MT",
+  "gathered_date": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "elk_hunting_districts_2024.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/conservation/wildlife-reports/elk/2024/elk2024_20241113.pdf",
+      "description": "2024 Elk Management Unit data by hunting district - includes elk counts, population goals, and harvest data",
+      "size_bytes": 160705
+    },
+    {
+      "filename": "bonus_points_drawing_statistics.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/buyandapply/hunting/misc/bonus-points-drawing-statistics.pdf",
+      "description": "Infographic explaining how bonus points affect draw odds for special permits",
+      "size_bytes": 1101073
+    },
+    {
+      "filename": "drawing_statistics_reports.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/buyandapply/hunting/misc/drawing-statistics-reports.pdf",
+      "description": "Infographic explaining drawing statistics reports - quotas and applicant proportions",
+      "size_bytes": 1309558
+    },
+    {
+      "filename": "nr_combo_preference_points.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/buyandapply/hunting/misc/nonresident-combination-license-preference-points-statistics.pdf",
+      "description": "Nonresident combination license preference point statistics infographic",
+      "size_bytes": 825146
+    },
+    {
+      "filename": "nr_combo_faq.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/buyandapply/hunting/misc/questions-after-the-nr-combo-ec-v2.pdf",
+      "description": "FAQ for nonresident combo and deer/elk permits",
+      "size_bytes": 55903
+    },
+    {
+      "filename": "region1_elk_report_2024.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/aboutfwp/regions/r1/other/elk_r1_2024_annual_report.pdf",
+      "description": "2024 Region 1 annual elk report - harvest by hunting district, method, trends (31 pages)",
+      "size_bytes": 6564879
+    },
+    {
+      "filename": "region1_mule_deer_report_2023.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/commission/2025/june-19/wl/mtn-lion/r1-mule-deer-report.pdf",
+      "description": "2023 Region 1 mule deer report - population and harvest data by hunting district (30 pages)",
+      "size_bytes": 9833634
+    },
+    {
+      "filename": "deer_elk_regs_2024.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/commission/2023/dec/deer-and-elk/cs_final_deer-and-elk-and-boundary-changes.pdf",
+      "description": "2024-2025 deer and elk hunting regulations, season structures, and boundary changes",
+      "size_bytes": 331793
+    },
+    {
+      "filename": "deer_elk_regs_pages_2024.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/commission/2023/dec/deer-and-elk/2024-deer-and-elk-proposal-regs-pages-46_125-final.pdf",
+      "description": "2024 deer and elk regulation pages with permit quotas by hunting district (80 pages)",
+      "size_bytes": 828268
+    },
+    {
+      "filename": "region4_elk_season_setting.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/commission/2025/december-4/wildlife/deer--elk/region-4---elk.pdf",
+      "description": "Region 4 elk season setting data - harvest, population counts, and management recommendations",
+      "size_bytes": 2116235
+    },
+    {
+      "filename": "region4_deer_elk_justifications.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/commission/2023/dec/deer-and-elk/region-4-deer-elk-season-setting-justifications.pdf",
+      "description": "Region 4 deer and elk season-setting justifications with harvest survey data by hunting district",
+      "size_bytes": 2147421
+    },
+    {
+      "filename": "bonus_points_faq.pdf",
+      "url": "https://fwp.mt.gov/binaries/content/assets/fwp/buyandapply/hunting/bonus-points-faq--final-updated.pdf",
+      "description": "Detailed bonus points FAQ explaining draw system mechanics and odds calculations",
+      "size_bytes": 2283834
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://myfwp.mt.gov/fwpPub/drawingStatistics",
+      "description": "Interactive drawing statistics portal - searchable by species (Elk, White-tailed/Mule Deer, Antelope, etc.) showing applicants, successful draws, and success percentages by permit type",
+      "reason": "Data is served dynamically via JavaScript/AJAX. Must be queried interactively by selecting species and hunt type. No bulk download or PDF export option available. Requires manual scraping or browser automation to capture draw odds data."
+    },
+    {
+      "url": "https://myfwp.mt.gov/fwpExtPortal/myDrawResult_input.action",
+      "description": "Individual draw results lookup - check personal draw results by applicant",
+      "reason": "Requires login/applicant ID to access. Individual lookup only, not aggregate data."
+    },
+    {
+      "url": "https://myfwp.mt.gov/fwpPub/harvestReports",
+      "description": "Harvest estimates portal - has reports for bear, wolf, turkey, upland birds, furbearer, mountain lion but deer/elk harvest data is NOT listed on this page",
+      "reason": "Deer and elk harvest data appears to be distributed across regional reports and commission meeting documents rather than centralized harvest report PDFs. Regional reports for Regions 2, 3, 5, 6, 7 would need to be located individually."
+    },
+    {
+      "url": "https://fwp.mt.gov/hunt/seasons/forecasts",
+      "description": "2025 Hunting Forecasts page - contains regional harvest summaries and population estimates for deer and elk",
+      "reason": "Page content is HTML-based with regional forecast data. Would need to be fetched and parsed for harvest numbers."
+    }
+  ],
+  "notes": [
+    "Montana FWP does not publish a single consolidated 'Big Game Harvest Report' PDF for deer and elk like some other states. Harvest data is distributed across regional annual reports and commission meeting documents.",
+    "The primary source for draw odds data is the interactive portal at myfwp.mt.gov/fwpPub/drawingStatistics which requires browser-based interaction to query by species and permit type.",
+    "The 80-page deer_elk_regs_pages_2024.pdf contains permit quotas by hunting district which are essential for understanding draw odds.",
+    "Regional elk and deer reports (like region1_elk_report_2024.pdf) contain the most detailed harvest data by hunting district including harvest method breakdowns.",
+    "Only Region 1 and Region 4 reports were found via search. Reports for Regions 2, 3, 5, 6, and 7 likely exist but their URLs were not discovered.",
+    "Montana uses a bonus point system (not preference points) for deer/elk special permits, meaning higher points improve odds but do not guarantee a draw."
+  ]
+}

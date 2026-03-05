@@ -1,0 +1,201 @@
+{
+  "state": "NV",
+  "agency": "Nevada Department of Wildlife (NDOW)",
+  "date_collected": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "2024-Nevada-Big-Game-Hunt-Data.xlsx",
+      "url": "https://ndow-production-media.s3-us-gov-west-1.amazonaws.com/wp-content/uploads/2025/06/2024-Nevada-Big-Game-Hunt-Data.xlsx",
+      "description": "2024 Big Game Hunt Data - Excel with detailed breakdowns by species, unit, quotas, applicants, harvest for all big game including deer and elk",
+      "size_bytes": 153649
+    },
+    {
+      "filename": "2025-Big-Game-Draw-Report.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2025/02/Nevada-Wildlife-Commission-Report-2025-ADA.pdf",
+      "description": "2025 Big Game Draw Report to Wildlife Commission - 3-year averages (2022-2024) vs 2025 draw data",
+      "size_bytes": 2066742
+    },
+    {
+      "filename": "2025-Big-Game-Draw-Public-List.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2025/05/2025-Big-Game-Draw-Public-List_accessible.pdf",
+      "description": "2025 Big Game Draw Results - full public list of draw results",
+      "size_bytes": 7200351
+    },
+    {
+      "filename": "2025-Big-Game-Status-Book.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2025/06/2025-Big-Game-Status-Book-Draft-4_30_25.pdf",
+      "description": "2025 Big Game Status Book - management area reports with population estimates and management objectives",
+      "size_bytes": 6379899
+    },
+    {
+      "filename": "2023-24-NV-Big-Game-Status-Book.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2024/04/2023-24-NV-Big-Game-Status-Book_DRAFT.pdf",
+      "description": "2023-24 Big Game Status Book - prior year management area reports",
+      "size_bytes": 3102289
+    },
+    {
+      "filename": "2024-Mule-Deer-Harvest-by-Unit-Group.pdf",
+      "url": "https://ndow-production-media.s3-us-gov-west-1.amazonaws.com/wp-content/uploads/2025/07/2024-Mule-Deer-Harvest-by-Unit-Group.pdf",
+      "description": "2024 Mule Deer harvest by unit group - tags issued, harvest counts, success rates",
+      "size_bytes": 4068789
+    },
+    {
+      "filename": "2024-Mule-Deer-Harvest-Composition.pdf",
+      "url": "https://ndow-production-media.s3-us-gov-west-1.amazonaws.com/wp-content/uploads/2025/07/T2-Mule-Deer-2024-Harvest-Comp-by-Unit.pdf",
+      "description": "2024 Mule Deer harvest composition by unit (age/sex breakdown)",
+      "size_bytes": 652697
+    },
+    {
+      "filename": "2024-Mule-Deer-4pt-or-Greater.pdf",
+      "url": "https://ndow-production-media.s3-us-gov-west-1.amazonaws.com/wp-content/uploads/2025/06/T3-Mule-Deer-2024-Statewide-Four-Point-or-Greater-by-Unit-Group.pdf",
+      "description": "2024 Mule Deer statewide 4-point or greater harvest by unit group",
+      "size_bytes": 190774
+    },
+    {
+      "filename": "2024-NR-Guided-Deer-Harvest.pdf",
+      "url": "https://ndow-production-media.s3-us-gov-west-1.amazonaws.com/wp-content/uploads/2025/06/2024-NR-Guided-Mule-Deer-Harvest-by-Unit-Group.pdf",
+      "description": "2024 Nonresident guided mule deer harvest by unit group",
+      "size_bytes": 657925
+    },
+    {
+      "filename": "2024-Elk-Harvest-by-Unit-Group.pdf",
+      "url": "https://ndow-production-media.s3-us-gov-west-1.amazonaws.com/wp-content/uploads/2025/06/2024-Elk-Harvest-by-Unit-Group.pdf",
+      "description": "2024 Elk harvest by unit group - tags issued, harvest counts, success rates",
+      "size_bytes": 2984031
+    },
+    {
+      "filename": "2024-Elk-Harvest-Composition.pdf",
+      "url": "https://ndow-production-media.s3-us-gov-west-1.amazonaws.com/wp-content/uploads/2025/06/T6-Elk-2024-Harvest-Comp-by-Unit-1.pdf",
+      "description": "2024 Elk harvest composition by unit (age/sex breakdown)",
+      "size_bytes": 166593
+    },
+    {
+      "filename": "2024-Elk-Antler-Length.pdf",
+      "url": "https://ndow-production-media.s3-us-gov-west-1.amazonaws.com/wp-content/uploads/2025/06/T7-Elk-2024-Antler-Length-by-Unit-Group.pdf",
+      "description": "2024 Elk antler length by unit group",
+      "size_bytes": 309207
+    },
+    {
+      "filename": "Deer-Antlered-ALW-BonusPt-Res-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf",
+      "description": "2025 Mule Deer Antlered Any Legal Weapon bonus point and application trend - Resident",
+      "size_bytes": 163015
+    },
+    {
+      "filename": "Deer-Antlered-ALW-BonusPt-NR-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf",
+      "description": "2025 Mule Deer Antlered Any Legal Weapon bonus point and application trend - NonResident",
+      "size_bytes": 185910
+    },
+    {
+      "filename": "Deer-Antlered-Archery-BonusPt-Res-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Archery-Bonus-Point-and-Application-Trend-Resident-2025.pdf",
+      "description": "2025 Mule Deer Antlered Archery bonus point and application trend - Resident",
+      "size_bytes": 113121
+    },
+    {
+      "filename": "Deer-Antlered-Archery-BonusPt-NR-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Archery-Bonus-Point-and-Application-Trend-NonResident-2025.pdf",
+      "description": "2025 Mule Deer Antlered Archery bonus point and application trend - NonResident",
+      "size_bytes": 124496
+    },
+    {
+      "filename": "Deer-Antlered-Muzzleloader-BonusPt-Res-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-Resident-2025.pdf",
+      "description": "2025 Mule Deer Antlered Muzzleloader bonus point and application trend - Resident",
+      "size_bytes": 105134
+    },
+    {
+      "filename": "Deer-Antlered-Muzzleloader-BonusPt-NR-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-NonResident-2025.pdf",
+      "description": "2025 Mule Deer Antlered Muzzleloader bonus point and application trend - NonResident",
+      "size_bytes": 112863
+    },
+    {
+      "filename": "Deer-Junior-BonusPt-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-Junior-Antlered-Bonus-Point-and-Application-Trend-2025.pdf",
+      "description": "2025 Mule Deer Junior Antlered bonus point and application trend",
+      "size_bytes": 105885
+    },
+    {
+      "filename": "Deer-NR-Guided-BonusPt-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Mule-Deer-NonResident-Guided-Antlered-ALW-Bonus-Point-and-Application-Trend-2025.pdf",
+      "description": "2025 Mule Deer NonResident Guided Antlered ALW bonus point and application trend",
+      "size_bytes": 137705
+    },
+    {
+      "filename": "Elk-Antlered-ALW-BonusPt-Res-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf",
+      "description": "2025 Elk Antlered Any Legal Weapon bonus point and application trend - Resident",
+      "size_bytes": 109633
+    },
+    {
+      "filename": "Elk-Antlered-ALW-BonusPt-NR-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf",
+      "description": "2025 Elk Antlered Any Legal Weapon bonus point and application trend - NonResident",
+      "size_bytes": 110878
+    },
+    {
+      "filename": "Elk-Antlered-Archery-BonusPt-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-Archery-Bonus-Point-and-Application-Trend-2025.pdf",
+      "description": "2025 Elk Antlered Archery bonus point and application trend",
+      "size_bytes": 101344
+    },
+    {
+      "filename": "Elk-Antlered-Muzzleloader-BonusPt-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlered-Muzzleloader-Bonus-Point-and-Application-Trend-2025.pdf",
+      "description": "2025 Elk Antlered Muzzleloader bonus point and application trend",
+      "size_bytes": 99832
+    },
+    {
+      "filename": "Elk-Antlerless-ALW-BonusPt-Res-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-ALW-Bonus-Point-and-Application-Trend-Resident-2025.pdf",
+      "description": "2025 Elk Antlerless Any Legal Weapon bonus point and application trend - Resident",
+      "size_bytes": 104094
+    },
+    {
+      "filename": "Elk-Antlerless-ALW-BonusPt-NR-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-ALW-Bonus-Point-and-Application-Trend-NonResident-2025.pdf",
+      "description": "2025 Elk Antlerless Any Legal Weapon bonus point and application trend - NonResident",
+      "size_bytes": 86371
+    },
+    {
+      "filename": "Elk-Antlerless-Archery-BonusPt-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-Archery-Bonus-Point-and-Application-Trend-2025.pdf",
+      "description": "2025 Elk Antlerless Archery bonus point and application trend",
+      "size_bytes": 76439
+    },
+    {
+      "filename": "Elk-Antlerless-Muzzleloader-BonusPt-2025.pdf",
+      "url": "https://www.ndow.org/wp-content/uploads/2026/01/Elk-Antlerless-Muzzleloader-Bonus-Point-and-Application-Trend-2025.pdf",
+      "description": "2025 Elk Antlerless Muzzleloader bonus point and application trend",
+      "size_bytes": 73083
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://www.ndow.org/hunting/draw-odds/",
+      "description": "NDOW Draw Odds page",
+      "reason": "URL returned 404 - page may have been removed or relocated"
+    },
+    {
+      "url": "https://huntodds.monstermuleys.com/nevada/nevada.html",
+      "description": "MonsterMuleys Nevada draw odds calculator - third-party historical draw odds data",
+      "reason": "Third-party site requiring interactive use; may have useful historical draw odds calculations"
+    },
+    {
+      "url": "https://www.gohunt.com/browse/application-strategies/application-strategy-nevada-mule-deer-draw-insights-and-essential-info-before-you-apply",
+      "description": "goHunt Nevada mule deer draw insights and application strategy",
+      "reason": "Requires goHunt Insider subscription for full access"
+    }
+  ],
+  "notes": [
+    "The Excel file (2024-Nevada-Big-Game-Hunt-Data.xlsx) is the single most valuable file - contains quotas, applicants, tags issued, and harvest data for ALL species by unit for 2024.",
+    "Bonus point PDFs contain per-unit application counts by bonus point level, effectively showing draw odds (applicants vs tags at each point level). These are the primary draw odds data for Nevada since NDOW does not publish a simple draw odds table.",
+    "Nevada uses a squared bonus point system: (bonus_points^2 + 1) random numbers per applicant. The bonus point PDFs show how many applicants at each point level applied and drew for each unit.",
+    "The 2025 draw report and draw public list cover the most recent completed draw cycle.",
+    "The Big Game Status Books contain population estimates, trend data, and management objectives by unit.",
+    "NDOW publishes 2024 bonus point data as well (URLs in 2025/01/ and 2025/02/ paths) - not downloaded but available if prior year needed.",
+    "The draw-odds page at ndow.org/hunting/draw-odds/ returned 404; NDOW organizes this data under hunt-statistics and bonus-point-data pages instead."
+  ]
+}

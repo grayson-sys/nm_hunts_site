@@ -1,0 +1,100 @@
+{
+  "state": "UT",
+  "date_collected": "2026-03-05",
+  "files_downloaded": [
+    {
+      "filename": "25_deer_odds.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2025/25_deer_odds.pdf",
+      "description": "2025 general-season buck deer draw odds and points report",
+      "size_bytes": 1685706
+    },
+    {
+      "filename": "25_bg-odds.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2025/25_bg-odds.pdf",
+      "description": "2025 limited-entry and once-in-a-lifetime big game draw odds (includes LE deer and elk)",
+      "size_bytes": 12732089
+    },
+    {
+      "filename": "25_youth_elk.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2025/25_youth_elk.pdf",
+      "description": "2025 youth draw-only elk draw odds report",
+      "size_bytes": 93296
+    },
+    {
+      "filename": "25_antlerless_drawing_odds_report.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2025/25_antlerless_drawing_odds_report.pdf",
+      "description": "2025 antlerless big game draw odds report (includes antlerless elk and deer)",
+      "size_bytes": 3534025
+    },
+    {
+      "filename": "25_dh_odds.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2025/25_dh_odds.pdf",
+      "description": "2025 dedicated hunter deer draw odds report",
+      "size_bytes": 550654
+    },
+    {
+      "filename": "24_deer_odds.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2024/24_deer_odds.pdf",
+      "description": "2024 general-season buck deer draw odds and points report",
+      "size_bytes": 459740
+    },
+    {
+      "filename": "24_bg-odds.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2024/24_bg-odds.pdf",
+      "description": "2024 limited-entry and once-in-a-lifetime big game draw odds (includes LE deer and elk)",
+      "size_bytes": 3110486
+    },
+    {
+      "filename": "24_youth_elk.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2024/24_youth_elk.pdf",
+      "description": "2024 youth draw-only elk bonus point report",
+      "size_bytes": 76091
+    },
+    {
+      "filename": "2024_gs_buck_deer_hr.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2024/2024_gs_buck_deer_hr.pdf",
+      "description": "2024 general-season buck deer harvest report",
+      "size_bytes": 134013
+    },
+    {
+      "filename": "2024_le_oial_all.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2024/2024_le_oial_all.pdf",
+      "description": "2024 limited-entry and once-in-a-lifetime species harvest report (includes LE deer and elk)",
+      "size_bytes": 384486
+    },
+    {
+      "filename": "2024_antlerless_hr.pdf",
+      "url": "https://wildlife.utah.gov/pdf/bg/2024/2024_antlerless_hr.pdf",
+      "description": "2024 antlerless big game harvest report (includes antlerless elk and deer)",
+      "size_bytes": 186872
+    },
+    {
+      "filename": "24_bg_report.pdf",
+      "url": "https://wildlife.utah.gov/pdf/annual_reports/big_game/24_bg_report.pdf",
+      "description": "2024 big game annual report - comprehensive population, harvest, and management data for all big game species",
+      "size_bytes": 14037480
+    }
+  ],
+  "needs_manual": [
+    {
+      "url": "https://wildlife.utah.gov/hunting/maps.html",
+      "description": "Utah Hunt Planner interactive map with unit-level population and harvest statistics, biologist notes",
+      "reason": "Interactive web application - data is loaded dynamically per unit and cannot be bulk downloaded"
+    },
+    {
+      "url": "https://wildlife.utah.gov/bg-odds.html",
+      "description": "Additional years of draw odds data (2023 and earlier) available as PDFs",
+      "reason": "Only 2024 and 2025 were downloaded; earlier years available if needed"
+    }
+  ],
+  "notes": [
+    "Utah DWR provides all draw odds and harvest data in PDF format only - no Excel or CSV files are offered on their website.",
+    "The 25_bg-odds.pdf and 24_bg-odds.pdf files contain limited-entry deer AND elk draw odds together in a single report, along with other once-in-a-lifetime species (moose, bison, mountain goat, bighorn sheep).",
+    "General-season elk in Utah is an over-the-counter purchase (not drawn), so there are no general-season elk draw odds files. Youth elk is draw-only.",
+    "The 2024 big game annual report (24_bg_report.pdf, 14 MB) contains comprehensive population surveys, harvest statistics, and management objectives for all units.",
+    "PDF parsing will be required to extract tabular data from these files.",
+    "Source index page for draw odds: https://wildlife.utah.gov/bg-odds.html",
+    "Source index page for harvest data: https://wildlife.utah.gov/hunting/main-hunting-page/big-game/big-game-harvest-data.html",
+    "Source index page for annual reports: https://wildlife.utah.gov/hunting/main-hunting-page/annual-reports.html"
+  ]
+}
