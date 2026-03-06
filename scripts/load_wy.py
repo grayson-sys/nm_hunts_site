@@ -185,7 +185,8 @@ def parse_random_pdf(filepath):
 
 
 def parse_harvest_pdf(filepath, species):
-    """Parse WY harvest reports (by Hunt Area tables)."""
+    """Parse WY harvest reports (by Hunt Area tables).
+    Handles both 2025 format (Table 3/7/8) and 2024 format (TABLE I-A)."""
     results = []
     current_area = None
     in_table = False
@@ -197,7 +198,12 @@ def parse_harvest_pdf(filepath, species):
                 continue
 
             page_nospace = text.replace(' ', '')
+            # 2025 format markers
             if 'HarvestStatisticsbyHuntArea' in page_nospace:
+                in_table = True
+            # 2024 format markers
+            if 'TABLEI-A' in page_nospace or 'TABLEI-B' in page_nospace or \
+               'TABLEIII-A' in page_nospace or 'TABLEIII-H' in page_nospace:
                 in_table = True
             if not in_table:
                 continue
@@ -205,25 +211,31 @@ def parse_harvest_pdf(filepath, species):
                'HarvestStatisticsbyNonresident' in page_nospace:
                 in_table = False
                 continue
+            # 2024 format end markers
+            if 'TABLEII' in page_nospace and 'TABLEI-' not in page_nospace and \
+               'TABLEIII-' not in page_nospace:
+                in_table = False
+                continue
+            if 'TABLEV' in page_nospace or 'TABLEIV' in page_nospace:
+                in_table = False
+                continue
 
             for line in text.split('\n'):
                 stripped = line.strip()
                 if not stripped:
                     continue
-                if any(kw in line for kw in ['Hunter', 'Active', 'HuntArea',
-                       'Table', 'Summary', 'excludes', 'indicates']):
-                    if 'HuntArea' in line.replace(' ', '') or 'Table' in line:
-                        continue
-                    if 'Hunter' in line and 'Licenses' in line:
-                        continue
-                    if 'Active' in line and 'Harvest' in line:
-                        continue
-                    if 'excludes' in line or 'indicates' in line or 'Summary' in line:
-                        continue
-                if 'column' in line.lower() or 'count' in line.lower():
+
+                # Skip header lines
+                skip_keywords = ['Hunter', 'Active', 'HuntArea', 'Table', 'TABLE',
+                                 'Summary', 'excludes', 'indicates', 'AREA TYPE',
+                                 'LICENSES', 'ELK 20', 'DEER 20', 'MULE DEER',
+                                 'WHITE-TAILED', 'column', 'count', '(cross',
+                                 'BY HUNT AREA', 'HARVEST,']
+                if any(kw in stripped for kw in skip_keywords):
                     continue
 
-                m_area = re.match(r'^(\d+)([A-Z][a-zA-Z])', line)
+                # Hunt area header: "8Boulder Ridge" or "1BlackHills" or "1 Crook"
+                m_area = re.match(r'^(\d+)\s*([A-Z][a-zA-Z])', line)
                 if m_area:
                     current_area = m_area.group(1)
                     continue
@@ -231,11 +243,17 @@ def parse_harvest_pdf(filepath, species):
                 if current_area is None:
                     continue
 
-                if stripped.startswith('Resident') or stripped.startswith('Nonresident'):
+                # Skip Resident/Nonresident/Pooled Resident/Pooled Nonresident
+                if stripped.startswith('Resident') or stripped.startswith('Nonresident') or \
+                   stripped.startswith('Pooled Resident') or stripped.startswith('Pooled Nonresident'):
                     continue
 
-                if stripped.startswith('Total'):
-                    parts = stripped.split()
+                # Total line (2025: "Total ...", 2024: "Pooled Total ...")
+                if stripped.startswith('Total') or stripped.startswith('Pooled Total'):
+                    parts = stripped.replace('%', '').split()
+                    # Remove "Pooled" prefix if present
+                    if parts[0] == 'Pooled':
+                        parts = parts[1:]
                     if species == 'elk' and len(parts) >= 10:
                         results.append({
                             'area': current_area, 'type': 'Total',
@@ -256,9 +274,17 @@ def parse_harvest_pdf(filepath, species):
 
                 cleaned = re.sub(r'^\([\d,]+\)\s*', '', stripped)
 
+                # 2024 format: "Full 1 138 27 4 9 0 40 29.0% 31.2 1248 152"
+                # or "Reduced 6 211 0 0 24 15 39 18.5% 51.1 1993 250"
+                # or "General 1124 117 17 47 11 192 17.1% 39.9 7652"
+                # Strip Full/Reduced prefix and extract type
+                m_2024 = re.match(r'^(?:Full|Reduced)\s+', cleaned)
+                if m_2024:
+                    cleaned = cleaned[m_2024.end():]
+
                 if species == 'elk':
                     m_data = re.match(
-                        r'^(\S+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.]+)\s+([\d.]+)\s*([\d,]*)',
+                        r'^(\S+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.%]+)\s+([\d.]+)\s*([\d,]*)',
                         cleaned)
                     if m_data:
                         results.append({
@@ -270,7 +296,7 @@ def parse_harvest_pdf(filepath, species):
                         })
                 else:
                     m_data = re.match(
-                        r'^(\S+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.]+)\s+([\d.]+)\s*([\d,\-]*)',
+                        r'^(\S+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.%]+)\s+([\d.]+)\s*([\d,\-]*)',
                         cleaned)
                     if m_data:
                         results.append({
