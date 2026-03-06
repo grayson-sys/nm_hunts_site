@@ -3,709 +3,666 @@
 Wyoming data loader: hunts, GMUs, draw results, harvest stats, hunt dates.
 
 Sources:
-  - 2025 demand reports (elk + deer, random/prefpoints/leftover/cowcalf/doefawn)
-  - 2024/2025 harvest reports (elk + deer)
+  - 2025 draw PDFs (pref points, random, leftover, cow/calf, doe/fawn)
+  - 2024/2025 elk/deer harvest reports
   - WY/proclamations/2026/WY_hunt_dates_2026.csv
 """
 
 import os
 import re
 import csv
-import pdfplumber
 import psycopg2
+import pdfplumber
 
 BASE_DIR = "/Users/openclaw/Documents/GraysonsDrawOdds"
+RAW_DIR = os.path.join(BASE_DIR, "WY", "raw_data")
+PROC_DIR = os.path.join(BASE_DIR, "WY", "proclamations", "2026")
+
 DB_CONFIG = {
     'host': 'localhost', 'port': 5432,
     'dbname': 'draws', 'user': 'draws', 'password': 'drawspass'
 }
 
-# ── PDF Parsers ──────────────────────────────────────────────────────────────
 
-def parse_demand_report(filepath):
-    """Parse WY demand report (random/leftover/cowcalf/doefawn format).
-    Fixed-width columns: Area, Type, Description, Quota, 1st Apps, 2nd Apps, 3rd Apps.
-    Returns list of dicts with area, type, description, quota, apps_1st, apps_2nd, apps_3rd.
-    """
-    rows = []
+def connect():
+    conn = psycopg2.connect(**DB_CONFIG)
+    conn.autocommit = False
+    return conn
+
+
+def safe_int(val):
+    if val is None:
+        return 0
+    s = str(val).replace(',', '').strip()
+    if not s or s == '-':
+        return 0
+    try:
+        return int(float(s))
+    except ValueError:
+        return 0
+
+
+def safe_float(val):
+    if val is None:
+        return None
+    s = str(val).replace('%', '').replace(',', '').strip()
+    if not s or s == '-':
+        return None
+    try:
+        return float(s)
+    except ValueError:
+        return None
+
+
+def hunt_code_from(area, typ):
+    area = str(area).strip().lstrip('0') or '0'
+    typ = str(typ).strip()
+    return f"{area}-{typ}"
+
+
+def species_id_from_desc(desc, filename):
+    desc_lower = (desc or '').lower()
+    fn_lower = filename.lower()
+    if 'white-tailed' in desc_lower or 'white-tail' in desc_lower or 'whitetail' in desc_lower:
+        return 3  # WTD
+    if 'elk' in fn_lower or 'elk' in desc_lower:
+        return 1  # ELK
+    if 'deer' in fn_lower or 'deer' in desc_lower or 'mule' in desc_lower:
+        return 2  # MDR
+    return 1
+
+
+def weapon_type_for_wy(desc):
+    d = (desc or '').lower()
+    if 'archery' in d:
+        return 3  # ARCHERY
+    return 1  # ANY
+
+
+def parse_prefpoints_pdf(filepath):
+    """Parse NR preference point demand reports."""
+    results = {}
+    current_area = None
+    current_type = None
+
     with pdfplumber.open(filepath) as pdf:
         for page in pdf.pages:
-            text = page.extract_text()
+            text = page.extract_text(layout=True)
             if not text:
                 continue
             for line in text.split('\n'):
-                line = line.rstrip()
-                if not line or line.startswith('Demand Report') or line.startswith('Resident') or \
-                   line.startswith('Nonresident') or line.startswith('Leftover') or \
-                   line.startswith('Fiscal') or line.startswith('Hunt') or \
-                   line.startswith('Area') or line.startswith('----') or \
-                   'Page:' in line or 'Time:' in line or 'Date:' in line or \
-                   'Wyoming' in line:
+                stripped = line.strip()
+                if not stripped or stripped.startswith('Demand Report') or \
+                   stripped.startswith('Nonresident') or stripped.startswith('Fiscal') or \
+                   stripped.startswith('Hunt ') or stripped.startswith('Area ') or \
+                   stripped.startswith('----') or 'Page:' in stripped:
                     continue
-                # Match data lines: starts with a number (hunt area)
-                m = re.match(r'^\s*(\d{1,3})\s+(\d+)\s+(.+?)\s{2,}([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s*$', line)
+
+                # Full line: "  001   1     ANY ELK                 6       1     18            1      100.00%"
+                m = re.match(r'^\s*(\d{3})\s+(\S+)\s+(.+?)\s{2,}(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)', line)
                 if m:
-                    rows.append({
-                        'area': m.group(1).lstrip('0') or '0',
+                    current_area = m.group(1)
+                    current_type = m.group(2)
+                    desc = m.group(3).strip()
+                    quota = safe_int(m.group(4))
+                    issued = safe_int(m.group(5))
+                    pts_val = safe_int(m.group(6))
+                    apps = safe_int(m.group(7))
+
+                    key = (current_area, current_type)
+                    if key not in results:
+                        results[key] = {
+                            'quota': quota, 'total_apps': 0,
+                            'total_issued': 0, 'description': desc,
+                            'max_pts': 0
+                        }
+                    results[key]['total_apps'] += apps
+                    results[key]['total_issued'] += issued
+                    if pts_val > results[key]['max_pts']:
+                        results[key]['max_pts'] = pts_val
+                    continue
+
+                # Continuation line: quota_rem issued [<] points apps odds
+                m2 = re.match(r'^\s{10,}(\S+)\s+(\S+)\s+[<]?\s*(\S+)\s+(\S+)\s+(\S+)', line)
+                if not m2:
+                    # Alternate: no issued field (blank)
+                    m2 = re.match(r'^\s{10,}(\S+)\s+[<]?\s*(\S+)\s+(\S+)\s+(\S+)', line)
+                    if m2 and current_area:
+                        pts_val = safe_int(m2.group(2))
+                        issued = 0
+                        apps = safe_int(m2.group(3))
+                        key = (current_area, current_type)
+                        if key in results:
+                            results[key]['total_apps'] += apps
+                            if pts_val > results[key]['max_pts']:
+                                results[key]['max_pts'] = pts_val
+                        continue
+
+                if m2 and current_area:
+                    pts_val = safe_int(m2.group(1))
+                    issued = safe_int(m2.group(2))
+                    apps = safe_int(m2.group(4))
+
+                    key = (current_area, current_type)
+                    if key in results:
+                        results[key]['total_apps'] += apps
+                        results[key]['total_issued'] += issued
+                        if pts_val > results[key]['max_pts']:
+                            results[key]['max_pts'] = pts_val
+                    continue
+
+    return results
+
+
+def parse_random_pdf(filepath):
+    """Parse random/leftover/cow-calf/doe-fawn demand reports."""
+    results = []
+
+    with pdfplumber.open(filepath) as pdf:
+        for page in pdf.pages:
+            text = page.extract_text(layout=True)
+            if not text:
+                continue
+            for line in text.split('\n'):
+                stripped = line.strip()
+                if not stripped or stripped.startswith('Demand Report') or \
+                   stripped.startswith('Resident') or stripped.startswith('Nonresident') or \
+                   stripped.startswith('Leftover') or stripped.startswith('Fiscal') or \
+                   stripped.startswith('Hunt ') or stripped.startswith('Area ') or \
+                   stripped.startswith('----') or 'Page:' in stripped:
+                    continue
+
+                m = re.match(r'^\s*(\d{3})\s+(\S+)\s+(.+?)\s{2,}(\S+)\s+(\S+)\s+(\S+)\s+(\S+)', line)
+                if m:
+                    results.append({
+                        'area': m.group(1),
                         'type': m.group(2),
                         'description': m.group(3).strip(),
-                        'quota': int(m.group(4).replace(',', '')),
-                        'apps_1st': int(m.group(5).replace(',', '')),
-                        'apps_2nd': int(m.group(6).replace(',', '')),
-                        'apps_3rd': int(m.group(7).replace(',', '')),
+                        'quota': safe_int(m.group(4)),
+                        'first_choice_apps': safe_int(m.group(5)),
                     })
-    return rows
+    return results
 
 
-def parse_prefpoint_report(filepath):
-    """Parse WY preference point demand report.
-    Multi-row per hunt: first row has area/type/desc, continuation rows only have
-    Quota(remaining), Issued, Points, Applicants, Success, Odds.
-    Returns per-hunt aggregates: total_apps, total_drawn, min_pts_drawn, max_pts_held.
-    """
-    hunts = {}
-    current_key = None
-
-    with pdfplumber.open(filepath) as pdf:
-        for page in pdf.pages:
-            text = page.extract_text()
-            if not text:
-                continue
-            for line in text.split('\n'):
-                line = line.rstrip()
-                if not line or 'Demand Report' in line or 'Preference Point' in line or \
-                   'Fiscal' in line or 'Page:' in line or 'Time:' in line or \
-                   'Date:' in line or 'Wyoming' in line or \
-                   line.startswith('Hunt') or line.startswith('Area') or line.startswith('----'):
-                    continue
-
-                # Try to match a new hunt line (has area and type)
-                m = re.match(
-                    r'^\s*(\d{1,3})\s+(\d+)\s+(.+?)\s{2,}([\d,]+)\s+([\d,]+)\s+([\d<,]+)\s+([\d,]+)\s+([\d,.]+%?)\s*$',
-                    line
-                )
-                if m:
-                    area = m.group(1).lstrip('0') or '0'
-                    htype = m.group(2)
-                    current_key = f"{area}-{htype}"
-                    if current_key not in hunts:
-                        hunts[current_key] = {
-                            'area': area, 'type': htype,
-                            'description': m.group(3).strip(),
-                            'quota': int(m.group(4).replace(',', '')),
-                            'total_apps': 0, 'total_drawn': 0,
-                            'min_pts_drawn': None, 'max_pts_held': None,
-                        }
-                    pts_str = m.group(6).strip()
-                    pts = int(re.sub(r'[<>=,\s]', '', pts_str)) if re.search(r'\d', pts_str) else 0
-                    apps = int(m.group(7).replace(',', ''))
-                    # Parse success from odds field
-                    odds_str = m.group(8).strip().replace('%', '')
-                    try:
-                        odds = float(odds_str)
-                    except ValueError:
-                        odds = 0.0
-                    drawn = round(apps * odds / 100) if apps > 0 else 0
-
-                    hunts[current_key]['total_apps'] += apps
-                    hunts[current_key]['total_drawn'] += drawn
-                    if drawn > 0:
-                        if hunts[current_key]['min_pts_drawn'] is None or pts < hunts[current_key]['min_pts_drawn']:
-                            hunts[current_key]['min_pts_drawn'] = pts
-                    if hunts[current_key]['max_pts_held'] is None or pts > hunts[current_key]['max_pts_held']:
-                        hunts[current_key]['max_pts_held'] = pts
-                    continue
-
-                # Continuation line (no area/type, just numbers)
-                if current_key:
-                    m2 = re.match(
-                        r'^\s*([\d,]+)\s+([\d,]+)\s+([\d<>=,\s]+?)\s+([\d,]+)\s+([\d,.]+%?)\s*$',
-                        line
-                    )
-                    if m2:
-                        pts_str = m2.group(3).strip()
-                        pts = int(re.sub(r'[<>=,\s]', '', pts_str)) if re.search(r'\d', pts_str) else 0
-                        apps = int(m2.group(4).replace(',', ''))
-                        odds_str = m2.group(5).strip().replace('%', '')
-                        try:
-                            odds = float(odds_str)
-                        except ValueError:
-                            odds = 0.0
-                        drawn = round(apps * odds / 100) if apps > 0 else 0
-
-                        hunts[current_key]['total_apps'] += apps
-                        hunts[current_key]['total_drawn'] += drawn
-                        if drawn > 0:
-                            if hunts[current_key]['min_pts_drawn'] is None or pts < hunts[current_key]['min_pts_drawn']:
-                                hunts[current_key]['min_pts_drawn'] = pts
-                        if hunts[current_key]['max_pts_held'] is None or pts > hunts[current_key]['max_pts_held']:
-                            hunts[current_key]['max_pts_held'] = pts
-
-    return list(hunts.values())
-
-
-def parse_harvest_report(filepath, species):
-    """Parse WY harvest report Table 3 (elk) or Table 7/8 (deer).
-    Returns list of dicts: area, type, active_hunters, total_harvest, success_rate, days_hunted.
-    """
-    rows = []
-    in_table = False
+def parse_harvest_pdf(filepath, species):
+    """Parse WY harvest reports (by Hunt Area tables)."""
+    results = []
     current_area = None
+    in_table = False
 
     with pdfplumber.open(filepath) as pdf:
         for page in pdf.pages:
             text = page.extract_text()
             if not text:
                 continue
-            # Look for Table 3 (elk) or Table 7/8 (deer)
-            if species == 'ELK' and 'Table3' in text.replace(' ', ''):
-                in_table = True
-            elif species == 'MDR' and ('Table7' in text.replace(' ', '') or 'Table8' in text.replace(' ', '')):
-                in_table = True
-            # Also continue if we see the continuation header
-            if 'HarvestStatisticsbyHuntArea' in text.replace(' ', ''):
-                in_table = True
 
+            page_nospace = text.replace(' ', '')
+            if 'HarvestStatisticsbyHuntArea' in page_nospace:
+                in_table = True
             if not in_table:
                 continue
+            if 'HarvestStatisticsbyHerdUnit' in page_nospace or \
+               'HarvestStatisticsbyNonresident' in page_nospace:
+                in_table = False
+                continue
 
             for line in text.split('\n'):
-                line = line.rstrip()
-                if not line:
+                stripped = line.strip()
+                if not stripped:
                     continue
-                # Skip header lines
-                if 'Table' in line and ('Continued' in line or 'Harvest' in line):
-                    continue
-                if 'Active' in line or 'HuntArea' in line or 'Lics/Htrs' in line:
-                    continue
-                if 'Summary' in line or 'Hunter' in line or 'Licenses' in line:
-                    continue
-                if line.startswith('in') or line.startswith('excludes') or line.startswith('"'):
-                    continue
-
-                # Detect hunt area header: starts with a number followed by name
-                area_match = re.match(r'^(\d{1,3})\s*([A-Z][a-zA-Z].*)', line)
-                if area_match:
-                    current_area = area_match.group(1).lstrip('0') or '0'
+                if any(kw in line for kw in ['Hunter', 'Active', 'HuntArea',
+                       'Table', 'Summary', 'excludes', 'indicates']):
+                    if 'HuntArea' in line.replace(' ', '') or 'Table' in line:
+                        continue
+                    if 'Hunter' in line and 'Licenses' in line:
+                        continue
+                    if 'Active' in line and 'Harvest' in line:
+                        continue
+                    if 'excludes' in line or 'indicates' in line or 'Summary' in line:
+                        continue
+                if 'column' in line.lower() or 'count' in line.lower():
                     continue
 
-                if not current_area:
+                m_area = re.match(r'^(\d+)([A-Z][a-zA-Z])', line)
+                if m_area:
+                    current_area = m_area.group(1)
                     continue
 
-                # Match type data row: Type ActiveLics Bull Spike Cow Calf Total Days Success Days/Harvest [LicsSold]
-                # For elk: Type ActiveLics Bull Spike Cow Calf Total Days Success Days/Harvest
-                # For deer: Type ActiveLics Buck Doe Fawn Total Days Success Days/Harvest
-                # Type can be: 1, 2, 4, 6, 7, 8, 9, GEN, Total, Resident, Nonresident
-                type_match = re.match(
-                    r'^\s*(?:\([^)]+\)\s+)?(\d+|GEN)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.]+)\s+([\d.]+)',
-                    line
-                )
-                if type_match:
-                    htype = type_match.group(1)
-                    active = int(type_match.group(2).replace(',', ''))
-                    total_harvest = int(type_match.group(6).replace(',', ''))
-                    days = int(type_match.group(7).replace(',', ''))
-                    try:
-                        success = float(type_match.group(8))
-                    except ValueError:
-                        success = 0.0
-                    rows.append({
-                        'area': current_area,
-                        'type': htype,
-                        'active_hunters': active,
-                        'total_harvest': total_harvest,
-                        'success_rate': success,
-                        'days_hunted': days,
-                    })
+                if current_area is None:
                     continue
 
-                # Check if line starts with Total/Resident/Nonresident (summary rows - skip)
-                if line.strip().startswith('Total') or line.strip().startswith('Resident') or \
-                   line.strip().startswith('Nonresident'):
+                if stripped.startswith('Resident') or stripped.startswith('Nonresident'):
                     continue
 
-    return rows
+                if stripped.startswith('Total'):
+                    parts = stripped.split()
+                    if species == 'elk' and len(parts) >= 10:
+                        results.append({
+                            'area': current_area, 'type': 'Total',
+                            'active_hunters': safe_int(parts[1]),
+                            'harvest_total': safe_int(parts[6]),
+                            'success_pct': safe_float(parts[8]),
+                            'licenses_sold': None,
+                        })
+                    elif species == 'deer' and len(parts) >= 9:
+                        results.append({
+                            'area': current_area, 'type': 'Total',
+                            'active_hunters': safe_int(parts[1]),
+                            'harvest_total': safe_int(parts[5]),
+                            'success_pct': safe_float(parts[7]),
+                            'licenses_sold': None,
+                        })
+                    continue
 
+                cleaned = re.sub(r'^\([\d,]+\)\s*', '', stripped)
 
-# ── Helper functions ─────────────────────────────────────────────────────────
+                if species == 'elk':
+                    m_data = re.match(
+                        r'^(\S+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.]+)\s+([\d.]+)\s*([\d,]*)',
+                        cleaned)
+                    if m_data:
+                        results.append({
+                            'area': current_area, 'type': m_data.group(1),
+                            'active_hunters': safe_int(m_data.group(2)),
+                            'harvest_total': safe_int(m_data.group(7)),
+                            'success_pct': safe_float(m_data.group(9)),
+                            'licenses_sold': safe_int(m_data.group(11)) if m_data.group(11) else None,
+                        })
+                else:
+                    m_data = re.match(
+                        r'^(\S+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.]+)\s+([\d.]+)\s*([\d,\-]*)',
+                        cleaned)
+                    if m_data:
+                        results.append({
+                            'area': current_area, 'type': m_data.group(1),
+                            'active_hunters': safe_int(m_data.group(2)),
+                            'harvest_total': safe_int(m_data.group(6)),
+                            'success_pct': safe_float(m_data.group(8)),
+                            'licenses_sold': safe_int(m_data.group(10)) if m_data.group(10) and m_data.group(10) != '-' else None,
+                        })
 
-def infer_bag_limit(description, species):
-    """Map WY description to bag_limit_id."""
-    desc = (description or '').upper()
-    if species == 'ELK':
-        if 'COW OR CALF' in desc or 'COW/CALF' in desc:
-            return 15  # COW
-        if 'ANTLERLESS' in desc:
-            return 15  # COW (antlerless elk)
-        if 'ANTLERED' in desc:
-            return 13  # BULL
-        if 'ANY ELK' in desc:
-            return 5   # ES (either sex)
-        return 5  # default
-    else:  # deer
-        if 'DOE OR FAWN' in desc or 'DOE/FAWN' in desc:
-            return 18  # DOE
-        if 'ANTLERLESS' in desc:
-            return 18  # DOE
-        if 'ANTLERED' in desc:
-            return 16  # BUCK
-        if 'ANY WHITE-TAILED' in desc:
-            return 6   # ESWTD
-        if 'ANY MULE' in desc or 'ANY DEER' in desc:
-            return 5   # ES
-        return 16  # default deer = BUCK
+    return results
 
-
-def infer_weapon_type(htype, description):
-    """Map WY hunt type and description to weapon_type_id."""
-    desc = (description or '').upper()
-    if 'ARCHERY' in desc:
-        return 3  # ARCHERY
-    if htype == '9':
-        return 3  # Type 9 = archery only
-    return 1  # ANY legal weapon
-
-
-def infer_species_from_description(description):
-    """Determine species from WY description text."""
-    desc = (description or '').upper()
-    if 'WHITE-TAILED' in desc or 'WHITETAIL' in desc:
-        return 'WTD'
-    if 'DEER' in desc or 'BUCK' in desc or 'DOE' in desc or 'FAWN' in desc:
-        return 'MDR'
-    return 'ELK'
-
-
-def hunt_code_from_area_type(area, htype):
-    """Build hunt code from area and type, stripping leading zeros."""
-    area_clean = str(int(area))
-    return f"{area_clean}-{htype}"
-
-
-# ── Main loader ──────────────────────────────────────────────────────────────
 
 def main():
-    conn = psycopg2.connect(**DB_CONFIG)
+    conn = connect()
     cur = conn.cursor()
 
-    # Get state_id
     cur.execute("SELECT state_id FROM states WHERE state_code='WY'")
-    wy_id = cur.fetchone()[0]
+    row = cur.fetchone()
+    if not row:
+        print("ERROR: WY state not found")
+        return
+    wy_state_id = row[0]
+    print(f"WY state_id = {wy_state_id}")
 
-    # Species map
-    cur.execute("SELECT species_id, species_code FROM species")
-    species_map = {r[1]: r[0] for r in cur.fetchall()}
+    # Ensure WY pools exist
+    cur.execute("SELECT pool_id, pool_code FROM pools WHERE state_id=%s", (wy_state_id,))
+    existing_pools = {r[1]: r[0] for r in cur.fetchall()}
+    if 'RES' not in existing_pools:
+        cur.execute(
+            "INSERT INTO pools (state_id, pool_code, description, allocation_pct, allocation_note) "
+            "VALUES (%s, 'RES', 'Resident pool', 84.0, '~84%% of limited-quota tags') RETURNING pool_id",
+            (wy_state_id,))
+        existing_pools['RES'] = cur.fetchone()[0]
+    if 'NR' not in existing_pools:
+        cur.execute(
+            "INSERT INTO pools (state_id, pool_code, description, allocation_pct, allocation_note) "
+            "VALUES (%s, 'NR', 'Nonresident pool', 16.0, '~16%% elk / ~20%% deer NR allocation') RETURNING pool_id",
+            (wy_state_id,))
+        existing_pools['NR'] = cur.fetchone()[0]
+    res_pool_id = existing_pools['RES']
+    nr_pool_id = existing_pools['NR']
+    print(f"Pools: RES={res_pool_id}, NR={nr_pool_id}")
 
-    # Create WY pools
-    for pool_code, desc, pct, note in [
-        ('RES', 'Resident pool', 90.0, '~90% of tags'),
-        ('NR', 'Nonresident pool', 10.0, '~10% of tags (regular license)'),
-        ('NR_SPEC', 'Nonresident Special pool', None, 'NR special license pool (separate quota)'),
-    ]:
-        cur.execute("""
-            INSERT INTO pools (state_id, pool_code, description, allocation_pct, allocation_note)
-            VALUES (%s, %s, %s, %s, %s)
-            ON CONFLICT (state_id, pool_code) DO NOTHING
-        """, (wy_id, pool_code, desc, pct, note))
-    conn.commit()
+    # Parse all draw PDFs
+    draw_data = {}
 
-    cur.execute("SELECT pool_id, pool_code FROM pools WHERE state_id = %s", (wy_id,))
-    pool_map = {r[1]: r[0] for r in cur.fetchall()}
-
-    # ── Define source files ─────────────────────────────────────────────────
-    # (filepath, draw_year, species_code, pool_code, report_type)
-    demand_sources = [
-        # Elk random draw
-        ('WY/raw_data/2025_elk_random_res.pdf', 2025, 'ELK', 'RES', 'demand'),
-        ('WY/raw_data/2025_elk_random_nonres.pdf', 2025, 'ELK', 'NR', 'demand'),
-        ('WY/raw_data/2025_elk_random_nonres_special.pdf', 2025, 'ELK', 'NR_SPEC', 'demand'),
-        # Elk leftover
-        ('WY/raw_data/2025_elk_leftover_res.pdf', 2025, 'ELK', 'RES', 'demand'),
-        ('WY/raw_data/2025_elk_leftover_nonres.pdf', 2025, 'ELK', 'NR', 'demand'),
-        # Elk cow/calf
-        ('WY/raw_data/2025_elk_cowcalf_res.pdf', 2025, 'ELK', 'RES', 'demand'),
-        ('WY/raw_data/2025_elk_cowcalf_nonres.pdf', 2025, 'ELK', 'NR', 'demand'),
-        # Deer random draw
-        ('WY/raw_data/2025_deer_random_res.pdf', 2025, 'MDR', 'RES', 'demand'),
-        ('WY/raw_data/2025_deer_random_nonres.pdf', 2025, 'MDR', 'NR', 'demand'),
-        ('WY/raw_data/2025_deer_random_nonres_special.pdf', 2025, 'MDR', 'NR_SPEC', 'demand'),
-        # Deer leftover
-        ('WY/raw_data/2025_deer_leftover_res.pdf', 2025, 'MDR', 'RES', 'demand'),
-        ('WY/raw_data/2025_deer_leftover_nonres.pdf', 2025, 'MDR', 'NR', 'demand'),
-        # Deer doe/fawn
-        ('WY/raw_data/2025_deer_doefawn_res.pdf', 2025, 'MDR', 'RES', 'demand'),
-        ('WY/raw_data/2025_deer_doefawn_nonres.pdf', 2025, 'MDR', 'NR', 'demand'),
-    ]
-
-    prefpoint_sources = [
-        ('WY/raw_data/2025_elk_prefpoints_nonres.pdf', 2025, 'ELK', 'NR'),
-        ('WY/raw_data/2025_elk_prefpoints_nonres_special.pdf', 2025, 'ELK', 'NR_SPEC'),
-        ('WY/raw_data/2025_deer_prefpoints_nonres.pdf', 2025, 'MDR', 'NR'),
-        ('WY/raw_data/2025_deer_prefpoints_nonres_special.pdf', 2025, 'MDR', 'NR_SPEC'),
-    ]
-
-    harvest_sources = [
-        ('WY/raw_data/2024_elk_harvest_report.pdf', 2024, 'ELK'),
-        ('WY/raw_data/2025_elk_harvest_report.pdf', 2025, 'ELK'),
-        ('WY/raw_data/2024_deer_harvest_report.pdf', 2024, 'MDR'),
-        ('WY/raw_data/2025_deer_harvest_report.pdf', 2025, 'MDR'),
-    ]
-
-    # Track all unique hunts and their data
-    hunt_data = {}  # key = hunt_code → {species, description, ...}
-    draw_results = []  # list of (hunt_code, year, pool, apps, quota, drawn, ...)
-    prefpoint_data = {}  # key = (hunt_code, pool) → {min_pts, max_pts, ...}
-
-    # ── Parse demand reports ────────────────────────────────────────────────
-    total_demand_rows = 0
-    for relpath, year, sp_code, pool_code, rtype in demand_sources:
-        filepath = os.path.join(BASE_DIR, relpath)
-        if not os.path.exists(filepath):
-            print(f"  SKIP (missing): {relpath}")
-            continue
-
-        rows = parse_demand_report(filepath)
-        print(f"  {os.path.basename(relpath)}: {len(rows)} rows parsed")
-        total_demand_rows += len(rows)
-
-        for r in rows:
-            hcode = hunt_code_from_area_type(r['area'], r['type'])
-            # Determine actual species from description if it's WTD
-            actual_sp = sp_code
-            if sp_code == 'MDR':
-                desc_sp = infer_species_from_description(r['description'])
-                if desc_sp == 'WTD':
-                    actual_sp = 'WTD'
-
-            if hcode not in hunt_data:
-                hunt_data[hcode] = {
-                    'area': r['area'],
-                    'type': r['type'],
-                    'species': actual_sp,
-                    'description': r['description'],
-                }
-
-            # Only store 1st choice applications (what matters for draw odds)
-            if r['apps_1st'] > 0 or r['quota'] > 0:
-                draw_results.append({
-                    'hunt_code': hcode,
-                    'year': year,
-                    'pool': pool_code,
-                    'applications': r['apps_1st'],
-                    'tags_available': r['quota'],
-                    'tags_awarded': None,
-                })
-
-    # ── Parse preference point reports ──────────────────────────────────────
-    for relpath, year, sp_code, pool_code in prefpoint_sources:
-        filepath = os.path.join(BASE_DIR, relpath)
-        if not os.path.exists(filepath):
-            print(f"  SKIP (missing): {relpath}")
-            continue
-
-        hunts = parse_prefpoint_report(filepath)
-        print(f"  {os.path.basename(relpath)}: {len(hunts)} hunts parsed")
-
-        for h in hunts:
-            hcode = hunt_code_from_area_type(h['area'], h['type'])
-            actual_sp = sp_code
-            if sp_code == 'MDR':
-                desc_sp = infer_species_from_description(h['description'])
-                if desc_sp == 'WTD':
-                    actual_sp = 'WTD'
-
-            if hcode not in hunt_data:
-                hunt_data[hcode] = {
-                    'area': h['area'],
-                    'type': h['type'],
-                    'species': actual_sp,
-                    'description': h['description'],
-                }
-
-            # Store pref point info for later enrichment
-            key = (hcode, pool_code)
-            prefpoint_data[key] = {
-                'total_apps': h['total_apps'],
-                'total_drawn': h['total_drawn'],
-                'min_pts_drawn': h['min_pts_drawn'],
-                'max_pts_held': h['max_pts_held'],
-                'quota': h['quota'],
+    def merge_draw(area, typ, desc, filename, pool, apps, quota, issued=0, max_pts=0):
+        hc = hunt_code_from(area, typ)
+        if hc not in draw_data:
+            draw_data[hc] = {
+                'area': area.lstrip('0') or '0',
+                'description': desc,
+                'species_id': species_id_from_desc(desc, filename),
+                'weapon_type_id': weapon_type_for_wy(desc),
+                'res_apps': 0, 'res_quota': 0,
+                'nr_apps': 0, 'nr_quota': 0, 'nr_issued': 0,
+                'max_pts': 0,
             }
-
-    print(f"\n  Total unique hunts from draw data: {len(hunt_data)}")
-    print(f"  Total draw result rows: {len(draw_results)}")
-    print(f"  Pref point data entries: {len(prefpoint_data)}")
-
-    # ── Insert GMUs and Hunts ───────────────────────────────────────────────
-    gmu_count = 0
-    hunt_count = 0
-    hunt_id_map = {}  # hunt_code → hunt_id
-
-    # Also load hunt codes from proclamation CSV that aren't in draw data
-    proc_csv = os.path.join(BASE_DIR, 'WY/proclamations/2026/WY_hunt_dates_2026.csv')
-    proc_hunts = {}
-    if os.path.exists(proc_csv):
-        with open(proc_csv) as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                hc = row['hunt_code'].strip()
-                proc_hunts[hc] = row
-
-    # Merge: for hunts in draw data, use draw data info; also add proclamation-only hunts
-    all_hunt_codes = set(hunt_data.keys()) | set(proc_hunts.keys())
-    print(f"  Total unique hunt codes (draw + proclamation): {len(all_hunt_codes)}")
-
-    for hcode in sorted(all_hunt_codes):
-        # Determine species, bag limit, weapon type
-        if hcode in hunt_data:
-            hd = hunt_data[hcode]
-            sp_code = hd['species']
-            description = hd['description']
-            area = hd['area']
-            htype = hd['type']
+        if pool == 'RES':
+            draw_data[hc]['res_apps'] += apps
+            draw_data[hc]['res_quota'] = max(draw_data[hc]['res_quota'], quota)
         else:
-            # Parse from proclamation hunt code
-            parts = hcode.split('-')
-            area = parts[0]
-            htype = parts[1] if len(parts) > 1 else '1'
-            description = ''
-            # Infer species from proclamation bag_limit_description
-            bag_desc = proc_hunts[hcode].get('bag_limit_description', '') if hcode in proc_hunts else ''
-            if 'elk' in bag_desc.lower():
-                sp_code = 'ELK'
-            elif 'deer' in bag_desc.lower() or 'buck' in bag_desc.lower() or 'doe' in bag_desc.lower():
-                sp_code = 'MDR'
-            else:
-                sp_code = 'ELK'  # default
+            draw_data[hc]['nr_apps'] += apps
+            draw_data[hc]['nr_quota'] = max(draw_data[hc]['nr_quota'], quota)
+            draw_data[hc]['nr_issued'] += issued
+        draw_data[hc]['max_pts'] = max(draw_data[hc]['max_pts'], max_pts)
 
-        species_id = species_map.get(sp_code, species_map.get('ELK'))
-        bag_limit_id = infer_bag_limit(description, sp_code)
-        weapon_type_id = infer_weapon_type(htype, description)
-
-        # If hunt code ends with -ARCH, it's an archery season variant
-        if hcode.endswith('-ARCH'):
-            weapon_type_id = 3
-
-        # GMU from area
-        gmu_code = area
-        gmu_name = f"Hunt Area {area}"
-        gmu_sort_key = area.zfill(5)
-
-        cur.execute("""
-            INSERT INTO gmus (state_id, gmu_code, gmu_name, gmu_sort_key)
-            VALUES (%s, %s, %s, %s)
-            ON CONFLICT (state_id, gmu_code) DO UPDATE SET gmu_name = EXCLUDED.gmu_name
-            RETURNING gmu_id
-        """, (wy_id, gmu_code, gmu_name, gmu_sort_key))
-        gmu_id = cur.fetchone()[0]
-        gmu_count += 1
-
-        # Determine season_type and tag_type
-        season_type = 'controlled'
-        tag_type = 'LE'
-        if htype == 'Gen' or htype == 'GEN':
-            season_type = 'general'
-            tag_type = 'GEN'
-
-        # Get display info from proclamation if available
-        notes = None
-        if hcode in proc_hunts:
-            bag_desc = proc_hunts[hcode].get('bag_limit_description', '')
-            pnotes = proc_hunts[hcode].get('notes', '')
-            if bag_desc:
-                notes = bag_desc
-            if pnotes:
-                notes = f"{notes}; {pnotes}" if notes else pnotes
-
-        cur.execute("""
-            INSERT INTO hunts (state_id, species_id, hunt_code, hunt_code_display,
-                weapon_type_id, bag_limit_id, season_type, tag_type, is_active,
-                unit_description, notes)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 1, %s, %s)
-            ON CONFLICT (state_id, hunt_code) DO UPDATE SET
-                weapon_type_id = EXCLUDED.weapon_type_id,
-                bag_limit_id = EXCLUDED.bag_limit_id,
-                season_type = EXCLUDED.season_type,
-                unit_description = EXCLUDED.unit_description,
-                notes = EXCLUDED.notes
-            RETURNING hunt_id
-        """, (wy_id, species_id, hcode, hcode, weapon_type_id, bag_limit_id,
-              season_type, tag_type, gmu_name, notes))
-        hunt_id = cur.fetchone()[0]
-        hunt_id_map[hcode] = hunt_id
-        hunt_count += 1
-
-        # Link hunt to GMU
-        cur.execute("""
-            INSERT INTO hunt_gmus (hunt_id, gmu_id) VALUES (%s, %s)
-            ON CONFLICT (hunt_id, gmu_id) DO NOTHING
-        """, (hunt_id, gmu_id))
-
-    conn.commit()
-    print(f"\n  Inserted {hunt_count} hunts, {gmu_count} GMU upserts")
-
-    # ── Insert draw results ─────────────────────────────────────────────────
-    draw_count = 0
-    # Aggregate draw results by (hunt_code, year, pool) - sum applications and quota
-    from collections import defaultdict
-    agg = defaultdict(lambda: {'applications': 0, 'tags_available': 0})
-    for dr in draw_results:
-        key = (dr['hunt_code'], dr['year'], dr['pool'])
-        agg[key]['applications'] += dr['applications']
-        agg[key]['tags_available'] = max(agg[key]['tags_available'], dr['tags_available'])
-
-    for (hcode, year, pool_code), vals in agg.items():
-        if hcode not in hunt_id_map:
+    # NR Pref Points
+    for fn in ['2025_elk_prefpoints_nonres.pdf', '2025_elk_prefpoints_nonres_special.pdf',
+               '2025_deer_prefpoints_nonres.pdf', '2025_deer_prefpoints_nonres_special.pdf']:
+        fpath = os.path.join(RAW_DIR, fn)
+        if not os.path.exists(fpath):
+            print(f"  SKIP: {fn}")
             continue
-        hunt_id = hunt_id_map[hcode]
-        pool_id = pool_map.get(pool_code)
-        if not pool_id:
+        print(f"  Parsing {fn}...")
+        data = parse_prefpoints_pdf(fpath)
+        for (area, typ), info in data.items():
+            merge_draw(area, typ, info['description'], fn, 'NR',
+                       info['total_apps'], info['quota'], info['total_issued'], info['max_pts'])
+        print(f"    {len(data)} hunt codes")
+
+    # Resident random
+    for fn in ['2025_elk_random_res.pdf', '2025_deer_random_res.pdf']:
+        fpath = os.path.join(RAW_DIR, fn)
+        if not os.path.exists(fpath):
+            print(f"  SKIP: {fn}")
             continue
-        apps = vals['applications']
-        quota = vals['tags_available']
-        if apps == 0 and quota == 0:
+        print(f"  Parsing {fn}...")
+        data = parse_random_pdf(fpath)
+        for row in data:
+            merge_draw(row['area'], row['type'], row['description'], fn, 'RES',
+                       row['first_choice_apps'], row['quota'])
+        print(f"    {len(data)} rows")
+
+    # Resident cow/calf and doe/fawn
+    for fn in ['2025_elk_cowcalf_res.pdf', '2025_deer_doefawn_res.pdf']:
+        fpath = os.path.join(RAW_DIR, fn)
+        if not os.path.exists(fpath):
             continue
+        print(f"  Parsing {fn}...")
+        data = parse_random_pdf(fpath)
+        for row in data:
+            merge_draw(row['area'], row['type'], row['description'], fn, 'RES',
+                       row['first_choice_apps'], row['quota'])
+        print(f"    {len(data)} rows")
 
-        # Enrich with pref point data if available
-        pp = prefpoint_data.get((hcode, pool_code), {})
-        min_pts = pp.get('min_pts_drawn')
-        max_pts = pp.get('max_pts_held')
-        tags_awarded = pp.get('total_drawn')
-
-        # For NR pools, use pref point total_apps if larger (it includes all NR applicants)
-        pp_apps = pp.get('total_apps', 0)
-        if pp_apps > apps:
-            apps = pp_apps
-
-        cur.execute("""
-            INSERT INTO draw_results_by_pool
-                (hunt_id, draw_year, pool_id, applications, tags_available,
-                 tags_awarded, min_pts_drawn, max_pts_held)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-            ON CONFLICT (hunt_id, draw_year, pool_id) DO UPDATE SET
-                applications = EXCLUDED.applications,
-                tags_available = EXCLUDED.tags_available,
-                tags_awarded = COALESCE(EXCLUDED.tags_awarded, draw_results_by_pool.tags_awarded),
-                min_pts_drawn = COALESCE(EXCLUDED.min_pts_drawn, draw_results_by_pool.min_pts_drawn),
-                max_pts_held = COALESCE(EXCLUDED.max_pts_held, draw_results_by_pool.max_pts_held)
-        """, (hunt_id, year, pool_id, apps, quota, tags_awarded, min_pts, max_pts))
-        draw_count += 1
-
-    # Also insert pref-point-only entries (hunts that only appear in pref point reports)
-    for (hcode, pool_code), pp in prefpoint_data.items():
-        key = (hcode, 2025, pool_code)
-        if key in agg:
-            continue  # already handled
-        if hcode not in hunt_id_map:
+    # NR random — fill gaps
+    for fn in ['2025_elk_random_nonres.pdf', '2025_elk_random_nonres_special.pdf',
+               '2025_deer_random_nonres.pdf', '2025_deer_random_nonres_special.pdf']:
+        fpath = os.path.join(RAW_DIR, fn)
+        if not os.path.exists(fpath):
             continue
-        hunt_id = hunt_id_map[hcode]
-        pool_id = pool_map.get(pool_code)
-        if not pool_id:
+        print(f"  Parsing {fn} (NR random)...")
+        data = parse_random_pdf(fpath)
+        for row in data:
+            hc = hunt_code_from(row['area'], row['type'])
+            if hc not in draw_data:
+                merge_draw(row['area'], row['type'], row['description'], fn, 'NR',
+                           row['first_choice_apps'], row['quota'])
+        print(f"    {len(data)} rows")
+
+    # NR cow/calf and doe/fawn
+    for fn in ['2025_elk_cowcalf_nonres.pdf', '2025_deer_doefawn_nonres.pdf']:
+        fpath = os.path.join(RAW_DIR, fn)
+        if not os.path.exists(fpath):
             continue
+        print(f"  Parsing {fn}...")
+        data = parse_random_pdf(fpath)
+        for row in data:
+            merge_draw(row['area'], row['type'], row['description'], fn, 'NR',
+                       row['first_choice_apps'], row['quota'])
+        print(f"    {len(data)} rows")
 
-        cur.execute("""
-            INSERT INTO draw_results_by_pool
-                (hunt_id, draw_year, pool_id, applications, tags_available,
-                 tags_awarded, min_pts_drawn, max_pts_held)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-            ON CONFLICT (hunt_id, draw_year, pool_id) DO UPDATE SET
-                applications = EXCLUDED.applications,
-                tags_available = EXCLUDED.tags_available,
-                tags_awarded = COALESCE(EXCLUDED.tags_awarded, draw_results_by_pool.tags_awarded),
-                min_pts_drawn = COALESCE(EXCLUDED.min_pts_drawn, draw_results_by_pool.min_pts_drawn),
-                max_pts_held = COALESCE(EXCLUDED.max_pts_held, draw_results_by_pool.max_pts_held)
-        """, (hunt_id, 2025, pool_id, pp['total_apps'], pp['quota'],
-              pp['total_drawn'], pp['min_pts_drawn'], pp['max_pts_held']))
-        draw_count += 1
-
-    conn.commit()
-    print(f"  Inserted {draw_count} draw result rows")
-
-    # ── Load harvest data ───────────────────────────────────────────────────
-    harvest_count = 0
-    for relpath, year, sp_code in harvest_sources:
-        filepath = os.path.join(BASE_DIR, relpath)
-        if not os.path.exists(filepath):
-            print(f"  SKIP harvest (missing): {relpath}")
+    # Leftover — just ensure hunt codes exist
+    for fn in ['2025_elk_leftover_res.pdf', '2025_elk_leftover_nonres.pdf',
+               '2025_deer_leftover_res.pdf', '2025_deer_leftover_nonres.pdf']:
+        fpath = os.path.join(RAW_DIR, fn)
+        if not os.path.exists(fpath):
             continue
+        pool = 'RES' if '_res.' in fn else 'NR'
+        data = parse_random_pdf(fpath)
+        for row in data:
+            hc = hunt_code_from(row['area'], row['type'])
+            if hc not in draw_data:
+                merge_draw(row['area'], row['type'], row['description'], fn, pool,
+                           row['first_choice_apps'], row['quota'])
 
-        rows = parse_harvest_report(filepath, sp_code)
-        print(f"  {os.path.basename(relpath)}: {len(rows)} harvest rows parsed")
+    print(f"\nTotal unique hunt codes from draw PDFs: {len(draw_data)}")
 
-        for r in rows:
-            hcode = hunt_code_from_area_type(r['area'], r['type'])
-            if hcode not in hunt_id_map:
-                # Try with Gen
-                if r['type'] == 'GEN':
-                    hcode = f"{r['area']}-Gen"
-                if hcode not in hunt_id_map:
-                    continue
-
-            hunt_id = hunt_id_map[hcode]
-            cur.execute("""
-                INSERT INTO harvest_stats
-                    (hunt_id, harvest_year, success_rate, days_hunted,
-                     licenses_sold, harvest_count)
-                VALUES (%s, %s, %s, %s, %s, %s)
-                ON CONFLICT (hunt_id, harvest_year, access_type) DO UPDATE SET
-                    success_rate = EXCLUDED.success_rate,
-                    days_hunted = EXCLUDED.days_hunted,
-                    licenses_sold = EXCLUDED.licenses_sold,
-                    harvest_count = EXCLUDED.harvest_count
-            """, (hunt_id, year, r['success_rate'], r['days_hunted'],
-                  r['active_hunters'], r['total_harvest']))
-            harvest_count += 1
-
-    conn.commit()
-    print(f"  Inserted {harvest_count} harvest rows")
-
-    # ── Load hunt dates ─────────────────────────────────────────────────────
-    dates_loaded = 0
-    dates_unmatched = 0
-    if os.path.exists(proc_csv):
-        with open(proc_csv) as f:
+    # Hunt dates CSV
+    csv_path = os.path.join(PROC_DIR, "WY_hunt_dates_2026.csv")
+    csv_hunt_codes = set()
+    csv_rows = []
+    if os.path.exists(csv_path):
+        with open(csv_path, newline='') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 hc = row['hunt_code'].strip()
-                if hc in hunt_id_map:
-                    hunt_id = hunt_id_map[hc]
-                    start = row.get('open_date', '').strip()
-                    end = row.get('close_date', '').strip()
-                    if not start or not end:
-                        continue
-                    notes = row.get('notes', '').strip()
-                    cur.execute("""
-                        INSERT INTO hunt_dates (hunt_id, season_year, start_date, end_date, notes)
-                        VALUES (%s, 2026, %s, %s, %s)
-                        ON CONFLICT (hunt_id, season_year) DO UPDATE SET
-                            start_date = EXCLUDED.start_date,
-                            end_date = EXCLUDED.end_date,
-                            notes = EXCLUDED.notes
-                    """, (hunt_id, start, end, notes))
-                    dates_loaded += 1
-                else:
-                    dates_unmatched += 1
-        conn.commit()
+                csv_hunt_codes.add(hc)
+                csv_rows.append(row)
+        print(f"Hunt codes from CSV: {len(csv_hunt_codes)}")
 
-    # ── Summary ─────────────────────────────────────────────────────────────
-    print("\n=== WY LOAD SUMMARY ===")
-    cur.execute("SELECT COUNT(*) FROM hunts WHERE state_id = %s", (wy_id,))
-    print(f"  Hunts:        {cur.fetchone()[0]}")
-    cur.execute("SELECT COUNT(*) FROM gmus WHERE state_id = %s", (wy_id,))
-    print(f"  GMUs:         {cur.fetchone()[0]}")
-    cur.execute("""SELECT COUNT(*) FROM draw_results_by_pool dr
-                   JOIN hunts h ON h.hunt_id = dr.hunt_id WHERE h.state_id = %s""", (wy_id,))
-    print(f"  Draw results: {cur.fetchone()[0]}")
-    cur.execute("""SELECT COUNT(*) FROM harvest_stats hs
-                   JOIN hunts h ON h.hunt_id = hs.hunt_id WHERE h.state_id = %s""", (wy_id,))
-    print(f"  Harvest rows: {cur.fetchone()[0]}")
-    cur.execute("""SELECT COUNT(*) FROM hunt_dates hd
-                   JOIN hunts h ON h.hunt_id = hd.hunt_id WHERE h.state_id = %s""", (wy_id,))
-    print(f"  Hunt dates:   {cur.fetchone()[0]}")
-    print(f"  Dates loaded: {dates_loaded}, unmatched: {dates_unmatched}")
+    all_hunt_codes = set(draw_data.keys()) | csv_hunt_codes
+    print(f"Total unique hunt codes (draw + CSV): {len(all_hunt_codes)}")
 
+    # Extract areas for GMUs
+    areas = {}
+    for hc, info in draw_data.items():
+        area = info['area']
+        if area not in areas:
+            areas[area] = info['description']
+    for hc in csv_hunt_codes:
+        area = hc.split('-')[0]
+        if area not in areas:
+            areas[area] = None
+
+    # Insert GMUs
+    gmu_map = {}
+    cur.execute("SELECT gmu_id, gmu_code FROM gmus WHERE state_id=%s", (wy_state_id,))
+    for r in cur.fetchall():
+        gmu_map[r[1]] = r[0]
+
+    gmus_new = 0
+    for area_code in sorted(areas.keys(), key=lambda x: int(x) if x.isdigit() else 999):
+        if area_code in gmu_map:
+            continue
+        cur.execute(
+            "INSERT INTO gmus (state_id, gmu_code, gmu_name, gmu_sort_key) "
+            "VALUES (%s, %s, %s, %s) RETURNING gmu_id",
+            (wy_state_id, area_code, f"Hunt Area {area_code}", area_code.zfill(5)))
+        gmu_map[area_code] = cur.fetchone()[0]
+        gmus_new += 1
+    print(f"GMUs: {len(gmu_map)} total ({gmus_new} new)")
+
+    # Infer species/weapon for CSV-only hunt codes
+    def infer_from_csv(csv_matches):
+        for row in csv_matches:
+            combined = ((row.get('bag_limit_description') or '') + ' ' +
+                        (row.get('notes') or '')).lower()
+            if 'elk' in combined:
+                sp = 1
+            elif 'white-tailed' in combined or 'whitetail' in combined:
+                sp = 3
+            elif 'deer' in combined:
+                sp = 2
+            else:
+                sp = 1
+            wt = 3 if 'archery' in combined else 1
+            return sp, wt
+        return 1, 1
+
+    # Insert hunts
+    hunt_map = {}
+    cur.execute("SELECT hunt_id, hunt_code FROM hunts WHERE state_id=%s", (wy_state_id,))
+    for r in cur.fetchall():
+        hunt_map[r[1]] = r[0]
+
+    hunts_inserted = 0
+    for hc in sorted(all_hunt_codes):
+        if hc in hunt_map:
+            continue
+
+        parts = hc.split('-', 1)
+        area = parts[0]
+        typ = parts[1] if len(parts) > 1 else ''
+
+        if hc in draw_data:
+            info = draw_data[hc]
+            sp_id = info['species_id']
+            wt_id = info['weapon_type_id']
+            desc = info['description']
+        else:
+            csv_matches = [r for r in csv_rows if r['hunt_code'].strip() == hc]
+            sp_id, wt_id = infer_from_csv(csv_matches)
+            desc = csv_matches[0].get('bag_limit_description', '') if csv_matches else ''
+
+        if hc.endswith('-ARCH'):
+            wt_id = 3
+
+        typ_clean = typ.replace('-ARCH', '')
+        season_label = None
+        if typ_clean in ('Gen', 'GEN'):
+            season_label = 'General'
+        elif typ_clean.isdigit():
+            season_label = f'Type {typ_clean}'
+
+        cur.execute(
+            "INSERT INTO hunts (state_id, species_id, hunt_code, weapon_type_id, season_label, notes) "
+            "VALUES (%s, %s, %s, %s, %s, %s) RETURNING hunt_id",
+            (wy_state_id, sp_id, hc, wt_id, season_label, desc[:500] if desc else None))
+        hunt_map[hc] = cur.fetchone()[0]
+        hunts_inserted += 1
+    print(f"Hunts: {len(hunt_map)} total ({hunts_inserted} new)")
+
+    # Insert hunt_gmus
+    hg_inserted = 0
+    cur.execute(
+        "SELECT hg.hunt_id, hg.gmu_id FROM hunt_gmus hg "
+        "JOIN hunts h ON h.hunt_id = hg.hunt_id WHERE h.state_id=%s", (wy_state_id,))
+    existing_hg = set((r[0], r[1]) for r in cur.fetchall())
+
+    for hc, hunt_id in hunt_map.items():
+        area = hc.split('-')[0]
+        gmu_id = gmu_map.get(area)
+        if gmu_id and (hunt_id, gmu_id) not in existing_hg:
+            cur.execute("INSERT INTO hunt_gmus (hunt_id, gmu_id) VALUES (%s, %s)", (hunt_id, gmu_id))
+            hg_inserted += 1
+    print(f"Hunt-GMU links: {hg_inserted} new")
+
+    # Insert draw_results_by_pool
+    draw_year = 2025
+    dr_inserted = 0
+    for hc, info in draw_data.items():
+        hunt_id = hunt_map.get(hc)
+        if not hunt_id:
+            continue
+
+        if info['res_apps'] > 0 or info['res_quota'] > 0:
+            cur.execute(
+                "INSERT INTO draw_results_by_pool "
+                "(hunt_id, draw_year, pool_id, applications, tags_available) "
+                "VALUES (%s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",
+                (hunt_id, draw_year, res_pool_id,
+                 info['res_apps'], info['res_quota'] if info['res_quota'] > 0 else None))
+            dr_inserted += cur.rowcount
+
+        if info['nr_apps'] > 0 or info['nr_quota'] > 0:
+            tags_awarded = info['nr_issued'] if info['nr_issued'] > 0 else None
+            max_pts = info['max_pts'] if info['max_pts'] > 0 else None
+            cur.execute(
+                "INSERT INTO draw_results_by_pool "
+                "(hunt_id, draw_year, pool_id, applications, tags_available, tags_awarded, max_pts_held) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",
+                (hunt_id, draw_year, nr_pool_id, info['nr_apps'],
+                 info['nr_quota'] if info['nr_quota'] > 0 else None,
+                 tags_awarded, max_pts))
+            dr_inserted += cur.rowcount
+    print(f"Draw results: {dr_inserted} new rows")
+
+    # Harvest stats
+    hs_inserted = 0
+    for fn, species, harvest_year in [
+        ('2025_elk_harvest_report.pdf', 'elk', 2025),
+        ('2025_deer_harvest_report.pdf', 'deer', 2025),
+        ('2024_elk_harvest_report.pdf', 'elk', 2024),
+        ('2024_deer_harvest_report.pdf', 'deer', 2024),
+    ]:
+        fpath = os.path.join(RAW_DIR, fn)
+        if not os.path.exists(fpath):
+            print(f"  SKIP harvest: {fn}")
+            continue
+        print(f"  Parsing harvest: {fn}...")
+        harvest_rows = parse_harvest_pdf(fpath, species)
+        print(f"    {len(harvest_rows)} rows extracted")
+
+        for hr in harvest_rows:
+            area = hr['area']
+            typ = hr['type']
+            if typ == 'Total':
+                candidates = [f"{area}-1", f"{area}-Gen", f"{area}-GEN"]
+                hunt_id = None
+                for c in candidates:
+                    if c in hunt_map:
+                        hunt_id = hunt_map[c]
+                        break
+                if not hunt_id:
+                    for hc_key in hunt_map:
+                        if hc_key.split('-')[0] == area:
+                            hunt_id = hunt_map[hc_key]
+                            break
+            else:
+                hc = hunt_code_from(area.zfill(3), typ)
+                hunt_id = hunt_map.get(hc)
+
+            if not hunt_id:
+                continue
+
+            success = hr['success_pct'] / 100.0 if hr['success_pct'] else None
+            cur.execute(
+                "INSERT INTO harvest_stats "
+                "(hunt_id, harvest_year, success_rate, harvest_count, licenses_sold) "
+                "VALUES (%s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",
+                (hunt_id, harvest_year, success, hr['harvest_total'], hr['licenses_sold']))
+            hs_inserted += cur.rowcount
+    print(f"Harvest stats: {hs_inserted} new rows")
+
+    # Hunt dates from CSV
+    hd_inserted = 0
+    if csv_rows:
+        print(f"  Loading hunt dates ({len(csv_rows)} CSV rows)...")
+        for row in csv_rows:
+            hc = row['hunt_code'].strip()
+            hunt_id = hunt_map.get(hc)
+            if not hunt_id:
+                continue
+
+            start_date = row.get('open_date', '').strip() or None
+            end_date = row.get('close_date', '').strip() or None
+            notes = row.get('notes', '').strip() or None
+            bag = row.get('bag_limit_description', '').strip() or None
+
+            season_year = 2026
+            if start_date:
+                try:
+                    season_year = int(start_date.split('-')[0])
+                except (ValueError, IndexError):
+                    pass
+
+            cur.execute(
+                "INSERT INTO hunt_dates "
+                "(hunt_id, season_year, start_date, end_date, hunt_name, notes) "
+                "VALUES (%s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",
+                (hunt_id, season_year, start_date, end_date, bag, notes))
+            hd_inserted += cur.rowcount
+    print(f"Hunt dates: {hd_inserted} new rows")
+
+    conn.commit()
+    print("\n── Committed. Final WY counts: ──")
+
+    for table in ['hunts', 'gmus', 'hunt_gmus', 'draw_results_by_pool', 'harvest_stats', 'hunt_dates']:
+        if table in ('hunts', 'gmus'):
+            cur.execute(f"SELECT COUNT(*) FROM {table} WHERE state_id=%s", (wy_state_id,))
+        else:
+            cur.execute(
+                f"SELECT COUNT(*) FROM {table} WHERE hunt_id IN "
+                f"(SELECT hunt_id FROM hunts WHERE state_id=%s)", (wy_state_id,))
+        print(f"  {table}: {cur.fetchone()[0]}")
+
+    cur.close()
     conn.close()
-    print("\nWY load complete.")
+    print("\nDone.")
 
 
 if __name__ == '__main__':
