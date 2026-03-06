@@ -108,7 +108,7 @@ D-E-444-O1-A,2026-09-02,2026-09-30,Deer Either Sex,Archery; List A
 D-E-444-P2-R,2026-10-24,2026-11-01,Deer Either Sex,Second Rifle; List R
 D-E-444-P3-R,2026-11-07,2026-11-15,Deer Either Sex,Third Rifle; List R
 D-E-741-O1-A,2026-09-02,2026-09-30,Deer Either Sex,Archery; List A
-D-F-003-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-003-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-003-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-003-O3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-003-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
@@ -119,41 +119,41 @@ D-F-004-W3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-005-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
 D-F-005-W2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-006-E1-R,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List R
-D-F-007-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-007-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-009-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-F-009-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-009-O3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
-D-F-011-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-011-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-011-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-011-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
 D-F-011-W2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
-D-F-012-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-012-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-012-O3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-023-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
 D-F-025-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
-D-F-029-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-029-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-029-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-029-O4-R,2026-11-18,2026-11-22,Deer Doe/Cow,Fourth Rifle; List R
-D-F-033-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
-D-F-034-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-033-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
+D-F-034-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-034-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-038-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-F-038-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
-D-F-041-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
-D-F-043-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-041-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
+D-F-043-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-043-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
-D-F-048-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-048-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-049-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-049-O3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-049-P2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-049-P3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
-D-F-051-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-051-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-054-O1-A,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List A
-D-F-054-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-054-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-054-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
 D-F-055-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
 D-F-056-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
-D-F-059-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-059-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-060-P2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-066-O3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-069-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
@@ -161,54 +161,54 @@ D-F-069-P2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-069-P3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-071-P3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-072-P2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
-D-F-075-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
-D-F-077-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
-D-F-080-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-075-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
+D-F-077-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
+D-F-080-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-087-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-F-087-O2-X,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List X
 D-F-090-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-F-093-O2-X,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List X
 D-F-094-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
-D-F-094-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-094-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-095-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
 D-F-096-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
-D-F-096-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-096-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-097-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-F-098-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-F-099-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
-D-F-099-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
-D-F-101-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-099-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
+D-F-101-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-101-O2-X,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List X
-D-F-103-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-103-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-103-O3-A,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List A
 D-F-104-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
-D-F-104-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-104-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-104-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-104-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
 D-F-107-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
-D-F-107-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-107-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-107-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-107-O3-A,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List A
 D-F-107-O3-M,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List M
 D-F-109-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
-D-F-109-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-109-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-109-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-109-O3-A,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List A
 D-F-109-O3-M,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List M
-D-F-110-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-110-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-110-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-110-O3-M,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List M
 D-F-110-O4-A,2026-11-18,2026-11-22,Deer Doe/Cow,Fourth Rifle; List A
 D-F-112-O4-A,2026-11-18,2026-11-22,Deer Doe/Cow,Fourth Rifle; List A
 D-F-114-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
 D-F-116-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
-D-F-116-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-116-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-116-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-116-O3-A,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List A
 D-F-116-O3-M,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List M
 D-F-119-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
 D-F-122-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
-D-F-122-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-122-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-122-O3-A,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List A
 D-F-122-O3-M,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List M
 D-F-124-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
@@ -216,7 +216,7 @@ D-F-125-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-126-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-F-126-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-128-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
-D-F-128-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-128-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-128-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-128-O3-M,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List M
 D-F-128-O4-A,2026-11-18,2026-11-22,Deer Doe/Cow,Fourth Rifle; List A
@@ -228,12 +228,12 @@ D-F-136-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
 D-F-136-O3-A,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List A
 D-F-136-W2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-137-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
-D-F-137-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-137-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-137-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-139-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
 D-F-139-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-141-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
-D-F-142-O2-M,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List M
+D-F-142-O2-M,2026-10-10,2026-10-18,Deer Doe/Cow,Muzzleloader; List M
 D-F-147-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-F-211-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
 D-F-214-W2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
@@ -242,23 +242,23 @@ D-F-301-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
 D-F-301-W2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-301-W3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-441-W1-R,2026-10-14,2026-10-18,Deer Doe/Cow,First Rifle; List R
-D-F-444-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
-D-F-501-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-444-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
+D-F-501-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-501-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-501-O3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-511-O2-R,2026-10-24,2026-11-01,Deer Doe/Cow,Second Rifle; List R
 D-F-511-O3-R,2026-11-07,2026-11-15,Deer Doe/Cow,Third Rifle; List R
 D-F-551-O1-A,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List A
-D-F-551-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-551-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-551-O1-R,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List R
-D-F-741-O1-M,2026-09-02,2026-09-30,Deer Doe/Cow,Archery; List M
+D-F-741-O1-M,2026-09-12,2026-09-20,Deer Doe/Cow,Muzzleloader; List M
 D-F-741-P4-R,2026-11-18,2026-11-22,Deer Doe/Cow,Fourth Rifle; List R
 D-F-951-L1-R,2026-12-01,2027-01-31,Deer Doe/Cow,Late Season; List R
 D-M-001-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
 D-M-002-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
 D-M-002-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-002-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
-D-M-003-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-003-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-003-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-003-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-003-W1-R,2026-10-14,2026-10-18,Deer Buck/Bull,First Rifle; List R
@@ -271,19 +271,19 @@ D-M-006-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-006-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-006-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-006-W1-R,2026-10-14,2026-10-18,Deer Buck/Bull,First Rifle; List R
-D-M-007-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-007-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-009-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
 D-M-010-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-010-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-010-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-010-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-010-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-010-W1-R,2026-10-14,2026-10-18,Deer Buck/Bull,First Rifle; List R
-D-M-011-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-011-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-011-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-011-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-011-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-012-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
-D-M-012-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-012-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-012-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-012-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-014-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
@@ -291,20 +291,20 @@ D-M-015-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-016-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
 D-M-016-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-021-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-021-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-021-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-022-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-027-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
-D-M-029-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-029-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-029-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-029-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
-D-M-031-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-031-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-031-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-031-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
-D-M-033-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-033-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-033-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-033-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-033-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
-D-M-034-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-034-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-034-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-035-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-035-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
@@ -317,12 +317,12 @@ D-M-040-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-040-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-040-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-040-W1-R,2026-10-14,2026-10-18,Deer Buck/Bull,First Rifle; List R
-D-M-041-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-041-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-041-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-041-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-041-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-043-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
-D-M-043-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-043-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-043-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-043-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-044-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
@@ -331,74 +331,74 @@ D-M-044-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-047-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
 D-M-048-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
 D-M-048-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-048-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-048-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-048-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-048-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-049-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-049-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
-D-M-050-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-050-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-050-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-050-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-051-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-052-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-052-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-052-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-052-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-052-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-052-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-052-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-052-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-053-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-053-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-053-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-053-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-053-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-053-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-053-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-053-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-054-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-054-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-054-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-054-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-055-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-059-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-059-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-059-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-059-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-059-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-060-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-060-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-060-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-060-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-060-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-060-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-061-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-061-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-061-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-061-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-061-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-061-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-061-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-062-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-062-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-062-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-062-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-062-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-062-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-062-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-063-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-063-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-063-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-063-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-064-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-064-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-064-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-064-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-064-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-064-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-064-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-064-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-066-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-066-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-066-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-066-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-066-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-067-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-067-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-067-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-067-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-067-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-068-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-068-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-068-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-068-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-068-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-069-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
@@ -407,15 +407,15 @@ D-M-069-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-069-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-069-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-070-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-070-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-070-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-070-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-070-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-071-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-071-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-071-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-071-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-071-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-072-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-072-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-072-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-072-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-072-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-072-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
@@ -427,17 +427,17 @@ D-M-074-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-074-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-074-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-074-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
-D-M-076-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
-D-M-077-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-076-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
+D-M-077-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-077-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-077-P3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-077-P4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-079-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-079-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-079-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-079-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-079-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-079-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
-D-M-080-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-080-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-080-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-082-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
 D-M-082-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
@@ -445,40 +445,40 @@ D-M-082-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-083-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
 D-M-083-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-085-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-085-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-085-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-085-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-085-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-085-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-085-W1-R,2026-10-14,2026-10-18,Deer Buck/Bull,First Rifle; List R
 D-M-087-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
 D-M-090-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-093-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-093-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-094-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-095-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-096-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-096-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-098-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-099-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-099-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
-D-M-101-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
-D-M-103-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-099-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
+D-M-101-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
+D-M-103-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-104-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-104-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-104-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-107-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-107-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
-D-M-109-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
-D-M-110-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-107-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
+D-M-109-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
+D-M-110-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-112-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-114-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-116-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-116-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-116-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-117-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
 D-M-119-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-122-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-122-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-122-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-124-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-126-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
 D-M-128-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
-D-M-128-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-128-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-129-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
 D-M-131-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-131-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
@@ -487,14 +487,14 @@ D-M-136-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
 D-M-136-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-136-W2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-137-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-137-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-137-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-139-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-140-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-140-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-140-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-140-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-141-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
 D-M-142-L1-R,2026-12-01,2027-01-31,Deer Buck/Bull,Late Season; List R
-D-M-142-O2-M,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List M
+D-M-142-O2-M,2026-10-10,2026-10-18,Deer Buck/Bull,Muzzleloader; List M
 D-M-161-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
 D-M-161-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-161-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
@@ -504,23 +504,23 @@ D-M-171-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-171-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-171-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-201-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-201-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-201-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-201-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-201-O3-R,2026-11-07,2026-11-15,Deer Buck/Bull,Third Rifle; List R
 D-M-201-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-301-W1-R,2026-10-14,2026-10-18,Deer Buck/Bull,First Rifle; List R
 D-M-301-W2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
-D-M-444-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-444-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-471-E1-R,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List R
 D-M-501-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-551-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-551-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-551-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-551-O4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
-D-M-741-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-741-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-741-P2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-741-P4-R,2026-11-18,2026-11-22,Deer Buck/Bull,Fourth Rifle; List R
 D-M-851-O1-A,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List A
-D-M-851-O1-M,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List M
+D-M-851-O1-M,2026-09-12,2026-09-20,Deer Buck/Bull,Muzzleloader; List M
 D-M-851-O1-R,2026-09-02,2026-09-30,Deer Buck/Bull,Archery; List R
 D-M-851-O2-R,2026-10-24,2026-11-01,Deer Buck/Bull,Second Rifle; List R
 D-M-851-W1-R,2026-10-14,2026-10-18,Deer Buck/Bull,First Rifle; List R
@@ -530,7 +530,7 @@ E-E-001-E1-R,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List R
 E-E-001-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-002-E1-R,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List R
 E-E-002-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
-E-E-003-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-003-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-003-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-003-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-003-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
@@ -541,7 +541,7 @@ E-E-004-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
 E-E-005-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-005-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
 E-E-005-W2-R,2026-10-24,2026-11-01,Elk Either Sex,Second Rifle; List R
-E-E-006-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-006-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-006-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-006-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-006-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
@@ -549,35 +549,35 @@ E-E-007-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-010-E1-R,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List R
 E-E-010-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-010-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
-E-E-011-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-011-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-011-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
 E-E-011-W2-R,2026-10-24,2026-11-01,Elk Either Sex,Second Rifle; List R
 E-E-011-W4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-012-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
-E-E-012-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
-E-E-014-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
-E-E-015-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-012-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
+E-E-014-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
+E-E-015-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-015-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-015-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-015-P2-R,2026-10-24,2026-11-01,Elk Either Sex,Second Rifle; List R
 E-E-015-P3-R,2026-11-07,2026-11-15,Elk Either Sex,Third Rifle; List R
 E-E-015-P4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-016-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
-E-E-018-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-018-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-018-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-018-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-018-P4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-020-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
-E-E-021-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-021-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-021-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-021-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-023-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
-E-E-025-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-025-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-025-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
 E-E-027-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-027-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-027-P4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
-E-E-028-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-028-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-028-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-028-P4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-029-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
@@ -588,7 +588,7 @@ E-E-035-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-036-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-039-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-040-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
-E-E-040-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-040-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-040-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-040-O2-R,2026-10-24,2026-11-01,Elk Either Sex,Second Rifle; List R
 E-E-040-O3-R,2026-11-07,2026-11-15,Elk Either Sex,Third Rifle; List R
@@ -623,25 +623,25 @@ E-E-067-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-069-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-076-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-080-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
-E-E-082-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
-E-E-083-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-082-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
+E-E-083-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-083-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-083-O2-R,2026-10-24,2026-11-01,Elk Either Sex,Second Rifle; List R
 E-E-083-O3-R,2026-11-07,2026-11-15,Elk Either Sex,Third Rifle; List R
 E-E-083-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-084-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
 E-E-084-W2-R,2026-10-24,2026-11-01,Elk Either Sex,Second Rifle; List R
-E-E-085-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-085-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-085-O1-R,2026-09-02,2026-09-30,Elk Either Sex,Archery; List R
 E-E-085-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-085-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
-E-E-086-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-086-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-086-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-087-U1-A,2026-09-02,2026-09-30,Elk Either Sex,OTC Archery; List A
 E-E-104-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-104-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
-E-E-128-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
-E-E-133-O1-M,2026-09-02,2026-09-30,Elk Either Sex,Archery; List M
+E-E-128-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
+E-E-133-O1-M,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List M
 E-E-161-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-171-O4-R,2026-11-18,2026-11-22,Elk Either Sex,Fourth Rifle; List R
 E-E-201-E1-R,2026-09-12,2026-09-20,Elk Either Sex,Muzzleloader; List R
@@ -667,19 +667,19 @@ E-E-851-O1-A,2026-09-02,2026-09-30,Elk Either Sex,Archery; List A
 E-E-851-W1-R,2026-10-14,2026-10-18,Elk Either Sex,First Rifle; List R
 E-E-851-W2-R,2026-10-24,2026-11-01,Elk Either Sex,Second Rifle; List R
 E-F-001-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-001-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-001-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-001-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-001-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-001-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-001-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-002-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-002-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-002-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-002-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-002-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-002-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-002-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-003-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-003-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-003-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-003-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-003-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-003-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -695,7 +695,7 @@ E-F-005-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
 E-F-005-W2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-005-W3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-005-W4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-006-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-006-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-006-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-006-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-006-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -703,17 +703,17 @@ E-F-006-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-006-W3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-006-W4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-007-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-007-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-007-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-007-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-007-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-009-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-010-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-010-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-010-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-010-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-010-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-010-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
 E-F-011-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-011-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-011-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-011-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-011-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-011-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -722,20 +722,20 @@ E-F-011-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
 E-F-011-W2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-011-W3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-011-W4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-012-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-012-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-012-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-012-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-013-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-014-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-014-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-014-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
-E-F-015-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-015-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-015-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-016-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-016-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-017-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-017-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-018-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-018-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-018-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-018-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-018-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-018-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -743,10 +743,10 @@ E-F-018-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-019-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-019-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-020-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-020-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-020-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-020-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-020-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-021-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-021-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-021-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-021-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-021-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -755,7 +755,7 @@ E-F-022-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-023-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
 E-F-023-W2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-023-W3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
-E-F-025-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-025-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-025-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-025-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-025-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -766,7 +766,7 @@ E-F-026-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-027-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-027-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-027-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-028-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-028-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-028-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-029-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-029-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
@@ -775,10 +775,10 @@ E-F-030-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-030-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-030-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-031-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-033-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-033-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-033-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-035-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-035-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-035-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-035-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-036-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-036-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -789,23 +789,23 @@ E-F-038-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-038-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-039-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-040-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-040-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-040-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-040-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-040-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-040-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-040-W2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
-E-F-041-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-041-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-041-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-041-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-042-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-042-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-042-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-043-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-043-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-043-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-043-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-043-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-043-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-044-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-044-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-044-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-044-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-044-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -816,87 +816,87 @@ E-F-046-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-046-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-046-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-046-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-048-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-048-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-048-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-048-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-049-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-049-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-049-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-049-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-050-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-050-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-050-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-050-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-050-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-050-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-051-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-051-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-051-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-052-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-052-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-052-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-053-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-053-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-053-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
-E-F-054-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-054-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-054-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-054-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
-E-F-055-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-055-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-055-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-055-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-055-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-055-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-056-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-057-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-057-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-057-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-057-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-057-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-059-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-059-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-059-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-059-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-059-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-059-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-060-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-060-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-060-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-060-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-060-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-060-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-061-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-061-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-061-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-061-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-061-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-062-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-062-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-062-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-062-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-062-P4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-063-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-063-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-063-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-063-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
-E-F-064-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-064-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-064-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-064-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-064-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-064-P2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-064-P3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-064-P4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-066-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-066-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-066-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-066-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-066-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-067-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-067-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-067-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-067-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-068-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-068-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-068-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-068-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-068-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-069-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-069-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-069-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-069-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-070-O1-A,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List A
-E-F-070-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-070-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-070-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-070-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-070-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-070-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-071-O1-A,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List A
-E-F-071-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-071-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-071-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-071-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-071-P4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
@@ -906,14 +906,14 @@ E-F-073-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-073-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-073-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-074-O1-A,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List A
-E-F-074-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-074-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-074-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-074-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-074-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-074-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-074-P4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-075-O1-A,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List A
-E-F-075-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-075-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-075-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-075-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-075-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -922,42 +922,42 @@ E-F-075-P4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-076-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-076-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-077-O1-A,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List A
-E-F-077-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-077-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-077-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-077-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-077-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-079-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-079-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-079-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-079-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-080-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-080-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-080-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-081-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-081-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-081-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-082-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
-E-F-083-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-082-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
+E-F-083-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-083-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-084-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
 E-F-084-W2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-084-W3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-084-W4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-085-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-085-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-085-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-085-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-085-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-085-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-085-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
-E-F-086-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-086-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-086-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-086-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-104-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-104-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-104-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
 E-F-104-W2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-128-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-131-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-131-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-133-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-133-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-133-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-133-U1-A,2026-09-02,2026-09-30,Elk Doe/Cow,OTC Archery; List A
 E-F-142-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-161-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -969,7 +969,7 @@ E-F-191-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-191-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-191-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-191-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-201-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-201-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-201-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-201-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-201-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
@@ -991,7 +991,7 @@ E-F-361-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-371-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-371-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-371-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-391-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-391-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-411-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-421-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-441-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
@@ -1000,18 +1000,18 @@ E-F-441-W3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-444-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-444-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-444-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-461-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
-E-F-481-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-461-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
+E-F-481-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-481-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-481-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-481-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-500-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-500-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-500-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-500-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-500-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-500-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-501-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-501-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-501-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-501-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-501-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-501-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
@@ -1019,20 +1019,20 @@ E-F-511-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-511-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-511-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-511-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-521-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-521-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-521-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-521-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
-E-F-551-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-551-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-551-O1-R,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List R
 E-F-551-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-551-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-551-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
-E-F-561-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-561-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-561-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-561-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-561-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-591-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
-E-F-682-O1-M,2026-09-02,2026-09-30,Elk Doe/Cow,Archery; List M
+E-F-682-O1-M,2026-09-12,2026-09-20,Elk Doe/Cow,Muzzleloader; List M
 E-F-711-O2-R,2026-10-24,2026-11-01,Elk Doe/Cow,Second Rifle; List R
 E-F-711-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-711-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
@@ -1041,9 +1041,9 @@ E-F-741-O3-R,2026-11-07,2026-11-15,Elk Doe/Cow,Third Rifle; List R
 E-F-741-O4-R,2026-11-18,2026-11-22,Elk Doe/Cow,Fourth Rifle; List R
 E-F-851-L1-R,2026-12-01,2027-01-31,Elk Doe/Cow,Late Season; List R
 E-F-851-W1-R,2026-10-14,2026-10-18,Elk Doe/Cow,First Rifle; List R
-E-M-001-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
-E-M-002-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
-E-M-007-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-001-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
+E-M-002-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
+E-M-007-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-007-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-007-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-007-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
@@ -1051,7 +1051,7 @@ E-M-009-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-009-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-009-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-009-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-010-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-010-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-011-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-011-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-012-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
@@ -1060,7 +1060,7 @@ E-M-019-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-019-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-019-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-020-L1-R,2026-12-01,2027-01-31,Elk Buck/Bull,Late Season; List R
-E-M-020-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-020-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-020-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-020-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-025-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
@@ -1069,15 +1069,15 @@ E-M-029-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-029-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-029-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-033-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-035-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
-E-M-038-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-035-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
+E-M-038-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-038-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-039-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
-E-M-041-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-041-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-041-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-041-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-043-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
-E-M-044-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-043-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
+E-M-044-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-044-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-044-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-045-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
@@ -1085,97 +1085,97 @@ E-M-046-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-046-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-046-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-046-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-048-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-048-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-048-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-048-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-048-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
-E-M-049-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-049-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-049-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-049-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-049-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
-E-M-050-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-050-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-050-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-050-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-050-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-050-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-051-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-051-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-051-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-051-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-053-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-053-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-053-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-053-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-054-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-054-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-054-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-054-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
-E-M-055-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-055-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-055-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-055-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-055-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-055-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-056-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-057-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-057-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-057-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-057-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-059-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-059-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-059-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-059-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-060-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-060-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-060-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
-E-M-061-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-061-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-061-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-061-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-061-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-061-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-062-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-062-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-062-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
-E-M-063-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-063-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-063-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
-E-M-064-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
-E-M-066-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-064-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
+E-M-066-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-066-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-066-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-066-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-067-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-067-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-067-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-067-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
-E-M-068-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-068-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-068-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-068-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-069-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-069-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-069-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-069-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-070-O1-A,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List A
-E-M-070-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-070-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-070-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-070-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-071-O1-A,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List A
-E-M-071-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-071-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-071-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-071-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-071-P4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-074-O1-A,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List A
-E-M-074-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-074-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-074-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-074-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-074-P4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-075-O1-A,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List A
-E-M-075-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-075-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-075-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-075-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-075-P4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-076-E1-R,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List R
-E-M-076-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-076-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-076-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-076-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-077-O1-A,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List A
-E-M-077-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-077-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-077-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-079-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-079-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-079-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
-E-M-080-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-080-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-080-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-080-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-104-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-104-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-104-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-104-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-133-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
@@ -1183,40 +1183,40 @@ E-M-191-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-191-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-191-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-191-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-201-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-201-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-214-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-231-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-391-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-391-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-391-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-444-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-461-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-461-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-461-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
-E-M-481-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-481-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-481-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-481-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-481-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-481-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-500-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-500-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-500-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-500-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-500-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-500-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-501-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-501-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-501-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-501-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
 E-M-511-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-511-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-551-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-551-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-551-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-551-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-551-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-551-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-561-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-561-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-561-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-561-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-561-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
 E-M-561-O4-R,2026-11-18,2026-11-22,Elk Buck/Bull,Fourth Rifle; List R
-E-M-851-O1-M,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List M
+E-M-851-O1-M,2026-09-12,2026-09-20,Elk Buck/Bull,Muzzleloader; List M
 E-M-851-O1-R,2026-09-02,2026-09-30,Elk Buck/Bull,Archery; List R
 E-M-851-O2-R,2026-10-24,2026-11-01,Elk Buck/Bull,Second Rifle; List R
 E-M-851-O3-R,2026-11-07,2026-11-15,Elk Buck/Bull,Third Rifle; List R
