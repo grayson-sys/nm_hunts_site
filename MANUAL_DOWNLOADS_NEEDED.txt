@@ -116,3 +116,31 @@ State subfolders:
   MT/raw_data/   <-- Montana draw stats + regional harvest go here
   WA/raw_data/   <-- Washington draw odds go here
   CA/raw_data/   <-- California elk harvest goes here (if found)
+
+---
+## Proclamation Re-Downloads Needed (Spring 2026)
+
+### WA — Washington 2026-27 Big Game Pamphlet
+- Current file covers through March 2026 (2025-26 pamphlet)
+- Fall 2026 hunt dates will be in the 2026-27 pamphlet
+- Publishes: ~April/May 2026
+- URL: https://wdfw.wa.gov/hunting/regulations/big-game → download new PDF when it appears
+- Re-run: scripts/load_proclamation_dates.py --state WA after re-parsing
+
+### ID — Idaho 2026-27 Big Game Seasons & Rules
+- Current file is the 2025-26 booklet
+- Fall 2026 controlled hunt dates likely in new booklet
+- Publishes: ~April/May 2026
+- URL: https://idfg.idaho.gov/rules/big-game
+- Also re-download draw odds CSV from Hunt Planner when 2026 draw opens (~May)
+
+### WY — Wyoming Chapter 6 Deer Regulations (Final)
+- Current file is DRAFT pending April 2026 Commission approval
+- Re-download after April 2026 Commission meeting
+- URL: https://wgfd.wyo.gov/Regulations
+
+### AZ — Deer Annual Regulations
+- Agent (oceanic-dune) is fetching the 2025-26 annual booklet now
+- If it can't find it automatically, download manually from:
+  https://www.azgfd.com/hunting/regulations/ → "2025-26 Arizona hunting regulations" PDF
+- This covers deer, fall turkey, fall javelina — NOT elk (elk is separate, already have it)
