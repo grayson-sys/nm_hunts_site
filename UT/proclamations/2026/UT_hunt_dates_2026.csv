@@ -1,261 +1,261 @@
-hunt_code,open_date,close_date,bag_limit_description,notes
-General-season units,2026-08-15,2026-09-11,,Page 8
+hunt_code,open_date,close_date,bag_limit_description,notes,load_status
+General-season units,2026-08-15,2026-09-11,,Page 8,DO_NOT_LOAD
 "• Nine Mile, Green River Valley
 • Sanpete Valley
-• South Wasatch",2026-09-12,2026-10-15,,Page 9
+• South Wasatch",2026-09-12,2026-10-15,,Page 9,DO_NOT_LOAD
 "• Uinta Basin
-• Wasatch Front",2026-08-15,2026-12-15,,Page 9
-PB1000,2026-09-01,2026-11-15,Buck pronghorn,Page 10
-DS1000,2026-09-01,2026-12-31,,Page 10
-Archery,2026-08-15,2026-09-16,Any bull*,Page 39
-Muzzleloader,2026-10-28,2026-11-05,Any bull and spike only,Page 39
-"Beaver, East",2026-08-15,2026-09-11,,Page 43
-Boulder/Kaiparowits,2026-08-15,2026-09-11,,Page 43
-Cache,2026-08-15,2026-09-11,,Page 43
-Chalk Creek,2026-08-15,2026-09-11,,Page 43
-Fillmore,2026-08-15,2026-09-11,,Page 43
-Kamas,2026-08-15,2026-09-11,,Page 43
-Manti/San Rafael,2026-08-15,2026-09-11,,Page 43
-Morgan-South Rich,2026-08-15,2026-09-11,,Page 43
-Nebo,2026-08-15,2026-09-11,,Page 43
-North Slope,2026-08-15,2026-09-11,,Page 43
-Oquirrh/Tintic,2026-08-15,2026-09-11,,Page 43
-Pine Valley,2026-08-15,2026-09-11,,Page 43
-Southwest Desert,2026-08-15,2026-09-11,,Page 43
-"Wasatch Mtns, East",2026-08-15,2026-09-11,,Page 43
-"West Desert, Swasey",2026-08-15,2026-09-11,,Page 44
-Zion,2026-08-15,2026-09-11,,Page 44
-Box Elder,2026-10-07,2026-10-11,,Page 44
-East Canyon,2026-10-07,2026-10-11,,Page 44
-Fishlake,2026-10-07,2026-10-11,,Page 44
-Morgan-South Rich,2026-10-07,2026-10-11,,Page 44
-North Slope,2026-10-07,2026-10-11,,Page 44
-Pine Valley,2026-10-07,2026-10-11,,Page 44
-"Beaver, East",2026-10-17,2026-10-25,,Page 45
-Box Elder,2026-10-17,2026-10-25,,Page 45
-Cedar/Stansbury,2026-10-17,2026-10-25,,Page 45
-Chalk Creek,2026-10-17,2026-10-25,,Page 45
-East Canyon,2026-10-17,2026-10-25,,Page 45
-Fillmore,2026-10-17,2026-10-25,,Page 45
-Fishlake,2026-10-17,2026-10-25,,Page 45
-Kamas,2026-10-17,2026-10-25,,Page 45
-La Sal Mtns,2026-10-17,2026-10-25,,Page 45
-Manti/San Rafael,2026-10-17,2026-10-25,,Page 45
-Monroe,2026-10-17,2026-10-25,,Page 45
-Morgan-South Rich,2026-10-17,2026-10-25,,Page 45
-Mt Dutton,2026-10-17,2026-10-25,,Page 45
-Nebo,2026-10-17,2026-10-25,,Page 45
-Nine Mile,2026-10-17,2026-10-25,,Page 45
-North Slope,2026-10-17,2026-10-25,,Page 45
-Ogden*,2026-10-17,2026-10-25,,Page 45
-Oquirrh/Tintic,2026-10-17,2026-10-25,,Page 45
-Panguitch Lake,2026-10-17,2026-10-25,,Page 45
-Pine Valley,2026-10-17,2026-10-25,,Page 45
-"San Juan, Abajo Mtns",2026-10-17,2026-10-25,,Page 45
-Southwest Desert,2026-10-17,2026-10-25,,Page 45
-Vernal/Bonanza,2026-10-17,2026-10-25,,Page 45
-"Wasatch Mtns, East",2026-10-17,2026-10-25,,Page 45
-"Wasatch Mtns, West",2026-10-17,2026-10-25,,Page 45
-"West Desert, Swasey",2026-10-17,2026-10-25,,Page 45
-Yellowstone,2026-10-17,2026-10-25,,Page 45
-Zion,2026-10-17,2026-10-25,,Page 45
-"Beaver, West",2026-10-17,2026-10-25,,Page 46
-Cache,2026-10-17,2026-10-25,,Page 46
-"Beaver, East",2026-09-23,2026-10-01,,Page 46
-Cedar/Stansbury,2026-09-23,2026-10-01,,Page 46
-East Canyon,2026-09-23,2026-10-01,,Page 46
-Fishlake,2026-09-23,2026-10-01,,Page 46
-La Sal Mtns,2026-09-23,2026-10-01,,Page 46
-Monroe,2026-09-23,2026-10-01,,Page 46
-Mt Dutton,2026-09-23,2026-10-01,,Page 46
-Nine Mile,2026-09-23,2026-10-01,,Page 46
-Ogden,2026-09-23,2026-10-01,,Page 46
-Panguitch Lake,2026-09-23,2026-10-01,,Page 46
-"San Juan, Abajo Mtns",2026-09-23,2026-10-01,,Page 46
-Vernal/Bonanza,2026-09-23,2026-10-01,,Page 47
-"Wasatch Mtns, West",2026-09-23,2026-10-01,,Page 47
-Yellowstone,2026-09-23,2026-10-01,,Page 47
-"Beaver, West",2026-09-23,2026-10-01,,Page 47
-Cache,2026-09-23,2026-10-01,,Page 47
-Henry Mtns,2026-08-15,2026-09-11,,Page 49
-Antelope Island,2026-11-11,2026-11-18,,Page 49
-Paunsaugunt,2026-10-17,2026-10-31,,Page 49
-Henry Mtns,2026-09-23,2026-10-01,,Page 49
-Paunsaugunt (archery),2026-08-15,2026-09-11,,Page 50
-Paunsaugunt (any legal weapon),2026-11-02,2026-11-20,,Page 50
-Paunsaugunt,2026-11-02,2026-11-20,,Page 50
-Book Cliffs,2026-08-15,2026-09-11,,Page 50
-Dolores Triangle,2026-10-31,2026-11-13,,Page 50
-"San Juan, Elk Ridge",2026-08-15,2026-09-11,,Page 50
-Thousand Lakes,2026-08-15,2026-09-11,,Page 50
-"Book Cliffs, North",2026-10-17,2026-10-25,,Page 51
-Castle Valley*,2026-11-07,2026-11-22,,Page 51
-Dolores Triangle,2026-11-14,2026-11-22,,Page 51
-Little Rockies,2026-11-07,2026-11-30,,Page 51
-"San Juan, Elk Ridge",2026-10-17,2026-10-25,,Page 51
-Thousand Lakes,2026-10-17,2026-10-25,,Page 51
-Book Cliffs,2026-09-23,2026-10-01,,Page 51
-Diamond Mtn,2026-09-23,2026-10-01,,Page 51
-"Fillmore, Oak Creek LE",2026-09-23,2026-10-01,,Page 51
-"West Desert, Vernon",2026-09-23,2026-10-01,,Page 51
-Thousand Lakes,2026-09-23,2026-10-01,,Page 51
-"Beaver, East",2026-10-28,2026-11-05,,Page 52
-Boulder/Kaiparowits,2026-10-28,2026-11-05,,Page 52
-Cache,2026-10-28,2026-11-05,,Page 52
-Chalk Creek,2026-10-28,2026-11-05,,Page 52
-Fillmore,2026-10-28,2026-11-05,,Page 52
-Kamas,2026-10-28,2026-11-05,,Page 52
-Manti/San Rafael,2026-10-28,2026-11-05,,Page 52
-Morgan-South Rich,2026-10-28,2026-11-05,,Page 52
-Nebo,2026-10-28,2026-11-05,,Page 52
-North Slope,2026-10-28,2026-11-05,,Page 52
-Oquirrh/Tintic,2026-10-28,2026-11-05,,Page 52
-Pine Valley,2026-10-28,2026-11-05,,Page 52
-Southwest Desert,2026-10-28,2026-11-05,,Page 52
-"Wasatch Mtns, East",2026-10-28,2026-11-05,,Page 52
-"West Desert, Swasey",2026-10-28,2026-11-05,,Page 53
-Zion,2026-10-28,2026-11-05,,Page 53
-"Book Cliffs, Floy Canyon",2026-11-07,2026-11-30,,Page 53
-Kaiparowits HAMSS,2026-11-07,2026-11-30,,Page 53
-Draw-only youth any bull/hunter’s choice elk*,2026-09-12,2026-09-22,Draw-only youth any bull/hunter’s choice elk*,Page 54
-"Beaver, East",2026-08-15,2026-09-15,,Page 54
-"Book Cliffs, Little Creek Roadless",2026-08-15,2026-09-15,,Page 54
-"Box Elder, Pilot Mtn",2026-08-15,2026-09-06,,Page 54
-"Cache, South",2026-08-15,2026-09-15,,Page 54
-"Fillmore, Pahvant",2026-08-15,2026-09-15,,Page 54
-La Sal Mtns,2026-08-15,2026-09-15,,Page 54
-Monroe,2026-08-15,2026-09-15,,Page 54
-Nebo/San Pitch Mtns,2026-08-15,2026-09-15,,Page 54
-Panguitch Lake,2026-08-15,2026-09-15,,Page 54
-"Southwest Desert, South",2026-08-15,2026-09-15,,Page 54
-Barney Top/Kaiparowits,2026-09-01,2026-09-30,,Page 55
-"Southwest Desert, North",2026-09-01,2026-09-30,,Page 55
-"Beaver, East",2026-11-28,2026-12-13,,Page 55
-Boulder,2026-11-28,2026-12-13,,Page 55
-"Cache, South",2026-11-28,2026-12-13,,Page 55
-"Fillmore, Pahvant",2026-11-28,2026-12-13,,Page 55
-La Sal Mtns,2026-11-28,2026-12-13,,Page 55
-Monroe,2026-11-28,2026-12-13,,Page 55
-Nebo/San Pitch Mtns,2026-11-28,2026-12-13,,Page 55
-San Juan Bull Elk,2026-11-28,2026-12-13,San Juan Bull Elk,Page 55
-Wasatch Mtns,2026-11-28,2026-12-13,,Page 55
-"Beaver, East",2026-09-16,2026-09-20,,Page 56
-"Book Cliffs, Little Creek Roadless",2026-09-16,2026-09-20,,Page 56
-"Box Elder, Grouse Creek",2026-09-16,2026-09-20,,Page 56
-"Cache, Meadowville†",2026-09-16,2026-09-20,,Page 56
-Diamond Mtn,2026-09-16,2026-09-20,,Page 56
-Fishlake/Thousand Lakes,2026-09-16,2026-09-20,,Page 56
-Manti,2026-09-16,2026-09-20,,Page 56
-Mt Dutton,2026-09-16,2026-09-20,,Page 56
-"North Slope, Three Corners",2026-09-16,2026-09-20,,Page 56
-San Juan Bull Elk,2026-09-16,2026-09-20,San Juan Bull Elk,Page 56
-Wasatch Mtns,2026-09-16,2026-09-20,,Page 56
-"Beaver, East",2026-10-03,2026-10-15,,Page 57
-"Book Cliffs, Little Creek Roadless",2026-10-03,2026-10-15,,Page 57
-"Box Elder, Grouse Creek",2026-10-03,2026-10-15,,Page 57
-"Cache, South",2026-10-03,2026-10-15,,Page 57
-"Fillmore, Pahvant",2026-10-03,2026-10-15,,Page 57
-La Sal Mtns,2026-10-03,2026-10-15,,Page 57
-Monroe,2026-10-03,2026-10-15,,Page 57
-Nebo/San Pitch Mtn,2026-10-03,2026-10-15,,Page 57
-Panguitch Lake,2026-10-03,2026-10-15,,Page 57
-"Southwest Desert, South",2026-10-03,2026-10-15,,Page 57
-"Beaver, East",2026-11-07,2026-11-15,,Page 58
-Boulder,2026-11-07,2026-11-15,,Page 58
-"Cache, South",2026-11-07,2026-11-15,,Page 58
-Fishlake/Thousand Lakes,2026-11-07,2026-11-15,,Page 58
-Manti,2026-11-07,2026-11-15,,Page 58
-Morgan-South Rich,2026-12-19,2026-12-27,,Page 58
-Nebo/San Pitch Mtns,2026-11-07,2026-11-15,,Page 58
-San Juan Bull Elk,2026-11-07,2026-11-15,San Juan Bull Elk,Page 58
-Wasatch Mtns,2026-11-07,2026-11-15,,Page 58
-"Beaver, East",2026-09-21,2026-10-02,,Page 59
-"Book Cliffs, Little Creek Roadless",2026-09-21,2026-10-02,,Page 59
-"Box Elder, Grouse Creek",2026-09-21,2026-10-02,,Page 59
-"Cache, South",2026-09-21,2026-10-02,,Page 59
-"Fillmore, Pahvant",2026-09-21,2026-10-02,,Page 59
-La Sal Mtns,2026-09-21,2026-10-02,,Page 59
-Monroe,2026-09-21,2026-10-02,,Page 59
-Nebo/San Pitch Mtns,2026-09-21,2026-10-02,,Page 59
-Panguitch Lake,2026-09-21,2026-10-02,,Page 59
-"Southwest Desert, South",2026-09-21,2026-10-02,,Page 59
-Barney Top/Kaiparowits,2026-11-07,2026-11-30,,Page 61
-East Canyon,2026-12-19,2026-12-27,,Page 61
-"West Desert, Deep Creek",2026-11-07,2026-11-30,,Page 61
-Beaver,2026-08-15,2026-09-11,,Page 61
-"Book Cliffs, South",2026-08-15,2026-09-11,,Page 61
-"Box Elder, Puddle Valley",2026-08-15,2026-09-11,,Page 61
-"Box Elder, West",2026-08-15,2026-09-11,,Page 61
-Diamond Mtn/Bonanza,2026-08-15,2026-09-11,,Page 61
-"La Sal, Potash/South Cisco",2026-08-15,2026-09-11,,Page 61
-"Nine Mile, Anthro-Myton Bench",2026-08-15,2026-09-11,,Page 61
-"Panguitch Lake/Zion, North",2026-08-15,2026-09-11,,Page 62
-Pine Valley,2026-08-15,2026-09-11,,Page 62
-"San Rafael, North",2026-08-15,2026-09-11,,Page 62
-Vernal,2026-08-15,2026-09-11,,Page 62
-"West Desert, Rush Valley",2026-08-15,2026-09-11,,Page 62
-"Box Elder, Snowville",2026-09-23,2026-10-01,,Page 62
-"Cache, Rich",2026-09-23,2026-10-01,,Page 62
-"Fillmore, Oak Creek South",2026-09-23,2026-10-01,,Page 62
-"North Slope, Three Corners/West Daggett",2026-09-23,2026-10-01,,Page 62
-Parker Mtn,2026-09-23,2026-10-01,,Page 62
-"San Rafael, North",2026-09-23,2026-10-01,,Page 62
-Vernal,2026-09-23,2026-10-01,,Page 62
-Beaver,2026-09-12,2026-09-20,,Page 63
-"Book Cliffs, South",2026-09-12,2026-09-20,,Page 63
-"Box Elder, Puddle Valley",2026-09-12,2026-09-20,,Page 63
-"Box Elder, West",2026-09-12,2026-09-20,,Page 63
-Diamond Mtn/Bonanza,2026-09-12,2026-09-20,,Page 63
-Kaiparowits,2026-09-12,2026-09-20,,Page 63
-Mt Dutton/Paunsaugunt,2026-09-12,2026-09-20,,Page 63
-"Nine Mile, Range Creek",2026-09-12,2026-09-20,,Page 63
-"North Slope, Three Corners/West Daggett",2026-09-12,2026-09-20,,Page 63
-Parker Mtn,2026-09-12,2026-09-20,,Page 63
-"San Juan, Hatch Point",2026-09-12,2026-09-20,,Page 63
-"San Rafael, North",2026-09-12,2026-09-20,,Page 63
-"West Desert, Riverbed",2026-09-12,2026-09-20,,Page 64
-"West Desert, Snake Valley",2026-09-12,2026-09-20,,Page 64
-Box Elder,2026-09-12,2026-10-31,,Page 64
-Chalk Creek†,2026-09-12,2026-10-31,,Page 64
-East Canyon†,2026-09-12,2026-10-31,,Page 64
-Kamas,2026-09-12,2026-10-31,,Page 64
-"North Slope, Summit",2026-09-12,2026-10-31,,Page 64
-Ogden†,2026-09-12,2026-10-31,,Page 64
-Yellowstone,2026-09-12,2026-10-31,,Page 64
-"Book Cliffs, Bitter Creek",2026-09-12,2026-09-20,,Page 65
-"Book Cliffs, Little Creek/South",2026-09-21,2026-10-02,,Page 65
-Henry Mtns,2026-10-28,2026-11-08,,Page 65
-Henry Mtns,2026-11-25,2026-12-06,,Page 65
-Antelope Island,2026-12-07,2026-12-09,,Page 65
-"Book Cliffs, Bitter Creek",2026-11-14,2026-11-29,,Page 65
-Henry Mtns,2026-12-09,2026-12-20,,Page 65
-Henry Mtns (new),2027-01-06,2027-01-17,,Page 65
-"Book Cliffs, Bitter Creek",2026-08-15,2026-09-11,,Page 65
-Henry Mtns,2027-01-18,2027-01-31,,Page 65
-"Escalante, East",2026-09-12,2026-11-10,,Page 66
-Henry Mtns,2026-09-12,2026-11-10,,Page 66
-"Kaiparowits, West",2026-09-12,2026-11-10,,Page 66
-Mineral Mtns,2026-09-12,2026-11-10,,Page 66
-"Pine Valley, Virgin River",2026-10-24,2026-12-25,,Page 66
-"San Juan, North",2026-09-12,2026-11-10,,Page 66
-"San Juan, South",2026-09-12,2026-11-10,,Page 66
-"San Rafael, North",2026-09-12,2026-11-10,,Page 66
-Zion,2026-09-12,2026-11-10,,Page 66
-"San Rafael, Dirty Devil",2026-11-11,2026-12-17,,Page 66
-Antelope Island,2026-11-09,2026-11-16,,Page 67
-"Box Elder, Newfoundland Mtn",2026-10-03,2026-10-23,,Page 67
-"Fillmore, Oak Creek",2026-10-03,2026-10-23,,Page 67
-Nebo,2026-10-31,2026-11-30,,Page 67
-"Nine Mile, Jack Creek",2026-10-31,2026-11-30,,Page 67
-"North Slope, Three Corners",2026-09-14,2026-11-30,,Page 67
-"Wasatch Mtns, West",2026-10-31,2026-11-30,,Page 67
-"Box Elder, Newfoundland Mtn",2026-11-14,2026-12-06,,Page 67
-Beaver,2026-09-05,2026-09-27,,Page 68
-High Uintas Central,2026-09-05,2026-10-31,,Page 68
-High Uintas Kamas,2026-09-05,2026-10-31,,Page 68
-High Uintas West,2026-09-05,2026-10-31,,Page 68
-Mt Dutton,2026-09-05,2026-11-25,,Page 68
-"Ogden, Willard Peak",2026-09-05,2026-11-25,,Page 68
-"Wasatch Mtns, Lone Peak",2026-09-05,2026-11-25,,Page 68
-"Wasatch Mtns, Timpanogos",2026-09-05,2026-11-25,,Page 68
-Beaver,2026-11-14,2026-11-23,,Page 68
+• Wasatch Front",2026-08-15,2026-12-15,,Page 9,DO_NOT_LOAD
+PB1000,2026-09-01,2026-11-15,Buck pronghorn,Page 10,DO_NOT_LOAD
+DS1000,2026-09-01,2026-12-31,,Page 10,DO_NOT_LOAD
+Archery,2026-08-15,2026-09-16,Any bull*,Page 39,DO_NOT_LOAD
+Muzzleloader,2026-10-28,2026-11-05,Any bull and spike only,Page 39,DO_NOT_LOAD
+"Beaver, East",2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Boulder/Kaiparowits,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Cache,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Chalk Creek,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Fillmore,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Kamas,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Manti/San Rafael,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Morgan-South Rich,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Nebo,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+North Slope,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Oquirrh/Tintic,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Pine Valley,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+Southwest Desert,2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+"Wasatch Mtns, East",2026-08-15,2026-09-11,,Page 43,DO_NOT_LOAD
+"West Desert, Swasey",2026-08-15,2026-09-11,,Page 44,DO_NOT_LOAD
+Zion,2026-08-15,2026-09-11,,Page 44,DO_NOT_LOAD
+Box Elder,2026-10-07,2026-10-11,,Page 44,DO_NOT_LOAD
+East Canyon,2026-10-07,2026-10-11,,Page 44,DO_NOT_LOAD
+Fishlake,2026-10-07,2026-10-11,,Page 44,DO_NOT_LOAD
+Morgan-South Rich,2026-10-07,2026-10-11,,Page 44,DO_NOT_LOAD
+North Slope,2026-10-07,2026-10-11,,Page 44,DO_NOT_LOAD
+Pine Valley,2026-10-07,2026-10-11,,Page 44,DO_NOT_LOAD
+"Beaver, East",2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Box Elder,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Cedar/Stansbury,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Chalk Creek,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+East Canyon,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Fillmore,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Fishlake,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Kamas,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+La Sal Mtns,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Manti/San Rafael,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Monroe,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Morgan-South Rich,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Mt Dutton,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Nebo,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Nine Mile,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+North Slope,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Ogden*,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Oquirrh/Tintic,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Panguitch Lake,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Pine Valley,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+"San Juan, Abajo Mtns",2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Southwest Desert,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Vernal/Bonanza,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+"Wasatch Mtns, East",2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+"Wasatch Mtns, West",2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+"West Desert, Swasey",2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Yellowstone,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+Zion,2026-10-17,2026-10-25,,Page 45,DO_NOT_LOAD
+"Beaver, West",2026-10-17,2026-10-25,,Page 46,DO_NOT_LOAD
+Cache,2026-10-17,2026-10-25,,Page 46,DO_NOT_LOAD
+"Beaver, East",2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+Cedar/Stansbury,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+East Canyon,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+Fishlake,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+La Sal Mtns,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+Monroe,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+Mt Dutton,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+Nine Mile,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+Ogden,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+Panguitch Lake,2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+"San Juan, Abajo Mtns",2026-09-23,2026-10-01,,Page 46,DO_NOT_LOAD
+Vernal/Bonanza,2026-09-23,2026-10-01,,Page 47,DO_NOT_LOAD
+"Wasatch Mtns, West",2026-09-23,2026-10-01,,Page 47,DO_NOT_LOAD
+Yellowstone,2026-09-23,2026-10-01,,Page 47,DO_NOT_LOAD
+"Beaver, West",2026-09-23,2026-10-01,,Page 47,DO_NOT_LOAD
+Cache,2026-09-23,2026-10-01,,Page 47,DO_NOT_LOAD
+Henry Mtns,2026-08-15,2026-09-11,,Page 49,DO_NOT_LOAD
+Antelope Island,2026-11-11,2026-11-18,,Page 49,DO_NOT_LOAD
+Paunsaugunt,2026-10-17,2026-10-31,,Page 49,DO_NOT_LOAD
+Henry Mtns,2026-09-23,2026-10-01,,Page 49,DO_NOT_LOAD
+Paunsaugunt (archery),2026-08-15,2026-09-11,,Page 50,DO_NOT_LOAD
+Paunsaugunt (any legal weapon),2026-11-02,2026-11-20,,Page 50,DO_NOT_LOAD
+Paunsaugunt,2026-11-02,2026-11-20,,Page 50,DO_NOT_LOAD
+Book Cliffs,2026-08-15,2026-09-11,,Page 50,DO_NOT_LOAD
+Dolores Triangle,2026-10-31,2026-11-13,,Page 50,DO_NOT_LOAD
+"San Juan, Elk Ridge",2026-08-15,2026-09-11,,Page 50,DO_NOT_LOAD
+Thousand Lakes,2026-08-15,2026-09-11,,Page 50,DO_NOT_LOAD
+"Book Cliffs, North",2026-10-17,2026-10-25,,Page 51,DO_NOT_LOAD
+Castle Valley*,2026-11-07,2026-11-22,,Page 51,DO_NOT_LOAD
+Dolores Triangle,2026-11-14,2026-11-22,,Page 51,DO_NOT_LOAD
+Little Rockies,2026-11-07,2026-11-30,,Page 51,DO_NOT_LOAD
+"San Juan, Elk Ridge",2026-10-17,2026-10-25,,Page 51,DO_NOT_LOAD
+Thousand Lakes,2026-10-17,2026-10-25,,Page 51,DO_NOT_LOAD
+Book Cliffs,2026-09-23,2026-10-01,,Page 51,DO_NOT_LOAD
+Diamond Mtn,2026-09-23,2026-10-01,,Page 51,DO_NOT_LOAD
+"Fillmore, Oak Creek LE",2026-09-23,2026-10-01,,Page 51,DO_NOT_LOAD
+"West Desert, Vernon",2026-09-23,2026-10-01,,Page 51,DO_NOT_LOAD
+Thousand Lakes,2026-09-23,2026-10-01,,Page 51,DO_NOT_LOAD
+"Beaver, East",2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Boulder/Kaiparowits,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Cache,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Chalk Creek,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Fillmore,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Kamas,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Manti/San Rafael,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Morgan-South Rich,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Nebo,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+North Slope,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Oquirrh/Tintic,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Pine Valley,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+Southwest Desert,2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+"Wasatch Mtns, East",2026-10-28,2026-11-05,,Page 52,DO_NOT_LOAD
+"West Desert, Swasey",2026-10-28,2026-11-05,,Page 53,DO_NOT_LOAD
+Zion,2026-10-28,2026-11-05,,Page 53,DO_NOT_LOAD
+"Book Cliffs, Floy Canyon",2026-11-07,2026-11-30,,Page 53,DO_NOT_LOAD
+Kaiparowits HAMSS,2026-11-07,2026-11-30,,Page 53,DO_NOT_LOAD
+Draw-only youth any bull/hunter’s choice elk*,2026-09-12,2026-09-22,Draw-only youth any bull/hunter’s choice elk*,Page 54,DO_NOT_LOAD
+"Beaver, East",2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+"Book Cliffs, Little Creek Roadless",2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+"Box Elder, Pilot Mtn",2026-08-15,2026-09-06,,Page 54,DO_NOT_LOAD
+"Cache, South",2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+"Fillmore, Pahvant",2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+La Sal Mtns,2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+Monroe,2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+Nebo/San Pitch Mtns,2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+Panguitch Lake,2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+"Southwest Desert, South",2026-08-15,2026-09-15,,Page 54,DO_NOT_LOAD
+Barney Top/Kaiparowits,2026-09-01,2026-09-30,,Page 55,DO_NOT_LOAD
+"Southwest Desert, North",2026-09-01,2026-09-30,,Page 55,DO_NOT_LOAD
+"Beaver, East",2026-11-28,2026-12-13,,Page 55,DO_NOT_LOAD
+Boulder,2026-11-28,2026-12-13,,Page 55,DO_NOT_LOAD
+"Cache, South",2026-11-28,2026-12-13,,Page 55,DO_NOT_LOAD
+"Fillmore, Pahvant",2026-11-28,2026-12-13,,Page 55,DO_NOT_LOAD
+La Sal Mtns,2026-11-28,2026-12-13,,Page 55,DO_NOT_LOAD
+Monroe,2026-11-28,2026-12-13,,Page 55,DO_NOT_LOAD
+Nebo/San Pitch Mtns,2026-11-28,2026-12-13,,Page 55,DO_NOT_LOAD
+San Juan Bull Elk,2026-11-28,2026-12-13,San Juan Bull Elk,Page 55,DO_NOT_LOAD
+Wasatch Mtns,2026-11-28,2026-12-13,,Page 55,DO_NOT_LOAD
+"Beaver, East",2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+"Book Cliffs, Little Creek Roadless",2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+"Box Elder, Grouse Creek",2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+"Cache, Meadowville†",2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+Diamond Mtn,2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+Fishlake/Thousand Lakes,2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+Manti,2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+Mt Dutton,2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+"North Slope, Three Corners",2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+San Juan Bull Elk,2026-09-16,2026-09-20,San Juan Bull Elk,Page 56,DO_NOT_LOAD
+Wasatch Mtns,2026-09-16,2026-09-20,,Page 56,DO_NOT_LOAD
+"Beaver, East",2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+"Book Cliffs, Little Creek Roadless",2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+"Box Elder, Grouse Creek",2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+"Cache, South",2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+"Fillmore, Pahvant",2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+La Sal Mtns,2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+Monroe,2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+Nebo/San Pitch Mtn,2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+Panguitch Lake,2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+"Southwest Desert, South",2026-10-03,2026-10-15,,Page 57,DO_NOT_LOAD
+"Beaver, East",2026-11-07,2026-11-15,,Page 58,DO_NOT_LOAD
+Boulder,2026-11-07,2026-11-15,,Page 58,DO_NOT_LOAD
+"Cache, South",2026-11-07,2026-11-15,,Page 58,DO_NOT_LOAD
+Fishlake/Thousand Lakes,2026-11-07,2026-11-15,,Page 58,DO_NOT_LOAD
+Manti,2026-11-07,2026-11-15,,Page 58,DO_NOT_LOAD
+Morgan-South Rich,2026-12-19,2026-12-27,,Page 58,DO_NOT_LOAD
+Nebo/San Pitch Mtns,2026-11-07,2026-11-15,,Page 58,DO_NOT_LOAD
+San Juan Bull Elk,2026-11-07,2026-11-15,San Juan Bull Elk,Page 58,DO_NOT_LOAD
+Wasatch Mtns,2026-11-07,2026-11-15,,Page 58,DO_NOT_LOAD
+"Beaver, East",2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+"Book Cliffs, Little Creek Roadless",2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+"Box Elder, Grouse Creek",2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+"Cache, South",2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+"Fillmore, Pahvant",2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+La Sal Mtns,2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+Monroe,2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+Nebo/San Pitch Mtns,2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+Panguitch Lake,2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+"Southwest Desert, South",2026-09-21,2026-10-02,,Page 59,DO_NOT_LOAD
+Barney Top/Kaiparowits,2026-11-07,2026-11-30,,Page 61,DO_NOT_LOAD
+East Canyon,2026-12-19,2026-12-27,,Page 61,DO_NOT_LOAD
+"West Desert, Deep Creek",2026-11-07,2026-11-30,,Page 61,DO_NOT_LOAD
+Beaver,2026-08-15,2026-09-11,,Page 61,DO_NOT_LOAD
+"Book Cliffs, South",2026-08-15,2026-09-11,,Page 61,DO_NOT_LOAD
+"Box Elder, Puddle Valley",2026-08-15,2026-09-11,,Page 61,DO_NOT_LOAD
+"Box Elder, West",2026-08-15,2026-09-11,,Page 61,DO_NOT_LOAD
+Diamond Mtn/Bonanza,2026-08-15,2026-09-11,,Page 61,DO_NOT_LOAD
+"La Sal, Potash/South Cisco",2026-08-15,2026-09-11,,Page 61,DO_NOT_LOAD
+"Nine Mile, Anthro-Myton Bench",2026-08-15,2026-09-11,,Page 61,DO_NOT_LOAD
+"Panguitch Lake/Zion, North",2026-08-15,2026-09-11,,Page 62,DO_NOT_LOAD
+Pine Valley,2026-08-15,2026-09-11,,Page 62,DO_NOT_LOAD
+"San Rafael, North",2026-08-15,2026-09-11,,Page 62,DO_NOT_LOAD
+Vernal,2026-08-15,2026-09-11,,Page 62,DO_NOT_LOAD
+"West Desert, Rush Valley",2026-08-15,2026-09-11,,Page 62,DO_NOT_LOAD
+"Box Elder, Snowville",2026-09-23,2026-10-01,,Page 62,DO_NOT_LOAD
+"Cache, Rich",2026-09-23,2026-10-01,,Page 62,DO_NOT_LOAD
+"Fillmore, Oak Creek South",2026-09-23,2026-10-01,,Page 62,DO_NOT_LOAD
+"North Slope, Three Corners/West Daggett",2026-09-23,2026-10-01,,Page 62,DO_NOT_LOAD
+Parker Mtn,2026-09-23,2026-10-01,,Page 62,DO_NOT_LOAD
+"San Rafael, North",2026-09-23,2026-10-01,,Page 62,DO_NOT_LOAD
+Vernal,2026-09-23,2026-10-01,,Page 62,DO_NOT_LOAD
+Beaver,2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+"Book Cliffs, South",2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+"Box Elder, Puddle Valley",2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+"Box Elder, West",2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+Diamond Mtn/Bonanza,2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+Kaiparowits,2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+Mt Dutton/Paunsaugunt,2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+"Nine Mile, Range Creek",2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+"North Slope, Three Corners/West Daggett",2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+Parker Mtn,2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+"San Juan, Hatch Point",2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+"San Rafael, North",2026-09-12,2026-09-20,,Page 63,DO_NOT_LOAD
+"West Desert, Riverbed",2026-09-12,2026-09-20,,Page 64,DO_NOT_LOAD
+"West Desert, Snake Valley",2026-09-12,2026-09-20,,Page 64,DO_NOT_LOAD
+Box Elder,2026-09-12,2026-10-31,,Page 64,DO_NOT_LOAD
+Chalk Creek†,2026-09-12,2026-10-31,,Page 64,DO_NOT_LOAD
+East Canyon†,2026-09-12,2026-10-31,,Page 64,DO_NOT_LOAD
+Kamas,2026-09-12,2026-10-31,,Page 64,DO_NOT_LOAD
+"North Slope, Summit",2026-09-12,2026-10-31,,Page 64,DO_NOT_LOAD
+Ogden†,2026-09-12,2026-10-31,,Page 64,DO_NOT_LOAD
+Yellowstone,2026-09-12,2026-10-31,,Page 64,DO_NOT_LOAD
+"Book Cliffs, Bitter Creek",2026-09-12,2026-09-20,,Page 65,DO_NOT_LOAD
+"Book Cliffs, Little Creek/South",2026-09-21,2026-10-02,,Page 65,DO_NOT_LOAD
+Henry Mtns,2026-10-28,2026-11-08,,Page 65,DO_NOT_LOAD
+Henry Mtns,2026-11-25,2026-12-06,,Page 65,DO_NOT_LOAD
+Antelope Island,2026-12-07,2026-12-09,,Page 65,DO_NOT_LOAD
+"Book Cliffs, Bitter Creek",2026-11-14,2026-11-29,,Page 65,DO_NOT_LOAD
+Henry Mtns,2026-12-09,2026-12-20,,Page 65,DO_NOT_LOAD
+Henry Mtns (new),2027-01-06,2027-01-17,,Page 65,DO_NOT_LOAD
+"Book Cliffs, Bitter Creek",2026-08-15,2026-09-11,,Page 65,DO_NOT_LOAD
+Henry Mtns,2027-01-18,2027-01-31,,Page 65,DO_NOT_LOAD
+"Escalante, East",2026-09-12,2026-11-10,,Page 66,DO_NOT_LOAD
+Henry Mtns,2026-09-12,2026-11-10,,Page 66,DO_NOT_LOAD
+"Kaiparowits, West",2026-09-12,2026-11-10,,Page 66,DO_NOT_LOAD
+Mineral Mtns,2026-09-12,2026-11-10,,Page 66,DO_NOT_LOAD
+"Pine Valley, Virgin River",2026-10-24,2026-12-25,,Page 66,DO_NOT_LOAD
+"San Juan, North",2026-09-12,2026-11-10,,Page 66,DO_NOT_LOAD
+"San Juan, South",2026-09-12,2026-11-10,,Page 66,DO_NOT_LOAD
+"San Rafael, North",2026-09-12,2026-11-10,,Page 66,DO_NOT_LOAD
+Zion,2026-09-12,2026-11-10,,Page 66,DO_NOT_LOAD
+"San Rafael, Dirty Devil",2026-11-11,2026-12-17,,Page 66,DO_NOT_LOAD
+Antelope Island,2026-11-09,2026-11-16,,Page 67,DO_NOT_LOAD
+"Box Elder, Newfoundland Mtn",2026-10-03,2026-10-23,,Page 67,DO_NOT_LOAD
+"Fillmore, Oak Creek",2026-10-03,2026-10-23,,Page 67,DO_NOT_LOAD
+Nebo,2026-10-31,2026-11-30,,Page 67,DO_NOT_LOAD
+"Nine Mile, Jack Creek",2026-10-31,2026-11-30,,Page 67,DO_NOT_LOAD
+"North Slope, Three Corners",2026-09-14,2026-11-30,,Page 67,DO_NOT_LOAD
+"Wasatch Mtns, West",2026-10-31,2026-11-30,,Page 67,DO_NOT_LOAD
+"Box Elder, Newfoundland Mtn",2026-11-14,2026-12-06,,Page 67,DO_NOT_LOAD
+Beaver,2026-09-05,2026-09-27,,Page 68,DO_NOT_LOAD
+High Uintas Central,2026-09-05,2026-10-31,,Page 68,DO_NOT_LOAD
+High Uintas Kamas,2026-09-05,2026-10-31,,Page 68,DO_NOT_LOAD
+High Uintas West,2026-09-05,2026-10-31,,Page 68,DO_NOT_LOAD
+Mt Dutton,2026-09-05,2026-11-25,,Page 68,DO_NOT_LOAD
+"Ogden, Willard Peak",2026-09-05,2026-11-25,,Page 68,DO_NOT_LOAD
+"Wasatch Mtns, Lone Peak",2026-09-05,2026-11-25,,Page 68,DO_NOT_LOAD
+"Wasatch Mtns, Timpanogos",2026-09-05,2026-11-25,,Page 68,DO_NOT_LOAD
+Beaver,2026-11-14,2026-11-23,,Page 68,DO_NOT_LOAD

@@ -285,6 +285,17 @@
     }
     .empty-state h3 { font-size: 18px; color: #666; margin-bottom: 8px; }
     .empty-state p { font-size: 14px; }
+    .empty-body { margin-bottom: 16px; }
+    .timeline-table {
+      margin: 0 auto; text-align: left; font-size: 14px; border-collapse: collapse;
+    }
+    .timeline-table td {
+      padding: 5px 12px; border-bottom: 1px solid #e2e2e2;
+    }
+    .timeline-table td:first-child {
+      font-weight: 600; color: #666; white-space: nowrap;
+    }
+    .timeline-table a { color: #326891; }
 
     /* ─── Application Plan ─────────────────────────── */
     .app-plan { margin-top: 0; }
@@ -439,6 +450,97 @@ const PROCLAMATION_URLS = {
 let statesData = [];
 let currentStateCode = null;
 let currentHunts = [];
+
+const STATE_INFO = {
+  AZ: {
+    app_opens: 'January (elk/pronghorn) | April (deer)',
+    app_deadline: 'February 11, 2026 (elk/pronghorn) | June 11, 2026 (deer)',
+    draw_results: 'March (elk) | July (deer)',
+    regs_published: 'January (elk booklet, already available) | Current (2025-26 annual regs)',
+    portal: 'https://www.azgfd.com/hunting/draw/biggame/',
+    agency: 'AZ Game & Fish',
+  },
+  CO: {
+    app_opens: 'February',
+    app_deadline: 'April 7, 2026',
+    draw_results: 'May\u2013June',
+    regs_published: 'January (brochure already published)',
+    portal: 'https://cpw.state.co.us/thingstodo/Pages/BigGameDraws.aspx',
+    agency: 'Colorado Parks & Wildlife',
+  },
+  UT: {
+    app_opens: 'January',
+    app_deadline: 'March 31, 2026',
+    draw_results: 'May',
+    regs_published: 'January (guidebook already published)',
+    portal: 'https://wildlife.utah.gov/hunting/big-game.html',
+    agency: 'Utah DWR',
+  },
+  NV: {
+    app_opens: 'March',
+    app_deadline: 'May 6, 2026',
+    draw_results: 'Late May',
+    regs_published: 'February (already published)',
+    portal: 'https://www.ndow.org/hunt/big-game/',
+    agency: 'Nevada Department of Wildlife',
+  },
+  MT: {
+    app_opens: 'February (limited-entry permits) | March (combo license)',
+    app_deadline: 'April 1, 2026',
+    draw_results: 'Mid-April',
+    regs_published: 'January (already published)',
+    portal: 'https://myfwp.mt.gov/fwpPub/drawingStatistics',
+    agency: 'Montana FWP',
+  },
+  ID: {
+    app_opens: 'April (controlled hunts)',
+    app_deadline: 'June 5, 2026 (controlled) | December 15 (NR general)',
+    draw_results: 'July (controlled) | January (NR general)',
+    regs_published: 'April (2026-27 season rules)',
+    portal: 'https://idfg.idaho.gov/hunt/draw',
+    agency: 'Idaho Fish & Game',
+  },
+  WY: {
+    app_opens: 'January (NR elk) | April (deer, resident elk)',
+    app_deadline: 'February 2, 2026 (NR elk) | June 1, 2026 (deer/resident elk)',
+    draw_results: 'May (NR elk) | June (deer)',
+    regs_published: 'February (elk, already available) | April (deer, pending Commission)',
+    portal: 'https://wgfd.wyo.gov/Hunting/Apply-for-Hunts',
+    agency: 'Wyoming Game & Fish',
+  },
+  OR: {
+    app_opens: 'March',
+    app_deadline: 'May 15, 2026',
+    draw_results: 'June',
+    regs_published: 'January (already published)',
+    portal: 'https://myodfw.com/hunting/species/elk-deer',
+    agency: 'Oregon DFW',
+  },
+  WA: {
+    app_opens: 'March',
+    app_deadline: 'Late May 2026',
+    draw_results: 'Late June',
+    regs_published: 'April\u2013May (2026-27 pamphlet, not yet published as of March 2026)',
+    portal: 'https://wdfw.wa.gov/hunting/big-game',
+    agency: 'Washington DFW',
+  },
+  CA: {
+    app_opens: 'May (elk) | June (deer)',
+    app_deadline: 'June 2, 2026 (elk) | June 30, 2026 (deer)',
+    draw_results: 'July\u2013August',
+    regs_published: 'March (already published)',
+    portal: 'https://www.wildlife.ca.gov/Hunting/Big-Game',
+    agency: 'California DFW',
+  },
+  NM: {
+    app_opens: 'January',
+    app_deadline: 'March 18, 2026',
+    draw_results: 'April',
+    regs_published: 'January (already published)',
+    portal: 'https://www.wildlife.state.nm.us/hunting/big-game/',
+    agency: 'NM Department of Game & Fish',
+  },
+};
 let sortCol = null;
 let sortDir = 1;
 let expandedRow = null;
@@ -830,8 +932,30 @@ function fmtOddsFraction(p) {
   return `${pct} (1 in ${years})`;
 }
 
-function fmtSeasonDates(openDate, closeDate) {
-  if (!openDate && !closeDate) return '<span style="color:#999;">&mdash;</span>';
+function renderEmptyTimeline(stateCode) {
+  const sName = statesData.find(s => s.state_code === stateCode)?.state_name || stateCode;
+  const info = STATE_INFO[stateCode];
+  if (!info) {
+    return `<div class="empty-state"><h3>No draw data loaded yet for ${esc(sName)}</h3><p>We're actively collecting and processing draw data for ${esc(sName)}. Check back soon.</p></div>`;
+  }
+  return `<div class="empty-state">
+    <h3>No draw data loaded yet for ${esc(sName)}</h3>
+    <p class="empty-body">We're working on it. In the meantime, here's what you need to know for ${esc(sName)}:</p>
+    <table class="timeline-table">
+      <tr><td>Application opens:</td><td>${esc(info.app_opens)}</td></tr>
+      <tr><td>Application deadline:</td><td>${esc(info.app_deadline)}</td></tr>
+      <tr><td>Draw results:</td><td>${esc(info.draw_results)}</td></tr>
+      <tr><td>Regulations published:</td><td>${esc(info.regs_published)}</td></tr>
+      <tr><td>Official portal:</td><td><a href="${esc(info.portal)}">${esc(info.agency)}</a></td></tr>
+    </table>
+  </div>`;
+}
+
+function fmtSeasonDates(openDate, closeDate, stateCode) {
+  if (!openDate && !closeDate) {
+    const sc = stateCode || currentStateCode || '';
+    return `<span style="color:#999;">&mdash;</span> <i style="font-size:11px;color:#aaa;">dates pending ${esc(sc)} proclamation</i>`;
+  }
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   function fmtDate(ds) {
     if (!ds) return '';
@@ -1053,7 +1177,7 @@ async function loadFilterData(code) {
         const oddsResults = document.getElementById('odds-results');
         if (oddsResults) {
           const sName = statesData.find(s => s.state_code === code)?.state_name || code;
-          oddsResults.innerHTML = `<div class="empty-state"><h3>No draw data loaded yet for ${esc(sName)}</h3><p>We're actively collecting and processing draw data for ${esc(sName)}. Check back soon.</p></div>`;
+          oddsResults.innerHTML = renderEmptyTimeline(code);
         }
         const pill = document.querySelector(`.state-pill[data-code="${code}"]`);
         if (pill) {
@@ -1172,11 +1296,7 @@ async function searchHunts() {
     expandedRow = null;
 
     if (!currentHunts.length) {
-      target.innerHTML = `
-        <div class="empty-state">
-          <h3>No draw data loaded yet for ${esc(statesData.find(s=>s.state_code===currentStateCode)?.state_name || currentStateCode)}</h3>
-          <p>Data collection is ongoing. Check back soon.</p>
-        </div>`;
+      target.innerHTML = renderEmptyTimeline(currentStateCode);
       return;
     }
 
@@ -1224,7 +1344,7 @@ function renderHuntsTable() {
     html += `<td>${h.season_label ? esc(h.season_label) : '<span style="color:#999;">&mdash;</span>'}</td>`;
     html += `<td>${esc(h.bag_code || '')}</td>`;
     html += `<td>${esc(h.weapon_code || '')}</td>`;
-    html += `<td>${fmtSeasonDates(h.open_date, h.close_date)}</td>`;
+    html += `<td>${fmtSeasonDates(h.open_date, h.close_date, currentStateCode)}</td>`;
     html += `<td>${fmtPct(oddsPct)}</td>`;
     html += `<td>${fmtNum(h.applications)}</td>`;
     html += `<td>${fmtNum(h.tags_awarded)}</td>`;
