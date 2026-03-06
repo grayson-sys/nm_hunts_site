@@ -118,3 +118,6 @@
 | MT    | Partial | 240 hunts loaded. Need draw results, harvest, dates |
 | WA    | Empty   | No data loaded yet |
 | CA    | Empty   | No data loaded yet |
+
+## Supervisor completed at 2026-03-05 23:44:40.327372
+Total hunts across all states: 6337
