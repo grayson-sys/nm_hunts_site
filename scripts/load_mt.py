@@ -106,10 +106,11 @@ def parse_proclamation_hunts(filepath):
     current_species_section = None  # 'DEER' or 'ELK'
 
     with pdfplumber.open(filepath) as pdf:
-        # Deer/Elk regs are on pages 48-123 (1-indexed), so 47-122 (0-indexed)
+        # Deer/Elk regs start at page 44 (idx 43) through ~page 119 (idx 118)
+        # Multi-district and antelope tables continue through ~page 138
         total_pages = len(pdf.pages)
-        start_page = 47  # page 48
-        end_page = min(122, total_pages - 1)  # page 123
+        start_page = 43  # page 44
+        end_page = min(138, total_pages - 1)
 
         for page_idx in range(start_page, end_page + 1):
             page = pdf.pages[page_idx]
@@ -182,8 +183,21 @@ def parse_proclamation_hunts(filepath):
                             if val not in ('-', '', 'None'):
                                 season_dates[cname] = val
 
+                    # Prefix hunt_code with species to avoid collisions
+                    # Deer B License: 100-00 → D-100-00, Elk B License: 100-00 → E-100-00
+                    lt_lower = license_type.lower()
+                    if 'elk' in lt_lower:
+                        prefixed_code = f"E-{hunt_code}"
+                    elif 'deer' in lt_lower:
+                        prefixed_code = f"D-{hunt_code}"
+                    elif 'antelope' in lt_lower:
+                        prefixed_code = f"A-{hunt_code}"
+                    else:
+                        prefixed_code = hunt_code
+
                     hunt_entries.append({
-                        'hunt_code': hunt_code,
+                        'hunt_code': prefixed_code,
+                        'raw_code': hunt_code,
                         'license_type': license_type,
                         'opportunity': opportunity,
                         'hd': hd_num,
@@ -223,8 +237,10 @@ def parse_elk_counts_pdf(filepath):
 
 
 def parse_region1_harvest(filepath):
-    """Parse Region 1 elk report for 2024 harvest by HD."""
-    harvests = {}  # hd_num → {'bull_harvest': int}
+    """Parse Region 1 elk report for 2024 harvest by HD.
+    Tables have 3-period layout: Year,(None),Antlered,Antlerless,Total,%≥6pt,None,None repeated.
+    """
+    harvests = {}
 
     with pdfplumber.open(filepath) as pdf:
         for page in pdf.pages:
@@ -232,18 +248,40 @@ def parse_region1_harvest(filepath):
             if not tables:
                 continue
             for table in tables:
-                # Look for Table 1 with harvest data
-                for row in table:
-                    if not row or len(row) < 7:
-                        continue
-                    hd_cell = str(row[0] or '').strip()
-                    if not re.match(r'^\d{3}$', hd_cell):
-                        continue
+                if not table or len(table) < 3:
+                    continue
+                header_text = ' '.join(str(c) for c in table[0] if c)
+                if 'Harvest' not in header_text:
+                    continue
+                hd_match = re.search(r'HD\s+(\d{3})', header_text)
+                if not hd_match:
+                    continue
+                hd = hd_match.group(1)
 
-                    # Table 1 cols: HD | Prior5yr | Current5yr | Meeting? | LTA Bull | Meeting? | 2024 Bull Harvest | ...
-                    bull_harvest = safe_int(row[6]) if len(row) > 6 else 0
-                    if bull_harvest > 0:
-                        harvests[hd_cell] = {'bull_harvest': bull_harvest}
+                for row in table:
+                    if not row:
+                        continue
+                    for col_idx, cell in enumerate(row):
+                        if str(cell or '').strip() != '2024':
+                            continue
+                        # Check if next cell is None (period 1 has None gap)
+                        offset = 1
+                        if col_idx + 1 < len(row) and row[col_idx + 1] is None:
+                            offset = 2
+                        a_idx = col_idx + offset
+                        al_idx = col_idx + offset + 1
+                        t_idx = col_idx + offset + 2
+                        if t_idx < len(row):
+                            antlered = safe_int(row[a_idx])
+                            antlerless = safe_int(row[al_idx])
+                            total = safe_int(row[t_idx])
+                            if total > 0:
+                                harvests[hd] = {
+                                    'total': total,
+                                    'antlered': antlered,
+                                    'antlerless': antlerless,
+                                }
+                        break
 
     return harvests
 
@@ -314,6 +352,17 @@ def main():
     cur.execute("SELECT state_id FROM states WHERE state_code='MT'")
     mt_state_id = cur.fetchone()[0]
     print(f"MT state_id: {mt_state_id}")
+
+    # Clean up previous MT data for idempotent re-runs
+    print("Cleaning previous MT data...")
+    cur.execute("DELETE FROM hunt_dates WHERE hunt_id IN (SELECT hunt_id FROM hunts WHERE state_id=%s)", (mt_state_id,))
+    cur.execute("DELETE FROM harvest_stats WHERE hunt_id IN (SELECT hunt_id FROM hunts WHERE state_id=%s)", (mt_state_id,))
+    cur.execute("DELETE FROM draw_results_by_pool WHERE hunt_id IN (SELECT hunt_id FROM hunts WHERE state_id=%s)", (mt_state_id,))
+    cur.execute("DELETE FROM hunt_gmus WHERE hunt_id IN (SELECT hunt_id FROM hunts WHERE state_id=%s)", (mt_state_id,))
+    cur.execute("DELETE FROM hunts WHERE state_id=%s", (mt_state_id,))
+    cur.execute("DELETE FROM gmus WHERE state_id=%s", (mt_state_id,))
+    cur.execute("DELETE FROM pools WHERE state_id=%s", (mt_state_id,))
+    conn.commit()
 
     # Lookup tables
     cur.execute("SELECT species_id, species_code FROM species")
@@ -443,8 +492,9 @@ def main():
         tag_type = 'B' if 'b license' in entry['license_type'].lower() else 'LE'
         season_type = 'OTC' if entry.get('is_otc') else 'controlled'
 
-        # Display code
-        display = f"{entry['license_type']}: {code}"
+        # Display code - use the raw (un-prefixed) code
+        raw_code = entry.get('raw_code', code)
+        display = f"{entry['license_type']}: {raw_code}"
 
         # Unit description
         hd_name = hd_names.get(entry['hd'], f"HD {entry['hd']}")
@@ -525,33 +575,38 @@ def main():
                     end_date = EXCLUDED.end_date,
                     hunt_name = EXCLUDED.hunt_name
             """, (hunt_id, earliest_start, latest_end,
-                  f"{entry['license_type']}: {entry['hunt_code']}"))
+                  f"{entry['license_type']}: {entry.get('raw_code', entry['hunt_code'])}"))
             dates_count += 1
 
     conn.commit()
     print(f"Inserted {dates_count} hunt date rows")
 
     # ===== INSERT HARVEST STATS =====
+    # Map harvest data to elk B License hunts by HD (prefixed with E-)
     harvest_count = 0
     for hd_num, data in r1_harvest.items():
-        # Find elk hunts for this HD — match Elk B License codes
-        for code, hunt_id in hunt_id_map.items():
-            if code.startswith(hd_num + '-') and hunt_id:
-                # Check it's an elk hunt
-                matching_entries = [e for e in hunt_entries
-                                   if e['hunt_code'] == code and 'elk' in e['license_type'].lower()]
-                if not matching_entries:
-                    continue
+        # Find the first Elk B License for this HD: E-{hd}-00
+        elk_code = f"E-{hd_num}-00"
+        hunt_id = hunt_id_map.get(elk_code)
+        if not hunt_id:
+            # Try any elk hunt for this HD
+            for code, hid in hunt_id_map.items():
+                if code.startswith(f"E-{hd_num}-"):
+                    hunt_id = hid
+                    break
+        if not hunt_id:
+            continue
 
-                cur.execute("""
-                    INSERT INTO harvest_stats
-                        (hunt_id, harvest_year, access_type, harvest_count)
-                    VALUES (%s, 2024, %s, %s)
-                    ON CONFLICT (hunt_id, harvest_year, access_type) DO UPDATE SET
-                        harvest_count = EXCLUDED.harvest_count
-                """, (hunt_id, 'PUBLIC', data['bull_harvest']))
-                harvest_count += 1
-                break  # one per HD
+        cur.execute("""
+            INSERT INTO harvest_stats
+                (hunt_id, harvest_year, access_type, harvest_count, notes)
+            VALUES (%s, 2024, %s, %s, %s)
+            ON CONFLICT (hunt_id, harvest_year, access_type) DO UPDATE SET
+                harvest_count = EXCLUDED.harvest_count,
+                notes = EXCLUDED.notes
+        """, (hunt_id, 'PUBLIC', data['total'],
+              f"Antlered: {data['antlered']}, Antlerless: {data['antlerless']}"))
+        harvest_count += 1
 
     conn.commit()
     print(f"Inserted {harvest_count} harvest rows (Region 1 elk)")
