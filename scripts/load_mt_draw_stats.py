@@ -95,7 +95,7 @@ def main():
             return gmu_cache[area]
         gmu_code = f"DS-{area}"   # "DS" = draw stats district code
         gmu_sort = area.zfill(8)
-        gmu_name = f"Draw District {area}"
+        gmu_name = f"Area {area}"
         cur.execute("""
             INSERT INTO gmus (state_id, gmu_code, gmu_name, gmu_sort_key)
             VALUES (%s, %s, %s, %s)
@@ -114,8 +114,8 @@ def main():
             return hunt_cache[hunt_code]
         sp_id = species_map.get(species_code, species_map.get('ELK'))
         gmu_id = get_or_create_gmu(area)
-        display = f"B License {hunt_code} (Area {area})"
-        unit_desc = f"Draw District {area}"
+        display = f"Area {area} · B-License {hunt_code}"
+        unit_desc = f"MT Hunting Area {area} — B-License {hunt_code}"
         cur.execute("""
             INSERT INTO hunts (state_id, species_id, hunt_code, hunt_code_display,
                 weapon_type_id, bag_limit_id, season_type, tag_type, is_active,
