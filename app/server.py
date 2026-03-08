@@ -132,10 +132,15 @@ def api_units():
     conn.close()
 
     for r in rows:
-        if r["gmu_name"]:
-            r["dropdown_label"] = f"{r['gmu_code']} — {r['gmu_name']}"
+        code = r["gmu_code"] or ""
+        name = r["gmu_name"] or ""
+        if code.startswith("DS-"):
+            # MT draw-stats districts: show "Area 11" with B-License note
+            r["dropdown_label"] = name if name else code
+        elif name:
+            r["dropdown_label"] = f"{code} — {name}"
         else:
-            r["dropdown_label"] = r["gmu_code"]
+            r["dropdown_label"] = code
 
     return jsonify({"units": rows})
 
