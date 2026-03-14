@@ -2,17 +2,26 @@
 """
 Fetch Montana harvest data for all species from myfwp.mt.gov using Playwright.
 
-The FWP harvest search tool is a Struts2 jQuery app. Data is loaded by publishing
-a jQuery topic 'popReportResultsDiv' after form fields are filled. No submit button
-exists — the trigger is the JS topic system.
+HOW IT WORKS (from harvestReports.js, 2026-03-14):
+  1. Select species  → call handleSelectSpecies() → loads year dropdown
+  2. Select start yr → trigger('change') on #licYearStart → loads end year dropdown
+  3. Select end yr   → trigger('change') on #licYearEnd → loads district dropdown
+  4. Select district → trigger('change') on #districtId → enables buttons
+  5. Call handleViewReport() → sets reportNm='HarvestEstimates', publishes
+     'popReportResultsDiv' topic → loads data via POST to reportResultsDiv_input.action
+
+CSV download also possible via handleGenerateReport('CVS') but HTML table is easier
+to parse and avoids file download handling.
+
+Columns returned (elk): License Year, Hunting District, Residency, Hunters, Days,
+Days per Hunter, Total Harvest, Bow, Rifle, Spike Bull Elk, <6pt, 6+pt
 
 Usage:
-    python3 fetch_mt_harvest.py            # all species, 2023+2024
-    python3 fetch_mt_harvest.py EL 2024   # single species+year
+    python3 fetch_mt_harvest.py            # all species, all years in YEARS list
+    python3 fetch_mt_harvest.py EL 2024   # single species + year
 
 Requirements:
-    pip install playwright
-    playwright install chromium
+    pip install playwright && playwright install chromium
 """
 import asyncio
 import csv
@@ -30,6 +39,7 @@ SPECIES = [
     ("BS", "sheep"),
     ("MG", "goat"),
 ]
+# Update this list each year before running
 YEARS = ["2023", "2024"]
 
 
@@ -37,79 +47,54 @@ def log(msg):
     print(msg, flush=True)
 
 
-async def fetch_harvest(page, species_cd, species_name, year):
+async def fetch_one(page, species_cd, species_name, year):
     log(f"\n--- {species_name} {year} ---")
 
-    await page.goto(BASE_URL, wait_until="domcontentloaded", timeout=30000)
+    await page.goto(BASE_URL, wait_until="networkidle", timeout=30000)
+    await page.wait_for_selector('#speciesCd', timeout=20000)
 
-    # Wait for the Struts2 jQuery plugin to load the inner form div
-    try:
-        await page.wait_for_selector('#speciesCd', timeout=20000)
-    except Exception:
-        log(f"  TIMEOUT: #speciesCd never appeared (JS may not have loaded)")
-        return 0
-
-    # Select species — triggers year dropdown population via AJAX
-    log(f"  Selecting species={species_cd}")
+    # Step 1: species
     await page.select_option('#speciesCd', species_cd)
+    await page.evaluate("handleSelectSpecies()")
 
-    # Wait for year option to appear
-    try:
-        await page.wait_for_function(
-            f"document.querySelector('#licYearStart option[value=\"{year}\"]') !== null",
-            timeout=15000
-        )
-    except Exception:
-        log(f"  TIMEOUT: year {year} never appeared in #licYearStart")
-        return 0
-
+    # Step 2: start year
+    await page.wait_for_function(
+        f"document.querySelector('#licYearStart option[value=\"{year}\"]') !== null",
+        timeout=15000
+    )
     await page.select_option('#licYearStart', year)
+    await page.evaluate("$('#licYearStart').trigger('change')")
+
+    # Step 3: end year
+    await page.wait_for_function(
+        f"document.querySelector('#licYearEnd option[value=\"{year}\"]') !== null",
+        timeout=15000
+    )
     await page.select_option('#licYearEnd', year)
-    log(f"  Year={year}")
+    await page.evaluate("$('#licYearEnd').trigger('change')")
 
-    # Wait for district dropdown to populate
-    try:
-        await page.wait_for_function(
-            "document.querySelector('#districtId option[value=\"ALL\"]') !== null",
-            timeout=15000
-        )
-    except Exception:
-        log(f"  TIMEOUT: district dropdown never populated")
-        return 0
-
+    # Step 4: district
+    await page.wait_for_function(
+        "document.querySelector('#districtId option[value=\"ALL\"]') !== null",
+        timeout=15000
+    )
     await page.select_option('#districtId', 'ALL')
-    log(f"  District=ALL — publishing popReportResultsDiv topic")
+    await page.evaluate("$('#districtId').trigger('change')")
 
-    # No submit button exists. Trigger the results by publishing the Struts2 jQuery topic.
-    # The reportResultsDiv container listens for 'popReportResultsDiv' and reloads
-    # via POST to reportResultsDiv_input.action with harvestEstimatesSearchForm data.
-    await page.evaluate("""
-        () => {
-            // Struts2 jQuery topic publish — triggers the results container reload
-            if (typeof jQuery !== 'undefined' && jQuery.publish) {
-                jQuery.publish('popReportResultsDiv');
-            } else if (typeof jQuery !== 'undefined') {
-                // fallback: direct form submit
-                var form = document.getElementById('harvestEstimatesSearchForm');
-                if (form) jQuery(form).submit();
-            }
-        }
-    """)
+    # Step 5: trigger view
+    await page.evaluate("handleViewReport()")
 
-    # Wait for table rows to appear in the results div
+    # Wait for data to load
     try:
         await page.wait_for_function(
             "document.querySelectorAll('#reportResultsDiv tbody tr td').length > 0",
             timeout=25000
         )
     except Exception:
-        log(f"  No data rows returned (topic may not have triggered)")
-        # Debug: show what's in the results div
-        content = await page.inner_html('#reportResultsDiv')
-        log(f"  reportResultsDiv content (first 300): {content[:300]}")
+        log(f"  No data returned for {species_name} {year}")
         return 0
 
-    # Extract table data
+    # Extract table
     result = await page.evaluate("""
         () => {
             const table = document.querySelector('#reportResultsDiv table');
@@ -129,23 +114,28 @@ async def fetch_harvest(page, species_cd, species_name, year):
 
     headers = result['headers']
     data_rows = [r for r in result['rows'] if any(c for c in r)]
-    log(f"  Got {len(data_rows)} rows | cols: {headers}")
+    log(f"  {len(data_rows)} rows | cols: {headers}")
 
     out_path = os.path.join(OUT_DIR, f"harvest_{species_name}_{year}.csv")
-    with open(out_path, 'w', newline='') as f:
+    with open(out_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(headers)
         writer.writerows(data_rows)
-    log(f"  Saved → {out_path}")
+    log(f"  → {out_path}")
     return len(data_rows)
 
 
 async def main():
-    target_species = sys.argv[1].upper() if len(sys.argv) >= 2 else None
-    target_year = sys.argv[2] if len(sys.argv) >= 3 else None
+    target_cd = sys.argv[1].upper() if len(sys.argv) >= 2 else None
+    target_yr = sys.argv[2] if len(sys.argv) >= 3 else None
 
-    species_list = [(cd, nm) for cd, nm in SPECIES if not target_species or cd == target_species]
-    year_list = [y for y in YEARS if not target_year or y == target_year]
+    runs = [
+        (cd, nm, yr)
+        for cd, nm in SPECIES
+        for yr in YEARS
+        if (not target_cd or cd == target_cd)
+        and (not target_yr or yr == target_yr)
+    ]
 
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
@@ -153,18 +143,17 @@ async def main():
         page = await browser.new_page()
 
         total = 0
-        for species_cd, species_name in species_list:
-            for year in year_list:
-                try:
-                    n = await fetch_harvest(page, species_cd, species_name, year)
-                    total += n
-                except Exception as e:
-                    log(f"  ERROR {species_name} {year}: {e}")
+        for cd, nm, yr in runs:
+            try:
+                total += await fetch_one(page, cd, nm, yr)
+            except Exception as e:
+                log(f"  ERROR {nm} {yr}: {e}")
 
         await browser.close()
-        log(f"\n✅ Done. Total rows fetched: {total}")
-        files = [f for f in os.listdir(OUT_DIR) if f.startswith('harvest_') and f.endswith('.csv')]
-        log(f"Output files: {sorted(files)}")
+
+    log(f"\n✅ Done. {total} total rows across {len(runs)} fetches.")
+    files = sorted(f for f in os.listdir(OUT_DIR) if f.startswith('harvest_') and f.endswith('.csv'))
+    log(f"Output files: {files}")
 
 
 if __name__ == '__main__':
