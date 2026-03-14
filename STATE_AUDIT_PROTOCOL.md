@@ -68,6 +68,18 @@ GROUP BY sp.species_code;
 - Expect: min ~0%, max ~100%, avg 15–70% for most states.
 - **Red flags**: avg > 95% (all general/OTC hunts, no LE data), avg < 5% (only trophy units imported), any pct > 100.
 
+### ⚠️ HARD RULE: Draw odds never exceed 100%
+- If `tags_available > applications`, EVERYONE draws → odds = 100%. Never display >100%.
+- **`tags_awarded` must never exceed `tags_available`** in the DB. A DB trigger enforces this:
+  `trg_cap_tags_awarded_insert` / `trg_cap_tags_awarded_update` on `draw_results_by_pool`.
+- The server also caps with `MIN(..., 100.0)` in the `/api/hunts` SQL.
+- When writing import scripts: always insert `min(drew, quota)` for `tags_awarded`, never raw counts that might exceed quota.
+- Run this check after every import:
+```sql
+SELECT COUNT(*) FROM draw_results_by_pool WHERE tags_available > 0 AND tags_awarded > tags_available;
+-- Must return 0.
+```
+
 ### 2b. Spot-check 3–5 hunts against source PDF/CSV
 ```bash
 grep "^HUNTCODE," /path/to/source.csv
@@ -286,6 +298,40 @@ AZ uses sequential numeric hunt codes across ALL species. The draw data PDFs don
 - **After** any compaction/context reset: read today's memory file + MEMORY.md FIRST before doing anything
 - Memory file: `/Users/openclaw/.openclaw/workspace/memory/2026-03-14.md`
 - Watcher nudge format: "Read memory/YYYY-MM-DD.md + MEMORY.md, then resume from REMAINING QUEUE section. Last state: [paste checkpoint]."
+
+### Data Acquisition Methodology (from experience, 2026-03-14)
+
+**Before writing a scraper, check: is this portal JS-gated?**
+
+Signs you're dealing with a JS-gated tool (can't use curl/requests):
+- `curl` to the form action returns HTML with an empty `<tbody>`
+- Form has `<input type="hidden">` fields with blank values (filled by JS)
+- URLs end in `.action` (Struts2), or the page uses React/Angular/Power BI
+- Species/year/district dropdowns load via AJAX after selecting a prior field
+
+**If JS-gated → use Playwright (Python), NOT requests/curl:**
+```python
+from playwright.async_api import async_playwright
+# playwright install chromium  (if browser not installed)
+```
+Pattern:
+1. `page.goto(URL, wait_until="domcontentloaded")`
+2. `page.wait_for_selector('#fieldId')` — wait for form to fully load
+3. `page.select_option(...)` for each dropdown in sequence
+4. Trigger the results — try in order:
+   a. `page.evaluate("jQuery.publish('topicName')")` — for Struts2 jQuery apps
+   b. `page.evaluate("jQuery('#select').trigger('change')")` — for change-driven loads
+   c. Look for a custom JS file (e.g., `harvestReports.js`) in network tab
+5. `page.wait_for_function("tbody has rows")` — wait for data
+6. `page.evaluate(...)` to extract table as JSON
+
+**MT confirmed**: `myfwp.mt.gov/fwpPub/harvestReports` requires Playwright. Topic: `popReportResultsDiv`. Script: `MT/scripts/fetch_mt_harvest.py`. The download button on that page ONLY serves Bear/Lion/Turkey — NOT deer/elk.
+
+**Before assuming curl works**: always do a quick `wc -c` check on the response. If it's ~80–200 bytes (just a header row), it's JS-gated.
+
+**Script location convention**: `{STATE}/scripts/fetch_{state}_{datatype}.py`
+
+**After fetching, always check**: success_rate scale (should be 0–100, not 0–1), tags_awarded never exceeds tags_available, no duplicate hunt_id + harvest_year rows.
 
 ---
 
