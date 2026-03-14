@@ -4,6 +4,36 @@
 
 ---
 
+## ⚙️ Scraping Methodology Notes
+
+### JavaScript-Gated Portals (Struts2, React, Angular, Power BI)
+Some state tools — especially older Java/Struts2 apps — cannot be scraped with simple `curl` or `requests`. The server returns empty `<tbody>` tags because the actual data query is triggered by a JavaScript event (e.g., Struts2 jQuery topic publish, React state change). You'll recognize these when:
+- `curl` to the form action always returns just HTML shell with empty tables
+- The form has hidden fields populated only by JS
+- Page uses Struts2 (`s2j`, `.action` URLs), Angular, or React
+
+**Solution: Playwright (Python)**
+```python
+from playwright.async_api import async_playwright
+# playwright install chromium  (if browser not found)
+```
+- Use `page.select_option()` to fill dropdowns
+- Use `page.wait_for_function()` to wait for dynamic content to load
+- Use `page.evaluate()` to extract table data as JSON
+- Script pattern: `{STATE}/scripts/fetch_{state}_{datatype}.py`
+
+**States confirmed to require Playwright:**
+- Montana (MT) — harvest search tool at `myfwp.mt.gov/fwpPub/harvestReports`
+- Washington (WA) — Power BI portal (may need different approach)
+
+**States confirmed to NOT require Playwright (simple curl/requests works):**
+- Idaho — REST API
+- Nevada — direct Excel download
+- Oregon — direct PDF/Excel downloads
+- Colorado, Arizona, Utah, Wyoming, California, New Mexico — direct PDF downloads
+
+---
+
 ## NM -- New Mexico
 
 ### Draw Odds Data
@@ -132,10 +162,16 @@
 | Item | Details |
 |---|---|
 | URL | https://myfwp.mt.gov/fwpPub/harvestReports |
-| Format | **CSV and PDF** export available |
-| Years Available | 2003+ (confirmed for some species) |
-| Auto-Download | **Yes** -- CSV export available through harvest reports search tool |
-| Notes | **Best harvest data accessibility among western states** due to CSV export |
+| Interactive Search | https://myfwp.mt.gov/fwpPub/harvestReportsDiv.action |
+| Format | HTML table (interactive); **requires browser automation** to access deer/elk data |
+| Years Available | 2004+ (elk, deer confirmed via form) |
+| Auto-Download | ⚠️ **MISLEADING** — the page has a static download form (`/fwpPub/downloadHarvReports.action`) but it only serves Bear, Mountain Lion, Turkey, Upland Bird, Wolf. **Deer and elk harvest data is NOT available via that form.** |
+| Browser Automation | **Required.** The search tool is a Struts2 jQuery app. Deer/elk harvest is gated behind JavaScript event publishing (`popReportResultsDiv` topic). Simple curl/requests always return empty `<tbody>`. |
+| Script | `MT/scripts/fetch_mt_harvest.py` — uses **Playwright (Python)** to drive the browser, select species/year/district, extract the HTML table |
+| Form Fields | `speciesCd`: EL / DE / PA / MO / BS / MG · `licYearStart` / `licYearEnd` · `districtId`: ALL or specific HD number |
+| Columns Returned | License Year, Hunting District, Residency, Hunters, Days, Days per Hunter, Total Harvest, Bow, Rifle, Spike Bull, <6pt, 6+pt (elk) |
+| Success Rate Calc | `success_rate = (Total Harvest / Hunters) × 100` — computed at import time, not returned directly |
+| Notes | Static PDF downloads on the page sidebar are for other species only. Deer/elk live in the JS-gated interactive tool exclusively. Run `playwright install chromium` if browser is missing. |
 
 ---
 
@@ -264,7 +300,7 @@
 | **CO** | PDF | PDF | Low | All PDF; direct download URLs |
 | **UT** | PDF | PDF | Low-Medium | Predictable URL patterns; utahdraws.com interactive |
 | **NV** | PDF + Excel | Excel | **High** | Excel harvest stats directly downloadable |
-| **MT** | PDF (search tool) | **CSV export** | **Medium-High** | CSV harvest export excellent; draw stats harder |
+| **MT** | PDF (search tool) | **Playwright scrape** | **Medium** | Deer/elk harvest is JS-gated (Struts2); requires Playwright. Static downloads only cover Bear/Lion/Turkey. Script: `MT/scripts/fetch_mt_harvest.py` |
 | **ID** | **CSV/JSON/Excel/API** | Web tool | **Highest** | REST API + multi-format export; 27 years of data |
 | **WY** | PDF | PDF | Low-Medium | Direct PDF links; ArcGIS portal may help |
 | **OR** | **Excel + PDF** | PDF | **Medium-High** | Excel point summaries since 2017; good structure |
@@ -276,7 +312,7 @@
 1. **Idaho** -- REST API, 27 years of data, multiple export formats. Start here.
 2. **Nevada** -- Excel harvest stats, PDF bonus point tables. Good structured data.
 3. **Oregon** -- Excel point summary reports since 2017. Well-organized.
-4. **Montana** -- CSV harvest export. Draw stats require more work.
+4. **Montana** -- Harvest requires Playwright browser automation (JS-gated Struts2 tool). Script written. Draw stats are PDFs. See `MT/scripts/fetch_mt_harvest.py` and the Harvest Reports section above for full details.
 5. **Colorado** -- Direct PDF downloads, 6 years recent data.
 6. **Utah** -- Predictable PDF URLs, 15 years of data.
 7. **Arizona** -- PDF only but S3 URLs are stable.
